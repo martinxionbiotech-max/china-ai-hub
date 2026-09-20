@@ -2,37 +2,32 @@
 agent_id: minimax-agent
 agent_name: MiniMax Agent
 company: minimax
-description: "MiniMax's cloud agent web app (agent.minimax.io) with persistent memory, evolving skills, and two always-on cloud agents: MaxClaw (24/7 personal assistant) and MaxHermes (Beta, self-evolving agent)."
+description: "MiniMax's cloud agent platform at agent.minimax.io ('Minimize Effort, Maximize Intelligence'). Web app with Skills, Schedules, Websites, Research and AI PPT capability areas, persistent memory and evolving skills; includes always-on cloud agents MaxClaw ('Your 24/7 personal assistant', accessible in daily apps incl. Telegram) and MaxHermes (Beta, 'An Agent That Grows With You', self-evolution via unlocked skills). Billed via MiniMax Token Plan."
 agent_type: platform
 underlying_models:
   - minimax-m3
   - minimax-m2.7
-framework: "Cloud-hosted web app; MaxClaw and MaxHermes cloud agents accessible in daily apps including Telegram"
 tool_calling: true
-browser_use: null
-computer_use: null
-mcp: null
 memory: true
 planning: true
 multi_agent: true
-api: true
-pricing: "Bundled with MiniMax Token Plan (Plus $22 / Max $55 / Ultra $132 per month); web-app plan page requires sign-in; exact web-agent prices not publicly disclosed."
+pricing: "Token Plan subscriptions: Plus $22/mo, Max $55/mo, Ultra $132/mo (5-hour rolling + weekly quota); credits 1,000 = $1. Web-app plan/pricing details require sign-in and are not publicly disclosed from fetched sources."
 deployment: cloud
 open_source: false
-license: null
-github: null
+license: proprietary
 documentation: https://agent.minimax.io/docs/llms.txt
 use_cases:
-  - Always-on personal assistance (MaxClaw) accessible in Telegram and daily apps
-  - Self-evolving task skills (MaxHermes Beta)
-  - Office, finance and coding workflows via Expert Collection
-  - AI PPT and research tasks
-  - Scheduled tasks and persistent memory
+  - Office, Finance and Coding 'Expert Collection' work areas
+  - Deep research and website tasks
+  - AI PPT and multimodal creation
+  - 24/7 cloud assistant accessible in daily apps (MaxClaw, Telegram)
+  - Self-evolving assistant that unlocks new skills from completed complex tasks (MaxHermes)
 limitations:
+  - Cloud-hosted only; no self-host option documented
   - First release date not publicly disclosed in fetched sources
-  - Web-app pricing details beyond Token Plan require sign-in and could not be retrieved
-  - No self-host option documented; cloud-hosted only
+  - Web-app plan/pricing details require sign-in (not retrievable)
   - MaxHermes is in Beta
+  - Relationship between the web app, MaxClaw/MaxHermes and MiniMax Code is not explained in a single fetched doc (treated as an ecosystem of surfaces)
 last_verified: "2026-09-20"
 sources:
   - source_name: MiniMax Agent homepage
