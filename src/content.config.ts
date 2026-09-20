@@ -24,6 +24,7 @@ const sourceSchema = z.object({
 
 const benchmarkResultSchema = z.object({
   benchmark: z.string(),
+  model: z.string().optional(),
   benchmark_version: z.string().optional(),
   score: z.union([z.number(), z.string()]),
   metric: z.string().optional(),

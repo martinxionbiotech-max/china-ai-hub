@@ -46,7 +46,7 @@ const d = b.data;
       <tbody>
         {d.evaluations.map((e) => (
           <tr>
-            <td><a href={`/models/${e.benchmark}/`}>{e.benchmark}</a></td>
+            <td>{e.model ? <a href={`/models/${e.model}/`}>{e.model}</a> : e.benchmark}</td>
             <td>{e.model_version ?? '—'}</td>
             <td>{e.score}</td>
             <td>{e.metric ?? '—'}</td>
