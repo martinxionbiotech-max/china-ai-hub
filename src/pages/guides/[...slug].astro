@@ -1,7 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import SourceBadge from '../../components/SourceBadge.astro';
-import { getCollection, type CollectionEntry } from 'astro:content';
+import { getCollection, render, type CollectionEntry } from 'astro:content';
 
 export async function getStaticPaths() {
   const guides = await getCollection('guides');
@@ -14,7 +14,7 @@ interface Props {
 
 const { g } = Astro.props;
 const d = g.data;
-const { Content } = await g.render();
+const { Content } = await render(g);
 ---
 
 <BaseLayout

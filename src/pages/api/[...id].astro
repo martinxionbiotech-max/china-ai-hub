@@ -3,7 +3,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import SourceBadge from '../../components/SourceBadge.astro';
 import LastVerified from '../../components/LastVerified.astro';
 import EntityLinks from '../../components/EntityLinks.astro';
-import { getCollection, type CollectionEntry } from 'astro:content';
+import { getCollection, render, type CollectionEntry } from 'astro:content';
 
 export async function getStaticPaths() {
   const apis = await getCollection('apis');
@@ -16,7 +16,7 @@ interface Props {
 
 const { api } = Astro.props;
 const d = api.data;
-const { Content } = await api.render();
+const { Content } = await render(api);
 
 const fmt = (v: boolean | null | undefined) => (v === true ? 'Yes' : v === false ? 'No' : 'Unknown');
 ---
