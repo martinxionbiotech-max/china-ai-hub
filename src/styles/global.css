@@ -1,0 +1,65 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+/* China AI Hub design system — professional, data-centric, editorial.
+   No AI gradients, no neon, no robot illustrations. */
+
+:root {
+  --caih-accent: #0f4c81;      /* restrained technical blue */
+  --caih-bg: #fafafa;
+  --caih-surface: #ffffff;
+  --caih-border: #e5e7eb;
+  --caih-text: #111827;
+  --caih-muted: #6b7280;
+}
+
+body {
+  background: var(--caih-bg);
+  color: var(--caih-text);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+a {
+  color: var(--caih-accent);
+}
+a:hover {
+  text-decoration: underline;
+}
+
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.875rem;
+}
+.data-table th {
+  text-align: left;
+  font-weight: 600;
+  background: #f3f4f6;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid var(--caih-border);
+  white-space: nowrap;
+}
+.data-table td {
+  padding: 0.5rem 0.75rem;
+  border: 1px solid var(--caih-border);
+  vertical-align: top;
+}
+
+.stale {
+  color: #b45309;
+  font-weight: 600;
+}
+.stale-critical {
+  color: #b91c1c;
+  font-weight: 600;
+}
+
+.badge {
+  display: inline-block;
+  padding: 0.125rem 0.5rem;
+  border-radius: 0.25rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  border: 1px solid var(--caih-border);
+  background: #fff;
+}

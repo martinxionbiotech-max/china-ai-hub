@@ -1,0 +1,100 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import SourceBadge from '../../components/SourceBadge.astro';
+import LastVerified from '../../components/LastVerified.astro';
+import EntityLinks from '../../components/EntityLinks.astro';
+import { getCollection, type CollectionEntry } from 'astro:content';
+
+export async function getStaticPaths() {
+  const agents = await getCollection('agents');
+  return agents.map((agent) => ({ params: { id: agent.id }, props: { agent } }));
+}
+
+interface Props {
+  agent: CollectionEntry<'agents'>;
+}
+
+const { agent } = Astro.props;
+const d = agent.data;
+const { Content } = await agent.render();
+
+const fmt = (v: boolean | null | undefined) => (v === true ? 'Yes' : v === false ? 'No' : 'Unknown');
+const caps = [
+  ['Tool calling', d.tool_calling],
+  ['Browser use', d.browser_use],
+  ['Computer use', d.computer_use],
+  ['MCP support', d.mcp],
+  ['Memory', d.memory],
+  ['Planning', d.planning],
+  ['Multi-agent', d.multi_agent],
+  ['API', d.api],
+] as const;
+---
+
+<BaseLayout
+  title={d.agent_name}
+  description={`${d.agent_name} by ${d.company}: capabilities, underlying models, deployment and sources.`}
+  type="article"
+>
+  <article class="max-w-none">
+    <p class="text-sm text-gray-500 mb-1"><a href="/agents/">Agents</a> / {d.agent_name}</p>
+    <h1 class="text-3xl font-bold text-gray-900 mb-2">{d.agent_name}</h1>
+    <p class="text-gray-600 mb-4">{d.description}</p>
+
+    <div class="mb-4"><LastVerified date={d.last_verified} /></div>
+
+    <table class="data-table mb-6">
+      <caption class="sr-only">Key facts for {d.agent_name}</caption>
+      <thead><tr><th scope="col">Key fact</th><th scope="col">Value</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Company</th><td><a href={`/companies/${d.company}/`}>{d.company}</a></td></tr>
+        <tr><th scope="row">Type</th><td>{d.agent_type}</td></tr>
+        <tr><th scope="row">Framework</th><td>{d.framework ?? 'Unknown'}</td></tr>
+        <tr><th scope="row">Deployment</th><td>{d.deployment ?? 'Unknown'}</td></tr>
+        <tr><th scope="row">Open source</th><td>{fmt(d.open_source)}{d.license ? ` (${d.license})` : ''}</td></tr>
+        {d.github && <tr><th scope="row">GitHub</th><td><a href={d.github} rel="noopener" target="_blank">{d.github}</a></td></tr>}
+        {d.documentation && <tr><th scope="row">Documentation</th><td><a href={d.documentation} rel="noopener" target="_blank">{d.documentation}</a></td></tr>}
+        {d.pricing && <tr><th scope="row">Pricing</th><td>{d.pricing}</td></tr>}
+      </tbody>
+    </table>
+
+    <h2 class="text-xl font-semibold mb-2">Capabilities</h2>
+    <table class="data-table mb-6">
+      <caption class="sr-only">Capabilities of {d.agent_name}</caption>
+      <thead><tr><th scope="col">Capability</th><th scope="col">Supported</th></tr></thead>
+      <tbody>
+        {caps.map(([label, v]) => (
+          <tr><th scope="row">{label}</th><td>{fmt(v)}</td></tr>
+        ))}
+      </tbody>
+    </table>
+
+    {d.use_cases.length > 0 && (
+      <>
+        <h2 class="text-xl font-semibold mb-2">Use cases</h2>
+        <ul class="list-disc pl-5 mb-6 text-gray-700">{d.use_cases.map((u) => <li>{u}</li>)}</ul>
+      </>
+    )}
+
+    {d.limitations.length > 0 && (
+      <>
+        <h2 class="text-xl font-semibold mb-2">Limitations</h2>
+        <ul class="list-disc pl-5 mb-6 text-gray-700">{d.limitations.map((l) => <li>{l}</li>)}</ul>
+      </>
+    )}
+
+    <div class="prose prose-slate max-w-none mb-8">
+      <Content />
+    </div>
+
+    <EntityLinks
+      title="Underlying models"
+      links={d.underlying_models.map((m) => ({ href: `/models/${m}/`, label: m }))}
+    />
+
+    <h2 class="text-xl font-semibold mt-6 mb-2">Sources</h2>
+    <div class="flex flex-wrap gap-2">
+      {d.sources.map((s) => <SourceBadge source={s} />)}
+    </div>
+  </article>
+</BaseLayout>

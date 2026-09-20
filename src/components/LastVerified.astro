@@ -1,0 +1,23 @@
+---
+interface Props {
+  date: string;
+}
+
+const { date } = Astro.props;
+const verified = new Date(date + 'T00:00:00Z');
+const days = Math.floor((Date.now() - verified.getTime()) / 86400000);
+let cls = 'text-gray-600';
+let label = 'current';
+if (days > 90) {
+  cls = 'stale-critical';
+  label = 'outdated — verify before relying';
+} else if (days > 30) {
+  cls = 'stale';
+  label = 'may be outdated';
+}
+---
+
+<span class={cls}>
+  Last verified: <time datetime={date}>{date}</time>
+  {label !== 'current' && <span> ({label})</span>}
+</span>

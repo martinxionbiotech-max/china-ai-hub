@@ -1,0 +1,29 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const guides = await getCollection('guides');
+---
+
+<BaseLayout
+  title="Guides"
+  description="Practical guides to Chinese AI: choosing models, APIs, deployment, licensing and evaluation."
+>
+  <h1 class="text-3xl font-bold text-gray-900 mb-2">Guides</h1>
+  <p class="text-gray-600 mb-6 max-w-2xl">
+    Practical, sourced guidance for evaluating and using Chinese AI models, APIs and agents.
+  </p>
+
+  {guides.length === 0 ? (
+    <p class="text-gray-500">No guides published yet. Phase 5 adds the first practical guides.</p>
+  ) : (
+    <ul class="space-y-3">
+      {guides.map((g) => (
+        <li class="border border-gray-200 rounded-lg bg-white p-4 list-none">
+          <a href={`/guides/${g.id}/`} class="font-semibold">{g.data.title}</a>
+          <p class="text-sm text-gray-600 mt-1">{g.data.description}</p>
+        </li>
+      ))}
+    </ul>
+  )}
+</BaseLayout>

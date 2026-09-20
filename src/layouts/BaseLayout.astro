@@ -1,0 +1,71 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description: string;
+  type?: 'website' | 'article';
+}
+
+const { title, description, type = 'website' } = Astro.props;
+const canonical = new URL(Astro.url.pathname, Astro.site);
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title} | China AI Hub</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <meta name="generator" content={Astro.generator} />
+    <script type="application/ld+json" set:html={JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'Organization',
+      name: 'China AI Hub',
+      url: 'https://chinaaihub.com',
+      description: 'Independent English-language database and analysis of China AI models, agents, APIs, pricing, benchmarks and technology.',
+    })} />
+    <script type="application/ld+json" set:html={JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'WebSite',
+      name: 'China AI Hub',
+      url: 'https://chinaaihub.com',
+    })} />
+  </head>
+  <body class="min-h-screen">
+    <header class="border-b border-gray-200 bg-white">
+      <div class="mx-auto max-w-6xl px-4 py-3 flex items-center justify-between">
+        <a href="/" class="font-semibold text-lg text-gray-900 hover:no-underline">China AI Hub</a>
+        <nav class="hidden md:flex gap-5 text-sm text-gray-700" aria-label="Main navigation">
+          <a href="/models/">Models</a>
+          <a href="/agents/">Agents</a>
+          <a href="/companies/">Companies</a>
+          <a href="/api/">API</a>
+          <a href="/pricing/">Pricing</a>
+          <a href="/benchmarks/">Benchmarks</a>
+          <a href="/technology/">Technology</a>
+          <a href="/comparisons/">Comparisons</a>
+          <a href="/research/">Research</a>
+          <a href="/about/">About</a>
+        </nav>
+      </div>
+    </header>
+    <main class="mx-auto max-w-6xl px-4 py-8">
+      <slot />
+    </main>
+    <footer class="border-t border-gray-200 bg-white mt-12">
+      <div class="mx-auto max-w-6xl px-4 py-6 text-sm text-gray-600">
+        <p class="mb-2">
+          China AI Hub — an independent English-language knowledge platform for China's AI ecosystem.
+          All factual claims are sourced and date-stamped. Analysis is clearly labeled.
+        </p>
+        <p class="mb-2">
+          <a href="/about/">About</a> · <a href="/guides/">Guides</a> · <a href="/news/">News</a> · <a href="/research/">Research</a>
+        </p>
+        <p class="text-gray-400">© {new Date().getFullYear()} China AI Hub</p>
+      </div>
+    </footer>
+  </body>
+</html>

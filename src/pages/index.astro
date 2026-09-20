@@ -1,0 +1,106 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const models = await getCollection('models');
+const companies = await getCollection('companies');
+const agents = await getCollection('agents');
+const comparisons = await getCollection('comparisons');
+const research = await getCollection('research');
+const activeModels = models.filter((m) => m.data.status === 'active');
+---
+
+<BaseLayout
+  title="China AI Hub — China AI Models, Agents, APIs & AI Technology"
+  description="Explore China's AI ecosystem through structured data, comparisons and original research. Independent database of Chinese AI models, agents, APIs, pricing and benchmarks."
+>
+  <!-- Hero -->
+  <section class="py-10 md:py-16">
+    <h1 class="text-3xl md:text-5xl font-bold text-gray-900 max-w-3xl">
+      China AI Models, Agents, APIs &amp; AI Technology
+    </h1>
+    <p class="mt-4 text-lg text-gray-600 max-w-2xl">
+      Explore China's AI ecosystem through structured data, comparisons and original research.
+      Every fact is sourced, dated, and independently verifiable.
+    </p>
+    <div class="mt-8 flex gap-3">
+      <a href="/models/" class="bg-[#0f4c81] text-white px-5 py-2.5 rounded-md text-sm font-medium hover:no-underline">Explore Models</a>
+      <a href="/comparisons/" class="border border-gray-300 px-5 py-2.5 rounded-md text-sm font-medium text-gray-700 hover:no-underline">Compare Models</a>
+    </div>
+  </section>
+
+  <!-- Latest model updates -->
+  <section class="py-6">
+    <div class="flex items-baseline justify-between mb-4">
+      <h2 class="text-xl font-semibold text-gray-900">Latest Model Updates</h2>
+      <a href="/models/" class="text-sm">All models →</a>
+    </div>
+    {activeModels.length > 0 ? (
+      <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        {activeModels.slice(0, 6).map((m) => (
+          <article class="border border-gray-200 rounded-lg bg-white p-4">
+            <h3 class="font-semibold"><a href={`/models/${m.id}/`}>{m.data.model_name}</a></h3>
+            <p class="text-sm text-gray-500">{m.data.model_family ?? m.data.provider} · verified {m.data.last_verified}</p>
+          </article>
+        ))}
+      </div>
+    ) : (
+      <p class="text-gray-500 text-sm">
+        The model database is being built. Initial verified entities arrive in Phase 2.
+      </p>
+    )}
+  </section>
+
+  <!-- Grid sections -->
+  <section class="grid gap-8 md:grid-cols-3 py-8">
+    <div>
+      <h2 class="text-lg font-semibold mb-2">Model Explorer</h2>
+      <p class="text-sm text-gray-600 mb-3">Search and filter {models.length} documented models by provider, capability, context and price.</p>
+      <a href="/models/" class="text-sm">Open explorer →</a>
+    </div>
+    <div>
+      <h2 class="text-lg font-semibold mb-2">AI Pricing</h2>
+      <p class="text-sm text-gray-600 mb-3">Normalized API pricing across Chinese providers, with sources and verification dates.</p>
+      <a href="/pricing/" class="text-sm">Compare pricing →</a>
+    </div>
+    <div>
+      <h2 class="text-lg font-semibold mb-2">AI Agents</h2>
+      <p class="text-sm text-gray-600 mb-3">{agents.length} documented Chinese AI agents, frameworks and platforms.</p>
+      <a href="/agents/" class="text-sm">Browse agents →</a>
+    </div>
+  </section>
+
+  <section class="grid gap-8 md:grid-cols-2 py-8 border-t border-gray-200">
+    <div>
+      <h2 class="text-lg font-semibold mb-2">Latest Comparisons</h2>
+      {comparisons.length > 0 ? (
+        <ul class="text-sm space-y-1">
+          {comparisons.slice(0, 5).map((c) => <li><a href={`/comparisons/${c.id}/`}>{c.data.title}</a></li>)}
+        </ul>
+      ) : (
+        <p class="text-sm text-gray-500">Comparison pages arrive in Phase 5.</p>
+      )}
+      <a href="/comparisons/" class="text-sm mt-2 inline-block">All comparisons →</a>
+    </div>
+    <div>
+      <h2 class="text-lg font-semibold mb-2">Original Research</h2>
+      {research.length > 0 ? (
+        <ul class="text-sm space-y-1">
+          {research.slice(0, 5).map((r) => <li><a href={`/research/${r.id}/`}>{r.data.title}</a></li>)}
+        </ul>
+      ) : (
+        <p class="text-sm text-gray-500">Independent research and analysis arrive in Phase 5.</p>
+      )}
+      <a href="/research/" class="text-sm mt-2 inline-block">All research →</a>
+    </div>
+  </section>
+
+  <section class="py-8 border-t border-gray-200">
+    <h2 class="text-lg font-semibold mb-2">China AI Landscape</h2>
+    <p class="text-sm text-gray-600 mb-3">
+      {companies.length} companies tracked. Browse by entity: <a href="/companies/" class="underline">companies</a> ·
+      <a href="/benchmarks/" class="underline">benchmarks</a> · <a href="/technology/" class="underline">technology</a> ·
+      <a href="/api/" class="underline">APIs</a> · <a href="/guides/" class="underline">guides</a>.
+    </p>
+  </section>
+</BaseLayout>

@@ -1,0 +1,100 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import SourceBadge from '../../components/SourceBadge.astro';
+import LastVerified from '../../components/LastVerified.astro';
+import EntityLinks from '../../components/EntityLinks.astro';
+import { getCollection, type CollectionEntry } from 'astro:content';
+
+export async function getStaticPaths() {
+  const companies = await getCollection('companies');
+  return companies.map((company) => ({ params: { id: company.id }, props: { company } }));
+}
+
+interface Props {
+  company: CollectionEntry<'companies'>;
+}
+
+const { company } = Astro.props;
+const d = company.data;
+const { Content } = await company.render();
+
+const modelLinks = d.foundation_models.map((m) => ({ href: `/models/${m}/`, label: m }));
+const agentLinks = d.agents.map((a) => ({ href: `/agents/${a}/`, label: a }));
+const apiLinks = d.api.map((a) => ({ href: `/api/${a}/`, label: `${a} API` }));
+---
+
+<BaseLayout
+  title={d.company_name}
+  description={`${d.company_name}: Chinese AI company profile — models, agents, API, open-source projects and official sources.`}
+  type="article"
+>
+  <article class="max-w-none">
+    <p class="text-sm text-gray-500 mb-1"><a href="/companies/">Companies</a> / {d.company_name}</p>
+    <h1 class="text-3xl font-bold text-gray-900 mb-2">{d.company_name}</h1>
+    {d.aliases.length > 0 && <p class="text-sm text-gray-500 mb-4">Also known as: {d.aliases.join(', ')}</p>}
+
+    <div class="mb-4"><LastVerified date={d.last_verified} /></div>
+
+    <table class="data-table mb-6">
+      <caption class="sr-only">Key facts for {d.company_name}</caption>
+      <thead><tr><th scope="col">Key fact</th><th scope="col">Value</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Founded</th><td>{d.founded ?? 'Unknown'}</td></tr>
+        <tr><th scope="row">Headquarters</th><td>{d.headquarters ?? 'Unknown'}</td></tr>
+        {d.ownership_information && <tr><th scope="row">Ownership</th><td>{d.ownership_information}</td></tr>}
+        {d.official_website && (
+          <tr><th scope="row">Official website</th><td><a href={d.official_website} rel="noopener" target="_blank">{d.official_website}</a></td></tr>
+        )}
+        {d.official_documentation && (
+          <tr><th scope="row">Documentation</th><td><a href={d.official_documentation} rel="noopener" target="_blank">{d.official_documentation}</a></td></tr>
+        )}
+        {d.ai_products.length > 0 && <tr><th scope="row">AI products</th><td>{d.ai_products.join(', ')}</td></tr>}
+        {d.cloud_distribution.length > 0 && (
+          <tr><th scope="row">Cloud distribution</th><td>{d.cloud_distribution.join(', ')}</td></tr>
+        )}
+      </tbody>
+    </table>
+
+    {d.major_releases.length > 0 && (
+      <>
+        <h2 class="text-xl font-semibold mb-2">Major releases</h2>
+        <table class="data-table mb-6">
+          <caption class="sr-only">Major releases by {d.company_name}</caption>
+          <thead><tr><th scope="col">Release</th><th scope="col">Date</th><th scope="col">Type</th></tr></thead>
+          <tbody>
+            {d.major_releases.map((r) => (
+              <tr><td>{r.name}</td><td>{r.date ?? '—'}</td><td>{r.type ?? '—'}</td></tr>
+            ))}
+          </tbody>
+        </table>
+      </>
+    )}
+
+    {d.open_source_projects.length > 0 && (
+      <>
+        <h2 class="text-xl font-semibold mb-2">Open-source projects</h2>
+        <ul class="list-disc pl-5 mb-6 text-gray-700">
+          {d.open_source_projects.map((p) => <li>{p}</li>)}
+        </ul>
+      </>
+    )}
+
+    <div class="prose prose-slate max-w-none mb-8">
+      <Content />
+    </div>
+
+    <div class="space-y-6 mb-6">
+      <EntityLinks title="Models" links={modelLinks} />
+      <EntityLinks title="Agents" links={agentLinks} />
+      <EntityLinks title="APIs" links={apiLinks} />
+      {d.related_entities.length > 0 && (
+        <EntityLinks title="Related entities" links={d.related_entities.map((r) => ({ href: `/companies/${r}/`, label: r }))} />
+      )}
+    </div>
+
+    <h2 class="text-xl font-semibold mb-2">Sources</h2>
+    <div class="flex flex-wrap gap-2">
+      {d.sources.map((s) => <SourceBadge source={s} />)}
+    </div>
+  </article>
+</BaseLayout>

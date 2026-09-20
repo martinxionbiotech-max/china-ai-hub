@@ -1,0 +1,30 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const comparisons = await getCollection('comparisons');
+---
+
+<BaseLayout
+  title="Model Comparisons"
+  description="Evidence-based comparisons of Chinese AI models: pricing, context, reasoning, coding, deployment and trade-offs."
+>
+  <h1 class="text-3xl font-bold text-gray-900 mb-2">Model Comparisons</h1>
+  <p class="text-gray-600 mb-6 max-w-2xl">
+    Comparisons explain differences, trade-offs and workload fit — with evidence. No overall rankings, no "best model" verdicts.
+  </p>
+
+  {comparisons.length === 0 ? (
+    <p class="text-gray-500">No comparisons published yet. Phase 5 adds the first evidence-based comparisons.</p>
+  ) : (
+    <ul class="grid gap-4 sm:grid-cols-2">
+      {comparisons.map((c) => (
+        <li class="border border-gray-200 rounded-lg bg-white p-4 list-none">
+          <a href={`/comparisons/${c.id}/`} class="font-semibold">{c.data.title}</a>
+          {c.data.description && <p class="text-sm text-gray-600 mt-1">{c.data.description}</p>}
+          <p class="text-sm text-gray-500 mt-1">Entities: {c.data.entities.join(' vs ')}</p>
+        </li>
+      ))}
+    </ul>
+  )}
+</BaseLayout>

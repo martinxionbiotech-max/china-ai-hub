@@ -1,0 +1,42 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const apis = await getCollection('apis');
+---
+
+<BaseLayout
+  title="API Database"
+  description="Chinese AI API database: endpoints, authentication, capabilities, context limits, regions and documentation."
+>
+  <h1 class="text-3xl font-bold text-gray-900 mb-2">Chinese AI API Database</h1>
+  <p class="text-gray-600 mb-6 max-w-2xl">
+    Official, cloud-hosted, third-party and self-hosted API options — endpoints, auth, capabilities and limits, verified against official docs.
+  </p>
+
+  {apis.length === 0 ? (
+    <p class="text-gray-500">No API records published yet. Phase 2 adds the first verified entities.</p>
+  ) : (
+    <div class="overflow-x-auto">
+      <table class="data-table">
+        <caption class="sr-only">Chinese AI API database</caption>
+        <thead>
+          <tr><th>API</th><th>Provider</th><th>Type</th><th>Endpoint</th><th>Streaming</th><th>Regions</th><th>Verified</th></tr>
+        </thead>
+        <tbody>
+          {apis.map((a) => (
+            <tr>
+              <td><a href={`/api/${a.id}/`} class="font-medium">{a.data.api_id}</a></td>
+              <td><a href={`/companies/${a.data.provider}/`}>{a.data.provider}</a></td>
+              <td>{a.data.api_type}</td>
+              <td class="font-mono text-xs">{a.data.endpoint ?? '—'}</td>
+              <td>{a.data.streaming === true ? 'yes' : a.data.streaming === false ? 'no' : 'unknown'}</td>
+              <td>{a.data.regions.join(', ') || '—'}</td>
+              <td>{a.data.last_verified}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  )}
+</BaseLayout>

@@ -1,0 +1,143 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const models = await getCollection('models');
+const providers = [...new Set(models.map((m) => m.data.provider))].sort();
+const families = [...new Set(models.map((m) => m.data.model_family).filter(Boolean) as string[])].sort();
+---
+
+<BaseLayout
+  title="AI Model Database"
+  description="Searchable database of Chinese AI models: providers, context windows, capabilities, open weights, licenses and pricing. Sourced and verified."
+>
+  <h1 class="text-3xl font-bold text-gray-900 mb-2">Chinese AI Model Database</h1>
+  <p class="text-gray-600 mb-6 max-w-2xl">
+    Documented models with verified facts: provider, context window, capabilities, license, API availability and pricing.
+    Filtering works in the browser; the underlying table is plain HTML.
+  </p>
+
+  {models.length === 0 ? (
+    <p class="text-gray-500">
+      No models published yet. Phase 2 adds the first verified entities — see docs/ARCHITECTURE.md.
+    </p>
+  ) : (
+    <>
+      <div class="flex flex-wrap gap-3 mb-6 text-sm">
+        <select id="f-provider" class="border border-gray-300 rounded px-2 py-1.5 bg-white">
+          <option value="">All providers</option>
+          {providers.map((p) => <option value={p}>{p}</option>)}
+        </select>
+        <select id="f-family" class="border border-gray-300 rounded px-2 py-1.5 bg-white">
+          <option value="">All families</option>
+          {families.map((f) => <option value={f}>{f}</option>)}
+        </select>
+        <select id="f-open" class="border border-gray-300 rounded px-2 py-1.5 bg-white">
+          <option value="">Weights: all</option>
+          <option value="open">Open weight</option>
+          <option value="closed">Closed weight</option>
+        </select>
+        <select id="f-api" class="border border-gray-300 rounded px-2 py-1.5 bg-white">
+          <option value="">API: all</option>
+          <option value="yes">API available</option>
+          <option value="no">No API</option>
+        </select>
+        <select id="f-reasoning" class="border border-gray-300 rounded px-2 py-1.5 bg-white">
+          <option value="">Reasoning: all</option>
+          <option value="yes">Reasoning</option>
+        </select>
+        <span id="f-count" class="text-gray-500 self-center"></span>
+      </div>
+
+      <div class="overflow-x-auto">
+        <table class="data-table" id="model-table">
+          <caption class="sr-only">Chinese AI model database</caption>
+          <thead>
+            <tr>
+              <th>Model</th>
+              <th>Provider</th>
+              <th>Context</th>
+              <th>Reasoning</th>
+              <th>Coding</th>
+              <th>Vision</th>
+              <th>Open weights</th>
+              <th>License</th>
+              <th>API</th>
+              <th>Input $/1M</th>
+              <th>Output $/1M</th>
+              <th>Verified</th>
+            </tr>
+          </thead>
+          <tbody>
+            {models.map((m) => {
+              const d = m.data;
+              const openLabel = d.open_weight === true ? 'open' : d.open_weight === false ? 'closed' : 'unknown';
+              const apiLabel = d.api_available === true ? 'yes' : d.api_available === false ? 'no' : 'unknown';
+              const reasoning = d.capabilities.reasoning === true ? 'yes' : d.capabilities.reasoning === false ? 'no' : '—';
+              const coding = d.capabilities.coding === true ? 'yes' : d.capabilities.coding === false ? 'no' : '—';
+              const vision = d.capabilities.vision === true ? 'yes' : d.capabilities.vision === false ? 'no' : '—';
+              return (
+                <tr
+                  data-provider={d.provider}
+                  data-family={d.model_family ?? ''}
+                  data-open={openLabel}
+                  data-api={apiLabel}
+                  data-reasoning={d.capabilities.reasoning === true ? 'yes' : 'no'}
+                >
+                  <td><a href={`/models/${m.id}/`} class="font-medium">{d.model_name}</a></td>
+                  <td>{d.provider}</td>
+                  <td>{d.context_window != null ? d.context_window.toLocaleString() : '—'}</td>
+                  <td>{reasoning}</td>
+                  <td>{coding}</td>
+                  <td>{vision}</td>
+                  <td>{openLabel}</td>
+                  <td>{d.license ?? '—'}</td>
+                  <td>{apiLabel}</td>
+                  <td>{d.pricing?.input_price_per_1m ?? '—'}</td>
+                  <td>{d.pricing?.output_price_per_1m ?? '—'}</td>
+                  <td>{d.last_verified}</td>
+                </tr>
+              );
+            })}
+          </tbody>
+        </table>
+      </div>
+    </>
+  )}
+</BaseLayout>
+
+<script>
+  // Progressive enhancement: client-side row filtering. Table renders fully in HTML.
+  const table = document.getElementById('model-table') as HTMLTableElement | null;
+  if (table) {
+    const rows = Array.from(table.querySelectorAll('tbody tr'));
+    const count = document.getElementById('f-count');
+    const selects = ['f-provider', 'f-family', 'f-open', 'f-api', 'f-reasoning'];
+    const apply = () => {
+      let visible = 0;
+      rows.forEach((r) => {
+        let show = true;
+        selects.forEach((s) => {
+          const el = document.getElementById(s) as HTMLSelectElement;
+          if (el.value) {
+            if (s === 'f-open') {
+              if (r.dataset.open !== el.value) show = false;
+            } else if (s === 'f-api') {
+              if (r.dataset.api !== el.value) show = false;
+            } else if (s === 'f-reasoning') {
+              if (r.dataset.reasoning !== el.value) show = false;
+            } else {
+              const key = s === 'f-provider' ? 'provider' : 'family';
+              if (r.dataset[key] !== el.value) show = false;
+            }
+          }
+        });
+        (r as HTMLElement).style.display = show ? '' : 'none';
+        if (show) visible++;
+      });
+      if (count) count.textContent = `${visible} of ${rows.length} models`;
+    };
+    selects.forEach((s) => document.getElementById(s)?.addEventListener('change', apply));
+    apply();
+  }
+</script>

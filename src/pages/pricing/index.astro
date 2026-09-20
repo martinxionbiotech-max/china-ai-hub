@@ -1,0 +1,64 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const pricing = await getCollection('pricing');
+---
+
+<BaseLayout
+  title="API Pricing"
+  description="Normalized Chinese AI API pricing: input, output, cached and batch prices per 1M tokens, with sources and verification dates."
+>
+  <h1 class="text-3xl font-bold text-gray-900 mb-2">Chinese AI API Pricing</h1>
+  <p class="text-gray-600 mb-6 max-w-2xl">
+    Prices normalized to USD per 1 million tokens, with currency, region, billing mode, effective dates and
+    official sources preserved. Pricing is time-sensitive — always check the verification date.
+  </p>
+
+  {pricing.length === 0 ? (
+    <p class="text-gray-500">No pricing records published yet. Phase 2 adds the first verified providers.</p>
+  ) : (
+    <div class="overflow-x-auto">
+      <table class="data-table">
+        <caption class="sr-only">Chinese AI API pricing comparison</caption>
+        <thead>
+          <tr>
+            <th>Provider</th>
+            <th>Model</th>
+            <th>Input $/1M</th>
+            <th>Output $/1M</th>
+            <th>Cached input $/1M</th>
+            <th>Batch $/1M</th>
+            <th>Effective</th>
+            <th>Note</th>
+            <th>Verified</th>
+            <th>Source</th>
+          </tr>
+        </thead>
+        <tbody>
+          {pricing.flatMap((p) =>
+            p.data.models.map((m) => (
+              <tr>
+                <td><a href={`/pricing/${p.id}/`} class="font-medium">{p.data.provider_id}</a></td>
+                <td>{m.model}</td>
+                <td>{m.input_price_per_1m ?? '—'}</td>
+                <td>{m.output_price_per_1m ?? '—'}</td>
+                <td>{m.cached_input_price_per_1m ?? '—'}</td>
+                <td>{m.batch_price_per_1m ?? '—'}</td>
+                <td>{m.effective_date ?? '—'}</td>
+                <td>{m.note ?? ''}</td>
+                <td>{p.data.last_verified}</td>
+                <td>{m.official_source ? <a href={m.official_source} rel="noopener" target="_blank">link</a> : '—'}</td>
+              </tr>
+            ))
+          )}
+        </tbody>
+      </table>
+    </div>
+  )}
+
+  <p class="text-xs text-gray-500 mt-4">
+    All prices in {new Set(pricing.map((p) => p.data.currency)).size === 1 ? pricing[0]?.data.currency : 'original currency'} per 1M tokens unless noted.
+    Always verify against the official pricing page before procurement decisions.
+  </p>
+</BaseLayout>

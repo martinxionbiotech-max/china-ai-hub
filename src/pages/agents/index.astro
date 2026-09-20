@@ -1,0 +1,43 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const agents = await getCollection('agents');
+---
+
+<BaseLayout
+  title="AI Agents"
+  description="Database of Chinese AI agents, frameworks and platforms: underlying models, capabilities, deployment and pricing."
+>
+  <h1 class="text-3xl font-bold text-gray-900 mb-2">Chinese AI Agent Database</h1>
+  <p class="text-gray-600 mb-6 max-w-2xl">
+    Coding, research, browser, computer-use, enterprise and multi-agent systems from China —
+    distinguished from models, assistants, frameworks and platforms.
+  </p>
+
+  {agents.length === 0 ? (
+    <p class="text-gray-500">No agents published yet. Phase 2 adds the first verified entities.</p>
+  ) : (
+    <div class="overflow-x-auto">
+      <table class="data-table">
+        <caption class="sr-only">Chinese AI agent database</caption>
+        <thead>
+          <tr><th>Agent</th><th>Company</th><th>Type</th><th>Underlying models</th><th>Open source</th><th>Deployment</th><th>Verified</th></tr>
+        </thead>
+        <tbody>
+          {agents.map((a) => (
+            <tr>
+              <td><a href={`/agents/${a.id}/`} class="font-medium">{a.data.agent_name}</a></td>
+              <td><a href={`/companies/${a.data.company}/`}>{a.data.company}</a></td>
+              <td>{a.data.agent_type}</td>
+              <td>{a.data.underlying_models.join(', ') || '—'}</td>
+              <td>{a.data.open_source === true ? 'yes' : a.data.open_source === false ? 'no' : 'unknown'}</td>
+              <td>{a.data.deployment ?? '—'}</td>
+              <td>{a.data.last_verified}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  )}
+</BaseLayout>

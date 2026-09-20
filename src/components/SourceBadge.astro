@@ -1,0 +1,30 @@
+---
+import type { CollectionEntry } from 'astro:content';
+
+interface Props {
+  source: CollectionEntry<'models'>['data']['sources'][number] | {
+    source_name: string;
+    source_url: string;
+    source_type: string;
+    published_date?: string;
+    confidence?: string;
+  };
+}
+
+const { source } = Astro.props;
+const tierLabels: Record<string, string> = {
+  official: 'Official',
+  academic: 'Academic',
+  benchmark_org: 'Benchmark org',
+  cloud_doc: 'Cloud docs',
+  industry_media: 'Industry media',
+  community: 'Community',
+  independent: 'Independent',
+};
+---
+
+<a href={source.source_url} class="badge hover:no-underline" rel="noopener" target="_blank"
+  title={`${tierLabels[source.source_type] ?? source.source_type} source${source.confidence ? ` · confidence: ${source.confidence}` : ''}`}>
+  <span class="font-mono">[{tierLabels[source.source_type] ?? source.source_type}]</span> {source.source_name}
+  {source.published_date && <span class="text-gray-400"> · {source.published_date}</span>}
+</a>

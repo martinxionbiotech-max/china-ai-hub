@@ -1,0 +1,100 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import SourceBadge from '../../components/SourceBadge.astro';
+import LastVerified from '../../components/LastVerified.astro';
+import EntityLinks from '../../components/EntityLinks.astro';
+import { getCollection, type CollectionEntry } from 'astro:content';
+
+export async function getStaticPaths() {
+  const pricing = await getCollection('pricing');
+  return pricing.map((p) => ({ params: { provider: p.id }, props: { p } }));
+}
+
+interface Props {
+  p: CollectionEntry<'pricing'>;
+}
+
+const { p } = Astro.props;
+const d = p.data;
+---
+
+<BaseLayout
+  title={`${d.provider_id} API Pricing`}
+  description={`${d.provider_id} API pricing: input, output, cached and batch prices per 1M tokens with history and official sources.`}
+  type="article"
+>
+  <article class="max-w-none">
+    <p class="text-sm text-gray-500 mb-1"><a href="/pricing/">Pricing</a> / {d.provider_id}</p>
+    <h1 class="text-3xl font-bold text-gray-900 mb-2">{d.provider_id} API Pricing</h1>
+    <p class="text-gray-600 mb-4">
+      Currency: {d.currency} · Region: {d.region ?? '—'} · Billing: {d.billing_mode}
+    </p>
+
+    <div class="mb-4"><LastVerified date={d.last_verified} /></div>
+
+    <h2 class="text-xl font-semibold mb-2">Current prices</h2>
+    <table class="data-table mb-6">
+      <caption class="sr-only">Current {d.provider_id} API prices</caption>
+      <thead>
+        <tr>
+          <th scope="col">Model</th>
+          <th scope="col">Input $/1M</th>
+          <th scope="col">Output $/1M</th>
+          <th scope="col">Cached input $/1M</th>
+          <th scope="col">Cached output $/1M</th>
+          <th scope="col">Batch $/1M</th>
+          <th scope="col">Effective</th>
+          <th scope="col">Note</th>
+          <th scope="col">Source</th>
+        </tr>
+      </thead>
+      <tbody>
+        {d.models.map((m) => (
+          <tr>
+            <td><a href={`/models/${m.model}/`}>{m.model}</a></td>
+            <td>{m.input_price_per_1m ?? '—'}</td>
+            <td>{m.output_price_per_1m ?? '—'}</td>
+            <td>{m.cached_input_price_per_1m ?? '—'}</td>
+            <td>{m.cached_output_price_per_1m ?? '—'}</td>
+            <td>{m.batch_price_per_1m ?? '—'}</td>
+            <td>{m.effective_date ?? '—'}</td>
+            <td>{m.note ?? ''}</td>
+            <td>{m.official_source ? <a href={m.official_source} rel="noopener" target="_blank">link</a> : '—'}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+
+    {d.price_history.length > 0 && (
+      <>
+        <h2 class="text-xl font-semibold mb-2">Price history</h2>
+        <table class="data-table mb-6">
+          <caption class="sr-only">Price history for {d.provider_id}</caption>
+          <thead><tr><th scope="col">Model</th><th scope="col">Field</th><th scope="col">Old</th><th scope="col">New</th><th scope="col">Effective</th><th scope="col">Source</th></tr></thead>
+          <tbody>
+            {d.price_history.map((h, i) => (
+              <tr>
+                <td>{h.model}</td>
+                <td>{h.field}</td>
+                <td>{h.old_value}</td>
+                <td>{h.new_value}</td>
+                <td>{h.effective_date ?? '—'}</td>
+                <td>{h.source ? <a href={h.source} rel="noopener" target="_blank">link</a> : '—'}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </>
+    )}
+
+    <EntityLinks title="Provider" links={[{ href: `/companies/${d.provider_id}/`, label: d.provider_id }]} />
+
+    <h2 class="text-xl font-semibold mt-6 mb-2">Sources</h2>
+    <div class="flex flex-wrap gap-2">
+      {d.sources.map((s) => <SourceBadge source={s} />)}
+    </div>
+    <p class="text-xs text-gray-500 mt-2">
+      Prices change frequently. Verify against the official pricing page before making decisions.
+    </p>
+  </article>
+</BaseLayout>

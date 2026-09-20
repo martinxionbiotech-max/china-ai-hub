@@ -1,0 +1,33 @@
+---
+import type { CollectionEntry } from 'astro:content';
+
+interface Props {
+  model: CollectionEntry<'models'>;
+}
+
+const { model } = Astro.props;
+const d = model.data;
+const price = d.pricing?.input_price_per_1m;
+const priceOut = d.pricing?.output_price_per_1m;
+---
+
+<article class="border border-gray-200 rounded-lg bg-white p-4 hover:shadow-sm">
+  <h3 class="font-semibold text-gray-900 mb-1">
+    <a href={`/models/${model.id}/`} class="hover:no-underline">{d.model_name}</a>
+  </h3>
+  <p class="text-sm text-gray-500 mb-2">{d.model_family ?? d.provider} · {d.status}</p>
+  <dl class="text-sm text-gray-700 space-y-1">
+    {d.context_window != null && (
+      <div class="flex justify-between gap-2"><dt class="text-gray-500">Context</dt><dd>{d.context_window.toLocaleString()} tokens</dd></div>
+    )}
+    {price != null && (
+      <div class="flex justify-between gap-2">
+        <dt class="text-gray-500">Price</dt>
+        <dd>${price} / ${priceOut ?? '—'} per 1M</dd>
+      </div>
+    )}
+    {d.open_weight != null && (
+      <div class="flex justify-between gap-2"><dt class="text-gray-500">Weights</dt><dd>{d.open_weight ? 'Open' : 'Closed'}</dd></div>
+    )}
+  </dl>
+</article>

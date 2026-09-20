@@ -1,0 +1,51 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import SourceBadge from '../../components/SourceBadge.astro';
+import EntityLinks from '../../components/EntityLinks.astro';
+import { getCollection, type CollectionEntry } from 'astro:content';
+
+export async function getStaticPaths() {
+  const news = await getCollection('news');
+  return news.map((n) => ({ params: { slug: n.id }, props: { n } }));
+}
+
+interface Props {
+  n: CollectionEntry<'news'>;
+}
+
+const { n } = Astro.props;
+const d = n.data;
+const { Content } = await n.render();
+---
+
+<BaseLayout
+  title={d.title}
+  description={d.description}
+  type="article"
+>
+  <article class="max-w-none">
+    <p class="text-sm text-gray-500 mb-1"><a href="/news/">News</a> / {d.title}</p>
+    <h1 class="text-3xl font-bold text-gray-900 mb-2">{d.title}</h1>
+    <p class="text-sm text-gray-500 mb-4">{d.published_date} · {d.type}</p>
+
+    <div class="prose prose-slate max-w-none my-8">
+      <Content />
+    </div>
+
+    {d.trigger_updates.length > 0 && (
+      <EntityLinks
+        title="Database updates triggered"
+        links={d.trigger_updates.map((t) => ({ href: `/models/${t}/`, label: t }))}
+      />
+    )}
+
+    {d.sources.length > 0 && (
+      <>
+        <h2 class="text-xl font-semibold mt-6 mb-2">Sources</h2>
+        <div class="flex flex-wrap gap-2">
+          {d.sources.map((s) => <SourceBadge source={s} />)}
+        </div>
+      </>
+    )}
+  </article>
+</BaseLayout>

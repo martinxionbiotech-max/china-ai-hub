@@ -1,0 +1,92 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import SourceBadge from '../../components/SourceBadge.astro';
+import LastVerified from '../../components/LastVerified.astro';
+import EntityLinks from '../../components/EntityLinks.astro';
+import { getCollection, type CollectionEntry } from 'astro:content';
+
+export async function getStaticPaths() {
+  const apis = await getCollection('apis');
+  return apis.map((api) => ({ params: { id: api.id }, props: { api } }));
+}
+
+interface Props {
+  api: CollectionEntry<'apis'>;
+}
+
+const { api } = Astro.props;
+const d = api.data;
+const { Content } = await api.render();
+
+const fmt = (v: boolean | null | undefined) => (v === true ? 'Yes' : v === false ? 'No' : 'Unknown');
+---
+
+<BaseLayout
+  title={`${d.api_id} API`}
+  description={`${d.api_id} API by ${d.provider}: endpoint, authentication, capabilities, context limits, regions and pricing.`}
+  type="article"
+>
+  <article class="max-w-none">
+    <p class="text-sm text-gray-500 mb-1"><a href="/api/">API</a> / {d.api_id}</p>
+    <h1 class="text-3xl font-bold text-gray-900 mb-2">{d.api_id} API</h1>
+    <p class="text-gray-600 mb-4">Provider: <a href={`/companies/${d.provider}/`}>{d.provider}</a> · Type: {d.api_type}</p>
+
+    <div class="mb-4"><LastVerified date={d.last_verified} /></div>
+
+    <table class="data-table mb-6">
+      <caption class="sr-only">Key facts for {d.api_id} API</caption>
+      <thead><tr><th scope="col">Key fact</th><th scope="col">Value</th></tr></thead>
+      <tbody>
+        {d.endpoint && <tr><th scope="row">Endpoint</th><td class="font-mono">{d.endpoint}</td></tr>}
+        <tr><th scope="row">Authentication</th><td>{d.authentication ?? 'Unknown'}</td></tr>
+        <tr><th scope="row">Streaming</th><td>{fmt(d.streaming)}</td></tr>
+        <tr><th scope="row">Function calling</th><td>{fmt(d.function_calling)}</td></tr>
+        <tr><th scope="row">Tool calling</th><td>{fmt(d.tool_calling)}</td></tr>
+        <tr><th scope="row">Structured output</th><td>{fmt(d.structured_output)}</td></tr>
+        <tr><th scope="row">Vision</th><td>{fmt(d.vision)}</td></tr>
+        <tr><th scope="row">Audio</th><td>{fmt(d.audio)}</td></tr>
+        {d.rate_limits && <tr><th scope="row">Rate limits</th><td>{d.rate_limits}</td></tr>}
+        <tr><th scope="row">Regions</th><td>{d.regions.join(', ') || '—'}</td></tr>
+        <tr><th scope="row">Cloud providers</th><td>{d.cloud_providers.join(', ') || '—'}</td></tr>
+        {d.documentation && (
+          <tr><th scope="row">Documentation</th><td><a href={d.documentation} rel="noopener" target="_blank">{d.documentation}</a></td></tr>
+        )}
+      </tbody>
+    </table>
+
+    {d.context_limits.length > 0 && (
+      <>
+        <h2 class="text-xl font-semibold mb-2">Context limits</h2>
+        <table class="data-table mb-6">
+          <caption class="sr-only">Context limits for {d.api_id} API</caption>
+          <thead><tr><th scope="col">Model</th><th scope="col">Input limit</th><th scope="col">Output limit</th></tr></thead>
+          <tbody>
+            {d.context_limits.map((c) => (
+              <tr>
+                <td>{c.model}</td>
+                <td>{c.input_limit != null ? c.input_limit.toLocaleString() : '—'}</td>
+                <td>{c.output_limit != null ? c.output_limit.toLocaleString() : '—'}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </>
+    )}
+
+    <div class="prose prose-slate max-w-none mb-8">
+      <Content />
+    </div>
+
+    <div class="space-y-6 mb-6">
+      <EntityLinks title="Provider" links={[{ href: `/companies/${d.provider}/`, label: d.provider }]} />
+      {d.pricing_ref && (
+        <EntityLinks title="Pricing" links={[{ href: `/pricing/${d.pricing_ref}/`, label: `${d.pricing_ref} pricing` }]} />
+      )}
+    </div>
+
+    <h2 class="text-xl font-semibold mb-2">Sources</h2>
+    <div class="flex flex-wrap gap-2">
+      {d.sources.map((s) => <SourceBadge source={s} />)}
+    </div>
+  </article>
+</BaseLayout>

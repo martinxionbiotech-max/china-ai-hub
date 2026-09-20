@@ -1,0 +1,29 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const technologies = await getCollection('technologies');
+---
+
+<BaseLayout
+  title="AI Technology Knowledge Base"
+  description="China AI technology knowledge base: reasoning models, MoE, long context, RAG, agents, MCP, quantization and AI infrastructure."
+>
+  <h1 class="text-3xl font-bold text-gray-900 mb-2">Technology Knowledge Base</h1>
+  <p class="text-gray-600 mb-6 max-w-2xl">
+    Core AI technologies — how they work, why they matter, how China's companies implement them, and their limitations.
+  </p>
+
+  {technologies.length === 0 ? (
+    <p class="text-gray-500">No technology pages published yet. Phase 5 adds the first explainers.</p>
+  ) : (
+    <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      {technologies.map((t) => (
+        <article class="border border-gray-200 rounded-lg bg-white p-4">
+          <h2 class="font-semibold"><a href={`/technology/${t.id}/`}>{t.data.title}</a></h2>
+          <p class="text-sm text-gray-600 mt-1">{t.data.definition.slice(0, 160)}…</p>
+        </article>
+      ))}
+    </div>
+  )}
+</BaseLayout>

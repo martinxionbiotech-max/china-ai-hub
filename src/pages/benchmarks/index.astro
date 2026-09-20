@@ -1,0 +1,33 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const benchmarks = await getCollection('benchmarks');
+---
+
+<BaseLayout
+  title="Benchmarks"
+  description="Chinese AI benchmark database: scores, evaluation methods, model versions, source types and dates."
+>
+  <h1 class="text-3xl font-bold text-gray-900 mb-2">Benchmark Database</h1>
+  <p class="text-gray-600 mb-6 max-w-2xl">
+    Benchmark results with evaluation method, model version, source type (vendor-reported vs independent) and date.
+    Scores are data points — never universal rankings.
+  </p>
+
+  {benchmarks.length === 0 ? (
+    <p class="text-gray-500">No benchmarks published yet. Phase 2 adds the first verified results.</p>
+  ) : (
+    <div class="grid gap-4 sm:grid-cols-2">
+      {benchmarks.map((b) => (
+        <article class="border border-gray-200 rounded-lg bg-white p-4">
+          <h2 class="font-semibold"><a href={`/benchmarks/${b.id}/`}>{b.data.benchmark_name}</a></h2>
+          <p class="text-sm text-gray-500 mt-1">
+            {b.data.version ? `v${b.data.version} · ` : ''}{b.data.evaluations.length} results · verified {b.data.last_verified}
+          </p>
+          {b.data.description && <p class="text-sm text-gray-600 mt-1">{b.data.description.slice(0, 140)}…</p>}
+        </article>
+      ))}
+    </div>
+  )}
+</BaseLayout>

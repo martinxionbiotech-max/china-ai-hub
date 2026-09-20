@@ -1,0 +1,173 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import SourceBadge from '../../components/SourceBadge.astro';
+import LastVerified from '../../components/LastVerified.astro';
+import EntityLinks from '../../components/EntityLinks.astro';
+import { getCollection, type CollectionEntry } from 'astro:content';
+
+export async function getStaticPaths() {
+  const models = await getCollection('models');
+  return models.map((model) => ({ params: { id: model.id }, props: { model } }));
+}
+
+interface Props {
+  model: CollectionEntry<'models'>;
+}
+
+const { model } = Astro.props;
+const d = model.data;
+const { Content } = await model.render();
+
+const caps = [
+  ['Reasoning', d.capabilities.reasoning],
+  ['Coding', d.capabilities.coding],
+  ['Math', d.capabilities.math],
+  ['Chinese', d.capabilities.chinese],
+  ['English', d.capabilities.english],
+  ['Multilingual', d.capabilities.multilingual],
+  ['Vision', d.capabilities.vision],
+  ['Audio', d.capabilities.audio],
+  ['Video', d.capabilities.video],
+  ['Tool calling', d.capabilities.tool_calling],
+  ['Function calling', d.capabilities.function_calling],
+  ['Structured output', d.capabilities.structured_output],
+  ['Agent capability', d.capabilities.agent_capability],
+  ['RAG', d.capabilities.rag],
+  ['Computer use', d.capabilities.computer_use],
+] as const;
+
+const fmt = (v: boolean | null | undefined) => (v === true ? 'Yes' : v === false ? 'No' : 'Unknown');
+---
+
+<BaseLayout
+  title={d.model_name}
+  description={`${d.model_name} by ${d.provider}: context window, capabilities, pricing, benchmarks and verified sources.`}
+  type="article"
+>
+  <article class="max-w-none">
+    <p class="text-sm text-gray-500 mb-1">
+      <a href="/models/">Models</a> / {d.model_name}
+    </p>
+    <h1 class="text-3xl font-bold text-gray-900 mb-2">{d.model_name}</h1>
+    <p class="text-gray-600 mb-4">
+      {d.model_family ? `${d.model_family} family · ` : ''}Provider: <a href={`/companies/${d.provider}/`}>{d.provider}</a>
+      {' · '}Status: {d.status}
+      {d.release_date && <> · Released: {d.release_date}</>}
+    </p>
+
+    <div class="mb-4 flex items-center gap-2 text-sm">
+      <LastVerified date={d.last_verified} />
+    </div>
+
+    <!-- Key facts -->
+    <table class="data-table mb-6">
+      <caption class="sr-only">Key facts for {d.model_name}</caption>
+      <thead><tr><th scope="col">Key fact</th><th scope="col">Value</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Model ID</th><td class="font-mono">{d.model_id}</td></tr>
+        {d.version && <tr><th scope="row">Version</th><td>{d.version}</td></tr>}
+        <tr><th scope="row">Architecture</th><td>{d.architecture ?? 'Not publicly disclosed'}</td></tr>
+        <tr>
+          <th scope="row">Context window</th>
+          <td>{d.context_window != null ? `${d.context_window.toLocaleString()} tokens` : 'Unknown'}</td>
+        </tr>
+        {d.maximum_output != null && (
+          <tr><th scope="row">Max output</th><td>{d.maximum_output.toLocaleString()} tokens</td></tr>
+        )}
+        <tr><th scope="row">Open weights</th><td>{fmt(d.open_weight)}</td></tr>
+        <tr><th scope="row">License</th><td>{d.license ?? 'Unknown'}</td></tr>
+        <tr><th scope="row">Self-hosting</th><td>{fmt(d.self_hosting)}</td></tr>
+        <tr><th scope="row">API available</th><td>{fmt(d.api_available)}</td></tr>
+        {d.pricing?.input_price_per_1m != null && (
+          <tr>
+            <th scope="row">API pricing</th>
+            <td>
+              ${d.pricing.input_price_per_1m} input / ${d.pricing.output_price_per_1m ?? '—'} output per 1M tokens ({d.pricing.currency})
+              {d.pricing.effective_date && <> · effective {d.pricing.effective_date}</>}
+              {d.pricing.pricing_ref && <> · <a href={`/pricing/${d.pricing.pricing_ref}/`}>provider pricing page</a></>}
+            </td>
+          </tr>
+        )}
+        {d.regions.length > 0 && <tr><th scope="row">Regions</th><td>{d.regions.join(', ')}</td></tr>}
+        {d.cloud_providers.length > 0 && (
+          <tr><th scope="row">Cloud providers</th><td>{d.cloud_providers.join(', ')}</td></tr>
+        )}
+      </tbody>
+    </table>
+
+    <!-- Capabilities -->
+    <h2 class="text-xl font-semibold mb-2">Capabilities</h2>
+    <table class="data-table mb-6">
+      <caption class="sr-only">Capabilities of {d.model_name}</caption>
+      <thead><tr><th scope="col">Capability</th><th scope="col">Supported</th></tr></thead>
+      <tbody>
+        {caps.map(([label, v]) => (
+          <tr><th scope="row">{label}</th><td>{fmt(v)}</td></tr>
+        ))}
+      </tbody>
+    </table>
+
+    <!-- Benchmarks -->
+    {d.benchmark_results.length > 0 && (
+      <>
+        <h2 class="text-xl font-semibold mb-2">Benchmark results</h2>
+        <table class="data-table mb-6">
+          <caption class="sr-only">Benchmark results for {d.model_name}</caption>
+          <thead>
+            <tr><th scope="col">Benchmark</th><th scope="col">Version</th><th scope="col">Score</th><th scope="col">Metric</th><th scope="col">Date</th><th scope="col">Source type</th><th scope="col">Source</th></tr>
+          </thead>
+          <tbody>
+            {d.benchmark_results.map((b) => (
+              <tr>
+                <td>{b.benchmark}</td>
+                <td>{b.benchmark_version ?? '—'}</td>
+                <td>{b.score}</td>
+                <td>{b.metric ?? '—'}</td>
+                <td>{b.date ?? '—'}</td>
+                <td>{b.source_type}</td>
+                <td>{b.source_url ? <a href={b.source_url} rel="noopener" target="_blank">link</a> : '—'}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+        <p class="text-xs text-gray-500 mb-6">
+          Benchmark scores are single data points, not universal rankings. Vendor-reported scores are labeled as such.
+        </p>
+      </>
+    )}
+
+    <!-- Known limitations -->
+    {d.known_limitations.length > 0 && (
+      <>
+        <h2 class="text-xl font-semibold mb-2">Known limitations</h2>
+        <ul class="list-disc pl-5 mb-6 text-gray-700">
+          {d.known_limitations.map((l) => <li>{l}</li>)}
+        </ul>
+      </>
+    )}
+
+    <!-- Editorial body -->
+    {d.model_name && (
+      <div class="prose prose-slate max-w-none mb-8">
+        <Content />
+      </div>
+    )}
+
+    <!-- Related entities -->
+    <div class="space-y-6 mb-6">
+      <EntityLinks title="Provider" links={[{ href: `/companies/${d.provider}/`, label: d.provider }]} />
+      {d.pricing?.pricing_ref && (
+        <EntityLinks title="Pricing" links={[{ href: `/pricing/${d.pricing.pricing_ref}/`, label: `${d.pricing.pricing_ref} pricing` }]} />
+      )}
+    </div>
+
+    <!-- Sources -->
+    <h2 class="text-xl font-semibold mb-2">Sources</h2>
+    <div class="flex flex-wrap gap-2 mb-2">
+      {d.sources.map((s) => <SourceBadge source={s} />)}
+    </div>
+    <p class="text-xs text-gray-500">
+      Confidence and source hierarchy per the <a href="/about/">sourcing policy</a>. Facts change; check the source before relying on this page.
+    </p>
+  </article>
+</BaseLayout>

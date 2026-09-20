@@ -1,0 +1,34 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const companies = await getCollection('companies');
+---
+
+<BaseLayout
+  title="AI Companies"
+  description="Chinese AI companies database: foundation models, agents, APIs, open models and official sources."
+>
+  <h1 class="text-3xl font-bold text-gray-900 mb-2">Chinese AI Company Database</h1>
+  <p class="text-gray-600 mb-6 max-w-2xl">
+    Organizations building China's AI ecosystem — with their models, agents, APIs and official sources.
+  </p>
+
+  {companies.length === 0 ? (
+    <p class="text-gray-500">No companies published yet. Phase 2 adds the first verified entities.</p>
+  ) : (
+    <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      {companies.map((c) => (
+        <article class="border border-gray-200 rounded-lg bg-white p-4">
+          <h2 class="font-semibold"><a href={`/companies/${c.id}/`}>{c.data.company_name}</a></h2>
+          <p class="text-sm text-gray-500">
+            {c.data.founded ? `Founded ${c.data.founded} · ` : ''}{c.data.headquarters ?? 'HQ unknown'}
+          </p>
+          <p class="text-sm text-gray-600 mt-1">
+            {c.data.foundation_models.length} models · {c.data.agents.length} agents · verified {c.data.last_verified}
+          </p>
+        </article>
+      ))}
+    </div>
+  )}
+</BaseLayout>

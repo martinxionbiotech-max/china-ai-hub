@@ -1,0 +1,52 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import SourceBadge from '../../components/SourceBadge.astro';
+import EntityLinks from '../../components/EntityLinks.astro';
+import { getCollection, type CollectionEntry } from 'astro:content';
+
+export async function getStaticPaths() {
+  const comparisons = await getCollection('comparisons');
+  return comparisons.map((c) => ({ params: { slug: c.id }, props: { c } }));
+}
+
+interface Props {
+  c: CollectionEntry<'comparisons'>;
+}
+
+const { c } = Astro.props;
+const d = c.data;
+const { Content } = await c.render();
+---
+
+<BaseLayout
+  title={d.title}
+  description={d.description ?? `${d.title}: evidence-based comparison of ${d.entities.join(' and ')}.`}
+  type="article"
+>
+  <article class="max-w-none">
+    <p class="text-sm text-gray-500 mb-1"><a href="/comparisons/">Comparisons</a> / {d.title}</p>
+    <h1 class="text-3xl font-bold text-gray-900 mb-2">{d.title}</h1>
+    {d.updated_date && <p class="text-sm text-gray-500 mb-4">Updated: {d.updated_date}</p>}
+
+    <EntityLinks
+      title="Compared entities"
+      links={d.entities.map((e) => {
+        const isModel = e.includes('-'); // heuristic: model ids are hyphenated model names; fallback works via /models/
+        return isModel ? { href: `/models/${e}/`, label: e } : { href: `/companies/${e}/`, label: e };
+      })}
+    />
+
+    <div class="prose prose-slate max-w-none my-8">
+      <Content />
+    </div>
+
+    {d.sources.length > 0 && (
+      <>
+        <h2 class="text-xl font-semibold mb-2">Sources</h2>
+        <div class="flex flex-wrap gap-2">
+          {d.sources.map((s) => <SourceBadge source={s} />)}
+        </div>
+      </>
+    )}
+  </article>
+</BaseLayout>
