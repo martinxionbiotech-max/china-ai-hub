@@ -159,17 +159,13 @@ Core URL structure:
 
 Do NOT create multiple subdomains during Phase 1 unless there is a strong technical reason.
 
-Future data layer may become:
+Future data layer (ONE data subdomain only):
 
 data.chinaaihub.com
 
-Possible future subdomains:
+Repo: `martinxionbiotech-max/china-ai-hub-data` (created 2026-09-21, public, main branch; agent access authorized).
 
-models.chinaaihub.com
-agents.chinaaihub.com
-pricing.chinaaihub.com
-
-But these should only be introduced after the main site's information architecture and authority are established.
+No other subdomains are planned. models./agents./pricing. subdomains are cancelled — the main site routes `/models`, `/agents`, `/pricing` remain the canonical locations. The data subdomain should only be introduced after the main site's information architecture and authority are established.
 
 ---
 

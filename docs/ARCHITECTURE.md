@@ -6,6 +6,7 @@
 ## 1. Product Summary
 
 - **Domain:** https://chinaaihub.com (single domain, Phase 1; no subdomains)
+- **Future data layer:** ONE data subdomain `data.chinaaihub.com` only — repo `martinxionbiotech-max/china-ai-hub-data` (public, main, created 2026-09-21, agent authorized). No models./agents./pricing. subdomains planned.
 - **Audience:** international developers, engineers, researchers, enterprise buyers, analysts
 - **Core question answered:** Which Chinese AI model / agent / API suits which task, at what cost, with what capabilities, under what deployment conditions?
 - **Differentiation:** structured data + evidence + original analysis, not article volume.
