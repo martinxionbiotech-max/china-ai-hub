@@ -3,6 +3,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import SourceBadge from '../../components/SourceBadge.astro';
 import EntityLinks from '../../components/EntityLinks.astro';
 import { getCollection, render, type CollectionEntry } from 'astro:content';
+import { getModelIdMap, modelHref } from '../../lib/entity-links';
 
 export async function getStaticPaths() {
   const research = await getCollection('research');
@@ -16,6 +17,15 @@ interface Props {
 const { r } = Astro.props;
 const d = r.data;
 const { Content } = await render(r);
+
+const modelMap = await getModelIdMap();
+const agents = await getCollection('agents');
+const agentIds = new Set(agents.map((a) => a.id));
+const relatedLinks = d.related_entities.map((e) => {
+  if (agentIds.has(e)) return { href: `/agents/${e}/`, label: e };
+  if (modelMap.has(e)) return { href: modelHref(modelMap, e), label: e };
+  return { href: null, label: e };
+}).filter((l) => l.href);
 ---
 
 <BaseLayout
@@ -43,7 +53,7 @@ const { Content } = await render(r);
     <div class="space-y-6 mb-6">
       <EntityLinks
         title="Related entities"
-        links={d.related_entities.map((e) => ({ href: `/models/${e}/`, label: e }))}
+        links={relatedLinks}
       />
     </div>
 
