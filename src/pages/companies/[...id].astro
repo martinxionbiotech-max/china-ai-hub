@@ -23,11 +23,12 @@ const { Content } = await render(company);
 
 const pageUrl = new URL(Astro.url.pathname, Astro.site).href;
 const modelMap = await getModelIdMap();
+const metaDescription = d.description ?? `${d.company_name}: Chinese AI company profile — models, agents, API, open-source projects and official sources.`;
 const faqs = companyFaqs(d);
 const jsonLd = organizationJsonLd({
   id: pageUrl,
   name: d.company_name,
-  description: `${d.company_name}: Chinese AI company profile — models, agents, API, open-source projects and official sources.`,
+  description: metaDescription,
   sameAs: d.official_website ? [d.official_website] : undefined,
   alternateName: d.aliases.length ? d.aliases : undefined,
 });
@@ -44,7 +45,7 @@ const apiLinks = d.api.map((a) => ({ href: `/api/${a}/`, label: `${a} API` }));
 
 <BaseLayout
   title={d.company_name}
-  description={`${d.company_name}: Chinese AI company profile — models, agents, API, open-source projects and official sources.`}
+  description={metaDescription}
   type="article"
 >
   <article class="max-w-none">

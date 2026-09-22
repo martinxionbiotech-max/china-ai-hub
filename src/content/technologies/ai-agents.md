@@ -19,7 +19,7 @@ related_technologies:
   - a2a
   - tool-calling
   - computer-use
-related_guides: []
+related_guides: [how-to-choose-a-chinese-ai-model]
 last_verified: "2026-09-22"
 sources:
   - source_name: "Anthropic — Building Effective Agents"

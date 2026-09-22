@@ -1,5 +1,6 @@
 ---
 api_id: minimax
+description: "MiniMax's API platform with an Anthropic-compatible endpoint (api.minimax.io/anthropic): MiniMax-M3 (1M context) plus M2.7 and M2.7-HighSpeed, with vision, streaming and tool calling. Serves international and China regions; ANTHROPIC_API_KEY-style auth."
 provider: minimax
 api_type: official
 endpoint: https://api.minimax.io/anthropic

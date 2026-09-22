@@ -8,7 +8,7 @@ related_companies:
 related_technologies:
   - synthetic-data
   - quantization
-related_guides: []
+related_guides: [open-weight-vs-api]
 last_verified: "2026-09-22"
 sources:
   - source_name: "Hinton, Vinyals & Dean — Distilling the Knowledge in a Neural Network"

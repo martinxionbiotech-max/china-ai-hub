@@ -1,6 +1,7 @@
 ---
 company_id: zhipu-ai
 company_name: Zhipu AI
+description: "Zhipu AI (Beijing; international operator Z.AI in Singapore): Z.ai / GLM assistant, BigModel platform, GLM Coding Plan, AutoGLM phone agent, GLM-Image / CogView and CogVideoX. Foundation models GLM-5.3, GLM-5.3-Flash and GLM-5.2."
 aliases:
   - 智谱
   - Z.ai

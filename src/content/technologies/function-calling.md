@@ -9,7 +9,7 @@ related_companies:
   - deepseek
 related_technologies:
   - tool-calling
-related_guides: []
+related_guides: [how-to-choose-a-chinese-ai-model]
 last_verified: "2026-09-22"
 sources:
   - source_name: "OpenAI — Function calling guide"

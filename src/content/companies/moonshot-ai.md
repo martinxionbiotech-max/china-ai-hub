@@ -1,6 +1,7 @@
 ---
 company_id: moonshot-ai
 company_name: Moonshot AI
+description: "Moonshot AI (Beijing, founded spring 2023): Kimi chat assistant, Kimi API Platform, Kimi Work and Kimi Code. Foundation model Kimi K3."
 aliases:
   - 月之暗面
   - Kimi

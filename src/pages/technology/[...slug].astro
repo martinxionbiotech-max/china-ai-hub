@@ -20,6 +20,9 @@ const { t } = Astro.props;
 const d = t.data;
 const { Content } = await render(t);
 
+const guides = await getCollection('guides');
+const guideNames = new Map(guides.map((g) => [g.id, g.data.title]));
+
 const pageUrl = new URL(Astro.url.pathname, Astro.site).href;
 const modelMap = await getModelIdMap();
 const jsonLd = {
@@ -70,6 +73,12 @@ const breadcrumb = breadcrumbJsonLd([
         title="Related technologies"
         links={d.related_technologies.map((x) => ({ href: `/technology/${x}/`, label: x }))}
       />
+      {d.related_guides.length > 0 && (
+        <EntityLinks
+          title="Related guides"
+          links={d.related_guides.map((g) => ({ href: `/guides/${g}/`, label: guideNames.get(g) ?? g }))}
+        />
+      )}
     </div>
 
     <h2 class="text-xl font-semibold mb-2">Sources</h2>

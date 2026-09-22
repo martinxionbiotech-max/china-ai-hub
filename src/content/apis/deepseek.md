@@ -1,5 +1,6 @@
 ---
 api_id: deepseek
+description: "DeepSeek's official API platform (api.deepseek.com): OpenAI-compatible endpoints for DeepSeek-V4-Pro and V4.1-Flash with vision, function calling, tool calling and structured output. Bearer API key authentication."
 provider: deepseek
 api_type: official
 endpoint: https://api.deepseek.com

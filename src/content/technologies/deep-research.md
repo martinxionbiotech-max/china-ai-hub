@@ -8,7 +8,7 @@ related_technologies:
   - ai-agents
   - reasoning-models
   - synthetic-data
-related_guides: []
+related_guides: [how-to-read-vendor-reported-benchmarks]
 last_verified: "2026-09-22"
 sources:
   - source_name: "OpenAI — Introducing deep research"

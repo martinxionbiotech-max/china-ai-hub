@@ -10,7 +10,7 @@ related_companies:
 related_technologies:
   - inference
   - quantization
-related_guides: []
+related_guides: [how-to-choose-a-chinese-ai-model]
 last_verified: "2026-09-22"
 sources:
   - source_name: "Shazeer et al. — Outrageously Large Neural Networks: The Sparsely-Gated Mixture-of-Experts Layer"

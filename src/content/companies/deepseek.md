@@ -1,6 +1,7 @@
 ---
 company_id: deepseek
 company_name: DeepSeek
+description: "DeepSeek (Hangzhou): DeepSeek Chat (web and mobile), DeepSeek API platform, and DeepSeek Harness developer preview. Foundation models DeepSeek-V4-Pro and V4.1-Flash; open model DeepSeek-V3-2."
 aliases:
   - 深度求索
 headquarters: "Hangzhou, Zhejiang, China (derived from the official footer company name 杭州深度求索人工智能基础技术研究有限公司 and Zhejiang ICP / Hangzhou public-security filings; the official pages fetched do not print a headquarters line verbatim)"

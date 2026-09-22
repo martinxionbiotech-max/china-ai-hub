@@ -13,7 +13,7 @@ related_companies:
 related_technologies:
   - long-context
   - function-calling
-related_guides: []
+related_guides: [how-to-choose-a-chinese-ai-model]
 last_verified: "2026-09-22"
 sources:
   - source_name: "Lewis et al. — Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks"

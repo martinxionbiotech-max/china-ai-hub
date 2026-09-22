@@ -1,6 +1,7 @@
 ---
 company_id: minimax
 company_name: MiniMax
+description: "MiniMax (Shanghai, founded early 2022): MiniMax Code / Design / Audio apps, Talkie (international) / Xingye (China), MiniMax Agent, and the MiniMax open platform. Foundation models MiniMax-M3 and M2.7."
 aliases:
   - MiniMax AI
   - 上海稀宇科技有限公司

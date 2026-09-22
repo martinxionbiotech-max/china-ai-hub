@@ -13,7 +13,7 @@ related_technologies:
   - ai-agents
   - tool-calling
   - a2a
-related_guides: []
+related_guides: [how-to-choose-a-chinese-ai-model]
 last_verified: "2026-09-22"
 sources:
   - source_name: "Anthropic — Introducing the Model Context Protocol"

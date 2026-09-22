@@ -19,7 +19,7 @@ related_companies:
 related_technologies:
   - rag
   - inference
-related_guides: []
+related_guides: [how-to-read-vendor-reported-benchmarks]
 last_verified: "2026-09-22"
 sources:
   - source_name: "Chen et al. — LongLoRA: Efficient Fine-tuning of Long-Context Large Language Models"

@@ -11,7 +11,7 @@ related_technologies:
   - quantization
   - mixture-of-experts
   - long-context
-related_guides: []
+related_guides: [open-weight-vs-api]
 last_verified: "2026-09-22"
 sources:
   - source_name: "DeepSeek-V2: A Strong, Economical, and Efficient Mixture-of-Experts Language Model"

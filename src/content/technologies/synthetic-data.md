@@ -8,7 +8,7 @@ related_companies:
 related_technologies:
   - reasoning-models
   - distillation
-related_guides: []
+related_guides: [open-weight-vs-api]
 last_verified: "2026-09-22"
 sources:
   - source_name: "DeepSeek-R1: Incentivizing Reasoning Capability in LLMs via Reinforcement Learning"

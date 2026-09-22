@@ -107,6 +107,7 @@ const companies = defineCollection({
   schema: z.object({
     company_id: z.string(),
     company_name: z.string(),
+    description: z.string().optional(),
     aliases: z.array(z.string()).default([]),
     founded: z.union([z.number(), z.string()]).optional(),
     headquarters: z.string().optional(),
@@ -177,6 +178,7 @@ const apis = defineCollection({
   loader: glob({ pattern: '**/*.md', base: './src/content/apis' }),
   schema: z.object({
     api_id: z.string(),
+    description: z.string().optional(),
     provider: z.string(),
     api_type: z.enum(['official', 'cloud_hosted', 'third_party', 'self_hosted_endpoint']),
     endpoint: z.string().url().optional(),

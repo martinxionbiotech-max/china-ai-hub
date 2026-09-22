@@ -1,5 +1,6 @@
 ---
 api_id: zai
+description: "Zhipu AI's Z.AI API platform (api.z.ai/api/paas/v4/chat/completions): GLM-5.3 and GLM-5.3-Flash with 1M-token context and vision. Bearer API key; available internationally via Z.ai and in China via BigModel."
 provider: zhipu-ai
 api_type: official
 endpoint: https://api.z.ai/api/paas/v4/chat/completions

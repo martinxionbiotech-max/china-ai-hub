@@ -22,11 +22,12 @@ const { Content } = await render(api);
 
 const pageUrl = new URL(Astro.url.pathname, Astro.site).href;
 const providerUrl = new URL(`/companies/${d.provider}/`, Astro.site).href;
+const metaDescription = d.description ?? `${d.api_id} API by ${d.provider}: endpoint, authentication, capabilities, context limits, regions and pricing.`;
 const faqs = apiFaqs(d);
 const jsonLd = apiReferenceJsonLd({
   id: pageUrl,
   name: `${d.api_id} API`,
-  description: `${d.api_id} API by ${d.provider}: endpoint, authentication, capabilities, context limits, regions and pricing.`,
+  description: metaDescription,
   provider: d.provider,
   providerUrl,
   documentation: d.documentation,
@@ -42,7 +43,7 @@ const fmt = (v: boolean | null | undefined) => (v === true ? 'Yes' : v === false
 
 <BaseLayout
   title={`${d.api_id} API`}
-  description={`${d.api_id} API by ${d.provider}: endpoint, authentication, capabilities, context limits, regions and pricing.`}
+  description={metaDescription}
   type="article"
 >
   <article class="max-w-none">

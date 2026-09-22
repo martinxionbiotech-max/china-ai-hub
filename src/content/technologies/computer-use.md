@@ -11,7 +11,7 @@ related_companies:
 related_technologies:
   - ai-agents
   - multimodal-ai
-related_guides: []
+related_guides: [how-to-choose-a-chinese-ai-model]
 last_verified: "2026-09-22"
 sources:
   - source_name: "Anthropic — Introducing computer use"
