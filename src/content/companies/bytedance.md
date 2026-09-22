@@ -9,6 +9,7 @@ aliases:
   - Doubao
   - 豆包
 headquarters: "No. 1 Building, Dazhongsi Plaza, No. 18A North Third Ring Road West, Haidian District, Beijing, China"
+funding: "Privately held; funding rounds not officially disclosed as of 2026-09-22."
 ai_products:
   - Doubao (consumer AI assistant)
   - Volcengine Ark (AI API platform)

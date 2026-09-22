@@ -4,6 +4,11 @@ image_credit: "AI-generated illustration (Seedream)"
 benchmark_id: cybergym
 benchmark_name: CyberGym
 description: "Cybersecurity agent benchmark focused on vulnerability discovery tasks."
+task_type: "Cybersecurity vulnerability analysis (real-world vulnerability discovery)"
+dataset_size: "Large-scale task suite sourced from ARVO and OSS-Fuzz (~240GB data)"
+evaluation_method: "Docker-isolated environments; agents analyze vulnerabilities and generate proofs of concept; pre-/post-patch versions"
+scoring: "Success rate on vulnerability analysis tasks (PoC generation)"
+
 evaluations:
   - benchmark: CyberGym
     model: deepseek-v4-1-flash
@@ -30,6 +35,11 @@ evaluations:
 limitations: "All scores are vendor-reported and not independently verified."
 last_verified: "2026-09-20"
 sources:
+  - source_name: "CyberGym official repository (Sunblaze UC Berkeley)"
+    source_url: https://github.com/sunblaze-ucb/cybergym
+    source_type: official
+    last_verified: "2026-09-22"
+    confidence: high
   - source_name: DeepSeek API Change Log
     source_url: https://api-docs.deepseek.com/updates
     source_type: official

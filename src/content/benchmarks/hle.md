@@ -4,6 +4,12 @@ image_credit: "AI-generated illustration (Seedream)"
 benchmark_id: hle
 benchmark_name: HLE
 description: "Humanity's Last Exam - a frontier benchmark of expert-level questions across disciplines, often reported with and without tool access."
+task_type: "Expert-level academic Q&A across mathematics, humanities and natural sciences"
+dataset_size: "2,500 questions across dozens of subjects"
+evaluation_method: "Multiple-choice and short-answer questions developed by subject-matter experts; multimodal; suitable for automated grading"
+scoring: "Accuracy (% correct); frequently reported with and without tool access"
+contamination_notes: "Dataset includes a canary string (hle:3r2s:26b5c67b-...) to aid model builders in filtering the dataset from future training."
+
 evaluations:
   - benchmark: HLE
     model: deepseek-v4-1-flash
@@ -52,6 +58,11 @@ evaluations:
 limitations: "All scores are vendor-reported and not independently verified. With-tools and without-tools results are not directly comparable; the setting is recorded per score."
 last_verified: "2026-09-20"
 sources:
+  - source_name: "Humanity's Last Exam official site"
+    source_url: https://lastexam.ai/
+    source_type: official
+    last_verified: "2026-09-22"
+    confidence: high
   - source_name: DeepSeek API Change Log
     source_url: https://api-docs.deepseek.com/updates
     source_type: official

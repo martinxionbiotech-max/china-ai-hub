@@ -4,6 +4,11 @@ image_credit: "AI-generated illustration (Seedream)"
 benchmark_id: terminal-bench
 benchmark_name: Terminal-Bench
 description: "Terminal-based agent benchmark (shell commands, file operations, package management and other command-line tasks)."
+task_type: "Terminal-based agent tasks (shell commands, file operations, compilation, package management, server setup)"
+dataset_size: "~100 tasks (beta release)"
+evaluation_method: "Sandboxed terminal environment (Docker); each task has an English instruction, a test script verifying completion, and a reference (oracle) solution; agents run end-to-end autonomously"
+scoring: "Binary pass/fail per task; accuracy = share of tasks completed successfully"
+
 evaluations:
   - benchmark: Terminal-Bench
     model: deepseek-v4-1-flash
@@ -79,6 +84,11 @@ evaluations:
 limitations: "Benchmark versions (2.0 / 2.1 / 3.0) are not comparable to each other; the version is recorded per evaluation. All scores are vendor-reported and not independently verified."
 last_verified: "2026-09-20"
 sources:
+  - source_name: "Terminal-Bench official repository (laude-institute)"
+    source_url: https://github.com/laude-institute/terminal-bench
+    source_type: official
+    last_verified: "2026-09-22"
+    confidence: high
   - source_name: DeepSeek API Change Log
     source_url: https://api-docs.deepseek.com/updates
     source_type: official

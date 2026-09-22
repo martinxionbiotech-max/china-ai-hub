@@ -82,6 +82,7 @@ const apiLinks = d.api.map((a) => ({ href: `/api/${a}/`, label: `${a} API` }));
         <tr><th scope="row">Founded</th><td>{d.founded ?? 'Unknown'}</td></tr>
         <tr><th scope="row">Headquarters</th><td>{d.headquarters ?? 'Unknown'}</td></tr>
         {d.ownership_information && <tr><th scope="row">Ownership</th><td>{d.ownership_information}</td></tr>}
+        {d.funding && <tr><th scope="row">Funding</th><td>{d.funding}</td></tr>}
         {d.official_website && (
           <tr><th scope="row">Official website</th><td><a href={d.official_website} rel="noopener" target="_blank">{d.official_website}</a></td></tr>
         )}

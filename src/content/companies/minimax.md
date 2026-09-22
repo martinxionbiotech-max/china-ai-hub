@@ -9,6 +9,7 @@ aliases:
   - 上海稀宇科技有限公司
 founded: "early 2022"
 headquarters: "Room 1704-1, No. 1699 Gubei Road, Minhang District, Shanghai, China"
+funding: "Investor-relations site exists (ir.minimax.cn); funding-round details are not listed on official pages as of 2026-09-22."
 ai_products:
   - MiniMax Code
   - MiniMax Design

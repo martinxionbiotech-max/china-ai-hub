@@ -4,6 +4,11 @@ image_credit: "AI-generated illustration (Seedream)"
 benchmark_id: video-mme
 benchmark_name: Video-MME
 description: "Video understanding benchmark spanning various video durations and domains."
+task_type: "Video understanding (multimodal video analysis)"
+dataset_size: "900 videos (254 hours total), 2,700 human-annotated question-answer pairs"
+evaluation_method: "Video QA with subtitles and audio modalities; duration-stratified evaluation"
+scoring: "Accuracy (% correct); variants with/without subtitles"
+
 evaluations:
   - benchmark: Video-MME
     model: kimi-k3
@@ -22,6 +27,11 @@ evaluations:
 limitations: "All scores are vendor-reported and not independently verified. Subtitle usage differs between evaluations."
 last_verified: "2026-09-20"
 sources:
+  - source_name: "Video-MME official repository"
+    source_url: https://github.com/BradyFU/Video-MME
+    source_type: official
+    last_verified: "2026-09-22"
+    confidence: high
   - source_name: Kimi K3 GitHub README
     source_url: https://github.com/MoonshotAI/Kimi-K3
     source_type: official

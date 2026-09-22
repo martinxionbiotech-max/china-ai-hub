@@ -17,6 +17,19 @@ models:
     cached_input_price_per_1m: 0.022
     note: "Off-peak rates; peak = 2x: $1.32 input / $3.96 output / $0.044 cache hit. Concurrency limit 500. Deprecation announced 2026-09-10 (service continuation per change log)."
     official_source: https://api-docs.deepseek.com/quick_start/pricing
+price_history:
+  - model: deepseek-v4-pro
+    field: billing_structure
+    old_value: "Flat pricing"
+    new_value: "Peak/off-peak pricing; off-peak = 50% of peak"
+    effective_date: "2026-08-16"
+    source: https://api-docs.deepseek.com/updates
+  - model: deepseek-v4-1-flash
+    field: api_pricing
+    old_value: "V4-Flash list pricing (model retired)"
+    new_value: "Reduced V4.1-Flash pricing"
+    effective_date: "2026-09-10"
+    source: https://api-docs.deepseek.com/updates
 last_verified: "2026-09-20"
 sources:
   - source_name: DeepSeek API docs — Models & Pricing

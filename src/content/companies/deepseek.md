@@ -7,6 +7,7 @@ description: "DeepSeek (Hangzhou): DeepSeek Chat (web and mobile), DeepSeek API 
 aliases:
   - 深度求索
 headquarters: "Hangzhou, Zhejiang, China (derived from the official footer company name 杭州深度求索人工智能基础技术研究有限公司 and Zhejiang ICP / Hangzhou public-security filings; the official pages fetched do not print a headquarters line verbatim)"
+funding: "No external funding officially disclosed as of 2026-09-22 (media-reported rounds are not confirmed on official channels)."
 ai_products:
   - DeepSeek Chat (web and mobile assistant)
   - DeepSeek API platform

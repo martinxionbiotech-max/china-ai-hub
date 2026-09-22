@@ -4,6 +4,11 @@ image_credit: "AI-generated illustration (Seedream)"
 benchmark_id: deepswe
 benchmark_name: DeepSWE
 description: "Software engineering benchmark built from real-world issues and pull requests."
+task_type: "Long-horizon software engineering tasks on active open-source repositories"
+dataset_size: "113 tasks across TypeScript, Go, Python, JavaScript and Rust"
+evaluation_method: "Isolated agent environment with program-based verifiers; the agent's committed patch is applied and graded in a pristine container"
+scoring: "Binary reward plus pass fractions per task (reward.json / CTRF test report)"
+
 evaluations:
   - benchmark: DeepSWE
     model: deepseek-v4-1-flash
@@ -56,6 +61,11 @@ evaluations:
 limitations: "All scores are vendor-reported and not independently verified. Some vendors do not state the benchmark version; unversioned scores should not be compared with versioned ones."
 last_verified: "2026-09-20"
 sources:
+  - source_name: "DeepSWE official repository (DataCurve)"
+    source_url: https://github.com/datacurve-ai/deep-swe
+    source_type: official
+    last_verified: "2026-09-22"
+    confidence: high
   - source_name: DeepSeek API Change Log
     source_url: https://api-docs.deepseek.com/updates
     source_type: official

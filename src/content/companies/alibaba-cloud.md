@@ -4,6 +4,7 @@ image_credit: "AI-generated illustration (Seedream)"
 company_id: alibaba-cloud
 company_name: Alibaba Cloud (Qwen)
 description: "Alibaba Cloud's Qwen division: Qwen Chat / Qwen Studio, Alibaba Cloud Model Studio (Bailian), Qwen Code and Qoder agentic coding. Foundation models Qwen3.8-Max and Qwen3.8-Flash; open model Qwen3.8-2.4T-A95B."
+funding: "No separate funding rounds; Alibaba Cloud is a business of Alibaba Group Holding, a public company (NYSE: BABA; HKEX: 9988)."
 aliases:
   - Qwen
   - 千问

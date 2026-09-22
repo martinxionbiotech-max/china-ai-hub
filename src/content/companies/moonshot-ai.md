@@ -9,6 +9,7 @@ aliases:
   - Kimi
 founded: "Spring 2023"
 headquarters: "13F, Building 1, JD Technology Building, 76 Zhichun Road, Haidian District, Beijing, China"
+funding: "No official funding disclosure located as of 2026-09-22."
 ai_products:
   - Kimi (chat assistant, kimi.com / kimi.ai)
   - Kimi API Platform (platform.kimi.ai)

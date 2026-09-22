@@ -61,6 +61,49 @@ const breadcrumb = breadcrumbJsonLd([
 
     <div class="prose prose-slate max-w-none mb-6"><Content /></div>
 
+    {(d.task_type || d.dataset_size || d.evaluation_method || d.scoring || d.contamination_notes) && (
+      <div class="mb-6">
+        <h2 class="text-xl font-semibold mb-2">Benchmark methodology</h2>
+        <div class="table-wrap">
+          <table class="data-table">
+            <caption class="sr-only">Methodology of {d.benchmark_name}</caption>
+            <tbody>
+              {d.task_type && (
+                <tr>
+                  <th scope="row" class="whitespace-nowrap">Task type</th>
+                  <td>{d.task_type}</td>
+                </tr>
+              )}
+              {d.dataset_size && (
+                <tr>
+                  <th scope="row" class="whitespace-nowrap">Dataset size</th>
+                  <td>{d.dataset_size}</td>
+                </tr>
+              )}
+              {d.evaluation_method && (
+                <tr>
+                  <th scope="row" class="whitespace-nowrap">Evaluation method</th>
+                  <td>{d.evaluation_method}</td>
+                </tr>
+              )}
+              {d.scoring && (
+                <tr>
+                  <th scope="row" class="whitespace-nowrap">Scoring</th>
+                  <td>{d.scoring}</td>
+                </tr>
+              )}
+              {d.contamination_notes && (
+                <tr>
+                  <th scope="row" class="whitespace-nowrap">Contamination notes</th>
+                  <td>{d.contamination_notes}</td>
+                </tr>
+              )}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    )}
+
     <div class="mb-4"><LastVerified date={d.last_verified} /></div>
 
     <h2 class="text-xl font-semibold mb-2">Results</h2>

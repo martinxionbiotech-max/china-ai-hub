@@ -4,6 +4,11 @@ image_credit: "AI-generated illustration (Seedream)"
 benchmark_id: browsecomp
 benchmark_name: BrowseComp
 description: "Benchmark of browsing and retrieval ability: locating obscure information using web search and browsing."
+task_type: "Browsing agent benchmark (locate hard-to-find, entangled information on the internet)"
+dataset_size: "1,266 problems"
+evaluation_method: "Short-answer questions with a single correct answer; graders verify the exact answer (encrypted set)"
+scoring: "Accuracy (% correct)"
+
 evaluations:
   - benchmark: BrowseComp
     model: kimi-k3
@@ -28,6 +33,11 @@ evaluations:
 limitations: "All scores are vendor-reported and not independently verified. Evaluation setups (context management, agent scaffolding) differ between vendors."
 last_verified: "2026-09-20"
 sources:
+  - source_name: "OpenAI BrowseComp announcement"
+    source_url: https://openai.com/index/browsecomp/
+    source_type: official
+    last_verified: "2026-09-22"
+    confidence: high
   - source_name: Kimi K3 GitHub README
     source_url: https://github.com/MoonshotAI/Kimi-K3
     source_type: official

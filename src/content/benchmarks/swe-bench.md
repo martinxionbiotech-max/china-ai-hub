@@ -4,6 +4,11 @@ image_credit: "AI-generated illustration (Seedream)"
 benchmark_id: swe-bench
 benchmark_name: SWE-bench
 description: "Software engineering benchmark family built from real GitHub issues, with Pro, Verified and Multilingual variants."
+task_type: "Software engineering (resolve real GitHub issues by generating code patches)"
+dataset_size: "2,294 task instances from 12 Python repositories (full set); SWE-bench Verified = 500 human-confirmed solvable problems"
+evaluation_method: "Docker-containerized harness; the model's patch is applied to the repository and the project's tests are run to verify resolution"
+scoring: "Resolved rate (% of instances where all tests pass)"
+
 evaluations:
   - benchmark: SWE-bench
     model: qwen3.8-max
@@ -47,6 +52,11 @@ evaluations:
 limitations: "Pro, Verified and Multilingual variants are different test sets and are not comparable to each other; the variant is recorded per evaluation. All scores are vendor-reported and not independently verified."
 last_verified: "2026-09-20"
 sources:
+  - source_name: "SWE-bench official repository"
+    source_url: https://github.com/SWE-bench/SWE-bench
+    source_type: official
+    last_verified: "2026-09-22"
+    confidence: high
   - source_name: Qwen3.8-2.4T-A95B model card
     source_url: https://huggingface.co/Qwen/Qwen3.8-2.4T-A95B
     source_type: official

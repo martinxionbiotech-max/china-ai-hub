@@ -24,6 +24,25 @@ models:
     cached_input_price_per_1m: 0.06
     note: "Cache write $0.375 per 1M tokens. China platform: ¥4.2 / ¥16.8."
     official_source: https://platform.minimax.io/docs/guides/pricing-paygo.md
+price_history:
+  - model: minimax-m3
+    field: input_price_per_1m
+    old_value: 0.6
+    new_value: 0.3
+    effective_date: ""
+    source: https://platform.minimax.io/docs/guides/pricing-paygo
+  - model: minimax-m3
+    field: output_price_per_1m
+    old_value: 2.4
+    new_value: 1.2
+    effective_date: ""
+    source: https://platform.minimax.io/docs/guides/pricing-paygo
+  - model: minimax-m3
+    field: cached_input_price_per_1m
+    old_value: 0.12
+    new_value: 0.06
+    effective_date: ""
+    source: https://platform.minimax.io/docs/guides/pricing-paygo
 last_verified: "2026-09-20"
 sources:
   - source_name: MiniMax API platform — pay-as-you-go pricing (intl)

@@ -4,6 +4,11 @@ image_credit: "AI-generated illustration (Seedream)"
 benchmark_id: automationbench
 benchmark_name: AutomationBench
 description: "Benchmark of computer-use automation tasks."
+task_type: "End-to-end business workflow automation in simulated SaaS environments"
+dataset_size: "47 simulated SaaS tools across 6 business functions (Sales, Marketing, Operations, Support, Finance, HR)"
+evaluation_method: "Each task initializes a simulated business environment (CRM, calendar, inbox); the agent must leave the environment in the correct end state"
+scoring: "Task success rate (environment end-state verification)"
+
 evaluations:
   - benchmark: AutomationBench
     model: deepseek-v4-1-flash
@@ -39,6 +44,11 @@ evaluations:
 limitations: "All scores are vendor-reported and not independently verified. Pass@1 vs other sampling settings differ between vendors."
 last_verified: "2026-09-20"
 sources:
+  - source_name: "AutomationBench official repository (Zapier)"
+    source_url: https://github.com/zapier/AutomationBench
+    source_type: official
+    last_verified: "2026-09-22"
+    confidence: high
   - source_name: DeepSeek API Change Log
     source_url: https://api-docs.deepseek.com/updates
     source_type: official
