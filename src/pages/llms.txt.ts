@@ -4,7 +4,7 @@ import { getCollection } from 'astro:content';
 /* llms.txt for AI crawlers and LLM-oriented tooling (llmstxt.org spec). */
 export const GET: APIRoute = async ({ site }) => {
   const base = (site?.origin ?? 'https://chinaaihub.com').replace(/\/$/, '');
-  const [models, agents, companies, apis, pricing, benchmarks, technologies, comparisons, guides] =
+  const [models, agents, companies, apis, pricing, benchmarks, technologies, comparisons, guides, research, news] =
     await Promise.all([
       getCollection('models'),
       getCollection('agents'),
@@ -15,6 +15,8 @@ export const GET: APIRoute = async ({ site }) => {
       getCollection('technologies'),
       getCollection('comparisons'),
       getCollection('guides'),
+      getCollection('research'),
+      getCollection('news'),
     ]);
 
   const L: string[] = [];
@@ -112,6 +114,20 @@ export const GET: APIRoute = async ({ site }) => {
   for (const g of guides) {
     const d = g.data;
     L.push(`- [${d.title}](${base}/guides/${g.id}/): ${d.description}`);
+  }
+  L.push('');
+  L.push('## Research');
+  for (const r of research) {
+    const d = r.data;
+    L.push(
+      `- [${d.title}](${base}/research/${r.id}/): ${d.research_question ?? d.description}`
+    );
+  }
+  L.push('');
+  L.push('## News');
+  for (const n of news) {
+    const d = n.data;
+    L.push(`- [${d.title}](${base}/news/${n.id}/): ${d.published_date} · ${d.type} — ${d.description}`);
   }
   L.push('');
   L.push('## Optional');
