@@ -92,7 +92,8 @@ const fmt = (v: boolean | null | undefined) => (v === true ? 'Yes' : v === false
     </div>
 
     <!-- Key facts -->
-    <table class="data-table mb-6">
+    <div class="table-wrap mb-6">
+<table class="data-table">
       <caption class="sr-only">Key facts for {d.model_name}</caption>
       <thead><tr><th scope="col">Key fact</th><th scope="col">Value</th></tr></thead>
       <tbody>
@@ -126,10 +127,12 @@ const fmt = (v: boolean | null | undefined) => (v === true ? 'Yes' : v === false
         )}
       </tbody>
     </table>
+</div>
 
     <!-- Capabilities -->
     <h2 class="text-xl font-semibold mb-2">Capabilities</h2>
-    <table class="data-table mb-6">
+    <div class="table-wrap mb-6">
+<table class="data-table">
       <caption class="sr-only">Capabilities of {d.model_name}</caption>
       <thead><tr><th scope="col">Capability</th><th scope="col">Supported</th></tr></thead>
       <tbody>
@@ -138,12 +141,14 @@ const fmt = (v: boolean | null | undefined) => (v === true ? 'Yes' : v === false
         ))}
       </tbody>
     </table>
+</div>
 
     <!-- Benchmarks -->
     {d.benchmark_results.length > 0 && (
       <>
         <h2 class="text-xl font-semibold mb-2">Benchmark results</h2>
-        <table class="data-table mb-6">
+        <div class="table-wrap mb-6">
+<table class="data-table">
           <caption class="sr-only">Benchmark results for {d.model_name}</caption>
           <thead>
             <tr><th scope="col">Benchmark</th><th scope="col">Version</th><th scope="col">Score</th><th scope="col">Metric</th><th scope="col">Date</th><th scope="col">Source type</th><th scope="col">Source</th></tr>
@@ -162,6 +167,7 @@ const fmt = (v: boolean | null | undefined) => (v === true ? 'Yes' : v === false
             ))}
           </tbody>
         </table>
+</div>
         <p class="text-xs text-gray-500 mb-6">
           Benchmark scores are single data points, not universal rankings. Vendor-reported scores are labeled as such.
         </p>

@@ -75,7 +75,8 @@ const breadcrumb = breadcrumbJsonLd([
     <div class="mb-4"><LastVerified date={d.last_verified} /></div>
 
     <h2 class="text-xl font-semibold mb-2">Current prices</h2>
-    <table class="data-table mb-6">
+    <div class="table-wrap mb-6">
+<table class="data-table">
       <caption class="sr-only">Current {d.provider_id} API prices</caption>
       <thead>
         <tr>
@@ -106,11 +107,13 @@ const breadcrumb = breadcrumbJsonLd([
         ))}
       </tbody>
     </table>
+</div>
 
     {d.price_history.length > 0 && (
       <>
         <h2 class="text-xl font-semibold mb-2">Price history</h2>
-        <table class="data-table mb-6">
+        <div class="table-wrap mb-6">
+<table class="data-table">
           <caption class="sr-only">Price history for {d.provider_id}</caption>
           <thead><tr><th scope="col">Model</th><th scope="col">Field</th><th scope="col">Old</th><th scope="col">New</th><th scope="col">Effective</th><th scope="col">Source</th></tr></thead>
           <tbody>
@@ -126,6 +129,7 @@ const breadcrumb = breadcrumbJsonLd([
             ))}
           </tbody>
         </table>
+</div>
       </>
     )}
 

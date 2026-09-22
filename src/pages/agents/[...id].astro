@@ -76,7 +76,8 @@ const caps = [
 
     <div class="mb-4"><LastVerified date={d.last_verified} /></div>
 
-    <table class="data-table mb-6">
+    <div class="table-wrap mb-6">
+<table class="data-table">
       <caption class="sr-only">Key facts for {d.agent_name}</caption>
       <thead><tr><th scope="col">Key fact</th><th scope="col">Value</th></tr></thead>
       <tbody>
@@ -90,9 +91,11 @@ const caps = [
         {d.pricing && <tr><th scope="row">Pricing</th><td>{d.pricing}</td></tr>}
       </tbody>
     </table>
+</div>
 
     <h2 class="text-xl font-semibold mb-2">Capabilities</h2>
-    <table class="data-table mb-6">
+    <div class="table-wrap mb-6">
+<table class="data-table">
       <caption class="sr-only">Capabilities of {d.agent_name}</caption>
       <thead><tr><th scope="col">Capability</th><th scope="col">Supported</th></tr></thead>
       <tbody>
@@ -101,6 +104,7 @@ const caps = [
         ))}
       </tbody>
     </table>
+</div>
 
     {d.use_cases.length > 0 && (
       <>

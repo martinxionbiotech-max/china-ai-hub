@@ -31,20 +31,64 @@ body {
 .data-table {
   width: 100%;
   border-collapse: collapse;
-  font-size: 0.875rem;
+  font-size: 0.8125rem;
+  line-height: 1.4;
 }
 .data-table th {
   text-align: left;
   font-weight: 600;
   background: #f3f4f6;
-  padding: 0.5rem 0.75rem;
+  padding: 0.375rem 0.5rem;
   border: 1px solid var(--caih-border);
   white-space: nowrap;
 }
 .data-table td {
-  padding: 0.5rem 0.75rem;
+  padding: 0.375rem 0.5rem;
   border: 1px solid var(--caih-border);
   vertical-align: top;
+  overflow-wrap: normal;
+  word-break: normal;
+  hyphens: none;
+}
+
+/* Prose (markdown) tables — compact and consistent with data-table */
+.prose table {
+  font-size: 0.8125rem;
+  line-height: 1.4;
+}
+.prose table th,
+.prose table td {
+  padding: 0.375rem 0.5rem;
+  overflow-wrap: normal;
+  word-break: normal;
+  hyphens: none;
+}
+.prose table th {
+  white-space: nowrap;
+}
+
+/* Scroll wrapper for tables */
+.table-wrap {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  max-width: 100%;
+}
+
+/* Mobile: compact cells + horizontal scroll instead of squeezed columns */
+@media (max-width: 640px) {
+  .data-table {
+    font-size: 0.75rem;
+    line-height: 1.35;
+  }
+  .data-table th,
+  .data-table td {
+    padding: 0.3125rem 0.375rem;
+  }
+  .prose table {
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
 }
 
 .stale {

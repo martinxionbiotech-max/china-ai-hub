@@ -68,7 +68,8 @@ const apiLinks = d.api.map((a) => ({ href: `/api/${a}/`, label: `${a} API` }));
 
     <div class="mb-4"><LastVerified date={d.last_verified} /></div>
 
-    <table class="data-table mb-6">
+    <div class="table-wrap mb-6">
+<table class="data-table">
       <caption class="sr-only">Key facts for {d.company_name}</caption>
       <thead><tr><th scope="col">Key fact</th><th scope="col">Value</th></tr></thead>
       <tbody>
@@ -87,11 +88,13 @@ const apiLinks = d.api.map((a) => ({ href: `/api/${a}/`, label: `${a} API` }));
         )}
       </tbody>
     </table>
+</div>
 
     {d.major_releases.length > 0 && (
       <>
         <h2 class="text-xl font-semibold mb-2">Major releases</h2>
-        <table class="data-table mb-6">
+        <div class="table-wrap mb-6">
+<table class="data-table">
           <caption class="sr-only">Major releases by {d.company_name}</caption>
           <thead><tr><th scope="col">Release</th><th scope="col">Date</th><th scope="col">Type</th></tr></thead>
           <tbody>
@@ -100,6 +103,7 @@ const apiLinks = d.api.map((a) => ({ href: `/api/${a}/`, label: `${a} API` }));
             ))}
           </tbody>
         </table>
+</div>
       </>
     )}
 

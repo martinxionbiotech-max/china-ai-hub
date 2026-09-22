@@ -64,7 +64,8 @@ const breadcrumb = breadcrumbJsonLd([
     <div class="mb-4"><LastVerified date={d.last_verified} /></div>
 
     <h2 class="text-xl font-semibold mb-2">Results</h2>
-    <table class="data-table mb-6">
+    <div class="table-wrap mb-6">
+<table class="data-table">
       <caption class="sr-only">Results for {d.benchmark_name}</caption>
       <thead>
         <tr>
@@ -91,6 +92,7 @@ const breadcrumb = breadcrumbJsonLd([
         ))}
       </tbody>
     </table>
+</div>
 
     {d.limitations && (
       <>
