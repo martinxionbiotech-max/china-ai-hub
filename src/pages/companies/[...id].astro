@@ -24,6 +24,10 @@ const { Content } = await render(company);
 const pageUrl = new URL(Astro.url.pathname, Astro.site).href;
 const modelMap = await getModelIdMap();
 const metaDescription = d.description ?? `${d.company_name}: Chinese AI company profile — models, agents, API, open-source projects and official sources.`;
+
+/* Entity definition — derived from verified DB fields only. */
+const hqShort2 = (d.headquarters ?? '').split(';')[0].trim().replace(/^China platform:\s*/i, '');
+const definition = `${d.company_name} is a Chinese AI company${hqShort2 ? ` headquartered in ${hqShort2}` : ''}${d.founded ? `, founded ${d.founded}` : ''}${d.foundation_models.length > 0 ? `, known for the ${d.foundation_models.slice(0, 3).join(', ')} model${d.foundation_models.length > 1 ? 's' : ''}` : ''}.`;
 const faqs = companyFaqs(d);
 const jsonLd = organizationJsonLd({
   id: pageUrl,
@@ -54,6 +58,8 @@ const apiLinks = d.api.map((a) => ({ href: `/api/${a}/`, label: `${a} API` }));
     <p class="text-sm text-gray-500 mb-1"><a href="/companies/">Companies</a> / {d.company_name}</p>
     <h1 class="text-3xl font-bold text-gray-900 mb-2">{d.company_name}</h1>
     {d.aliases.length > 0 && <p class="text-sm text-gray-500 mb-4">Also known as: {d.aliases.join(', ')}</p>}
+
+    <p class="text-gray-700 border-l-4 border-[#0f4c81] pl-4 mb-6">{definition}</p>
 
     {d.image && (
       <figure class="mb-6">
@@ -133,6 +139,26 @@ const apiLinks = d.api.map((a) => ({ href: `/api/${a}/`, label: `${a} API` }));
     <div class="flex flex-wrap gap-2">
       {d.sources.map((s) => <SourceBadge source={s} />)}
     </div>
+
+    <!-- Data interpretation -->
+    <h2 class="text-xl font-semibold mt-6 mb-2">Data interpretation</h2>
+    <div class="table-wrap mb-6">
+<table class="data-table">
+      <caption class="sr-only">Evidence types for {d.company_name}</caption>
+      <thead><tr><th scope="col">Field</th><th scope="col">Value</th><th scope="col">Evidence type</th></tr></thead>
+      <tbody>
+        {d.founded != null && <tr><th scope="row">Founded</th><td>{d.founded}</td><td>Official</td></tr>}
+        {d.headquarters && <tr><th scope="row">Headquarters</th><td>{d.headquarters.split(';')[0]}</td><td>Official</td></tr>}
+        {d.ownership_information && <tr><th scope="row">Ownership</th><td>{d.ownership_information}</td><td>Official</td></tr>}
+        {d.foundation_models.length > 0 && <tr><th scope="row">Foundation models</th><td>{d.foundation_models.join(', ')}</td><td>Official</td></tr>}
+        {d.major_releases.length > 0 && <tr><th scope="row">Major releases</th><td>{d.major_releases.length} entries</td><td>Official</td></tr>}
+        <tr><th scope="row">Entity relations</th><td>{modelLinks.length} models, {agentLinks.length} agents, {apiLinks.length} APIs</td><td>China AI Hub analysis</td></tr>
+      </tbody>
+    </table>
+</div>
+    <p class="text-xs text-gray-500 mb-6">
+      Evidence types: Official = vendor documentation or official pages. China AI Hub analysis = derived from the database itself. See the <a href="/about/">sourcing policy</a>.
+    </p>
 
     <EntityFaq faqs={faqs} />
   </article>

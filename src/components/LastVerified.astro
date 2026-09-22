@@ -5,19 +5,25 @@ interface Props {
 
 const { date } = Astro.props;
 const verified = new Date(date + 'T00:00:00Z');
+const nextReview = new Date(verified.getTime() + 30 * 86400000).toISOString().slice(0, 10);
 const days = Math.floor((Date.now() - verified.getTime()) / 86400000);
 let cls = 'text-gray-600';
 let label = 'current';
+let status = 'Current';
 if (days > 90) {
   cls = 'stale-critical';
   label = 'outdated — verify before relying';
+  status = 'Outdated';
 } else if (days > 30) {
   cls = 'stale';
   label = 'may be outdated';
+  status = 'Stale';
 }
 ---
 
 <span class={cls}>
   Last verified: <time datetime={date}>{date}</time>
   {label !== 'current' && <span> ({label})</span>}
+  {' · '}Data status: {status}
+  {' · '}Next review: <time datetime={nextReview}>{nextReview}</time>
 </span>

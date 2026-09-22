@@ -1,8 +1,16 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { getCollection } from 'astro:content';
+import { datasetJsonLd } from '../../lib/seo';
 
 const companies = await getCollection('companies');
+const companiesPageUrl = new URL(Astro.url.pathname, Astro.site).href;
+const companiesDataset = datasetJsonLd({
+  id: companiesPageUrl,
+  name: 'China AI Company Database',
+  description: 'Structured database of Chinese AI companies: foundation models, agents, APIs, open models, releases and official sources.',
+  dateModified: companies.map((x) => x.data.last_verified).sort().at(-1),
+});
 ---
 
 <BaseLayout
@@ -13,6 +21,8 @@ const companies = await getCollection('companies');
   <p class="text-gray-600 mb-6 max-w-2xl">
     Organizations building China's AI ecosystem — with their models, agents, APIs and official sources.
   </p>
+
+    <script type="application/ld+json" set:html={JSON.stringify(companiesDataset)} />
 
   {companies.length === 0 ? (
     <p class="text-gray-500">No companies published yet. Phase 2 adds the first verified entities.</p>

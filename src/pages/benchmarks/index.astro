@@ -1,8 +1,16 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { getCollection } from 'astro:content';
+import { datasetJsonLd } from '../../lib/seo';
 
 const benchmarks = await getCollection('benchmarks');
+const benchmarksPageUrl = new URL(Astro.url.pathname, Astro.site).href;
+const benchmarksDataset = datasetJsonLd({
+  id: benchmarksPageUrl,
+  name: 'China AI Benchmark Database',
+  description: 'Structured database of benchmark results for Chinese AI models with evaluation method, source type and date.',
+  dateModified: benchmarks.map((x) => x.data.last_verified).sort().at(-1),
+});
 ---
 
 <BaseLayout
@@ -14,6 +22,8 @@ const benchmarks = await getCollection('benchmarks');
     Benchmark results with evaluation method, model version, source type (vendor-reported vs independent) and date.
     Scores are data points — never universal rankings.
   </p>
+
+    <script type="application/ld+json" set:html={JSON.stringify(benchmarksDataset)} />
 
   {benchmarks.length === 0 ? (
     <p class="text-gray-500">No benchmarks published yet. Phase 2 adds the first verified results.</p>

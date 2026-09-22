@@ -130,6 +130,20 @@ export const GET: APIRoute = async ({ site }) => {
     L.push(`- [${d.title}](${base}/news/${n.id}/): ${d.published_date} · ${d.type} — ${d.description}`);
   }
   L.push('');
+  L.push('## Machine-readable data');
+  L.push(
+    'JSON endpoints for AI agents and data users. Entity JSON keeps the same verified fields as the HTML pages, plus derived entity relations (_relations).'
+  );
+  L.push(`- [Models dump](${base}/data/models.json): All models with verified fields.`);
+  L.push(`- [Companies dump](${base}/data/companies.json): All companies with verified fields.`);
+  L.push(`- [Agents dump](${base}/data/agents.json): All agents with verified fields.`);
+  L.push(`- [APIs dump](${base}/data/apis.json): All API records with verified fields.`);
+  L.push(`- [Pricing dump](${base}/data/pricing.json): Normalized pricing snapshots with effective dates.`);
+  L.push(`- [Benchmarks dump](${base}/data/benchmarks.json): All benchmark results with source types.`);
+  L.push(
+    `- Per-model JSON: ${base}/models/{model-id}.json (e.g. ${base}/models/deepseek-v4-pro.json) — entity record plus related benchmarks and agents.`
+  );
+  L.push('');
   L.push('## Optional');
   L.push(`- [Sitemap](${base}/sitemap-index.xml): Full sitemap of all China AI Hub pages.`);
   L.push(`- [Data Hub](https://data.chinaaihub.com/): Structured data layer with entity records.`);

@@ -1,8 +1,16 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { getCollection } from 'astro:content';
+import { datasetJsonLd } from '../../lib/seo';
 
 const apis = await getCollection('apis');
+const apisPageUrl = new URL(Astro.url.pathname, Astro.site).href;
+const apisDataset = datasetJsonLd({
+  id: apisPageUrl,
+  name: 'China AI API Database',
+  description: 'Structured database of Chinese AI APIs: endpoints, authentication, capabilities, context limits, regions and documentation.',
+  dateModified: apis.map((x) => x.data.last_verified).sort().at(-1),
+});
 ---
 
 <BaseLayout
@@ -13,6 +21,8 @@ const apis = await getCollection('apis');
   <p class="text-gray-600 mb-6 max-w-2xl">
     Official, cloud-hosted, third-party and self-hosted API options — endpoints, auth, capabilities and limits, verified against official docs.
   </p>
+
+    <script type="application/ld+json" set:html={JSON.stringify(apisDataset)} />
 
   {apis.length === 0 ? (
     <p class="text-gray-500">No API records published yet. Phase 2 adds the first verified entities.</p>

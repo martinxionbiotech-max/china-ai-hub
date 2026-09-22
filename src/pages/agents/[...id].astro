@@ -24,6 +24,9 @@ const { Content } = await render(agent);
 const pageUrl = new URL(Astro.url.pathname, Astro.site).href;
 const providerUrl = new URL(`/companies/${d.company}/`, Astro.site).href;
 const modelMap = await getModelIdMap();
+
+/* Entity definition — derived from verified DB fields only. */
+const definition = `${d.agent_name} is a ${d.agent_type} agent by ${d.company}${d.underlying_models.length > 0 ? `, built on ${d.underlying_models.join(', ')}` : ''}${d.deployment ? `, deployable ${d.deployment === 'both' ? 'as both a cloud service and self-hosted' : d.deployment === 'cloud' ? 'as a cloud service' : 'self-hosted'}` : ''}${d.open_source === true ? ', and released open source' : ''}.`;
 const faqs = agentFaqs(d);
 const jsonLd = softwareApplicationJsonLd({
   id: pageUrl,
@@ -62,6 +65,8 @@ const caps = [
     <p class="text-sm text-gray-500 mb-1"><a href="/agents/">Agents</a> / {d.agent_name}</p>
     <h1 class="text-3xl font-bold text-gray-900 mb-2">{d.agent_name}</h1>
     <p class="text-gray-600 mb-4">{d.description}</p>
+
+    <p class="text-gray-700 border-l-4 border-[#0f4c81] pl-4 mb-6">{definition}</p>
 
     {d.image && (
       <figure class="mb-6">
@@ -133,6 +138,26 @@ const caps = [
     <div class="flex flex-wrap gap-2">
       {d.sources.map((s) => <SourceBadge source={s} />)}
     </div>
+
+    <!-- Data interpretation -->
+    <h2 class="text-xl font-semibold mt-6 mb-2">Data interpretation</h2>
+    <div class="table-wrap mb-6">
+<table class="data-table">
+      <caption class="sr-only">Evidence types for {d.agent_name}</caption>
+      <thead><tr><th scope="col">Field</th><th scope="col">Value</th><th scope="col">Evidence type</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Company</th><td>{d.company}</td><td>Official</td></tr>
+        <tr><th scope="row">Type</th><td>{d.agent_type}</td><td>Official</td></tr>
+        {d.underlying_models.length > 0 && <tr><th scope="row">Underlying models</th><td>{d.underlying_models.join(', ')}</td><td>Official</td></tr>}
+        {d.open_source != null && <tr><th scope="row">Open source</th><td>{fmt(d.open_source)}{d.license ? ` (${d.license})` : ''}</td><td>Official</td></tr>}
+        {d.deployment && <tr><th scope="row">Deployment</th><td>{d.deployment}</td><td>Official</td></tr>}
+        <tr><th scope="row">Capabilities</th><td>{caps.filter(([, v]) => v === true).map(([l]) => l).join(', ') || 'None listed'}</td><td>Official</td></tr>
+      </tbody>
+    </table>
+</div>
+    <p class="text-xs text-gray-500 mb-6">
+      Evidence types: Official = vendor documentation or official pages. See the <a href="/about/">sourcing policy</a>.
+    </p>
 
     <EntityFaq faqs={faqs} />
   </article>

@@ -6,6 +6,7 @@ import EntityLinks from '../../components/EntityLinks.astro';
 import EntityFaq from '../../components/EntityFaq.astro';
 import { modelFaqs, softwareApplicationJsonLd, breadcrumbJsonLd } from '../../lib/seo';
 import { getCollection, render, type CollectionEntry } from 'astro:content';
+import { getModelIdMap, modelHref } from '../../lib/entity-links';
 
 export async function getStaticPaths() {
   const models = await getCollection('models');
@@ -19,6 +20,41 @@ interface Props {
 const { model } = Astro.props;
 const d = model.data;
 const { Content } = await render(model);
+
+const modelMap = await getModelIdMap();
+const [allModels, allBenchmarks, allAgents, allApis, allCompanies] = await Promise.all([
+  getCollection('models'),
+  getCollection('benchmarks'),
+  getCollection('agents'),
+  getCollection('apis'),
+  getCollection('companies'),
+]);
+
+const companyRec = allCompanies.find((c) => c.id === d.provider || c.data.aliases?.includes(d.provider));
+
+/* Entity definition — derived from verified DB fields only. */
+const hqShort = (companyRec?.data.headquarters ?? '').split(';')[0].trim().replace(/^China platform:\s*/i, '');
+const definition = `${d.model_name} is a ${d.model_family ?? ''} model developed by ${d.provider}, a Chinese AI company${hqShort ? ` headquartered in ${hqShort}` : ''}${d.release_date ? `, released ${d.release_date}` : ''}${d.context_window != null ? ` with a ${d.context_window.toLocaleString()}-token context window` : ''}${d.open_weight === true ? ' and open weights' : d.open_weight === false ? ' and closed weights' : ''}.`;
+
+/* Entity relationships — all derived from collections. */
+const benchLinks = allBenchmarks
+  .filter((b) => b.data.evaluations.some((e) => e.model === d.model_id))
+  .map((b) => ({ href: `/benchmarks/${b.id}/`, label: b.data.benchmark_name }));
+const agentLinks2 = allAgents
+  .filter((a) => (a.data.underlying_models ?? []).includes(d.model_id))
+  .map((a) => ({ href: `/agents/${a.id}/`, label: a.data.agent_name }));
+const familyLinks = allModels
+  .filter((m) => m.id !== model.id && m.data.model_family === d.model_family)
+  .map((m) => ({ href: modelHref(modelMap, m.data.model_id), label: `${m.data.model_name} (${m.data.status})` }));
+const apiLinks2 = allApis
+  .filter((a) => a.data.provider === d.provider)
+  .map((a) => ({ href: `/api/${a.id}/`, label: `${a.data.api_id} API` }));
+
+/* Family timeline — from release dates already in the DB. */
+const familyTimeline = allModels
+  .filter((m) => m.data.model_family === d.model_family)
+  .map((m) => ({ name: m.data.model_name, id: m.id, date: m.data.release_date, status: m.data.status }))
+  .sort((a, b) => (a.date ?? '').localeCompare(b.date ?? ''));
 
 const pageUrl = new URL(Astro.url.pathname, Astro.site).href;
 const providerUrl = new URL(`/companies/${d.provider}/`, Astro.site).href;
@@ -56,6 +92,14 @@ const caps = [
 ] as const;
 
 const fmt = (v: boolean | null | undefined) => (v === true ? 'Yes' : v === false ? 'No' : 'Unknown');
+
+/* Evidence-type labels for the Data Interpretation table. */
+const evidenceLabel: Record<string, string> = {
+  vendor_reported: 'Vendor-reported',
+  independent: 'Independent',
+  academic: 'Academic',
+  community: 'Community',
+};
 ---
 
 <BaseLayout
@@ -75,6 +119,8 @@ const fmt = (v: boolean | null | undefined) => (v === true ? 'Yes' : v === false
       {' · '}Status: {d.status}
       {d.release_date && <> · Released: {d.release_date}</>}
     </p>
+
+    <p class="text-gray-700 border-l-4 border-[#0f4c81] pl-4 mb-6">{definition}</p>
 
     {d.image && (
       <figure class="mb-6">
@@ -197,7 +243,67 @@ const fmt = (v: boolean | null | undefined) => (v === true ? 'Yes' : v === false
       {d.pricing?.pricing_ref && (
         <EntityLinks title="Pricing" links={[{ href: `/pricing/${d.pricing.pricing_ref}/`, label: `${d.pricing.pricing_ref} pricing` }]} />
       )}
+      {benchLinks.length > 0 && <EntityLinks title="Benchmarks with results for this model" links={benchLinks} />}
+      {agentLinks2.length > 0 && <EntityLinks title="Agents built on this model" links={agentLinks2} />}
+      {familyLinks.length > 0 && <EntityLinks title="Related models (same family)" links={familyLinks} />}
+      {apiLinks2.length > 0 && <EntityLinks title="API" links={apiLinks2} />}
     </div>
+
+    <!-- Family timeline -->
+    {familyTimeline.length > 1 && (
+      <>
+        <h2 class="text-xl font-semibold mb-2">Model family timeline</h2>
+        <div class="table-wrap mb-6">
+<table class="data-table">
+          <caption class="sr-only">Release timeline for the {d.model_family} family</caption>
+          <thead><tr><th scope="col">Model</th><th scope="col">Released</th><th scope="col">Status</th></tr></thead>
+          <tbody>
+            {familyTimeline.map((m) => (
+              <tr class={m.id === model.id ? 'bg-blue-50' : ''}>
+                <td>{m.id === model.id ? <strong>{m.name} (this page)</strong> : <a href={modelHref(modelMap, m.id === model.id ? d.model_id : m.id)}>{m.name}</a>}</td>
+                <td>{m.date ?? '—'}</td>
+                <td>{m.status}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+</div>
+      </>
+    )}
+
+    <!-- Data interpretation -->
+    <h2 class="text-xl font-semibold mb-2">Data interpretation</h2>
+    <div class="table-wrap mb-6">
+<table class="data-table">
+      <caption class="sr-only">Evidence types for {d.model_name}</caption>
+      <thead><tr><th scope="col">Field</th><th scope="col">Value</th><th scope="col">Evidence type</th></tr></thead>
+      <tbody>
+        {d.context_window != null && <tr><th scope="row">Context window</th><td>{d.context_window.toLocaleString()} tokens</td><td>Official</td></tr>}
+        {d.architecture && <tr><th scope="row">Architecture</th><td>{d.architecture}</td><td>Official</td></tr>}
+        {d.open_weight != null && <tr><th scope="row">Open weights</th><td>{fmt(d.open_weight)}</td><td>Official</td></tr>}
+        {d.license && <tr><th scope="row">License</th><td>{d.license}</td><td>Official</td></tr>}
+        {d.pricing?.input_price_per_1m != null && (
+          <tr>
+            <th scope="row">API pricing</th>
+            <td>${d.pricing.input_price_per_1m} / ${d.pricing.output_price_per_1m ?? '—'} per 1M tokens ({d.pricing.currency})</td>
+            <td>Official</td>
+          </tr>
+        )}
+        {d.benchmark_results.map((b) => (
+          <tr>
+            <th scope="row">{b.benchmark}{b.benchmark_version ? ` (${b.benchmark_version})` : ''}</th>
+            <td>{b.score}{b.metric ? ` ${b.metric}` : ''}</td>
+            <td>{evidenceLabel[b.source_type] ?? b.source_type}</td>
+          </tr>
+        ))}
+        <tr><th scope="row">Family position</th><td>{familyTimeline.length} model{familyTimeline.length === 1 ? '' : 's'} in the {d.model_family} family</td><td>China AI Hub analysis</td></tr>
+      </tbody>
+    </table>
+</div>
+    <p class="text-xs text-gray-500 mb-6">
+      Evidence types: Official = vendor documentation, pricing pages or model cards. Vendor-reported = benchmark
+      scores published by the vendor. China AI Hub analysis = derived from the database itself. See the <a href="/about/">sourcing policy</a>.
+    </p>
 
     <!-- Sources -->
     <h2 class="text-xl font-semibold mb-2">Sources</h2>

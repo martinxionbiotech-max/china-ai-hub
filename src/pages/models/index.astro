@@ -1,8 +1,16 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { getCollection } from 'astro:content';
+import { datasetJsonLd } from '../../lib/seo';
 
 const models = await getCollection('models');
+const modelsPageUrl = new URL(Astro.url.pathname, Astro.site).href;
+const modelsDataset = datasetJsonLd({
+  id: modelsPageUrl,
+  name: 'China AI Model Database',
+  description: 'Structured database of Chinese AI models: providers, context windows, capabilities, open weights, licenses, pricing and benchmarks, each fact sourced and date-stamped.',
+  dateModified: models.map((x) => x.data.last_verified).sort().at(-1),
+});
 const providers = [...new Set(models.map((m) => m.data.provider))].sort();
 const families = [...new Set(models.map((m) => m.data.model_family).filter(Boolean) as string[])].sort();
 ---
@@ -16,6 +24,8 @@ const families = [...new Set(models.map((m) => m.data.model_family).filter(Boole
     Documented models with verified facts: provider, context window, capabilities, license, API availability and pricing.
     Filtering works in the browser; the underlying table is plain HTML.
   </p>
+
+    <script type="application/ld+json" set:html={JSON.stringify(modelsDataset)} />
 
   {models.length === 0 ? (
     <p class="text-gray-500">

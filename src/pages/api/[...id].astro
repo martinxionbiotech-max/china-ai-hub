@@ -5,6 +5,7 @@ import LastVerified from '../../components/LastVerified.astro';
 import EntityLinks from '../../components/EntityLinks.astro';
 import EntityFaq from '../../components/EntityFaq.astro';
 import { apiFaqs, apiReferenceJsonLd, breadcrumbJsonLd } from '../../lib/seo';
+import { getModelIdMap, modelHref } from '../../lib/entity-links';
 import { getCollection, render, type CollectionEntry } from 'astro:content';
 
 export async function getStaticPaths() {
@@ -23,6 +24,13 @@ const { Content } = await render(api);
 const pageUrl = new URL(Astro.url.pathname, Astro.site).href;
 const providerUrl = new URL(`/companies/${d.provider}/`, Astro.site).href;
 const metaDescription = d.description ?? `${d.api_id} API by ${d.provider}: endpoint, authentication, capabilities, context limits, regions and pricing.`;
+
+const modelMap = await getModelIdMap();
+const allModels = await getCollection('models');
+
+/* Entity definition — derived from verified DB fields only. */
+const relatedModels = allModels.filter((m) => m.data.provider === d.provider);
+const definition = `${d.api_id} is an API by ${d.provider}${d.endpoint ? `, served at ${d.endpoint}` : ''}${d.api_type ? ` for ${d.api_type} models` : ''}${relatedModels.length > 0 ? `, exposing ${relatedModels.map((m) => m.data.model_name).join(', ')}` : ''}.`;
 const faqs = apiFaqs(d);
 const jsonLd = apiReferenceJsonLd({
   id: pageUrl,
@@ -52,6 +60,8 @@ const fmt = (v: boolean | null | undefined) => (v === true ? 'Yes' : v === false
     <p class="text-sm text-gray-500 mb-1"><a href="/api/">API</a> / {d.api_id}</p>
     <h1 class="text-3xl font-bold text-gray-900 mb-2">{d.api_id} API</h1>
     <p class="text-gray-600 mb-4">Provider: <a href={`/companies/${d.provider}/`}>{d.provider}</a> · Type: {d.api_type}</p>
+
+    <p class="text-gray-700 border-l-4 border-[#0f4c81] pl-4 mb-6">{definition}</p>
 
     {d.image && (
       <figure class="mb-6">
@@ -116,6 +126,12 @@ const fmt = (v: boolean | null | undefined) => (v === true ? 'Yes' : v === false
 
     <div class="space-y-6 mb-6">
       <EntityLinks title="Provider" links={[{ href: `/companies/${d.provider}/`, label: d.provider }]} />
+      {relatedModels.length > 0 && (
+        <EntityLinks
+          title="Models served"
+          links={relatedModels.map((m) => ({ href: modelHref(modelMap, m.data.model_id), label: m.data.model_name }))}
+        />
+      )}
       {d.pricing_ref && (
         <EntityLinks title="Pricing" links={[{ href: `/pricing/${d.pricing_ref}/`, label: `${d.pricing_ref} pricing` }]} />
       )}
@@ -125,6 +141,24 @@ const fmt = (v: boolean | null | undefined) => (v === true ? 'Yes' : v === false
     <div class="flex flex-wrap gap-2">
       {d.sources.map((s) => <SourceBadge source={s} />)}
     </div>
+
+    <!-- Data interpretation -->
+    <h2 class="text-xl font-semibold mt-6 mb-2">Data interpretation</h2>
+    <div class="table-wrap mb-6">
+<table class="data-table">
+      <caption class="sr-only">Evidence types for {d.api_id} API</caption>
+      <thead><tr><th scope="col">Field</th><th scope="col">Value</th><th scope="col">Evidence type</th></tr></thead>
+      <tbody>
+        {d.endpoint && <tr><th scope="row">Endpoint</th><td class="font-mono">{d.endpoint}</td><td>Official</td></tr>}
+        <tr><th scope="row">Authentication</th><td>{d.authentication ?? 'Unknown'}</td><td>Official</td></tr>
+        <tr><th scope="row">Capabilities</th><td>{[['Streaming', d.streaming], ['Function calling', d.function_calling], ['Tool calling', d.tool_calling], ['Structured output', d.structured_output], ['Vision', d.vision], ['Audio', d.audio]].filter(([, v]) => v === true).map(([l]) => l).join(', ') || 'None listed'}</td><td>Official</td></tr>
+        <tr><th scope="row">Models served</th><td>{relatedModels.length} models in the database</td><td>China AI Hub analysis</td></tr>
+      </tbody>
+    </table>
+</div>
+    <p class="text-xs text-gray-500 mb-6">
+      Evidence types: Official = vendor documentation or official pages. China AI Hub analysis = derived from the database itself. See the <a href="/about/">sourcing policy</a>.
+    </p>
 
     <EntityFaq faqs={faqs} />
   </article>

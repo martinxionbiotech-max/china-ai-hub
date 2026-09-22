@@ -1,8 +1,16 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { getCollection } from 'astro:content';
+import { datasetJsonLd } from '../../lib/seo';
 
 const pricing = await getCollection('pricing');
+const pricingPageUrl = new URL(Astro.url.pathname, Astro.site).href;
+const pricingDataset = datasetJsonLd({
+  id: pricingPageUrl,
+  name: 'China AI API Pricing Database',
+  description: 'Time-stamped Chinese AI API pricing snapshots: input, output, cached and batch prices per 1M tokens with sources and effective dates.',
+  dateModified: pricing.map((x) => x.data.last_verified).sort().at(-1),
+});
 ---
 
 <BaseLayout
@@ -14,6 +22,8 @@ const pricing = await getCollection('pricing');
     Prices normalized to USD per 1 million tokens, with currency, region, billing mode, effective dates and
     official sources preserved. Pricing is time-sensitive — always check the verification date.
   </p>
+
+    <script type="application/ld+json" set:html={JSON.stringify(pricingDataset)} />
 
   {pricing.length === 0 ? (
     <p class="text-gray-500">No pricing records published yet. Phase 2 adds the first verified providers.</p>
