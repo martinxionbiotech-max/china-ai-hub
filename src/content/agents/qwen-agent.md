@@ -42,3 +42,8 @@ sources:
     last_verified: "2026-09-20"
     confidence: high
 ---
+Qwen-Agent is the Qwen team's open-source Python framework for building LLM applications: it ships built-in Assistant, FnCallAgent and ReActChat agents with a @register_tool decorator, and connects to the DashScope API or to self-hosted models via vLLM/Ollama.
+
+The framework is free under Apache-2.0 with no subscription of its own; model usage is billed per token through DashScope, or free with self-hosted open models.
+
+See the [Alibaba Cloud](/companies/alibaba-cloud/) profile.

@@ -61,3 +61,8 @@ sources:
     last_verified: "2026-09-20"
     confidence: high
 ---
+DeepSeek Harness is DeepSeek's open-source agent harness ("Everything is a Plugin") that powers its coding agent. Models, tools, skills, sessions, sandbox, storage, loops, scheduling and the UI are all composed from replaceable plugins on the Cordis framework. It is a developer preview that ships as a CLI (dsh), Web UI, Electron Desktop app, Python SDK and ACP server.
+
+The software is free and self-hosted; model usage is billed by the provider you configure. DeepSeek API pay-as-you-go ranges from $0.15–$0.30/M input (cache-miss) for flash up to $1.98–$3.96/M output for V4-Pro, with off-peak at half price.
+
+See the [DeepSeek](/companies/deepseek/) profile and the [DeepSeek-V4-Pro](/models/deepseek-v4-pro/) model page.

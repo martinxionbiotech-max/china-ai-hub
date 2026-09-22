@@ -49,3 +49,8 @@ sources:
     last_verified: "2026-09-20"
     confidence: high
 ---
+GLM Coding Plan is Zhipu AI's coding-agent subscription: one plan that powers ZCode (Zhipu's own coding client), AutoClaw (office agent) and more than 20 third-party coding tools including Claude Code, Codex, Cursor and OpenClaw. It runs on GLM-5.3 / GLM-5.3-Flash with 1M-token context; credits refresh in 5-hour windows and weekly.
+
+China billing on bigmodel.cn has Lite / Pro / Max tiers at ¥118 / ¥538 / ¥1,078 per month with team seats available; the international Z.AI counterpart starts at $18/month. Off-peak usage costs half the credits, and peak hours (Mon–Fri 14:00–18:00 UTC+8) cost double.
+
+See the [Zhipu AI](/companies/zhipu-ai/) profile and the [GLM-5.3](/models/glm-53/) model page.

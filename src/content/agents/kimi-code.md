@@ -61,3 +61,8 @@ sources:
     last_verified: "2026-09-20"
     confidence: high
 ---
+Kimi Code is Moonshot AI's terminal AI coding agent and the successor to the deprecated kimi-cli. It ships as a TypeScript CLI (MIT), a VS Code extension and a Desktop app, and can read and edit code, run shell commands, search files, fetch web pages, and plan and adjust actions autonomously. Subagents, MCP, Kimi Computer Use, browser control and multimodal input (text, images, video) are built in.
+
+It runs on [Kimi K3](/models/kimi-k3/), [Kimi K2.7-Code](/models/kimi-k27-code/) and [Kimi K2.7-Code-HighSpeed](/models/kimi-k27-code-highspeed/) — K3's 1M-token context enables long-horizon whole-repo work.
+
+Billing follows Kimi membership (Plus and above); the Open Platform API is pay-as-you-go at $3.00/M input / $15.00/M output for kimi-k3. See the [Moonshot AI](/companies/moonshot-ai/) profile.

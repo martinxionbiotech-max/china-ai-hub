@@ -55,3 +55,8 @@ sources:
     last_verified: "2026-09-20"
     confidence: high
 ---
+Doubao is ByteDance's consumer AI assistant app: Q&A and explanations, study help, office automation (documents, spreadsheets, PPT, data analysis, code), and image and video creation backed by the Seedream and Seedance models. It also supports voice calls, photo recognition and web search.
+
+"Doubao Work" mode runs an autonomous planning-and-executing agent that operates a virtual desktop on the local computer, with real-time watching, pause and takeover, plus Feishu integration for enterprise context.
+
+Doubao is mainland-China-focused (overseas users are redirected to Dola) and billed by subscription: Basic is free; paid tiers are 68 / 200 / 500 CNY per month with quota-based usage and separately sold creation packs. See the [ByteDance](/companies/bytedance/) profile.

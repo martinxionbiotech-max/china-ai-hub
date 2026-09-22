@@ -54,3 +54,8 @@ sources:
     last_verified: "2026-09-20"
     confidence: high
 ---
+AutoGLM is Zhipu AI's open-source phone-use agent ([Open-AutoGLM](https://github.com/zai-org/Open-AutoGLM)): the vision-language model reads the phone screen, plans a chain-of-thought action sequence, and executes it over ADB (Android), HDC (HarmonyOS NEXT) or WebDriverAgent (iOS). It was the first phone agent with true Phone Use capabilities (2024-10-25); the commercial AutoGLM 2.0 product runs the same approach on cloud virtual phones.
+
+The framework ships as a Python package (PhoneAgent API + CLI) built around AutoGLM-Phone-9B, a 9B VLM from the GLM-4.1V-9B family. The open-source framework is free, and the hosted AutoGLM-Phone API on BigModel was free during its promotional period as of 2026-09-20.
+
+Local deployment needs a GPU with roughly 24GB+ VRAM; Android use requires developer mode and USB debugging, and iOS needs a separate WebDriverAgent setup. See the [Zhipu AI](/companies/zhipu-ai/) profile for the wider GLM ecosystem.

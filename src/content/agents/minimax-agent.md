@@ -46,3 +46,8 @@ sources:
     last_verified: "2026-09-20"
     confidence: high
 ---
+MiniMax Agent is MiniMax's cloud agent platform at agent.minimax.io ("Minimize Effort, Maximize Intelligence"). The web app provides Skills, Schedules, Websites, Research and AI PPT capability areas with persistent memory and evolving skills. It includes always-on cloud agents: MaxClaw, a 24/7 personal assistant reachable from daily apps including Telegram, and MaxHermes (Beta), an agent that grows with you by unlocking new skills.
+
+Billing runs on MiniMax Token Plan subscriptions (Plus $22 / Max $55 / Ultra $132 per month) with 5-hour rolling and weekly quota windows; overflow credits cost 1,000 credits = $1.
+
+See the [MiniMax](/companies/minimax/) profile and the [MiniMax-M3](/models/minimax-m3/) model page.

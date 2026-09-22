@@ -59,3 +59,8 @@ sources:
     last_verified: "2026-09-20"
     confidence: high
 ---
+MiniMax Code is MiniMax's desktop AI agent app and CLI (mcode) for software development, everyday workflows, automation and remote collaboration, available on macOS and Windows. The code is open source under the MIT license.
+
+Billing runs through MiniMax Token Plan subscriptions (Plus $22 / Max $55 / Ultra $132 per month) with 5-hour rolling and weekly quota windows; enterprise API pay-as-you-go is also available.
+
+See the [MiniMax](/companies/minimax/) profile.

@@ -56,3 +56,8 @@ sources:
     last_verified: "2026-09-20"
     confidence: high
 ---
+Qwen Code is the Qwen team's open-source AI coding agent (Apache-2.0) for terminal, editor, desktop, browser and chat. Its multi-protocol TypeScript framework supports OpenAI, Anthropic, Gemini and Qwen APIs plus DeepSeek, MiniMax, Z.AI, Kimi, OpenRouter and local models (Ollama/vLLM).
+
+The CLI is free and the user pays the model provider. Alibaba Cloud billing options include the international Coding Plan (Pro $50/month), the China Token Plan (Personal ¥39–¥499/month, team seats ¥150–¥1,398) or pay-as-you-go Model Studio API keys.
+
+See the [Alibaba Cloud](/companies/alibaba-cloud/) profile.

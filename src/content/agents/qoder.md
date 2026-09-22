@@ -63,3 +63,8 @@ sources:
     last_verified: "2026-09-20"
     confidence: high
 ---
+Qoder is Alibaba Cloud's commercial agentic coding platform: a desktop app (Qoder IDE), CLI (qodercli), JetBrains plugin and Cloud companion. Its Auto tier smart-routes tasks across selectable models — Ultimate, Performance and Efficient carry roughly 1.6x / 1.1x / 0.3x credit multipliers.
+
+International pricing (qoder.com) runs Free $0 (with a one-time 2-week Pro trial), Pro $20/month, Pro+ $60/month and Ultra $200/month, plus Credit Packs; China billing (qoder.cn) goes through Alibaba Cloud plans.
+
+See the [Alibaba Cloud](/companies/alibaba-cloud/) profile.
