@@ -58,3 +58,4 @@ sources:
     last_verified: "2026-09-20"
     confidence: high
 ---
+Graduate-level science question-answering benchmark (expert-level questions in biology, physics, chemistry). The table below lists 5 recorded evaluations across 5 models: deepseek-v4-1-flash, qwen3.8-max, kimi-k3, kimi-k2.5, minimax-m2. All entries are labeled by source type (vendor_reported) with links to the original publication. See the Limitations section for comparability caveats before citing any score.

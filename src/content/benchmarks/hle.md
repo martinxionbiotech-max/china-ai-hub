@@ -66,3 +66,4 @@ sources:
     last_verified: "2026-09-20"
     confidence: high
 ---
+Humanity's Last Exam - a frontier benchmark of expert-level questions across disciplines, often reported with and without tool access. The table below lists 6 recorded evaluations across 6 models: deepseek-v4-1-flash, deepseek-v4-pro, qwen3.8-max, kimi-k3, kimi-k2.5, minimax-m2. All entries are labeled by source type (vendor_reported) with links to the original publication. See the Limitations section for comparability caveats before citing any score.

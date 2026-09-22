@@ -6,7 +6,7 @@ import EntityLinks from '../../components/EntityLinks.astro';
 import EntityFaq from '../../components/EntityFaq.astro';
 import { pricingFaqs, offerCatalogJsonLd, breadcrumbJsonLd } from '../../lib/seo';
 import { getModelIdMap, modelHref } from '../../lib/entity-links';
-import { getCollection, type CollectionEntry } from 'astro:content';
+import { getCollection, render, type CollectionEntry } from 'astro:content';
 
 export async function getStaticPaths() {
   const pricing = await getCollection('pricing');
@@ -19,6 +19,7 @@ interface Props {
 
 const { p } = Astro.props;
 const d = p.data;
+const { Content } = await render(p);
 
 const models = await getCollection('models');
 const modelMap = await getModelIdMap();
@@ -57,6 +58,8 @@ const breadcrumb = breadcrumbJsonLd([
     <p class="text-gray-600 mb-4">
       Currency: {d.currency} · Region: {d.region ?? '—'} · Billing: {d.billing_mode}
     </p>
+
+    <div class="prose prose-slate max-w-none mb-6"><Content /></div>
 
     <div class="mb-4"><LastVerified date={d.last_verified} /></div>
 

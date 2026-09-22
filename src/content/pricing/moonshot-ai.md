@@ -35,3 +35,4 @@ sources:
     last_verified: "2026-09-20"
     confidence: high
 ---
+Moonshot AI Kimi API publishes pay-as-you-go API pricing in USD, covering 4 model(s): kimi-k3, kimi-k2.7-code, kimi-k2.7-code-highspeed, kimi-k2.6. Per-model input, output and cached rates are listed in the table below with links to the official source for each row; Prices change frequently — verify against the official pricing page before making decisions.

@@ -41,3 +41,4 @@ sources:
     last_verified: "2026-09-20"
     confidence: high
 ---
+Zhipu AI Z.AI platform publishes pay-as-you-go API pricing in USD for the International (Z.ai) region, covering 4 model(s): glm-5.3, glm-5.3-flash, glm-5.3-flashx, glm-5.2. Per-model input, output and cached rates are listed in the table below with links to the official source for each row; Prices change frequently — verify against the official pricing page before making decisions.

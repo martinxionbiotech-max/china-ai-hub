@@ -35,3 +35,4 @@ sources:
     last_verified: "2026-09-20"
     confidence: high
 ---
+MiniMax open platform publishes pay-as-you-go API pricing in USD for the International region, covering 3 model(s): minimax-m3, minimax-m2.7, minimax-m2.7-highspeed. Per-model input, output and cached rates are listed in the table below with links to the official source for each row; Prices change frequently — verify against the official pricing page before making decisions.

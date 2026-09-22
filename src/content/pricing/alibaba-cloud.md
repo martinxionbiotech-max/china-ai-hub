@@ -29,3 +29,4 @@ sources:
     last_verified: "2026-09-20"
     confidence: high
 ---
+Alibaba Cloud Model Studio publishes pay-as-you-go API pricing in USD for the Singapore (International) region, covering 3 model(s): qwen3.8-max, qwen3.8-flash, qwen3.7-plus. Per-model input, output and cached rates are listed in the table below with links to the official source for each row; Prices change frequently — verify against the official pricing page before making decisions.

@@ -34,3 +34,4 @@ sources:
     last_verified: "2026-09-20"
     confidence: high
 ---
+DeepSeek API publishes pay-as-you-go API pricing in USD, covering 2 model(s): deepseek-v4-1-flash, deepseek-v4-pro. Per-model input, output and cached rates are listed in the table below with links to the official source for each row; Peak/off-peak differentials are noted per model where applicable. Prices change frequently — verify against the official pricing page before making decisions.

@@ -70,3 +70,4 @@ sources:
     last_verified: "2026-09-20"
     confidence: high
 ---
+Software engineering benchmark built from real-world issues and pull requests. The table below lists 6 recorded evaluations across 6 models: deepseek-v4-1-flash, deepseek-v4-pro, qwen3.8-max, kimi-k3, glm-5.3, glm-5.3-flash. All entries are labeled by source type (vendor_reported) with links to the original publication. See the Limitations section for comparability caveats before citing any score.

@@ -30,3 +30,4 @@ sources:
     last_verified: "2026-09-20"
     confidence: high
 ---
+ByteDance Volcengine Ark publishes pay-as-you-go API pricing in CNY for the china region, covering 3 model(s): doubao-seed-2-1-pro, doubao-seed-evolving, doubao-seed-2-1-turbo. Per-model input, output and cached rates are listed in the table below with links to the official source for each row; Prices change frequently — verify against the official pricing page before making decisions.

@@ -93,3 +93,4 @@ sources:
     last_verified: "2026-09-20"
     confidence: high
 ---
+Terminal-based agent benchmark (shell commands, file operations, package management and other command-line tasks). The table below lists 9 recorded evaluations across 9 models: deepseek-v4-1-flash, deepseek-v4-pro, qwen3.8-max, kimi-k3, minimax-m3, glm-5.3, glm-5.2, kimi-k2.5, minimax-m2. All entries are labeled by source type (vendor_reported) with links to the original publication. See the Limitations section for comparability caveats before citing any score.

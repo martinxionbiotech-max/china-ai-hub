@@ -61,3 +61,4 @@ sources:
     last_verified: "2026-09-20"
     confidence: high
 ---
+Software engineering benchmark family built from real GitHub issues, with Pro, Verified and Multilingual variants. The table below lists 5 recorded evaluations across 4 models: qwen3.8-max, minimax-m3, kimi-k2.5, minimax-m2. All entries are labeled by source type (vendor_reported) with links to the original publication. See the Limitations section for comparability caveats before citing any score.

@@ -37,3 +37,4 @@ sources:
     last_verified: "2026-09-20"
     confidence: high
 ---
+Benchmark of browsing and retrieval ability: locating obscure information using web search and browsing. The table below lists 3 recorded evaluations across 3 models: kimi-k3, kimi-k2.5, minimax-m3. All entries are labeled by source type (vendor_reported) with links to the original publication. See the Limitations section for comparability caveats before citing any score.

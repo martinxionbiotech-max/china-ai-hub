@@ -39,3 +39,4 @@ sources:
     last_verified: "2026-09-20"
     confidence: high
 ---
+Cybersecurity agent benchmark focused on vulnerability discovery tasks. The table below lists 3 recorded evaluations across 3 models: deepseek-v4-1-flash, deepseek-v4-pro, glm-5.3. All entries are labeled by source type (vendor_reported) with links to the original publication. See the Limitations section for comparability caveats before citing any score.

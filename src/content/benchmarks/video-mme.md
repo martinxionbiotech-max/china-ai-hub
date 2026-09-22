@@ -31,3 +31,4 @@ sources:
     last_verified: "2026-09-20"
     confidence: high
 ---
+Video understanding benchmark spanning various video durations and domains. The table below lists 2 recorded evaluations across 2 models: kimi-k3, kimi-k2.5. All entries are labeled by source type (vendor_reported) with links to the original publication. See the Limitations section for comparability caveats before citing any score.
