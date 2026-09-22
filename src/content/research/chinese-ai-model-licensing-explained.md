@@ -38,13 +38,18 @@ sources:
     source_type: official
     last_verified: "2026-09-20"
     confidence: high
-  - source_name: "MiniMax API platform — M3/M2.7 licensing terms"
-    source_url: "https://platform.minimax.io/docs"
+  - source_name: "Hugging Face — MiniMax-M3 model card (Community License)"
+    source_url: "https://huggingface.co/MiniMaxAI/MiniMax-M3"
     source_type: official
     last_verified: "2026-09-20"
     confidence: high
-  - source_name: "GitHub — QwenLM (Qwen3.8-Max License)"
-    source_url: "https://github.com/QwenLM"
+  - source_name: "Hugging Face — MiniMax-M2.7 model card (custom non-commercial license)"
+    source_url: "https://huggingface.co/MiniMaxAI/MiniMax-M2.7"
+    source_type: official
+    last_verified: "2026-09-20"
+    confidence: high
+  - source_name: "Hugging Face — Qwen3.8-2.4T-A95B license file (Qwen3.8-Max License)"
+    source_url: "https://huggingface.co/Qwen/Qwen3.8-2.4T-A95B/raw/main/LICENSE"
     source_type: official
     last_verified: "2026-09-20"
     confidence: high
