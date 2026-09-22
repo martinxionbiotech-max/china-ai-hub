@@ -1,4 +1,6 @@
 ---
+image: "/images/ai/agents-kimi-code.webp"
+image_credit: "AI-generated illustration (Seedream)"
 agent_id: kimi-code
 agent_name: Kimi Code
 company: moonshot-ai

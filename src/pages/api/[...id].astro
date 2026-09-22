@@ -53,6 +53,17 @@ const fmt = (v: boolean | null | undefined) => (v === true ? 'Yes' : v === false
     <h1 class="text-3xl font-bold text-gray-900 mb-2">{d.api_id} API</h1>
     <p class="text-gray-600 mb-4">Provider: <a href={`/companies/${d.provider}/`}>{d.provider}</a> · Type: {d.api_type}</p>
 
+    {d.image && (
+      <figure class="mb-6">
+        <img src={d.image} alt={`${d.api_id} API`} class="w-full rounded-lg" loading="lazy" />
+        {d.image_credit && (
+          <figcaption class="text-xs text-gray-500 mt-1">
+            Image: {d.image_credit}{d.image_source && <> · <a href={d.image_source} rel="noopener" target="_blank">source</a></>}
+          </figcaption>
+        )}
+      </figure>
+    )}
+
     <div class="mb-4"><LastVerified date={d.last_verified} /></div>
 
     <table class="data-table mb-6">

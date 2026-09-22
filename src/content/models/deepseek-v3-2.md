@@ -1,4 +1,6 @@
 ---
+image: "/images/ai/models-deepseek-v3-2.webp"
+image_credit: "AI-generated illustration (Seedream)"
 model_id: deepseek-v3-2
 model_name: DeepSeek-V3.2
 provider: deepseek

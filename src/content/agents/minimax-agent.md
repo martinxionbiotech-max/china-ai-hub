@@ -1,4 +1,6 @@
 ---
+image: "/images/ai/agents-minimax-agent.webp"
+image_credit: "AI-generated illustration (Seedream)"
 agent_id: minimax-agent
 agent_name: MiniMax Agent
 company: minimax

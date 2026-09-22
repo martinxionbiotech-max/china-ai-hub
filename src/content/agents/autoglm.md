@@ -1,4 +1,6 @@
 ---
+image: "/images/ai/agents-autoglm.webp"
+image_credit: "AI-generated illustration (Seedream)"
 agent_id: autoglm
 agent_name: AutoGLM
 company: zhipu-ai

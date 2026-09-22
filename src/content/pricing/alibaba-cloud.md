@@ -1,4 +1,6 @@
 ---
+image: "/images/ai/pricing-alibaba-cloud.webp"
+image_credit: "AI-generated illustration (Seedream)"
 provider_id: alibaba-cloud
 currency: USD
 region: "Singapore (International)"

@@ -1,4 +1,6 @@
 ---
+image: "/images/ai/pricing-moonshot-ai.webp"
+image_credit: "AI-generated illustration (Seedream)"
 provider_id: moonshot-ai
 currency: USD
 billing_mode: pay_as_you_go

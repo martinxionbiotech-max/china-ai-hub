@@ -1,4 +1,6 @@
 ---
+image: "/images/ai/companies-bytedance.webp"
+image_credit: "AI-generated illustration (Seedream)"
 company_id: bytedance
 company_name: ByteDance
 description: "ByteDance (Doubao): the consumer AI assistant Doubao, Volcengine Ark AI API platform, Seedance video and Seedream image generation. Foundation models Doubao Seed 2.1 Pro / Evolving / Turbo."

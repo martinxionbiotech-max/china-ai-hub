@@ -1,4 +1,6 @@
 ---
+image: "/images/ai/benchmarks-video-mme.webp"
+image_credit: "AI-generated illustration (Seedream)"
 benchmark_id: video-mme
 benchmark_name: Video-MME
 description: "Video understanding benchmark spanning various video durations and domains."

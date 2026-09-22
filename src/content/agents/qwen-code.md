@@ -1,4 +1,6 @@
 ---
+image: "/images/ai/agents-qwen-code.webp"
+image_credit: "AI-generated illustration (Seedream)"
 agent_id: qwen-code
 agent_name: Qwen Code
 company: alibaba-cloud

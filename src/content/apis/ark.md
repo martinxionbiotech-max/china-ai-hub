@@ -1,4 +1,6 @@
 ---
+image: "/images/ai/apis-ark.webp"
+image_credit: "AI-generated illustration (Seedream)"
 api_id: ark
 description: "ByteDance's Volcengine Ark AI API platform (ark.cn-beijing.volces.com): OpenAI-compatible endpoints for the Doubao Seed 2.1 family (Pro / Evolving / Turbo) with up to 1M-token context, vision, tool calling and structured output. Flagship rate limits 500 RPM / 1,000,000 TPM; Bearer API key auth."
 provider: bytedance

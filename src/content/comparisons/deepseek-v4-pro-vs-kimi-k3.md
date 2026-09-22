@@ -1,4 +1,6 @@
 ---
+image: "/images/ai/comparisons-deepseek-v4-pro-vs-kimi-k3.webp"
+image_credit: "AI-generated illustration (Seedream)"
 title: "DeepSeek-V4-Pro vs Kimi K3: Price, Output Length and Licensing"
 description: "Evidence-based comparison of DeepSeek-V4-Pro and Kimi K3: API pricing, context window, maximum output, capabilities, licenses and benchmark records from the China AI Hub database."
 entities:

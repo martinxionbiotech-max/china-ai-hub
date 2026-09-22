@@ -1,4 +1,6 @@
 ---
+image: "/images/ai/models-doubao-seed-2-1-pro.webp"
+image_credit: "AI-generated illustration (Seedream)"
 model_id: doubao-seed-2-1-pro
 model_name: Doubao Seed 2.1 Pro
 provider: bytedance

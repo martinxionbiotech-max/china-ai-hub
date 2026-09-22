@@ -1,4 +1,6 @@
 ---
+image: "/images/ai/companies-deepseek.webp"
+image_credit: "AI-generated illustration (Seedream)"
 company_id: deepseek
 company_name: DeepSeek
 description: "DeepSeek (Hangzhou): DeepSeek Chat (web and mobile), DeepSeek API platform, and DeepSeek Harness developer preview. Foundation models DeepSeek-V4-Pro and V4.1-Flash; open model DeepSeek-V3-2."

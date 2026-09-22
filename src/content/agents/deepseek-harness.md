@@ -1,4 +1,6 @@
 ---
+image: "/images/ai/agents-deepseek-harness.webp"
+image_credit: "AI-generated illustration (Seedream)"
 agent_id: deepseek-harness
 agent_name: DeepSeek Harness
 company: deepseek

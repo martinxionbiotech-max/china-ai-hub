@@ -76,6 +76,17 @@ const fmt = (v: boolean | null | undefined) => (v === true ? 'Yes' : v === false
       {d.release_date && <> · Released: {d.release_date}</>}
     </p>
 
+    {d.image && (
+      <figure class="mb-6">
+        <img src={d.image} alt={d.model_name} class="w-full rounded-lg" loading="lazy" />
+        {d.image_credit && (
+          <figcaption class="text-xs text-gray-500 mt-1">
+            Image: {d.image_credit}{d.image_source && <> · <a href={d.image_source} rel="noopener" target="_blank">source</a></>}
+          </figcaption>
+        )}
+      </figure>
+    )}
+
     <div class="mb-4 flex items-center gap-2 text-sm">
       <LastVerified date={d.last_verified} />
     </div>

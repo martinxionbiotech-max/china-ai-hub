@@ -55,6 +55,17 @@ const apiLinks = d.api.map((a) => ({ href: `/api/${a}/`, label: `${a} API` }));
     <h1 class="text-3xl font-bold text-gray-900 mb-2">{d.company_name}</h1>
     {d.aliases.length > 0 && <p class="text-sm text-gray-500 mb-4">Also known as: {d.aliases.join(', ')}</p>}
 
+    {d.image && (
+      <figure class="mb-6">
+        <img src={d.image} alt={d.company_name} class="w-full rounded-lg" loading="lazy" />
+        {d.image_credit && (
+          <figcaption class="text-xs text-gray-500 mt-1">
+            Image: {d.image_credit}{d.image_source && <> · <a href={d.image_source} rel="noopener" target="_blank">source</a></>}
+          </figcaption>
+        )}
+      </figure>
+    )}
+
     <div class="mb-4"><LastVerified date={d.last_verified} /></div>
 
     <table class="data-table mb-6">

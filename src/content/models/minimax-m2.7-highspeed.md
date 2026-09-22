@@ -1,4 +1,6 @@
 ---
+image: "/images/ai/models-minimax-m2.7-highspeed.webp"
+image_credit: "AI-generated illustration (Seedream)"
 model_id: minimax-m2.7-highspeed
 model_name: MiniMax-M2.7-Highspeed
 provider: minimax

@@ -1,4 +1,6 @@
 ---
+image: "/images/ai/models-doubao-seed-evolving.webp"
+image_credit: "AI-generated illustration (Seedream)"
 model_id: doubao-seed-evolving
 model_name: Doubao Seed Evolving
 provider: bytedance

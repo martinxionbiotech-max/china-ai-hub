@@ -1,4 +1,6 @@
 ---
+image: "/images/ai/apis-model-studio.webp"
+image_credit: "AI-generated illustration (Seedream)"
 api_id: model-studio
 description: "Alibaba Cloud Model Studio (DashScope-compatible endpoint dashscope-us.aliyuncs.com): Qwen3.8-Max and Qwen3.8-Flash with ~968K context, vision and structured output. Region-bound API keys; global regions (Frankfurt / US / Tokyo / Hong Kong) at 30,000 RPM and 5,000,000 TPM."
 provider: alibaba-cloud

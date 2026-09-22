@@ -1,4 +1,6 @@
 ---
+image: "/images/ai/benchmarks-mmmu-pro.webp"
+image_credit: "AI-generated illustration (Seedream)"
 benchmark_id: mmmu-pro
 benchmark_name: MMMU-Pro
 description: "Multimodal, multi-discipline understanding benchmark with college-level questions requiring reasoning."

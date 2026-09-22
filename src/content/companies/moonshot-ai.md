@@ -1,4 +1,6 @@
 ---
+image: "/images/ai/companies-moonshot-ai.webp"
+image_credit: "AI-generated illustration (Seedream)"
 company_id: moonshot-ai
 company_name: Moonshot AI
 description: "Moonshot AI (Beijing, founded spring 2023): Kimi chat assistant, Kimi API Platform, Kimi Work and Kimi Code. Foundation model Kimi K3."

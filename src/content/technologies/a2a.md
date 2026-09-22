@@ -1,4 +1,6 @@
 ---
+image: "/images/ai/technologies-a2a.webp"
+image_credit: "AI-generated illustration (Seedream)"
 slug: a2a
 title: A2A
 definition: "Agent2Agent (A2A) is an open protocol announced by Google in April 2025 that lets AI agents from different vendors and frameworks discover, communicate and collaborate with each other."

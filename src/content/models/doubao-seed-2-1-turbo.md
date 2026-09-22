@@ -1,4 +1,6 @@
 ---
+image: "/images/ai/models-doubao-seed-2-1-turbo.webp"
+image_credit: "AI-generated illustration (Seedream)"
 model_id: doubao-seed-2-1-turbo
 model_name: Doubao Seed 2.1 Turbo
 provider: bytedance

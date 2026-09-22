@@ -1,4 +1,6 @@
 ---
+image: "/images/ai/apis-minimax.webp"
+image_credit: "AI-generated illustration (Seedream)"
 api_id: minimax
 description: "MiniMax's API platform with an Anthropic-compatible endpoint (api.minimax.io/anthropic): MiniMax-M3 (1M context) plus M2.7 and M2.7-HighSpeed, with vision, streaming and tool calling. Serves international and China regions; ANTHROPIC_API_KEY-style auth."
 provider: minimax

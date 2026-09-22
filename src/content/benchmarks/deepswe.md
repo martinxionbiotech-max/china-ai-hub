@@ -1,4 +1,6 @@
 ---
+image: "/images/ai/benchmarks-deepswe.webp"
+image_credit: "AI-generated illustration (Seedream)"
 benchmark_id: deepswe
 benchmark_name: DeepSWE
 description: "Software engineering benchmark built from real-world issues and pull requests."

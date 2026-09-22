@@ -1,4 +1,6 @@
 ---
+image: "/images/ai/models-kimi-k2.7-code.webp"
+image_credit: "AI-generated illustration (Seedream)"
 model_id: kimi-k2.7-code
 model_name: Kimi K2.7 Code
 provider: moonshot-ai

@@ -1,4 +1,6 @@
 ---
+image: "/images/ai/technologies-reasoning-models.webp"
+image_credit: "AI-generated illustration (Seedream)"
 slug: reasoning-models
 title: Reasoning Models
 definition: "A reasoning model is a language model trained to produce explicit intermediate reasoning — typically chain-of-thought steps — before giving a final answer, usually via reinforcement learning on verifiable tasks rather than supervised imitation alone."

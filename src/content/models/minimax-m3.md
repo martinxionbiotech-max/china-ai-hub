@@ -1,4 +1,6 @@
 ---
+image: "/images/ai/models-minimax-m3.webp"
+image_credit: "AI-generated illustration (Seedream)"
 model_id: minimax-m3
 model_name: MiniMax-M3
 provider: minimax

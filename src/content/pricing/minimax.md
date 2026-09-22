@@ -1,4 +1,6 @@
 ---
+image: "/images/ai/pricing-minimax.webp"
+image_credit: "AI-generated illustration (Seedream)"
 provider_id: minimax
 currency: USD
 region: "International"

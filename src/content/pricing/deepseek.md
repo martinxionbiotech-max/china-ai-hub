@@ -1,4 +1,6 @@
 ---
+image: "/images/ai/pricing-deepseek.webp"
+image_credit: "AI-generated illustration (Seedream)"
 provider_id: deepseek
 currency: USD
 billing_mode: pay_as_you_go

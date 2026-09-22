@@ -1,4 +1,6 @@
 ---
+image: "/images/ai/benchmarks-hle.webp"
+image_credit: "AI-generated illustration (Seedream)"
 benchmark_id: hle
 benchmark_name: HLE
 description: "Humanity's Last Exam - a frontier benchmark of expert-level questions across disciplines, often reported with and without tool access."

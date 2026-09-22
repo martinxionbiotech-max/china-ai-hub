@@ -1,4 +1,6 @@
 ---
+image: "/images/ai/benchmarks-gpqa-diamond.webp"
+image_credit: "AI-generated illustration (Seedream)"
 benchmark_id: gpqa-diamond
 benchmark_name: GPQA Diamond
 description: "Graduate-level science question-answering benchmark (expert-level questions in biology, physics, chemistry)."

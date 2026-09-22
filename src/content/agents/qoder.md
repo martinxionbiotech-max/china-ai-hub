@@ -1,4 +1,6 @@
 ---
+image: "/images/ai/agents-qoder.webp"
+image_credit: "AI-generated illustration (Seedream)"
 agent_id: qoder
 agent_name: Qoder
 company: alibaba-cloud

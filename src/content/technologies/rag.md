@@ -1,4 +1,6 @@
 ---
+image: "/images/ai/technologies-rag.webp"
+image_credit: "AI-generated illustration (Seedream)"
 slug: rag
 title: RAG
 definition: "Retrieval-Augmented Generation (RAG) is a pattern where a language model's answers are grounded in documents fetched by a retrieval system at query time, combining the fluency of generation with evidence from an external corpus."

@@ -1,4 +1,6 @@
 ---
+image: "/images/ai/benchmarks-browsecomp.webp"
+image_credit: "AI-generated illustration (Seedream)"
 benchmark_id: browsecomp
 benchmark_name: BrowseComp
 description: "Benchmark of browsing and retrieval ability: locating obscure information using web search and browsing."

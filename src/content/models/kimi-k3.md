@@ -1,4 +1,6 @@
 ---
+image: "/images/ai/models-kimi-k3.webp"
+image_credit: "AI-generated illustration (Seedream)"
 model_id: kimi-k3
 model_name: Kimi K3
 provider: moonshot-ai

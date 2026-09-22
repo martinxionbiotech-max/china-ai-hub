@@ -1,4 +1,6 @@
 ---
+image: "/images/ai/models-deepseek-v4-1-flash.webp"
+image_credit: "AI-generated illustration (Seedream)"
 model_id: deepseek-v4-1-flash
 model_name: DeepSeek-V4.1-Flash
 provider: deepseek

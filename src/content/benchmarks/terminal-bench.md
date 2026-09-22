@@ -1,4 +1,6 @@
 ---
+image: "/images/ai/benchmarks-terminal-bench.webp"
+image_credit: "AI-generated illustration (Seedream)"
 benchmark_id: terminal-bench
 benchmark_name: Terminal-Bench
 description: "Terminal-based agent benchmark (shell commands, file operations, package management and other command-line tasks)."

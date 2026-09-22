@@ -1,4 +1,6 @@
 ---
+image: "/images/ai/pricing-bytedance.webp"
+image_credit: "AI-generated illustration (Seedream)"
 provider_id: bytedance
 currency: CNY
 region: china

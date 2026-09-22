@@ -1,4 +1,6 @@
 ---
+image: "/images/ai/benchmarks-swe-bench.webp"
+image_credit: "AI-generated illustration (Seedream)"
 benchmark_id: swe-bench
 benchmark_name: SWE-bench
 description: "Software engineering benchmark family built from real GitHub issues, with Pro, Verified and Multilingual variants."

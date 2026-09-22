@@ -48,6 +48,17 @@ const breadcrumb = breadcrumbJsonLd([
     <h1 class="text-3xl font-bold text-gray-900 mb-2">{d.benchmark_name}{d.version ? ` v${d.version}` : ''}</h1>
     {d.description && <p class="text-gray-600 mb-4">{d.description}</p>}
 
+    {d.image && (
+      <figure class="mb-6">
+        <img src={d.image} alt={d.benchmark_name} class="w-full rounded-lg" loading="lazy" />
+        {d.image_credit && (
+          <figcaption class="text-xs text-gray-500 mt-1">
+            Image: {d.image_credit}{d.image_source && <> · <a href={d.image_source} rel="noopener" target="_blank">source</a></>}
+          </figcaption>
+        )}
+      </figure>
+    )}
+
     <div class="prose prose-slate max-w-none mb-6"><Content /></div>
 
     <div class="mb-4"><LastVerified date={d.last_verified} /></div>

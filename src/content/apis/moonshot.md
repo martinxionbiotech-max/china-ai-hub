@@ -1,4 +1,6 @@
 ---
+image: "/images/ai/apis-moonshot.webp"
+image_credit: "AI-generated illustration (Seedream)"
 api_id: moonshot
 description: "Moonshot AI's Kimi API platform (api.moonshot.ai/v1): Kimi K3 with 1M-token input and output context, plus K2.7-Code and K2.7-Code-HighSpeed, with vision, streaming and structured output. MOONSHOT_API_KEY Bearer auth."
 provider: moonshot-ai

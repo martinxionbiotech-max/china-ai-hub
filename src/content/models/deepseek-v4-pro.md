@@ -1,4 +1,6 @@
 ---
+image: "/images/ai/models-deepseek-v4-pro.webp"
+image_credit: "AI-generated illustration (Seedream)"
 model_id: deepseek-v4-pro
 model_name: DeepSeek-V4-Pro
 provider: deepseek

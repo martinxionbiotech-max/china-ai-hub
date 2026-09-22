@@ -1,4 +1,6 @@
 ---
+image: "/images/ai/technologies-quantization.webp"
+image_credit: "AI-generated illustration (Seedream)"
 slug: quantization
 title: Quantization
 definition: "Quantization compresses model weights and activations from high-precision formats (FP16/BF16) to lower precision (8-bit, 4-bit or mixed), shrinking memory and compute requirements — the standard way to run large models on limited hardware."

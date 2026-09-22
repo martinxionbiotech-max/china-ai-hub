@@ -1,4 +1,6 @@
 ---
+image: "/images/ai/agents-doubao-app.webp"
+image_credit: "AI-generated illustration (Seedream)"
 agent_id: doubao-app
 agent_name: Doubao
 company: bytedance

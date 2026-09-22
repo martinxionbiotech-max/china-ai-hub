@@ -1,4 +1,6 @@
 ---
+image: "/images/ai/models-qwen3.8-flash.webp"
+image_credit: "AI-generated illustration (Seedream)"
 model_id: qwen3.8-flash
 model_name: Qwen3.8-Flash
 provider: alibaba-cloud

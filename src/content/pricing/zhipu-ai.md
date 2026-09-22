@@ -1,4 +1,6 @@
 ---
+image: "/images/ai/pricing-zhipu-ai.webp"
+image_credit: "AI-generated illustration (Seedream)"
 provider_id: zhipu-ai
 currency: USD
 region: "International (Z.ai)"

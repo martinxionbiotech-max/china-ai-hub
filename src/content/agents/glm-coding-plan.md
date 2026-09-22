@@ -1,4 +1,6 @@
 ---
+image: "/images/ai/agents-glm-coding-plan.webp"
+image_credit: "AI-generated illustration (Seedream)"
 agent_id: glm-coding-plan
 agent_name: GLM Coding Plan
 company: zhipu-ai

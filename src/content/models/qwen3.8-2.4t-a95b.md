@@ -1,4 +1,6 @@
 ---
+image: "/images/ai/models-qwen3.8-2.4t-a95b.webp"
+image_credit: "AI-generated illustration (Seedream)"
 model_id: qwen3.8-2.4t-a95b
 model_name: Qwen3.8-2.4T-A95B
 provider: alibaba-cloud

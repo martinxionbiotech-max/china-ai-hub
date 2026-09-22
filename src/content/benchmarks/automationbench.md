@@ -1,4 +1,6 @@
 ---
+image: "/images/ai/benchmarks-automationbench.webp"
+image_credit: "AI-generated illustration (Seedream)"
 benchmark_id: automationbench
 benchmark_name: AutomationBench
 description: "Benchmark of computer-use automation tasks."

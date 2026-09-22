@@ -1,4 +1,6 @@
 ---
+image: "/images/ai/benchmarks-cybergym.webp"
+image_credit: "AI-generated illustration (Seedream)"
 benchmark_id: cybergym
 benchmark_name: CyberGym
 description: "Cybersecurity agent benchmark focused on vulnerability discovery tasks."

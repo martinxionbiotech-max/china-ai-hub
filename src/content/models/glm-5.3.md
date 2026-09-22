@@ -1,4 +1,6 @@
 ---
+image: "/images/ai/models-glm-5.3.webp"
+image_credit: "AI-generated illustration (Seedream)"
 model_id: glm-5.3
 model_name: GLM-5.3
 provider: zhipu-ai

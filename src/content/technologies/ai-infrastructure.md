@@ -1,4 +1,6 @@
 ---
+image: "/images/ai/technologies-ai-infrastructure.webp"
+image_credit: "AI-generated illustration (Seedream)"
 slug: ai-infrastructure
 title: AI Infrastructure
 definition: "AI infrastructure is the systems layer beneath models — compute clusters, storage, networking, and the serving software — that turns raw hardware into a service developers can call."

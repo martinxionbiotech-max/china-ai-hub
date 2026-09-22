@@ -1,4 +1,6 @@
 ---
+image: "/images/ai/technologies-computer-use.webp"
+image_credit: "AI-generated illustration (Seedream)"
 slug: computer-use
 title: Computer Use
 definition: "Computer use is a model capability in which the model operates a graphical computer the way a person does — viewing the screen, moving the mouse and typing — enabling it to drive arbitrary software without a custom API."

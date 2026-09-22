@@ -1,4 +1,6 @@
 ---
+image: "/images/ai/guides-open-weight-vs-api.webp"
+image_credit: "AI-generated illustration (Seedream)"
 title: "Open-Weight vs API: Trade-offs for Chinese Models"
 description: "A practical guide to choosing between open-weight self-hosting and API access for Chinese AI models, using license data and prices from the China AI Hub database."
 published_date: "2026-09-22"

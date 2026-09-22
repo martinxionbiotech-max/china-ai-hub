@@ -1,4 +1,6 @@
 ---
+image: "/images/ai/technologies-ai-agents.webp"
+image_credit: "AI-generated illustration (Seedream)"
 slug: ai-agents
 title: AI Agents
 definition: "An AI agent is a system in which a language model acts autonomously toward a goal — planning, calling tools, observing results and iterating — rather than producing a single response to a single prompt."

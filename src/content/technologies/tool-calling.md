@@ -1,4 +1,6 @@
 ---
+image: "/images/ai/technologies-tool-calling.webp"
+image_credit: "AI-generated illustration (Seedream)"
 slug: tool-calling
 title: Tool Calling
 definition: "Tool calling is a model capability where the model, instead of only writing text, emits structured requests to invoke external tools — search, calculators, code execution, APIs — and incorporates their results into its response."
