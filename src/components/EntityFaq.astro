@@ -1,0 +1,30 @@
+---
+interface Props {
+  faqs: { q: string; a: string }[];
+}
+const { faqs } = Astro.props;
+---
+{
+  faqs.length > 0 && (
+    <section class="mb-8" aria-label="Frequently asked questions">
+      {faqs.map((f) => (
+        <div class="mb-5">
+          <h2 class="text-lg font-semibold text-gray-900 mb-1">{f.q}</h2>
+          <p class="text-gray-700">{f.a}</p>
+        </div>
+      ))}
+      <script
+        type="application/ld+json"
+        set:html={JSON.stringify({
+          '@context': 'https://schema.org',
+          '@type': 'FAQPage',
+          mainEntity: faqs.map((f) => ({
+            '@type': 'Question',
+            name: f.q,
+            acceptedAnswer: { '@type': 'Answer', text: f.a },
+          })),
+        })}
+      />
+    </section>
+  )
+}

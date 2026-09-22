@@ -2,6 +2,8 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import SourceBadge from '../../components/SourceBadge.astro';
 import LastVerified from '../../components/LastVerified.astro';
+import EntityFaq from '../../components/EntityFaq.astro';
+import { benchmarkFaqs, datasetJsonLd, breadcrumbJsonLd } from '../../lib/seo';
 import { getCollection, type CollectionEntry } from 'astro:content';
 
 export async function getStaticPaths() {
@@ -15,6 +17,20 @@ interface Props {
 
 const { b } = Astro.props;
 const d = b.data;
+
+const pageUrl = new URL(Astro.url.pathname, Astro.site).href;
+const faqs = benchmarkFaqs(d);
+const jsonLd = datasetJsonLd({
+  id: pageUrl,
+  name: `${d.benchmark_name}${d.version ? ` v${d.version}` : ''}`,
+  description: `${d.benchmark_name}${d.version ? ` v${d.version}` : ''}: evaluation method and Chinese AI model results, with source types and dates.`,
+  dateModified: d.last_verified,
+});
+const breadcrumb = breadcrumbJsonLd([
+  { name: 'Home', url: new URL('/', Astro.site).href },
+  { name: 'Benchmarks', url: new URL('/benchmarks/', Astro.site).href },
+  { name: d.benchmark_name, url: pageUrl },
+]);
 ---
 
 <BaseLayout
@@ -23,6 +39,8 @@ const d = b.data;
   type="article"
 >
   <article class="max-w-none">
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+    <script type="application/ld+json" set:html={JSON.stringify(breadcrumb)} />
     <p class="text-sm text-gray-500 mb-1"><a href="/benchmarks/">Benchmarks</a> / {d.benchmark_name}</p>
     <h1 class="text-3xl font-bold text-gray-900 mb-2">{d.benchmark_name}{d.version ? ` v${d.version}` : ''}</h1>
     {d.description && <p class="text-gray-600 mb-4">{d.description}</p>}
@@ -74,5 +92,7 @@ const d = b.data;
     <div class="flex flex-wrap gap-2">
       {d.sources.map((s) => <SourceBadge source={s} />)}
     </div>
+
+    <EntityFaq faqs={faqs} />
   </article>
 </BaseLayout>

@@ -3,6 +3,8 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import SourceBadge from '../../components/SourceBadge.astro';
 import LastVerified from '../../components/LastVerified.astro';
 import EntityLinks from '../../components/EntityLinks.astro';
+import EntityFaq from '../../components/EntityFaq.astro';
+import { pricingFaqs, offerCatalogJsonLd, breadcrumbJsonLd } from '../../lib/seo';
 import { getCollection, type CollectionEntry } from 'astro:content';
 
 export async function getStaticPaths() {
@@ -16,6 +18,29 @@ interface Props {
 
 const { p } = Astro.props;
 const d = p.data;
+
+const models = await getCollection('models');
+const modelIds = new Set(models.map((m) => m.id));
+
+const pageUrl = new URL(Astro.url.pathname, Astro.site).href;
+const faqs = pricingFaqs(d);
+const jsonLd = offerCatalogJsonLd({
+  id: pageUrl,
+  name: `${d.provider_id} API Pricing`,
+  description: `${d.provider_id} API pricing: input, output, cached and batch prices per 1M tokens with history and official sources.`,
+  offers: d.models.map((m) => ({
+    model: m.model,
+    modelUrl: modelIds.has(m.model) ? new URL(`/models/${m.model}/`, Astro.site).href : undefined,
+    input: m.input_price_per_1m,
+    output: m.output_price_per_1m,
+    currency: d.currency,
+  })),
+});
+const breadcrumb = breadcrumbJsonLd([
+  { name: 'Home', url: new URL('/', Astro.site).href },
+  { name: 'Pricing', url: new URL('/pricing/', Astro.site).href },
+  { name: `${d.provider_id} API Pricing`, url: pageUrl },
+]);
 ---
 
 <BaseLayout
@@ -24,6 +49,8 @@ const d = p.data;
   type="article"
 >
   <article class="max-w-none">
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+    <script type="application/ld+json" set:html={JSON.stringify(breadcrumb)} />
     <p class="text-sm text-gray-500 mb-1"><a href="/pricing/">Pricing</a> / {d.provider_id}</p>
     <h1 class="text-3xl font-bold text-gray-900 mb-2">{d.provider_id} API Pricing</h1>
     <p class="text-gray-600 mb-4">
@@ -96,5 +123,7 @@ const d = p.data;
     <p class="text-xs text-gray-500 mt-2">
       Prices change frequently. Verify against the official pricing page before making decisions.
     </p>
+
+    <EntityFaq faqs={faqs} />
   </article>
 </BaseLayout>

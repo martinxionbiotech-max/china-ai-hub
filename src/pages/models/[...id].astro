@@ -3,6 +3,8 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import SourceBadge from '../../components/SourceBadge.astro';
 import LastVerified from '../../components/LastVerified.astro';
 import EntityLinks from '../../components/EntityLinks.astro';
+import EntityFaq from '../../components/EntityFaq.astro';
+import { modelFaqs, softwareApplicationJsonLd, breadcrumbJsonLd } from '../../lib/seo';
 import { getCollection, render, type CollectionEntry } from 'astro:content';
 
 export async function getStaticPaths() {
@@ -17,6 +19,23 @@ interface Props {
 const { model } = Astro.props;
 const d = model.data;
 const { Content } = await render(model);
+
+const pageUrl = new URL(Astro.url.pathname, Astro.site).href;
+const providerUrl = new URL(`/companies/${d.provider}/`, Astro.site).href;
+const faqs = modelFaqs(d);
+const jsonLd = softwareApplicationJsonLd({
+  id: pageUrl,
+  name: d.model_name,
+  description: `${d.model_name} by ${d.provider}: context window, capabilities, pricing, benchmarks and verified sources.`,
+  provider: d.provider,
+  providerUrl,
+  datePublished: d.release_date,
+});
+const breadcrumb = breadcrumbJsonLd([
+  { name: 'Home', url: new URL('/', Astro.site).href },
+  { name: 'Models', url: new URL('/models/', Astro.site).href },
+  { name: d.model_name, url: pageUrl },
+]);
 
 const caps = [
   ['Reasoning', d.capabilities.reasoning],
@@ -45,6 +64,8 @@ const fmt = (v: boolean | null | undefined) => (v === true ? 'Yes' : v === false
   type="article"
 >
   <article class="max-w-none">
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+    <script type="application/ld+json" set:html={JSON.stringify(breadcrumb)} />
     <p class="text-sm text-gray-500 mb-1">
       <a href="/models/">Models</a> / {d.model_name}
     </p>
@@ -169,5 +190,7 @@ const fmt = (v: boolean | null | undefined) => (v === true ? 'Yes' : v === false
     <p class="text-xs text-gray-500">
       Confidence and source hierarchy per the <a href="/about/">sourcing policy</a>. Facts change; check the source before relying on this page.
     </p>
+
+    <EntityFaq faqs={faqs} />
   </article>
 </BaseLayout>

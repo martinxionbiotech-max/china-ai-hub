@@ -3,6 +3,8 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import SourceBadge from '../../components/SourceBadge.astro';
 import LastVerified from '../../components/LastVerified.astro';
 import EntityLinks from '../../components/EntityLinks.astro';
+import EntityFaq from '../../components/EntityFaq.astro';
+import { apiFaqs, apiReferenceJsonLd, breadcrumbJsonLd } from '../../lib/seo';
 import { getCollection, render, type CollectionEntry } from 'astro:content';
 
 export async function getStaticPaths() {
@@ -18,6 +20,23 @@ const { api } = Astro.props;
 const d = api.data;
 const { Content } = await render(api);
 
+const pageUrl = new URL(Astro.url.pathname, Astro.site).href;
+const providerUrl = new URL(`/companies/${d.provider}/`, Astro.site).href;
+const faqs = apiFaqs(d);
+const jsonLd = apiReferenceJsonLd({
+  id: pageUrl,
+  name: `${d.api_id} API`,
+  description: `${d.api_id} API by ${d.provider}: endpoint, authentication, capabilities, context limits, regions and pricing.`,
+  provider: d.provider,
+  providerUrl,
+  documentation: d.documentation,
+});
+const breadcrumb = breadcrumbJsonLd([
+  { name: 'Home', url: new URL('/', Astro.site).href },
+  { name: 'API', url: new URL('/api/', Astro.site).href },
+  { name: `${d.api_id} API`, url: pageUrl },
+]);
+
 const fmt = (v: boolean | null | undefined) => (v === true ? 'Yes' : v === false ? 'No' : 'Unknown');
 ---
 
@@ -27,6 +46,8 @@ const fmt = (v: boolean | null | undefined) => (v === true ? 'Yes' : v === false
   type="article"
 >
   <article class="max-w-none">
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+    <script type="application/ld+json" set:html={JSON.stringify(breadcrumb)} />
     <p class="text-sm text-gray-500 mb-1"><a href="/api/">API</a> / {d.api_id}</p>
     <h1 class="text-3xl font-bold text-gray-900 mb-2">{d.api_id} API</h1>
     <p class="text-gray-600 mb-4">Provider: <a href={`/companies/${d.provider}/`}>{d.provider}</a> · Type: {d.api_type}</p>
@@ -88,5 +109,7 @@ const fmt = (v: boolean | null | undefined) => (v === true ? 'Yes' : v === false
     <div class="flex flex-wrap gap-2">
       {d.sources.map((s) => <SourceBadge source={s} />)}
     </div>
+
+    <EntityFaq faqs={faqs} />
   </article>
 </BaseLayout>

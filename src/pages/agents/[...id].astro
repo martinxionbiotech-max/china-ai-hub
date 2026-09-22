@@ -3,6 +3,8 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import SourceBadge from '../../components/SourceBadge.astro';
 import LastVerified from '../../components/LastVerified.astro';
 import EntityLinks from '../../components/EntityLinks.astro';
+import EntityFaq from '../../components/EntityFaq.astro';
+import { agentFaqs, softwareApplicationJsonLd, breadcrumbJsonLd } from '../../lib/seo';
 import { getCollection, render, type CollectionEntry } from 'astro:content';
 
 export async function getStaticPaths() {
@@ -17,6 +19,22 @@ interface Props {
 const { agent } = Astro.props;
 const d = agent.data;
 const { Content } = await render(agent);
+
+const pageUrl = new URL(Astro.url.pathname, Astro.site).href;
+const providerUrl = new URL(`/companies/${d.company}/`, Astro.site).href;
+const faqs = agentFaqs(d);
+const jsonLd = softwareApplicationJsonLd({
+  id: pageUrl,
+  name: d.agent_name,
+  description: d.description,
+  provider: d.company,
+  providerUrl,
+});
+const breadcrumb = breadcrumbJsonLd([
+  { name: 'Home', url: new URL('/', Astro.site).href },
+  { name: 'Agents', url: new URL('/agents/', Astro.site).href },
+  { name: d.agent_name, url: pageUrl },
+]);
 
 const fmt = (v: boolean | null | undefined) => (v === true ? 'Yes' : v === false ? 'No' : 'Unknown');
 const caps = [
@@ -37,6 +55,8 @@ const caps = [
   type="article"
 >
   <article class="max-w-none">
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+    <script type="application/ld+json" set:html={JSON.stringify(breadcrumb)} />
     <p class="text-sm text-gray-500 mb-1"><a href="/agents/">Agents</a> / {d.agent_name}</p>
     <h1 class="text-3xl font-bold text-gray-900 mb-2">{d.agent_name}</h1>
     <p class="text-gray-600 mb-4">{d.description}</p>
@@ -96,5 +116,7 @@ const caps = [
     <div class="flex flex-wrap gap-2">
       {d.sources.map((s) => <SourceBadge source={s} />)}
     </div>
+
+    <EntityFaq faqs={faqs} />
   </article>
 </BaseLayout>
