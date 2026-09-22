@@ -16,6 +16,9 @@ related_entities:
   - qwen-agent
   - qwen-code
 author_view: true
+image: "/images/cc/humanoid-robot.webp"
+image_credit: "Syced / CC0, via Wikimedia Commons"
+image_source: "https://commons.wikimedia.org/wiki/File:Humanoid_robot_at_Science_Square_Tsukuba.jpg"
 sources:
   - source_name: "Open-AutoGLM GitHub repository"
     source_url: "https://github.com/zai-org/Open-AutoGLM"

@@ -13,6 +13,9 @@ related_entities:
   - kimi-k3
   - minimax-m3
 author_view: true
+image: "/images/cc/data-center-hexagon.webp"
+image_credit: "Wikideas1 / CC0, via Wikimedia Commons"
+image_source: "https://commons.wikimedia.org/wiki/File:Space_data_center_hexagon.webp"
 sources:
   - source_name: "DeepSeek API docs — Models & Pricing"
     source_url: "https://api-docs.deepseek.com/quick_start/pricing"

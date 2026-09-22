@@ -16,6 +16,9 @@ related_entities:
   - kimi-k3
   - glm-5.3
 author_view: true
+image: "/images/cc/code-screen.jpg"
+image_credit: "Sai Kiran Anagani / CC0, via Wikimedia Commons"
+image_source: "https://commons.wikimedia.org/wiki/File:CSS_code_on_a_screen_(Unsplash).jpg"
 sources:
   - source_name: "DeepSeek API Change Log"
     source_url: "https://api-docs.deepseek.com/updates"

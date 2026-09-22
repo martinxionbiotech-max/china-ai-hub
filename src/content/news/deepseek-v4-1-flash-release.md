@@ -5,6 +5,9 @@ published_date: "2026-09-10"
 type: model_release
 trigger_updates:
   - deepseek-v4-1-flash
+image: "/images/cc/ai-chip.webp"
+image_credit: "mikemacmarketing / CC BY 2.0, via Wikimedia Commons"
+image_source: "https://commons.wikimedia.org/wiki/File:Artificial_Neural_Network_with_Chip.jpg"
 sources:
   - source_name: "DeepSeek API Change Log — 2026-09-10"
     source_url: "https://api-docs.deepseek.com/updates"

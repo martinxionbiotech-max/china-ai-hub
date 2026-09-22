@@ -11,6 +11,9 @@ related_entities:
   - swe-bench
   - deepswe
 author_view: true
+image: "/images/cc/neural-glow.webp"
+image_credit: "Michael Gaylard / CC BY 4.0, via Wikimedia Commons"
+image_source: "https://commons.wikimedia.org/wiki/File:Digital_Abstraction_Neural_Network_Glow_(55258890373).jpg"
 sources:
   - source_name: "DeepSeek API Change Log — 2026-09-10"
     source_url: "https://api-docs.deepseek.com/updates"

@@ -303,6 +303,9 @@ const research = defineCollection({
     research_question: z.string().optional(),
     related_entities: z.array(z.string()).default([]),
     author_view: z.boolean().default(true),
+    image: z.string().optional(),
+    image_credit: z.string().optional(),
+    image_source: z.string().optional(),
     sources: z.array(sourceSchema).default([]),
   }),
 });
@@ -315,6 +318,9 @@ const news = defineCollection({
     published_date: z.string(),
     type: z.enum(['model_release', 'price_change', 'company', 'agent', 'other']),
     trigger_updates: z.array(z.string()).default([]),
+    image: z.string().optional(),
+    image_credit: z.string().optional(),
+    image_source: z.string().optional(),
     sources: z.array(sourceSchema).default([]),
   }),
 });

@@ -46,6 +46,17 @@ const relatedLinks = d.related_entities.map((e) => {
       </p>
     )}
 
+    {d.image && (
+      <figure class="mb-6">
+        <img src={d.image} alt={d.title} class="w-full rounded-lg" loading="lazy" />
+        {d.image_credit && (
+          <figcaption class="text-xs text-gray-500 mt-1">
+            Image: {d.image_credit}{d.image_source && <> · <a href={d.image_source} rel="noopener" target="_blank">source</a></>}
+          </figcaption>
+        )}
+      </figure>
+    )}
+
     <div class="prose prose-slate max-w-none my-8">
       <Content />
     </div>

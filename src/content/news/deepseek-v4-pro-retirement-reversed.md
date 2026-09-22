@@ -5,6 +5,9 @@ published_date: "2026-09-10"
 type: company
 trigger_updates:
   - deepseek-v4-pro
+image: "/images/cc/data-center-roof.webp"
+image_credit: "Rsparks3 / CC0, via Wikimedia Commons"
+image_source: "https://commons.wikimedia.org/wiki/File:Data_center_roof.jpg"
 sources:
   - source_name: "DeepSeek API Change Log — 2026-09-10"
     source_url: "https://api-docs.deepseek.com/updates"

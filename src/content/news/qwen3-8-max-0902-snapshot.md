@@ -5,6 +5,9 @@ published_date: "2026-09-02"
 type: model_release
 trigger_updates:
   - qwen3.8-max
+image: "/images/cc/code-monitor.jpg"
+image_credit: "Markus Spiske / CC0, via Wikimedia Commons"
+image_source: "https://commons.wikimedia.org/wiki/File:Code_on_computer_monitor_(Unsplash).jpg"
 sources:
   - source_name: "QwenCloud — Qwen3.8-Max-0902 model page"
     source_url: "https://www.qwencloud.com/models/qwen3.8-max-0902"
