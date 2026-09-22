@@ -28,6 +28,20 @@ for (const m of models) {
   modelNames.set(m.id, m.data.model_name);
 }
 const companyNames = new Map(companies.map((co) => [co.id, co.data.company_name]));
+const dimensionLabels: Record<string, string> = {
+  pricing: 'API pricing (per 1M tokens, caching)',
+  context: 'Context window size',
+  reasoning: 'Reasoning & knowledge performance',
+  coding: 'Coding capabilities',
+  vision: 'Vision / multimodal input',
+  computer_use: 'Computer-use capabilities',
+  tool_calling: 'Tool calling',
+  agent: 'Agentic features',
+  open_weight: 'Open-weight availability',
+  license: 'License terms',
+  api: 'API access & platform features',
+  deployment: 'Deployment options',
+};
 const entityLinks = d.entities.map((e) => {
   const id = modelIdMap.get(e);
   if (id) return { href: `/models/${id}/`, label: modelNames.get(id)! };
@@ -81,6 +95,19 @@ const breadcrumb = breadcrumbJsonLd([
       title="Compared entities"
       links={entityLinks}
     />
+
+    {d.dimensions.length > 0 && (
+      <div class="mt-4">
+        <h2 class="text-xl font-semibold mb-2">Comparison dimensions</h2>
+        <div class="flex flex-wrap gap-2">
+          {d.dimensions.map((dim) => (
+            <span class="inline-flex items-center rounded-full bg-slate-100 px-3 py-1 text-sm text-slate-700">
+              {dimensionLabels[dim] ?? dim}
+            </span>
+          ))}
+        </div>
+      </div>
+    )}
 
     <div class="prose prose-slate max-w-none my-8">
       <Content />

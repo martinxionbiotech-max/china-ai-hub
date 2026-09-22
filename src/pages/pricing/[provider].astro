@@ -109,7 +109,9 @@ const breadcrumb = breadcrumbJsonLd([
     </table>
 </div>
 
-    {d.price_history.length > 0 && (
+    {d.price_history.length === 0 && (
+      <p class="text-sm text-gray-500 mb-6">No officially documented price-change events located as of 2026-09-22. Historical pricing is only recorded when an official page (pricing page, change log or announcement) documents the change.</p>
+    )}
       <>
         <h2 class="text-xl font-semibold mb-2">Price history</h2>
         <div class="table-wrap mb-6">
