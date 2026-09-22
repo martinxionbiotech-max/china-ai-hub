@@ -5,6 +5,7 @@ import LastVerified from '../../components/LastVerified.astro';
 import EntityLinks from '../../components/EntityLinks.astro';
 import EntityFaq from '../../components/EntityFaq.astro';
 import { pricingFaqs, offerCatalogJsonLd, breadcrumbJsonLd } from '../../lib/seo';
+import { getModelIdMap, modelHref } from '../../lib/entity-links';
 import { getCollection, type CollectionEntry } from 'astro:content';
 
 export async function getStaticPaths() {
@@ -20,7 +21,7 @@ const { p } = Astro.props;
 const d = p.data;
 
 const models = await getCollection('models');
-const modelIds = new Set(models.map((m) => m.id));
+const modelMap = await getModelIdMap();
 
 const pageUrl = new URL(Astro.url.pathname, Astro.site).href;
 const faqs = pricingFaqs(d);
@@ -30,7 +31,7 @@ const jsonLd = offerCatalogJsonLd({
   description: `${d.provider_id} API pricing: input, output, cached and batch prices per 1M tokens with history and official sources.`,
   offers: d.models.map((m) => ({
     model: m.model,
-    modelUrl: modelIds.has(m.model) ? new URL(`/models/${m.model}/`, Astro.site).href : undefined,
+    modelUrl: modelMap.has(m.model) ? new URL(modelHref(modelMap, m.model), Astro.site).href : undefined,
     input: m.input_price_per_1m,
     output: m.output_price_per_1m,
     currency: d.currency,
@@ -78,7 +79,7 @@ const breadcrumb = breadcrumbJsonLd([
       <tbody>
         {d.models.map((m) => (
           <tr>
-            <td><a href={`/models/${m.model}/`}>{m.model}</a></td>
+            <td>{modelMap.has(m.model) ? <a href={modelHref(modelMap, m.model)}>{m.model}</a> : m.model}</td>
             <td>{m.input_price_per_1m ?? '—'}</td>
             <td>{m.output_price_per_1m ?? '—'}</td>
             <td>{m.cached_input_price_per_1m ?? '—'}</td>

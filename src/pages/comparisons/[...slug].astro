@@ -2,6 +2,7 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import SourceBadge from '../../components/SourceBadge.astro';
 import EntityLinks from '../../components/EntityLinks.astro';
+import { breadcrumbJsonLd } from '../../lib/seo';
 import { getCollection, render, type CollectionEntry } from 'astro:content';
 
 export async function getStaticPaths() {
@@ -16,6 +17,41 @@ interface Props {
 const { c } = Astro.props;
 const d = c.data;
 const { Content } = await render(c);
+
+const models = await getCollection('models');
+const companies = await getCollection('companies');
+const modelIdMap = new Map<string, string>();
+const modelNames = new Map<string, string>();
+for (const m of models) {
+  modelIdMap.set(m.id, m.id);
+  modelIdMap.set(m.data.model_id, m.id);
+  modelNames.set(m.id, m.data.model_name);
+}
+const companyNames = new Map(companies.map((co) => [co.id, co.data.company_name]));
+const entityLinks = d.entities.map((e) => {
+  const id = modelIdMap.get(e);
+  if (id) return { href: `/models/${id}/`, label: modelNames.get(id)! };
+  if (companyNames.has(e)) return { href: `/companies/${e}/`, label: companyNames.get(e)! };
+  return { href: `/models/${e}/`, label: e };
+});
+
+const pageUrl = new URL(Astro.url.pathname, Astro.site).href;
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  '@id': pageUrl,
+  headline: d.title,
+  url: pageUrl,
+  description: d.description ?? `${d.title}: evidence-based comparison of ${d.entities.join(' and ')}.`,
+  datePublished: d.published_date,
+  dateModified: d.updated_date ?? d.published_date,
+  isPartOf: { '@type': 'WebSite', name: 'China AI Hub', url: 'https://chinaaihub.com' },
+};
+const breadcrumb = breadcrumbJsonLd([
+  { name: 'Home', url: new URL('/', Astro.site).href },
+  { name: 'Comparisons', url: new URL('/comparisons/', Astro.site).href },
+  { name: d.title, url: pageUrl },
+]);
 ---
 
 <BaseLayout
@@ -24,16 +60,15 @@ const { Content } = await render(c);
   type="article"
 >
   <article class="max-w-none">
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+    <script type="application/ld+json" set:html={JSON.stringify(breadcrumb)} />
     <p class="text-sm text-gray-500 mb-1"><a href="/comparisons/">Comparisons</a> / {d.title}</p>
     <h1 class="text-3xl font-bold text-gray-900 mb-2">{d.title}</h1>
     {d.updated_date && <p class="text-sm text-gray-500 mb-4">Updated: {d.updated_date}</p>}
 
     <EntityLinks
       title="Compared entities"
-      links={d.entities.map((e) => {
-        const isModel = e.includes('-'); // heuristic: model ids are hyphenated model names; fallback works via /models/
-        return isModel ? { href: `/models/${e}/`, label: e } : { href: `/companies/${e}/`, label: e };
-      })}
+      links={entityLinks}
     />
 
     <div class="prose prose-slate max-w-none my-8">

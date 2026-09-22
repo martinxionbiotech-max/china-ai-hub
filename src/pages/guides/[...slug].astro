@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import SourceBadge from '../../components/SourceBadge.astro';
+import { breadcrumbJsonLd } from '../../lib/seo';
 import { getCollection, render, type CollectionEntry } from 'astro:content';
 
 export async function getStaticPaths() {
@@ -15,6 +16,24 @@ interface Props {
 const { g } = Astro.props;
 const d = g.data;
 const { Content } = await render(g);
+
+const pageUrl = new URL(Astro.url.pathname, Astro.site).href;
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  '@id': pageUrl,
+  headline: d.title,
+  url: pageUrl,
+  description: d.description,
+  datePublished: d.published_date,
+  dateModified: d.updated_date ?? d.published_date,
+  isPartOf: { '@type': 'WebSite', name: 'China AI Hub', url: 'https://chinaaihub.com' },
+};
+const breadcrumb = breadcrumbJsonLd([
+  { name: 'Home', url: new URL('/', Astro.site).href },
+  { name: 'Guides', url: new URL('/guides/', Astro.site).href },
+  { name: d.title, url: pageUrl },
+]);
 ---
 
 <BaseLayout
@@ -23,6 +42,8 @@ const { Content } = await render(g);
   type="article"
 >
   <article class="max-w-none">
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+    <script type="application/ld+json" set:html={JSON.stringify(breadcrumb)} />
     <p class="text-sm text-gray-500 mb-1"><a href="/guides/">Guides</a> / {d.title}</p>
     <h1 class="text-3xl font-bold text-gray-900 mb-2">{d.title}</h1>
     {d.updated_date && <p class="text-sm text-gray-500 mb-4">Updated: {d.updated_date}</p>}

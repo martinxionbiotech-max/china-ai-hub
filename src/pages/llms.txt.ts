@@ -4,14 +4,18 @@ import { getCollection } from 'astro:content';
 /* llms.txt for AI crawlers and LLM-oriented tooling (llmstxt.org spec). */
 export const GET: APIRoute = async ({ site }) => {
   const base = (site?.origin ?? 'https://chinaaihub.com').replace(/\/$/, '');
-  const [models, agents, companies, apis, pricing, benchmarks] = await Promise.all([
-    getCollection('models'),
-    getCollection('agents'),
-    getCollection('companies'),
-    getCollection('apis'),
-    getCollection('pricing'),
-    getCollection('benchmarks'),
-  ]);
+  const [models, agents, companies, apis, pricing, benchmarks, technologies, comparisons, guides] =
+    await Promise.all([
+      getCollection('models'),
+      getCollection('agents'),
+      getCollection('companies'),
+      getCollection('apis'),
+      getCollection('pricing'),
+      getCollection('benchmarks'),
+      getCollection('technologies'),
+      getCollection('comparisons'),
+      getCollection('guides'),
+    ]);
 
   const L: string[] = [];
   L.push('# China AI Hub');
@@ -28,6 +32,9 @@ export const GET: APIRoute = async ({ site }) => {
   L.push(`- [API](${base}/api/): Chinese AI API endpoints and their capabilities.`);
   L.push(`- [Pricing](${base}/pricing/): Normalized API pricing across providers.`);
   L.push(`- [Benchmarks](${base}/benchmarks/): Benchmark evaluations of Chinese AI models.`);
+  L.push(`- [Technology](${base}/technology/): Knowledge base of AI technologies with Chinese adoption context.`);
+  L.push(`- [Comparisons](${base}/comparisons/): Evidence-based model comparisons (no rankings).`);
+  L.push(`- [Guides](${base}/guides/): Decision frameworks for choosing and evaluating models.`);
   L.push(`- [About](${base}/about/): Sourcing policy, source tiers and methodology.`);
   L.push('');
   L.push('## Models');
@@ -83,6 +90,28 @@ export const GET: APIRoute = async ({ site }) => {
         d.description ?? 'Benchmark evaluation of Chinese AI models'
       }.`
     );
+  }
+  L.push('');
+  L.push('## Technology');
+  for (const t of technologies) {
+    const d = t.data;
+    L.push(`- [${d.title}](${base}/technology/${t.id}/): ${d.definition}`);
+  }
+  L.push('');
+  L.push('## Comparisons');
+  for (const c of comparisons) {
+    const d = c.data;
+    L.push(
+      `- [${d.title}](${base}/comparisons/${c.id}/): ${
+        d.description ?? `Evidence-based comparison of ${d.entities.join(' and ')}`
+      }`
+    );
+  }
+  L.push('');
+  L.push('## Guides');
+  for (const g of guides) {
+    const d = g.data;
+    L.push(`- [${d.title}](${base}/guides/${g.id}/): ${d.description}`);
   }
   L.push('');
   L.push('## Optional');

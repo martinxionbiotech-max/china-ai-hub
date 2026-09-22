@@ -5,6 +5,7 @@ import LastVerified from '../../components/LastVerified.astro';
 import EntityLinks from '../../components/EntityLinks.astro';
 import EntityFaq from '../../components/EntityFaq.astro';
 import { agentFaqs, softwareApplicationJsonLd, breadcrumbJsonLd } from '../../lib/seo';
+import { getModelIdMap, modelHref } from '../../lib/entity-links';
 import { getCollection, render, type CollectionEntry } from 'astro:content';
 
 export async function getStaticPaths() {
@@ -22,6 +23,7 @@ const { Content } = await render(agent);
 
 const pageUrl = new URL(Astro.url.pathname, Astro.site).href;
 const providerUrl = new URL(`/companies/${d.company}/`, Astro.site).href;
+const modelMap = await getModelIdMap();
 const faqs = agentFaqs(d);
 const jsonLd = softwareApplicationJsonLd({
   id: pageUrl,
@@ -109,7 +111,7 @@ const caps = [
 
     <EntityLinks
       title="Underlying models"
-      links={d.underlying_models.map((m) => ({ href: `/models/${m}/`, label: m }))}
+      links={d.underlying_models.map((m) => ({ href: modelHref(modelMap, m), label: m }))}
     />
 
     <h2 class="text-xl font-semibold mt-6 mb-2">Sources</h2>

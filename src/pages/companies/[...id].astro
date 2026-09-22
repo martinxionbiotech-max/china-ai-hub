@@ -5,6 +5,7 @@ import LastVerified from '../../components/LastVerified.astro';
 import EntityLinks from '../../components/EntityLinks.astro';
 import EntityFaq from '../../components/EntityFaq.astro';
 import { companyFaqs, organizationJsonLd, breadcrumbJsonLd } from '../../lib/seo';
+import { getModelIdMap, modelHref } from '../../lib/entity-links';
 import { getCollection, render, type CollectionEntry } from 'astro:content';
 
 export async function getStaticPaths() {
@@ -21,6 +22,7 @@ const d = company.data;
 const { Content } = await render(company);
 
 const pageUrl = new URL(Astro.url.pathname, Astro.site).href;
+const modelMap = await getModelIdMap();
 const faqs = companyFaqs(d);
 const jsonLd = organizationJsonLd({
   id: pageUrl,
@@ -35,7 +37,7 @@ const breadcrumb = breadcrumbJsonLd([
   { name: d.company_name, url: pageUrl },
 ]);
 
-const modelLinks = d.foundation_models.map((m) => ({ href: `/models/${m}/`, label: m }));
+const modelLinks = d.foundation_models.map((m) => ({ href: modelHref(modelMap, m), label: m }));
 const agentLinks = d.agents.map((a) => ({ href: `/agents/${a}/`, label: a }));
 const apiLinks = d.api.map((a) => ({ href: `/api/${a}/`, label: `${a} API` }));
 ---

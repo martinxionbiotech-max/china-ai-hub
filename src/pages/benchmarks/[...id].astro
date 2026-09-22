@@ -4,6 +4,7 @@ import SourceBadge from '../../components/SourceBadge.astro';
 import LastVerified from '../../components/LastVerified.astro';
 import EntityFaq from '../../components/EntityFaq.astro';
 import { benchmarkFaqs, datasetJsonLd, breadcrumbJsonLd } from '../../lib/seo';
+import { getModelIdMap, modelHref } from '../../lib/entity-links';
 import { getCollection, type CollectionEntry } from 'astro:content';
 
 export async function getStaticPaths() {
@@ -19,6 +20,7 @@ const { b } = Astro.props;
 const d = b.data;
 
 const pageUrl = new URL(Astro.url.pathname, Astro.site).href;
+const modelMap = await getModelIdMap();
 const faqs = benchmarkFaqs(d);
 const jsonLd = datasetJsonLd({
   id: pageUrl,
@@ -64,7 +66,7 @@ const breadcrumb = breadcrumbJsonLd([
       <tbody>
         {d.evaluations.map((e) => (
           <tr>
-            <td>{e.model ? <a href={`/models/${e.model}/`}>{e.model}</a> : e.benchmark}</td>
+            <td>{e.model ? (modelMap.has(e.model) ? <a href={modelHref(modelMap, e.model)}>{e.model}</a> : e.model) : e.benchmark}</td>
             <td>{e.model_version ?? '—'}</td>
             <td>{e.score}</td>
             <td>{e.metric ?? '—'}</td>

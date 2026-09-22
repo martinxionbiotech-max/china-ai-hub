@@ -3,6 +3,8 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import SourceBadge from '../../components/SourceBadge.astro';
 import LastVerified from '../../components/LastVerified.astro';
 import EntityLinks from '../../components/EntityLinks.astro';
+import { breadcrumbJsonLd } from '../../lib/seo';
+import { getModelIdMap, modelHref } from '../../lib/entity-links';
 import { getCollection, render, type CollectionEntry } from 'astro:content';
 
 export async function getStaticPaths() {
@@ -17,6 +19,24 @@ interface Props {
 const { t } = Astro.props;
 const d = t.data;
 const { Content } = await render(t);
+
+const pageUrl = new URL(Astro.url.pathname, Astro.site).href;
+const modelMap = await getModelIdMap();
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'TechArticle',
+  '@id': pageUrl,
+  headline: d.title,
+  url: pageUrl,
+  description: d.definition,
+  dateModified: d.last_verified,
+  isPartOf: { '@type': 'WebSite', name: 'China AI Hub', url: 'https://chinaaihub.com' },
+};
+const breadcrumb = breadcrumbJsonLd([
+  { name: 'Home', url: new URL('/', Astro.site).href },
+  { name: 'Technology', url: new URL('/technology/', Astro.site).href },
+  { name: d.title, url: pageUrl },
+]);
 ---
 
 <BaseLayout
@@ -25,6 +45,8 @@ const { Content } = await render(t);
   type="article"
 >
   <article class="max-w-none">
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+    <script type="application/ld+json" set:html={JSON.stringify(breadcrumb)} />
     <p class="text-sm text-gray-500 mb-1"><a href="/technology/">Technology</a> / {d.title}</p>
     <h1 class="text-3xl font-bold text-gray-900 mb-2">{d.title}</h1>
     <p class="text-gray-700 text-lg mb-4">{d.definition}</p>
@@ -38,7 +60,7 @@ const { Content } = await render(t);
     <div class="space-y-6 mb-6">
       <EntityLinks
         title="Related models"
-        links={d.related_models.map((m) => ({ href: `/models/${m}/`, label: m }))}
+        links={d.related_models.map((m) => ({ href: modelHref(modelMap, m), label: m }))}
       />
       <EntityLinks
         title="Related companies"
