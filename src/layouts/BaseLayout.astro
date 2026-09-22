@@ -21,6 +21,7 @@ const ogImage = new URL('/og-image.png', Astro.site);
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
     <meta name="generator" content={Astro.generator} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta property="og:site_name" content="China AI Hub" />
     <meta property="og:locale" content="en_US" />
     <meta property="og:type" content={type} />
@@ -53,7 +54,10 @@ const ogImage = new URL('/og-image.png', Astro.site);
   <body class="min-h-screen">
     <header class="border-b border-gray-200 bg-white">
       <div class="mx-auto max-w-6xl px-4 py-3 flex items-center justify-between">
-        <a href="/" class="font-semibold text-lg text-gray-900 hover:no-underline">China AI Hub</a>
+        <a href="/" class="flex items-center gap-2 font-semibold text-lg text-gray-900 hover:no-underline">
+          <img src="/logo.svg" alt="China AI Hub" width="30" height="30" class="w-[30px] h-[30px]" loading="eager" />
+          China AI Hub
+        </a>
         <nav class="hidden md:flex gap-5 text-sm text-gray-700" aria-label="Main navigation">
           <a href="/models/">Models</a>
           <a href="/agents/">Agents</a>
