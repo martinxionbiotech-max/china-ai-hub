@@ -28,9 +28,10 @@ regions:
   - china
   - international
 known_limitations:
+  - "Parameter counts are not published in the official MiniMax-M2.7 model card (HF)"
   - "Text-only input; interleaved thinking always on (cannot be disabled via API)"
   - "Must echo full assistant content (thinking blocks) back in multi-turn history"
-last_verified: "2026-09-20"
+last_verified: "2026-09-27"
 sources:
   - source_name: MiniMax API platform — model overview (CN)
     source_url: https://platform.minimaxi.com/docs/guides/models-intro

@@ -21,10 +21,11 @@ official_api: true
 cloud_providers:
   - Moonshot AI Platform
 known_limitations:
+  - "Architecture and parameter counts are not publicly disclosed by Moonshot for the K2.7 series (API-only coding models)"
   - "Thinking is always on; temperature/top_p/n/penalties are fixed and must not be passed"
   - "Max output ceiling not stated in the fetched docs (256K context)"
   - "No open-weight release confirmed for K2.7 series"
-last_verified: "2026-09-20"
+last_verified: "2026-09-27"
 sources:
   - source_name: Kimi API platform — model list
     source_url: https://platform.kimi.ai/docs/models.md

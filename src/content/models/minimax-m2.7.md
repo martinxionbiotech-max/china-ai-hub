@@ -45,7 +45,7 @@ known_limitations:
   - "Parameter count and max output tokens not publicly disclosed"
   - "Must echo full assistant content (thinking blocks) back in multi-turn history"
   - "Benchmarks vendor-reported; not independently verified"
-last_verified: "2026-09-20"
+last_verified: "2026-09-27"
 sources:
   - source_name: MiniMax API platform — model overview (CN)
     source_url: https://platform.minimaxi.com/docs/guides/models-intro

@@ -12,6 +12,7 @@ parameter_information:
   total_parameters: "~428B"
   active_parameters: "~23B"
 context_window: 1048576
+maximum_output: 131072
 capabilities:
   reasoning: true
   coding: true
@@ -66,6 +67,7 @@ benchmark_results:
     source_type: vendor_reported
     source_url: https://www.minimax.cn/blog/minimax-m3
 known_limitations:
+  - "Maximum output of 131,072 tokens derived from official card evaluation config (128K max output tokens); the standalone API max-output ceiling is not separately published"
   - "Max output tokens not publicly disclosed in official docs"
   - "1M context with at least 512K guaranteed usable; pricing splits at the 512K input boundary"
   - "Thinking is disabled by default (thinking=adaptive enables it)"

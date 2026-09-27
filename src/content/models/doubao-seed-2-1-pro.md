@@ -43,10 +43,11 @@ benchmark_results:
     source_type: vendor_reported
     source_url: https://seed.bytedance.com/en/blog/seed2-1-officially-released-advancing-ai-productivity
 known_limitations:
+  - "Architecture and parameter counts are not publicly disclosed by ByteDance for the Seed 2.1 series (API-only model)"
   - "API served from cn-beijing region only; no international endpoint verified as of 2026-09-20"
   - "No open-weight release; no self-hosting"
   - "Exact release day for the 260915 version not officially stated (month 2026-09 only)"
-last_verified: "2026-09-20"
+last_verified: "2026-09-27"
 sources:
   - source_name: Ark official model list
     source_url: https://docs.volcengine.com/docs/ark/model-list?lang=zh

@@ -12,11 +12,34 @@ parameter_information:
   total_parameters: "744B"
   active_parameters: "40B"
 context_window: 1048576
+maximum_output: 163840
+benchmark_results:
+  - benchmark: HLE
+    score: "40.5 (text-only)"
+    metric: accuracy
+    date: "2026-06"
+    source_type: vendor_reported
+    source_url: https://huggingface.co/zai-org/GLM-5.2
+  - benchmark: HLE
+    score: "54.7 (w/ tools)"
+    metric: accuracy
+    date: "2026-06"
+    source_type: vendor_reported
+    source_url: https://huggingface.co/zai-org/GLM-5.2
+  - benchmark: SWE-bench Pro
+    score: "62.1"
+    metric: resolved
+    date: "2026-06"
+    source_type: vendor_reported
+    source_url: https://huggingface.co/zai-org/GLM-5.2
 capabilities:
   reasoning: true
+  coding: true
   vision: false
+  tool_calling: true
+  agent_capability: true
 open_weight: true
-license: Apache-2.0
+license: "MIT (pure open, no regional limits per official model card)"
 self_hosting: true
 api_available: true
 pricing:
@@ -34,7 +57,7 @@ regions:
 known_limitations:
   - "Superseded by GLM-5.3 (same base model, improved post-training) but still listed on the API pricing page at the same price"
   - "Text-only input; reasoning supports high/max only"
-last_verified: "2026-09-20"
+last_verified: "2026-09-27"
 sources:
   - source_name: Z.ai docs — GLM-5.3 model page
     source_url: https://docs.z.ai/guides/llm/glm-5.3
@@ -50,6 +73,11 @@ sources:
     source_url: https://docs.z.ai/release-notes/new-released
     source_type: official
     last_verified: "2026-09-20"
+    confidence: high
+  - source_name: Hugging Face model card — GLM-5.2 (benchmarks, license, 1M context)
+    source_url: https://huggingface.co/zai-org/GLM-5.2
+    source_type: official
+    last_verified: "2026-09-27"
     confidence: high
 ---
 

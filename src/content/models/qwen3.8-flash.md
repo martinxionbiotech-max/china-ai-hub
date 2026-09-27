@@ -33,10 +33,11 @@ regions:
   - us-virginia
   - japan-tokyo
 known_limitations:
+  - "Architecture and parameter counts are not publicly disclosed for the API-only Qwen3.8-Flash"
   - "Batch inference not supported"
   - "Prices differ by region: Singapore $0.15/$0.47; Beijing and Global regions $0.113/$0.382 per 1M tokens"
   - "Architecture details not published on the fetched official pages"
-last_verified: "2026-09-20"
+last_verified: "2026-09-27"
 sources:
   - source_name: Model Studio — qwen3.8-flash model detail
     source_url: https://www.alibabacloud.com/help/en/model-studio/qwen3-8-flash
