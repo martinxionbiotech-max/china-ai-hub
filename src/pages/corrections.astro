@@ -1,0 +1,56 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Corrections Policy"
+  description="How China AI Hub handles errors, corrections and data updates — and how to report a mistake."
+  type="article"
+>
+  <article class="prose prose-slate max-w-none">
+    <h1>Corrections Policy</h1>
+    <p class="text-sm text-gray-500">Last updated: 2026-09-27</p>
+
+    <h2>Our accuracy commitment</h2>
+    <p>
+      China AI Hub publishes factual data about China's AI ecosystem — model specifications,
+      pricing, benchmarks, releases and relationships. Every record is sourced and date-stamped
+      with a <code>last_verified</code> date. Analysis is labeled separately from observed data.
+    </p>
+
+    <h2>How to report an error</h2>
+    <p>
+      If you believe a fact, price, benchmark score or relationship on this site is wrong or
+      outdated, email us with:
+    </p>
+    <ul>
+      <li>The page URL (main site or Data Hub)</li>
+      <li>The specific claim or value that is wrong</li>
+      <li>The correct value and a link to an official source (vendor documentation, model card, official pricing page)</li>
+    </ul>
+    <p>
+      Contact: Martin.W — <a href="mailto:admin@sinoaihub.com">admin@sinoaihub.com</a>
+    </p>
+
+    <h2>What happens next</h2>
+    <ol>
+      <li>We verify the claim against the official source you provide (or our own re-check).</li>
+      <li>If confirmed, we update the record, refresh its <code>last_verified</code> date, and note the change where relevant (e.g. price history entries).</li>
+      <li>If we cannot verify, we mark the value "Not publicly documented" or remove it rather than guess.</li>
+    </ol>
+
+    <h2>Correction timeline</h2>
+    <p>
+      We aim to act on verified corrections within a few working days. Data on Chinese AI pricing
+      and releases changes quickly; we run periodic re-verification cycles across all records in
+      addition to ad-hoc corrections.
+    </p>
+
+    <h2>Correction log</h2>
+    <p>
+      Material corrections are recorded in the site's changelog documents
+      (<code>docs/phase2-changelog.md</code> and later phase changelogs in the project repository)
+      and, where applicable, in per-provider <code>price_history</code> entries on pricing pages.
+    </p>
+  </article>
+</BaseLayout>
