@@ -6,7 +6,7 @@ China AI Hub
 
 ## Primary Domain
 
-https://chinaaihub.com
+https://china-ai-hub.pages.dev
 
 ## Recommended Positioning
 
@@ -139,7 +139,7 @@ Phase 1 should use one primary domain.
 
 Primary domain:
 
-chinaaihub.com
+china-ai-hub.pages.dev
 
 Core URL structure:
 
@@ -161,7 +161,7 @@ Do NOT create multiple subdomains during Phase 1 unless there is a strong techni
 
 Future data layer (ONE data subdomain only):
 
-data.chinaaihub.com
+data.china-ai-hub.pages.dev
 
 Repo: `martinxionbiotech-max/china-ai-hub-data` (created 2026-09-21, public, main branch; agent access authorized).
 

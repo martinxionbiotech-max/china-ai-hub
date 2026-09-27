@@ -1,6 +1,6 @@
 # China AI Hub
 
-Source of truth for the development of https://chinaaihub.com — an independent, English-language, structured knowledge platform for China's AI ecosystem (models, agents, APIs, companies, pricing, benchmarks, technology, comparisons, original research).
+Source of truth for the development of https://china-ai-hub.pages.dev — an independent, English-language, structured knowledge platform for China's AI ecosystem (models, agents, APIs, companies, pricing, benchmarks, technology, comparisons, original research).
 
 ## Architecture docs (read before changing anything)
 
