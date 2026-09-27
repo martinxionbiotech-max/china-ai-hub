@@ -29,6 +29,8 @@ limitations:
   - Android store listing not directly verified this run (iOS CN listing fetched)
   - App Store disclaimer - as an AI it may misunderstand or mislead; users advised to cross-check
   - No public consumer API; developer access to Doubao models is via Volcengine Ark
+known_limitations:
+  - "No public GitHub repository located as of 2026-09-27 (checked ByteDance org)"
 last_verified: "2026-09-20"
 sources:
   - source_name: Doubao official website

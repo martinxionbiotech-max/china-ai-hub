@@ -7,7 +7,7 @@ company: alibaba-cloud
 description: "Alibaba Qwen team's open-source Python framework for developing LLM applications based on Qwen's instruction following, tool usage, planning and memory capabilities (Apache-2.0). Serves as the backend of Qwen Chat (chat.qwen.ai). Ships example applications including BrowserQwen browser assistant, Docker-isolated Code Interpreter, RAG over 1M-token documents, MCP integration and Gradio GUI."
 agent_type: framework
 underlying_models: []
-framework: "Python framework (pip install qwen-agent); built-in Assistant / FnCallAgent / ReActChat agents with @register_tool; connects to DashScope API or self-hosted models via vLLM/Ollama"
+framework: "Python framework built upon Qwen>=3.0 models (official README: \"Agent framework and applications built upon Qwen>=3.0\"); (pip install qwen-agent); built-in Assistant / FnCallAgent / ReActChat agents with @register_tool; connects to DashScope API or self-hosted models via vLLM/Ollama"
 tool_calling: true
 browser_use: true
 mcp: true

@@ -28,6 +28,8 @@ cloud_providers:
   - Moonshot AI Platform
 pricing_ref: moonshot-ai
 documentation: https://platform.kimi.ai/docs
+known_limitations:
+  - "Rate limits and regions are published behind a JS-rendered docs page; not extractable into structured data as of 2026-09-27"
 last_verified: "2026-09-20"
 sources:
   - source_name: Kimi API overview

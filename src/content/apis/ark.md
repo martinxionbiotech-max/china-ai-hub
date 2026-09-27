@@ -28,6 +28,8 @@ cloud_providers:
   - Volcengine
 pricing_ref: bytedance
 documentation: https://docs.volcengine.com/docs/ark
+known_limitations:
+  - "Function calling support for Ark-hosted models is documented per-model, not platform-wide; not extracted as of 2026-09-27"
 last_verified: "2026-09-20"
 sources:
   - source_name: Ark product overview (base URL, auth)

@@ -27,6 +27,8 @@ cloud_providers:
   - MiniMax Platform
 pricing_ref: minimax
 documentation: https://platform.minimax.io/docs
+known_limitations:
+  - "Rate limits published on a JS-rendered docs page; structured_output not publicly documented as of 2026-09-27"
 last_verified: "2026-09-20"
 sources:
   - source_name: MiniMax API — Anthropic-compatible API (intl)

@@ -33,6 +33,8 @@ limitations:
   - OpenClaw tasks run at secondary priority under load (preemption by coding-agent tasks)
   - Team plan - no mixed standard+advanced purchase; 1 seat per member; max 5 API keys per seat
   - Launch date not publicly disclosed in fetched sources (plan revision dated 2026-07-30)
+known_limitations:
+  - "No public GitHub repository located as of 2026-09-27 (checked THUDM org)"
 last_verified: "2026-09-20"
 sources:
   - source_name: GLM Coding Plan landing page

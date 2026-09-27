@@ -30,6 +30,8 @@ limitations:
   - Web-app plan/pricing details require sign-in (not retrievable)
   - MaxHermes is in Beta
   - Relationship between the web app, MaxClaw/MaxHermes and MiniMax Code is not explained in a single fetched doc (treated as an ecosystem of surfaces)
+known_limitations:
+  - "No public GitHub repository located as of 2026-09-27 (checked MiniMax-AI org)"
 last_verified: "2026-09-20"
 sources:
   - source_name: MiniMax Agent homepage

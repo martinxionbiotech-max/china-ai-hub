@@ -26,6 +26,8 @@ cloud_providers:
   - DeepSeek Platform
 pricing_ref: deepseek
 documentation: https://api-docs.deepseek.com/
+known_limitations:
+  - "Official docs publish concurrency limits only; no regional deployment breakdown as of 2026-09-27"
 last_verified: "2026-09-20"
 sources:
   - source_name: DeepSeek API docs

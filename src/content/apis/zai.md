@@ -28,6 +28,8 @@ cloud_providers:
   - BigModel
 pricing_ref: zhipu-ai
 documentation: https://docs.z.ai/
+known_limitations:
+  - "Rate limit documentation page not located (docs.z.ai paths 404) as of 2026-09-27"
 last_verified: "2026-09-20"
 sources:
   - source_name: Z.ai docs — Quick Start

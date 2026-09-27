@@ -22,6 +22,7 @@ pricing: "Billed via MiniMax Token Plan subscriptions: Plus $22/mo, Max $55/mo, 
 deployment: both
 open_source: true
 license: MIT
+framework: "TypeScript terminal coding agent (open-source, verified via GitHub repo description 2026-09-27)"
 github: https://github.com/MiniMax-AI/minimax-code
 documentation: https://agent.minimax.io/docs/code/welcome.md
 use_cases:
