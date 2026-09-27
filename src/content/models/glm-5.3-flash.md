@@ -5,10 +5,7 @@ model_id: glm-5.3-flash
 model_name: GLM-5.3-Flash
 provider: zhipu-ai
 model_family: GLM-5.3-Flash
-version: FlashX
-aliases:
-  - glm-5.3-flashx
-  - GLM-5.3-FlashX
+version: Flash
 release_date: "2026-08-26"
 status: active
 architecture: "320B total / 18B active; first open-source frontier model combining sparse + linear attention; mHC hyper-connections; 30T-token multimodal pre-training corpus"
