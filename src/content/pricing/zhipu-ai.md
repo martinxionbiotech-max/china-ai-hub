@@ -10,25 +10,32 @@ models:
     input_price_per_1m: 1.4
     output_price_per_1m: 4.4
     cached_input_price_per_1m: 0.26
-    note: "Cache storage limited-time free. China platform (BigModel): ¥8 / ¥28, cached hit ¥2. Batch API = 50% of standard price for supported models."
+    notes:
+      - "Cache storage: limited-time free"
+      - "China platform (BigModel): ¥8 / ¥28, cache hit ¥2"
+      - "Batch API: 50% of standard price"
     official_source: https://docs.z.ai/guides/overview/pricing
   - model: glm-5.3-flash
     input_price_per_1m: 0.15
     output_price_per_1m: 0.5
     cached_input_price_per_1m: 0.03
-    note: "China platform: ¥0.8 / ¥2.8, cached ¥0.23."
+    notes:
+      - "China platform: ¥0.8 / ¥2.8, cache ¥0.23"
     official_source: https://docs.z.ai/guides/overview/pricing
   - model: glm-5.3-flashx
     input_price_per_1m: 0.37
     output_price_per_1m: 1.25
     cached_input_price_per_1m: 0.075
-    note: "China platform: ¥2 / ¥7, cached ¥0.57. Not yet on the GLM Coding Plan."
+    notes:
+      - "China platform: ¥2 / ¥7, cache ¥0.57"
+      - "Not yet on the GLM Coding Plan"
     official_source: https://docs.z.ai/guides/overview/pricing
   - model: glm-5.2
     input_price_per_1m: 1.4
     output_price_per_1m: 4.4
     cached_input_price_per_1m: 0.26
-    note: "China platform: ¥8 / ¥28, cached ¥2."
+    notes:
+      - "China platform: ¥8 / ¥28, cache ¥2"
     official_source: https://docs.z.ai/guides/overview/pricing
 last_verified: "2026-09-20"
 sources:

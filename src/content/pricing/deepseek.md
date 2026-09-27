@@ -9,13 +9,21 @@ models:
     input_price_per_1m: 0.15
     output_price_per_1m: 0.6
     cached_input_price_per_1m: 0.003
-    note: "Off-peak rates (all times except 01:00-04:00 and 06:00-10:00 UTC Mon-Fri). Peak = 2x: $0.30 input / $1.20 output / $0.006 cache hit. Concurrency limit 2500. No batch pricing listed."
+    notes:
+      - "Off-peak rates (row price)"
+      - "Peak = 2x: $0.30 / $1.20 / $0.006 cache hit"
+      - "Concurrency limit: 2500"
+      - "No batch pricing listed"
     official_source: https://api-docs.deepseek.com/quick_start/pricing
   - model: deepseek-v4-pro
     input_price_per_1m: 0.66
     output_price_per_1m: 1.98
     cached_input_price_per_1m: 0.022
-    note: "Off-peak rates; peak = 2x: $1.32 input / $3.96 output / $0.044 cache hit. Concurrency limit 500. Deprecation announced 2026-09-10 (service continuation per change log)."
+    notes:
+      - "Off-peak rates (row price)"
+      - "Peak = 2x: $1.32 / $3.96 / $0.044 cache hit"
+      - "Concurrency limit: 500"
+      - "Deprecation announced 2026-09-10 (service continues per change log)"
     official_source: https://api-docs.deepseek.com/quick_start/pricing
 price_history:
   - model: deepseek-v4-pro

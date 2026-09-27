@@ -230,7 +230,7 @@ const pricing = defineCollection({
         cached_input_price_per_1m: z.number().nullable().optional(),
         cached_output_price_per_1m: z.number().nullable().optional(),
         batch_price_per_1m: z.number().nullable().optional(),
-        note: z.string().optional(),
+        notes: z.array(z.string()).default([]),
         effective_date: z.string().optional(),
         official_source: z.string().url().optional(),
       })

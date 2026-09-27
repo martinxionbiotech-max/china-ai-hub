@@ -10,19 +10,27 @@ models:
     input_price_per_1m: 0.3
     output_price_per_1m: 1.2
     cached_input_price_per_1m: 0.06
-    note: "Standard tier, <=512K input (permanent 50% off vs list $0.60/$2.40). >512K input: $0.60/$2.40, cache $0.12. Priority tier (service_tier=priority) = 1.5x. China platform: ¥2.1 / ¥8.4 (<=512K), ¥4.2 / ¥16.8 (>512K)."
+    notes:
+      - "Standard tier ≤512K input (row price; permanent 50% off vs list $0.60/$2.40)"
+      - ">512K input: $0.60/$2.40, cache $0.12"
+      - "Priority tier (service_tier=priority): 1.5x"
+      - "China platform: ¥2.1/¥8.4 (≤512K), ¥4.2/¥16.8 (>512K)"
     official_source: https://platform.minimax.io/docs/guides/pricing-paygo.md
   - model: minimax-m2.7
     input_price_per_1m: 0.3
     output_price_per_1m: 1.2
     cached_input_price_per_1m: 0.06
-    note: "Cache write $0.375 per 1M tokens. China platform: ¥2.1 / ¥8.4."
+    notes:
+      - "Cache write: $0.375 per 1M tokens"
+      - "China platform: ¥2.1 / ¥8.4"
     official_source: https://platform.minimax.io/docs/guides/pricing-paygo.md
   - model: minimax-m2.7-highspeed
     input_price_per_1m: 0.6
     output_price_per_1m: 2.4
     cached_input_price_per_1m: 0.06
-    note: "Cache write $0.375 per 1M tokens. China platform: ¥4.2 / ¥16.8."
+    notes:
+      - "Cache write: $0.375 per 1M tokens"
+      - "China platform: ¥4.2 / ¥16.8"
     official_source: https://platform.minimax.io/docs/guides/pricing-paygo.md
 price_history:
   - model: minimax-m3

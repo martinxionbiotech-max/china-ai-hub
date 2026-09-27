@@ -56,7 +56,11 @@ const pricingDataset = datasetJsonLd({
                 <td>{m.cached_input_price_per_1m ?? '—'}</td>
                 <td>{m.batch_price_per_1m ?? '—'}</td>
                 <td>{m.effective_date ?? '—'}</td>
-                <td>{m.note ?? ''}</td>
+                <td class="note-cell">{m.notes.length > 0 ? (
+                  <ul class="note-bullets">
+                    {m.notes.map((n) => <li>{n}</li>)}
+                  </ul>
+                ) : '—'}</td>
                 <td>{p.data.last_verified}</td>
                 <td>{m.official_source ? <a href={m.official_source} rel="noopener" target="_blank">link</a> : '—'}</td>
               </tr>
