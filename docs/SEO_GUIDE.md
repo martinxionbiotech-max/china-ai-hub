@@ -12,7 +12,7 @@ Optimize for Google Search, Google AI Overviews, ChatGPT, Gemini, Perplexity, an
 
 - Title: `{Entity} | China AI Hub` for entities; `{Topic} | China AI Hub` for editorial. Keep ≤ 60 chars where possible.
 - Meta description: factual, unique, ≤ 160 chars, includes the core fact (e.g. context window, price) when stable.
-- Canonical: self-referencing absolute URL on every page. `site` = https://china-ai-hub.pages.dev.
+- Canonical: self-referencing absolute URL on every page. `site` = https://sinoaihub.com.
 
 ## 3. Search intent clusters (build content around these)
 
@@ -48,7 +48,7 @@ Important pages contain: clear H1 → concise independently-understandable defin
 
 ## 7. Technical
 
-- sitemap.xml: all indexable pages, absolute URLs on china-ai-hub.pages.dev
+- sitemap.xml: all indexable pages, absolute URLs on sinoaihub.com
 - robots.txt: allow all + AI crawlers (GPTBot, ClaudeBot, PerplexityBot, Google-Extended decisions documented)
 - Fast static HTML, minimal JS (explorers degrade gracefully), good Core Web Vitals
 - Clean semantic URLs (no /blog/post123, no query-string routes, no date slugs)

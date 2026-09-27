@@ -59,7 +59,7 @@ const jsonLd = {
   description: d.description ?? `${d.title}: evidence-based comparison of ${d.entities.join(' and ')}.`,
   datePublished: d.published_date,
   dateModified: d.updated_date ?? d.published_date,
-  isPartOf: { '@type': 'WebSite', name: 'China AI Hub', url: 'https://china-ai-hub.pages.dev' },
+  isPartOf: { '@type': 'WebSite', name: 'China AI Hub', url: 'https://sinoaihub.com' },
 };
 const breadcrumb = breadcrumbJsonLd([
   { name: 'Home', url: new URL('/', Astro.site).href },

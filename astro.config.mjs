@@ -4,7 +4,7 @@ import tailwindcss from '@tailwindcss/vite';
 import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
-  site: 'https://china-ai-hub.pages.dev',
+  site: 'https://sinoaihub.com',
   output: 'static',
   vite: {
     plugins: [tailwindcss()],

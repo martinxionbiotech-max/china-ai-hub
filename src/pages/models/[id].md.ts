@@ -9,7 +9,7 @@ export async function getStaticPaths() {
 export const GET: APIRoute = async ({ props, site }) => {
   const m = (props as { model: { id: string; data: Record<string, unknown> } }).model;
   const d = m.data;
-  const base = (site?.origin ?? 'https://china-ai-hub.pages.dev').replace(/\/$/, '');
+  const base = (site?.origin ?? 'https://sinoaihub.com').replace(/\/$/, '');
   const yesNo = (v: unknown) => (v === true ? 'Yes' : v === false ? 'No' : 'Unknown');
   const rows: string[] = [];
   const push = (k: string, v: unknown) => { if (v != null && v !== '') rows.push(`| ${k} | ${v} |`); };

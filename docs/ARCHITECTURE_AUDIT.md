@@ -6,7 +6,7 @@
 
 ## 1. Audit Question
 
-Does any existing repository, codebase, or session already exist for China AI Hub (china-ai-hub.pages.dev)?
+Does any existing repository, codebase, or session already exist for China AI Hub (sinoaihub.com)?
 
 ## 2. Findings
 
@@ -15,7 +15,7 @@ Does any existing repository, codebase, or session already exist for China AI Hu
 | Local workspace (`~/.openclaw/workspace`, `projects/`) | Directory search for `*chinaai*`, `*ai-hub*`, `*aihub*` | ❌ Nothing found. No prior local repo. |
 | GitHub account `martinxionbiotech-max` | `gh repo list --limit 100` | ❌ No repo matching `chinaaihub` / `China-AI-Hub` / `AI-Hub`. 100 repos listed; no AI-hub entity. |
 | Remote OpenCode server (43.130.37.37:4096) | Session list scan (100 sessions) for "ai hub / chinaai / aihub / china ai" titles | ❌ No matching sessions. Server healthy (v1.18.30). |
-| Memory (`MEMORY.md`, `memory/*.md`) | Semantic search "China AI Hub china-ai-hub.pages.dev" | ❌ Only tangential hits (China Manufacturing Intelligence, unrelated). |
+| Memory (`MEMORY.md`, `memory/*.md`) | Semantic search "China AI Hub sinoaihub.com" | ❌ Only tangential hits (China Manufacturing Intelligence, unrelated). |
 
 ## 3. Conclusion
 

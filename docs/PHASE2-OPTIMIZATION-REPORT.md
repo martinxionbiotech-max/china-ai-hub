@@ -1,7 +1,7 @@
 # China AI Hub — 优化实施报告（P0 续 + P1）
 
 **日期**：2026-09-27 · **范围**：主站 `china-ai-hub` + Data Hub `china-ai-hub-data`
-**生产环境**：`https://china-ai-hub.pages.dev` / `https://china-ai-hub-data.pages.dev`（无自定义域名，全部引用已统一）
+**生产环境**：`https://sinoaihub.com` / `https://data.sinoaihub.com`（无自定义域名，全部引用已统一）
 
 ---
 
