@@ -36,8 +36,7 @@ open_source_projects:
   - Triton-distributed (ByteDance-Seed)
 official_documentation: https://docs.volcengine.com/docs/ark
 official_website: https://www.bytedance.com/
-related_entities:
-  - volcengine
+related_entities: []
 last_verified: "2026-09-20"
 sources:
   - source_name: Ark (Volcengine) official documentation
