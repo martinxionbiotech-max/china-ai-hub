@@ -9,7 +9,7 @@ export async function getStaticPaths() {
 
 export const GET: APIRoute = async ({ props, site }) => {
   const m = (props as { model: { id: string; data: Record<string, unknown> } }).model;
-  const base = (site?.origin ?? 'https://chinaaihub.com').replace(/\/$/, '');
+  const base = (site?.origin ?? 'https://china-ai-hub.pages.dev').replace(/\/$/, '');
   const [allBenchmarks, allAgents] = await Promise.all([
     getCollection('benchmarks'),
     getCollection('agents'),

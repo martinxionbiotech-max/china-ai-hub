@@ -3,7 +3,7 @@ import { getCollection } from 'astro:content';
 
 /* llms.txt for AI crawlers and LLM-oriented tooling (llmstxt.org spec). */
 export const GET: APIRoute = async ({ site }) => {
-  const base = (site?.origin ?? 'https://chinaaihub.com').replace(/\/$/, '');
+  const base = (site?.origin ?? 'https://china-ai-hub.pages.dev').replace(/\/$/, '');
   const [models, agents, companies, apis, pricing, benchmarks, technologies, comparisons, guides, research, news] =
     await Promise.all([
       getCollection('models'),
@@ -146,7 +146,7 @@ export const GET: APIRoute = async ({ site }) => {
   L.push('');
   L.push('## Optional');
   L.push(`- [Sitemap](${base}/sitemap-index.xml): Full sitemap of all China AI Hub pages.`);
-  L.push(`- [Data Hub](https://data.chinaaihub.com/): Structured data layer with entity records.`);
+  L.push(`- [Data Hub](https://china-ai-hub-data.pages.dev/): Structured data layer with entity records.`);
 
   return new Response(`${L.join('\n')}\n`, {
     headers: { 'Content-Type': 'text/plain; charset=utf-8' },

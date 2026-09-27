@@ -16,7 +16,7 @@ Allow: /
 User-agent: Google-Extended
 Allow: /
 
-Sitemap: https://chinaaihub.com/sitemap-index.xml
+Sitemap: https://china-ai-hub.pages.dev/sitemap-index.xml
 `,
     { headers: { 'Content-Type': 'text/plain; charset=utf-8' } }
   );

@@ -13,7 +13,7 @@ related_entities:
   - qwen3.8-max
 sources:
   - source_name: "China AI Hub — Models database"
-    source_url: "https://chinaaihub.com/models/"
+    source_url: "https://china-ai-hub.pages.dev/models/"
     source_type: independent
   - source_name: "DeepSeek — V4.1-Flash announcement"
     source_url: "https://www.deepseek.com/en/news/deepseek-v4-1-flash/"

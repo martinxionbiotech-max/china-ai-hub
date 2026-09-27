@@ -14,7 +14,7 @@ related_entities:
   - mmmu-pro
 sources:
   - source_name: "China AI Hub — Benchmarks database"
-    source_url: "https://chinaaihub.com/benchmarks/"
+    source_url: "https://china-ai-hub.pages.dev/benchmarks/"
     source_type: independent
   - source_name: "Rein et al. — GPQA: A Graduate-Level Google-Proof Q&A Benchmark"
     source_url: "https://arxiv.org/abs/2311.12022"

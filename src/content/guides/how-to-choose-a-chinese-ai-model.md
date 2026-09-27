@@ -15,10 +15,10 @@ related_entities:
   - doubao-seed-2-1-pro
 sources:
   - source_name: "China AI Hub — Models database"
-    source_url: "https://chinaaihub.com/models/"
+    source_url: "https://china-ai-hub.pages.dev/models/"
     source_type: independent
   - source_name: "China AI Hub — Pricing database"
-    source_url: "https://chinaaihub.com/pricing/"
+    source_url: "https://china-ai-hub.pages.dev/pricing/"
     source_type: independent
   - source_name: "DeepSeek API pricing"
     source_url: "https://api-docs.deepseek.com/quick_start/pricing"
