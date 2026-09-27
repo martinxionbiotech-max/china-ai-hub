@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { getCollection } from 'astro:content';
+import { datasetJsonLd } from '../lib/seo';
 
 const models = await getCollection('models');
 const companies = await getCollection('companies');
@@ -8,11 +9,19 @@ const agents = await getCollection('agents');
 const comparisons = await getCollection('comparisons');
 const research = await getCollection('research');
 const activeModels = models.filter((m) => m.data.status === 'active');
+
+// P1: 首页 Dataset JSON-LD —— 全站数据库概览（与 models/index 的 Dataset 一致口径）
+const hubDataset = datasetJsonLd({
+  id: 'https://china-ai-hub.pages.dev/',
+  name: 'China AI Hub Database',
+  description: `Structured reference database of China's AI ecosystem: ${models.length} models, ${companies.length} companies, ${agents.length} agents, plus APIs, pricing and benchmarks — each record sourced, dated and verification-labelled.`,
+});
 ---
 
 <BaseLayout
   title="China AI Hub — China AI Models, Agents, APIs & AI Technology"
   description="Explore China's AI ecosystem through structured data, comparisons and original research. Independent database of Chinese AI models, agents, APIs, pricing and benchmarks."
+  extraJsonLd={[hubDataset]}
 >
   <!-- Hero -->
   <section class="py-10 md:py-16">
