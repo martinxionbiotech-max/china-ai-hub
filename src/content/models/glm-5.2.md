@@ -81,7 +81,50 @@ sources:
     confidence: high
 ---
 
-GLM-5.2 (2026-06-16) is Zhipu's previous flagship text model - a 744B-total / 40B-active open-weight
-model with 1M context. It has been superseded by GLM-5.3, which uses the same base model with improved
-post-training, but GLM-5.2 remains on the pricing page at the same price ($1.40 / $4.40 per 1M tokens,
-cached $0.26, as of 2026-09-20).
+**What it is.** GLM-5.2 (2026-06-16) is Zhipu AI's previous flagship text model: a 744B-total / 40B-active open-weight model with a 1M-token context window, released under the MIT license. **Why it matters.** It is the direct predecessor of GLM-5.3 and remains listed on the API pricing page at the same price, making it a live reference point for the post-training gains of its successor. **Key characteristics.** Text-only input, reasoning in high/max modes, 1M context, 163,840 max output. **What a professional should know.** It is deprecated and superseded by GLM-5.3 (same base model, improved post-training), so new workloads should prefer GLM-5.3 — but GLM-5.2 remains billable and is worth tracking if you pinned a specific checkpoint.
+
+## Architecture and parameters
+
+GLM-5.2 is a 744B-total / 40B-active MoE (~5.4% activation), with open weights in BF16 and FP8. It shares this base with GLM-5.3, which means the entire GLM-5.2→5.3 delta is post-training, not architecture. That makes the pair a clean controlled comparison for how much post-training alone can move a fixed model. See [Mixture-of-Experts](/technology/mixture-of-experts/).
+
+## What the context window actually means
+
+The 1M-token context with a 163,840 output cap sits between GLM-5.3's 131K and DeepSeek's 393K on generation headroom. As a long-input analysis tool it matches the frontier norm. See the [context-window research](/research/chinese-ai-context-windows/).
+
+## Pricing implications
+
+$1.40 input / $4.40 output per 1M tokens (cached $0.26) — identical to GLM-5.3. Because the successor costs the same, there is no price reason to stay on GLM-5.2; the pricing page simply has not retired it. See the [pricing-changed research](/research/chinese-ai-model-pricing-changed/).
+
+## API, coding, and agent implications
+
+Vendor-reported HLE 40.5 (text-only) / 54.7 (with tools) and SWE-bench Pro 62.1 describe the pre-5.3 capability baseline. The with-tools HLE delta is the same agentic pattern seen across the database. For coding and agent work, GLM-5.3's claimed post-training gains (including the private Code Bench "50%" improvement) argue for the successor. See [GLM agent-oriented AI](/research/glm-agent-oriented-ai/).
+
+## Open weights and license
+
+Open weight, MIT license — described in the official model card as "pure open, no regional limits," which is notably cleaner than the Apache-2.0-with-verification note on GLM-5.3. Teams that specifically want an MIT-licensed 1M-context GLM checkpoint may prefer 5.2 on licensing grounds despite the deprecation. See [licensing explained](/research/chinese-ai-model-licensing-explained/).
+
+## Benchmark interpretation
+
+The three rows are vendor-reported. HLE 40.5 (54.7 with tools) and SWE-bench Pro 62.1 are the GLM-5.2 baseline against which GLM-5.3's improvements are claimed. The with-tools HLE delta (40.5 → 54.7) mirrors the agentic pattern seen across the database, where tool access raises the ceiling on the hardest knowledge benchmarks. These scores are useful as a historical baseline, not as a current competitive signal.
+
+## Context and output in practice
+
+The 1M-token input window places GLM-5.2 at the frontier norm of its release wave, but its 163,840-token output cap is worth noting because it actually exceeds GLM-5.3's 131,072 ceiling — an artifact of the two models' separate documentation rather than a capability regression. For long-input analysis (multi-document review, codebase-wide context) the input window is what matters; for generation, both models are long-input tools rather than long-form generators.
+
+## What the benchmarks do not prove
+
+Scores are vendor-reported and predate the 5.3 successor; they say nothing about GLM-5.3's actual gains, which rest on a private benchmark. As a deprecated model, the main utility is historical comparison. See [how to read vendor-reported benchmarks](/guides/how-to-read-vendor-reported-benchmarks/).
+
+## Suitable and less suitable workloads
+
+**Well-suited:** text-only long-context analysis where an MIT-licensed (no-verification) open checkpoint is specifically required, and historical/regression baselines against GLM-5.3. **Less suited:** any new production workload (deprecated, superseded), vision/multimodal input, and cost-optimization (same price as the better successor).
+
+## China AI Hub analysis
+
+China AI Hub analysis indicates GLM-5.2's residual value is almost entirely as a licensing option and a historical baseline: its MIT "pure open" label is cleaner than its successor's Apache-2.0-with-caveat, and its benchmark set is the reference point for GLM-5.3's claimed gains. For everyone else, the model is deprecated at identical pricing, which makes staying on it a strictly dominated choice — the successor costs the same and improves on the same base.
+
+## Market position and outlook
+
+China AI Hub analysis indicates GLM-5.2 illustrates a recurring pattern in the database: deprecation is not retirement. The 2026-09-10 DeepSeek change-log reversal kept DeepSeek-V4-Pro's API running past its announced cutoff, and GLM-5.2 similarly remains billable on Z.ai's pricing page at the same $1.40/$4.40 as its successor. The practical consequences are threefold: existing integrations continue to function, the model stays useful as a regression baseline for measuring GLM-5.3's claimed post-training gains, and its MIT "pure open, no regional limits" label keeps it relevant for teams that specifically want a permissive, no-verification 1M-context GLM checkpoint. For everyone else the model is a strictly dominated choice — the successor costs the same and improves on the same base. See the [state of China's AI models](/research/state-of-chinas-ai-models-2026/) and [licensing explained](/research/chinese-ai-model-licensing-explained/) research.
+
+*Labels used above: **Official fact** (from primary sources), **Vendor-reported claim** (benchmark scores published by Zhipu), and **China AI Hub analysis** (our synthesis, always introduced as such). No third-party benchmark evidence is currently recorded for this model.*

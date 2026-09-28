@@ -100,12 +100,42 @@ sources:
     confidence: high
 ---
 
-Kimi K3 is Moonshot AI's flagship open-weight model ("Open Frontier Weights", released 2026-07-16): a
-2.8T-parameter MoE with 104B activated parameters, a 1M-token context window, native visual
-understanding, and always-on thinking with reasoning_effort low/high/max (default max). It targets
-software engineering, knowledge work and deep reasoning.
+**What it is.** Kimi K3 is Moonshot AI's flagship open-weight model ("Open Frontier Weights"), released 2026-07-16: a 2.8T-parameter MoE with 104B activated parameters and a 1,048,576-token context window. **Why it matters.** It is the only model in the China AI Hub database documented as capable of both 1M-token input *and* 1M-token output, making it the strongest long-form *generation* model tracked, and it carries native visual understanding plus always-on thinking. **Key characteristics.** Native vision and video input, `reasoning_effort` low/high/max (default max), tool calling, structured output, and agent capability. **What a professional should know.** Temperature is fixed at 1.0 and top_p at 0.95 — you cannot tune sampling — and the license is permissive only up to a $20M revenue / 100M MAU threshold, above which Moonshot requires a separate agreement and UI attribution.
 
-The API model `kimi-k3` (min $1 top-up) prices at $3.00 input / $15.00 output per 1M tokens with
-automatic prefix caching ($0.30 cached input); max_completion_tokens defaults to 131,072 and can be set
-up to 1,048,576. Temperature (1.0) and top_p (0.95) are fixed. Full weights are on Hugging Face and
-ModelScope under the Kimi K3 License.
+## Architecture and parameters
+
+K3 publishes the fullest architecture card in the database: 2.8T total / 104B activated (~3.7% activation), 93 layers (1 dense), 896 experts with 16 selected + 2 shared per token, 69 KDA + 24 Gated MLA attention layers, hidden dim 7168, SiTU-GLU, a 401M-parameter MoonViT-V2 vision encoder, and MXFP4 weights with MXFP8 activations. The KDA (Kimi Delta Attention) plus Gated MLA split is Moonshot's answer to long-context economics: linear-attention layers replace part of the dense attention stack so 1M-token context stays tractable. See [Mixture-of-Experts](/technology/mixture-of-experts/) and the [MoE architectures research](/research/chinese-ai-moe-architectures/).
+
+## What the context window actually means
+
+K3 is the database's unique 1M-in / 1M-out pairing. Most 1M-input models cap output at 131K–393K; K3 can *generate* up to 1,048,576 tokens, which reframes what it is for: long-form document synthesis, multi-file code generation, and agent runs with very long output trajectories — not just long-input analysis. The trade-off is cost: at $15/M output tokens, a single maximal response is a material expense. See the [context-window research](/research/chinese-ai-context-windows/).
+
+## Pricing implications
+
+$3.00 input / $15.00 output per 1M tokens with automatic prefix caching ($0.30 cached input). The 5x input-to-output ratio is the highest in the flagship tier, reflecting the premium on generation. The $15 output price, combined with a 1M output ceiling, means K3's worst-case single-request cost is the highest in the database — budget-sensitive deployments should cap `max_completion_tokens` (default 131,072) rather than rely on the ceiling. API access requires a $1 minimum top-up. See the [MiniMax M3 comparison](/comparisons/kimi-k3-vs-minimax-m3/).
+
+## API, coding, and agent implications
+
+K3 targets software engineering and deep reasoning. Vendor-reported DeepSWE (67.5) and Terminal-Bench 2.1 (88.3) are strong coding/agentic signals, and agent capability is documented. The fixed sampling parameters (temperature 1.0, top_p 0.95) mean deterministic, low-temperature outputs are not achievable through the API — a real constraint for reproducible batch jobs. `max_completion_tokens` defaults to 131,072 and can be set to 1,048,576. The [Kimi Code](/agents/kimi-code/) agent runs on K3.
+
+## Open weights and license
+
+Weights are on Hugging Face and ModelScope under the "Kimi K3 License": MIT-style permissive, but operators with >$20M aggregate revenue over any 12 months must sign a separate agreement, and products over 100M MAU or $20M monthly revenue must display "Kimi K3" in the UI. This is a conditional-open license, not plain MIT — commercial self-hosters above the thresholds face obligations. See [licensing explained](/research/chinese-ai-model-licensing-explained/).
+
+## Benchmark interpretation
+
+Six vendor-reported rows: GPQA Diamond 93.5, HLE-Full 43.5 (56.0 with tools), DeepSWE 67.5, Terminal-Bench 2.1 88.3, MMMU-Pro 81.6, and Video-MME 90.0. The multimodal rows (MMMU-Pro, Video-MME) reflect K3's native vision/video; the HLE with-tools delta again shows tool access raising the ceiling. Moonshot notes some comparison scores are cited from Artificial Analysis — a third-party source — though the K3-specific rows here are vendor-reported.
+
+## What the benchmarks do not prove
+
+These scores do not independently verify K3 against competitors, and the modality documentation is itself inconsistent: the architecture table says Text+Image while the README, launch blog and API guide also show video input. Treat the exact input-modality boundary as uncertain. See [how to read vendor-reported benchmarks](/guides/how-to-read-vendor-reported-benchmarks/).
+
+## Suitable and less suitable workloads
+
+**Well-suited:** long-form document and code generation, deep reasoning, multimodal (vision/video) analysis, and agent workloads that benefit from 1M output headroom. **Less suited:** high-volume low-cost chat (priced at flagship tier), latency/reproducibility-sensitive batch work (fixed sampling), and commercial self-hosting above the license thresholds.
+
+## China AI Hub analysis
+
+China AI Hub analysis indicates that K3 occupies the top of the flagship tier on two axes — parameter scale (2.8T) and output ceiling (1M) — but pays for both in the highest output pricing and the most constrained sampling controls. The KDA/Gated-MLA architecture and 896-expert topology are the most technically transparent open release in the collection, which is an asset for researchers even if the $15 output price limits practical reach. The fixed temperature/top_p is a genuine, under-appreciated limitation for production users expecting standard sampling controls.
+
+*Labels used above: **Official fact** (from primary sources), **Vendor-reported claim** (benchmark scores published by Moonshot), **Third-party evidence** (Artificial Analysis, where cited), and **China AI Hub analysis** (our synthesis, always introduced as such).*
