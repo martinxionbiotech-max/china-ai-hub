@@ -57,3 +57,60 @@
 | Fabricated data | 0（deepseek-v3-2 / qwen3.7-plus 缺失字段如实标注，未补造） |
 | Build | 121 页通过；canonical/og:url 覆盖验证通过 |
 | Remaining | 6 个 comparison 页深度升级（P0 续）、14 research 页统一四层标签措辞（P0 续）|
+
+---
+
+# China AI Hub — Phase 2 Change Log（P0-b 对比页深化 + Research 页微调）
+
+**日期**：2026-09-28 · **范围**：主站 `china-ai-hub` 对比页 + Research 页
+**依据**：`docs/content-audit.md` P0 清单 + 战略 §4/§5/§8/§10
+**验证方式**：官方源沿用既有 source 引用（零编造）+ `npm run build` 121 页通过 + 内链逐条 grep 核对存在
+
+## A · 6 个对比页深化（规格表驱动 → 逐维解读）
+
+每页补：逐维「差异为何重要」分析（不重排规格表）、benchmark 可比性限制节、证据化语言（better suited to / more relevant when / has an advantage in / has a limitation in）、四层标签（Official fact / Vendor-reported claim / China AI Hub analysis）、内部链接到模型页。保留全部既有规格表与 source 引用。
+
+| File | 新增维度分析数 | 绝对胜者表述清除 | 内链新增 |
+|---|---|---|---|
+| `comparisons/deepseek-v4-1-flash-vs-glm-5.3-flash.md` | 7（cost/long-context/reasoning/coding/agent-GUI/deployment/API） | 0（原文已无） | 2（两模型页） |
+| `comparisons/deepseek-v4-pro-vs-kimi-k3.md` | 7 | 0 | 2 |
+| `comparisons/deepseek-v4-pro-vs-qwen3.8-max.md` | 7 | 0 | 2 |
+| `comparisons/doubao-seed-2-1-pro-vs-minimax-m3.md` | 7 | 0 | 2 |
+| `comparisons/kimi-k3-vs-minimax-m3.md` | 7 | 0 | 2 |
+| `comparisons/qwen3.8-max-vs-glm-5.3.md` | 7 | 0 | 2 |
+
+每页均新增 **Benchmark comparability is limited** 明确声明（不同 test configuration，不可按 headline scores 排名）＋ 文末四层标签说明。
+
+## B · 14 个 Research 页微调（纯增量，不动标题/URL/结构/数据）
+
+| File | 标签统一 | 补 Limitations | 内链新增 |
+|---|---|---|---|
+| `benchmark-methodology-divergence.md` | ✓（China AI Hub analysis indicates） | ✓（新增 Limitations 段） | 2（deepseek-v4-pro、qwen38-max） |
+| `open-weight-vs-api-structural-analysis.md` | ✓ | ✓（新增 Limitations 段） | 2（deepseek-v4-pro、qwen38-max） |
+| `chinese-ai-context-windows.md` | ✓ | 已有 | 2（kimi-k3、technology/long-context） |
+| `chinese-ai-apis-compared.md` | ✓ | 已有 | 2（deepseek-v4-pro、companies/alibaba-cloud） |
+| `chinese-ai-coding-models.md` | ✓ | 已有 | 2（glm-53、kimi-k3） |
+| `chinese-ai-model-companies-explained.md` | ✓ | 已有 | 6（六公司页） |
+| `chinese-ai-model-licensing-explained.md` | ✓ | 已有 | 4（deepseek-v4-pro、kimi-k3、minimax-m3、qwen38-max） |
+| `chinese-ai-model-pricing-changed.md` | ✓ | 已有 | 1（deepseek-v4-1-flash） |
+| `chinese-ai-moe-architectures.md` | ✓ | 已有 | 2（deepseek-v4-1-flash、glm-53-flash） |
+| `chinese-ai-multimodal-capabilities.md` | ✓ | 已有 | 2（deepseek-v4-1-flash、glm-53-flash） |
+| `glm-agent-oriented-ai.md` | ✓ | 已有 | 1（glm-53-flash） |
+| `how-deepseek-changed-chinas-ai-market.md` | ✓ | 已有 | 1（deepseek-v4-pro） |
+| `rise-of-chinese-ai-agents.md` | ✓ | 已有 | 5（autoglm、deepseek-harness、glm-coding-plan、kimi-code、qwen-code） |
+| `state-of-chinas-ai-models-2026.md` | ✓ | 已有 | 1（kimi-k3） |
+
+## 审计结论
+
+| 项 | 结果 |
+|---|---|
+| Pages modified | 20（6 对比 + 14 Research） |
+| Pages added / removed | 0 |
+| 维度分析新增 | 42（6 页 × 7 维） |
+| 绝对胜者表述清除 | 0（对比页原文已符合「不宣判胜者」，未发现 universal winner / overall best 类表述） |
+| 四层标签 | 6 对比页文末补标签说明 + 14 Research 页统一「China AI Hub analysis indicates」措辞 |
+| Limitations 新增 | 2（benchmark-methodology-divergence、open-weight-vs-api-structural-analysis） |
+| Internal links added | 对比 12 条 + Research 33 条（全部 grep 核对目标页存在） |
+| Fabricated data | 0（所有数值沿用既有 source） |
+| Build | 121 页通过 |
+| Remaining | P1（18 technology 页加深 + 6 company/10 agent/6 API 页加答案前置 + 3 guides 轻量优化） |
