@@ -77,6 +77,20 @@ MiniMax M3 is open weight under the MiniMax Community License (non-commercial fr
 
 The database holds 1 benchmark record for Doubao Seed 2.1 Pro and 5 for MiniMax M3, labeled by source type and version. The counts reflect what vendors have published, not model quality; we do not rank the two on this page. Check the benchmark pages for per-score source labels.
 
+**Benchmark comparability is limited**: the two models' scores come from different test configurations — different benchmark versions, evaluation harnesses and tool setups — and the single Doubao record makes head-to-head comparison unreliable. Do not rank on headline scores alone.
+
+## Why each difference matters
+
+China AI Hub analysis indicates the following per-dimension implications, drawn from the listed facts above.
+
+- **Cost**: [MiniMax M3](/models/minimax-m3/) has an advantage at ~1/20 the input and ~1/25 the output price — the widest gap in the database. At $30 per 1M output tokens, long generation and heavy reasoning on [Doubao Seed 2.1 Pro](/models/doubao-seed-2-1-pro/) multiply cost quickly.
+- **Long-context**: both list a 1M-token input window; Doubao Seed 2.1 Pro lists a 262,144-token maximum output while MiniMax M3 has a limitation in not publicly disclosing one.
+- **Reasoning**: both list reasoning, so cost — not capability — is the differentiator on this axis.
+- **Coding**: MiniMax M3 is more relevant for coding workloads — it lists coding where Doubao Seed 2.1 Pro does not.
+- **Agent / GUI**: Doubao Seed 2.1 Pro has an advantage in GUI automation — it lists computer use; MiniMax M3 lists agent capability and video input instead.
+- **Deployment**: MiniMax M3 has an advantage in self-hosting (open-weight under a community license), but with a limitation: the non-commercial boundary and attribution/authorization thresholds. Doubao Seed 2.1 Pro is proprietary and API-only.
+- **API**: both expose an API; cost and capability fit decide.
+
 ## Trade-off summary
 
 - Price: MiniMax M3 lists ~1/20 the input and ~1/25 the output price.
@@ -86,3 +100,5 @@ The database holds 1 benchmark record for Doubao Seed 2.1 Pro and 5 for MiniMax 
 - Output: Doubao lists a 262,144-token maximum; MiniMax M3 does not disclose one.
 
 The price difference is large enough to dominate most decisions; choose Doubao Seed 2.1 Pro only if computer use is the core requirement. Verify current prices on the official pages before committing.
+
+*Labels used above: **Official fact** (prices, context windows, capabilities and license terms from primary provider sources), **Vendor-reported claim** (benchmark scores), and **China AI Hub analysis** (the "why each difference matters" reasoning, introduced as analysis). No third-party benchmark evidence is currently recorded for these models.*

@@ -72,6 +72,20 @@ Both are open weight, with different obligations. Kimi K3 uses the Kimi K3 Licen
 
 The database holds 6 benchmark records for Kimi K3 and 5 for MiniMax M3, labeled by source type and version. Different benchmarks cover different models; we do not rank the two on this page. Check each benchmark page for score-by-score source labels.
 
+**Benchmark comparability is limited**: the two models' scores come from different test configurations — different benchmark versions, evaluation harnesses and tool setups — and several benchmarks cover only one of the two. Do not rank on headline scores alone.
+
+## Why each difference matters
+
+China AI Hub analysis indicates the following per-dimension implications, drawn from the listed facts above.
+
+- **Cost**: [MiniMax M3](/models/minimax-m3/) has an advantage at ~1/10 the input and ~1/12 the output price; on long reasoning or generation the per-task cost difference can be an order of magnitude.
+- **Long-context**: both list a 1M-token input window; [Kimi K3](/models/kimi-k3/) has an advantage in very long generations because it lists the full-window 1M-token maximum output, while MiniMax M3 has a limitation in not publicly disclosing one.
+- **Reasoning**: both list reasoning, so neither has a listed advantage — cost and output length, not capability, differentiate on this axis.
+- **Coding**: both list coding, and the capability profiles are closely matched on paper.
+- **Agent / media**: both list agent capability, vision and video, so this axis does not differentiate.
+- **Deployment / license**: both are open-weight but with different obligations; MiniMax M3 has a limitation in its non-commercial boundary, and Kimi K3 in its revenue-triggered obligations — choose by which license you can actually operate under.
+- **API**: both expose an API; cost and output-length profile decide.
+
 ## Trade-off summary
 
 - Price: MiniMax M3 lists roughly one-tenth the input and one-twelfth the output price of Kimi K3.
@@ -80,3 +94,5 @@ The database holds 6 benchmark records for Kimi K3 and 5 for MiniMax M3, labeled
 - License: both custom; MiniMax's has a non-commercial boundary, Kimi's has revenue-triggered obligations.
 
 Choose by cost profile and output-length needs, and by which license you can actually operate under. Verify current prices on the official pages before committing.
+
+*Labels used above: **Official fact** (prices, context windows, capabilities and license terms from primary provider sources), **Vendor-reported claim** (benchmark scores), and **China AI Hub analysis** (the "why each difference matters" reasoning, introduced as analysis). No third-party benchmark evidence is currently recorded for these models.*

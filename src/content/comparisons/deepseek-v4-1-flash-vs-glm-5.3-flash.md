@@ -79,6 +79,20 @@ Both are open weight with permissive licenses: MIT for DeepSeek-V4.1-Flash, Apac
 
 The database holds 5 benchmark records for DeepSeek-V4.1-Flash and 3 for GLM-5.3-Flash, labeled by source type and version. We do not rank the models on this page; check each benchmark page for score-by-score source labels.
 
+**Benchmark comparability is limited**: the two models' scores come from different test configurations — different benchmark versions, evaluation harnesses and tool setups — and several benchmarks cover only one of the two. Do not rank on headline scores alone.
+
+## Why each difference matters
+
+China AI Hub analysis indicates the following per-dimension implications, drawn from the listed facts above.
+
+- **Cost**: at $0.15 input for both, price is a weak discriminator at this tier; the $0.10 output gap only matters at very high output volume. [DeepSeek-V4.1-Flash](/models/deepseek-v4-1-flash/) has an advantage in off-peak scheduling — it lists half-price off-peak rates the other does not.
+- **Long-context**: both list a 1M-token input window, so long-input analysis is equivalent; [DeepSeek-V4.1-Flash](/models/deepseek-v4-1-flash/) has an advantage in long single generations because it lists a 3x larger maximum output.
+- **Reasoning**: both list reasoning and neither lists a distinct reasoning tier, so no listed difference on this axis.
+- **Coding**: both list coding; DeepSeek-V4.1-Flash is more relevant when the pipeline needs tool calling, function calling or structured output, which it lists and [GLM-5.3-Flash](/models/glm-53-flash/) does not.
+- **Agent / GUI**: GLM-5.3-Flash is more relevant when the workload is GUI or agent orchestration — it lists computer use and agent capability.
+- **Deployment**: both are open-weight and self-hostable, so neither has a deployment advantage; the license difference (MIT vs Apache-2.0) is minor, though Apache-2.0's explicit patent grant can matter in legal review.
+- **API**: both expose an API; the practical choice tracks capability fit (structured/tool surface vs video/computer-use) rather than cost.
+
 ## Trade-off summary
 
 - Price: essentially tied ($0.15 input both; $0.50 vs $0.60 output).
@@ -88,3 +102,5 @@ The database holds 5 benchmark records for DeepSeek-V4.1-Flash and 3 for GLM-5.3
 - License: both permissive open weight (MIT vs Apache-2.0).
 
 The right pick depends on whether the workload is structured API/agent-tool pipelines or GUI/video automation — the prices are close enough that capability fit should decide. Verify current prices on the official pages before committing.
+
+*Labels used above: **Official fact** (prices, context windows, capabilities and license terms from primary provider sources), **Vendor-reported claim** (benchmark scores), and **China AI Hub analysis** (the "why each difference matters" reasoning, introduced as analysis). No third-party benchmark evidence is currently recorded for these models.*

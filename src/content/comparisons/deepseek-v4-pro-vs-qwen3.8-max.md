@@ -74,6 +74,20 @@ DeepSeek-V4-Pro is open weight under MIT; Qwen3.8-Max is proprietary with API ac
 
 The database holds 4 benchmark records for DeepSeek-V4-Pro and 5 for Qwen3.8-Max, all labeled with source type (vendor-reported vs independent) and version. Different benchmarks cover different models, so counts are not comparable scores. We do not rank models on this page; the tables above state measured and vendor-listed facts, and the trade-offs below explain what to weigh.
 
+**Benchmark comparability is limited**: the two models' scores come from different test configurations — different benchmark versions, evaluation harnesses and tool setups — and several benchmarks cover only one of the two. Do not rank on headline scores alone.
+
+## Why each difference matters
+
+China AI Hub analysis indicates the following per-dimension implications, drawn from the listed facts above.
+
+- **Cost**: [DeepSeek-V4-Pro](/models/deepseek-v4-pro/) has an advantage at ~3x lower input and ~3x lower output price; output-token-heavy reasoning workloads amplify that gap.
+- **Long-context**: both list a 1M-token input window; DeepSeek-V4-Pro has an advantage in long single generations because it lists a 3x larger maximum output (393,216 vs 131,072 tokens).
+- **Reasoning**: both list reasoning, so neither has a listed advantage on this axis.
+- **Coding**: both list coding, tool calling and structured output; DeepSeek-V4-Pro's price is more relevant for high-volume code generation, while [Qwen3.8-Max](/models/qwen38-max/) adds vision/video for multimodal coding.
+- **Vision / media**: Qwen3.8-Max is more relevant when document-image, chart or video input is required — it lists vision and video where DeepSeek-V4-Pro lists neither.
+- **Deployment**: DeepSeek-V4-Pro has an advantage for self-hosting and data-residency (MIT open-weight, self-hostable); Qwen3.8-Max has a limitation here (proprietary, API-only).
+- **API**: both expose an API; DeepSeek-V4-Pro is listed deprecated, which is the operational caveat to verify.
+
 ## Trade-off summary
 
 - Price: DeepSeek-V4-Pro lists substantially lower input/output prices.
@@ -83,3 +97,5 @@ The database holds 4 benchmark records for DeepSeek-V4-Pro and 5 for Qwen3.8-Max
 - Status: DeepSeek-V4-Pro is listed as deprecated; Qwen3.8-Max as active.
 
 The right choice depends on the workload — vision requirements, self-hosting needs, price sensitivity and how much output a task generates. Verify prices on the official pages before committing, as both change frequently.
+
+*Labels used above: **Official fact** (prices, context windows, capabilities and license terms from primary provider sources), **Vendor-reported claim** (benchmark scores), and **China AI Hub analysis** (the "why each difference matters" reasoning, introduced as analysis). No third-party benchmark evidence is currently recorded for these models.*

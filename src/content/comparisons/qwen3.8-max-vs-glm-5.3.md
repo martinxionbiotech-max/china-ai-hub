@@ -74,6 +74,20 @@ This is the largest split. GLM-5.3 is open weight under Apache-2.0 and can be se
 
 The database holds 5 benchmark records for Qwen3.8-Max and 4 for GLM-5.3, each labeled with source type and version. Counts differ because benchmarks differ; we do not rank the models. Check the benchmark pages for per-benchmark scores and source-type labels.
 
+**Benchmark comparability is limited**: the two models' scores come from different test configurations — different benchmark versions, evaluation harnesses and tool setups — and several benchmarks cover only one of the two. Do not rank on headline scores alone.
+
+## Why each difference matters
+
+China AI Hub analysis indicates the following per-dimension implications, drawn from the listed facts above.
+
+- **Cost**: [GLM-5.3](/models/glm-53/) has an advantage at ~30% lower input and output price; the output-price gap compounds on reasoning workloads that multiply output tokens.
+- **Long-context**: identical listed windows (1M input / 131,072 output) — this axis does not differentiate.
+- **Reasoning**: both list reasoning, so neither has a listed advantage on this axis.
+- **Coding**: both list coding; [Qwen3.8-Max](/models/qwen38-max/) is more relevant for structured, tool-driven coding pipelines because it additionally lists tool calling and structured output.
+- **Vision / media**: Qwen3.8-Max is more relevant when document-image or video input is required — it lists vision and video where GLM-5.3 lists neither.
+- **Deployment**: GLM-5.3 has an advantage for self-hosting and data-residency (Apache-2.0 open-weight, self-hostable); Qwen3.8-Max has a limitation here (proprietary, API-only).
+- **API**: both expose an API; deployment constraints and workload decide.
+
 ## Trade-off summary
 
 - Media and tools: Qwen3.8-Max lists vision, video, tool calling and structured output; GLM-5.3 lists none of these.
@@ -82,3 +96,5 @@ The database holds 5 benchmark records for Qwen3.8-Max and 4 for GLM-5.3, each l
 - Context: identical listed windows.
 
 Choose by deployment constraints and workload: self-hosting and budget favor GLM-5.3's openness and price; vision/video and tool-heavy pipelines favor Qwen3.8-Max's listed capabilities. Verify prices on the official pages before committing.
+
+*Labels used above: **Official fact** (prices, context windows, capabilities and license terms from primary provider sources), **Vendor-reported claim** (benchmark scores), and **China AI Hub analysis** (the "why each difference matters" reasoning, introduced as analysis). No third-party benchmark evidence is currently recorded for these models.*
