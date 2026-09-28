@@ -63,6 +63,21 @@ A license that is permissive at your scale may not be at your customer's scale. 
 
 Most serious deployments run both: open-weight models for sensitive or steady workloads, APIs for spikes and frontier capability. The database fields to compare are open_weight, license, self_hosting, api_available and the pricing tables — all of which you can filter on the models page.
 
+## Decision matrix
+
+A starting filter, not a ranking. Match your dominant constraint to the path the database records support best (verified 2026-09-22).
+
+| Dominant constraint | Lean toward | Why (verified field) |
+|---|---|---|
+| Immediate capability, no infra | API | Qwen3.8-Max ($2.00/$6.00) or Doubao Seed 2.1 Pro ($6.00/$30.00) are API-only |
+| Data residency / on-premises | Open weight | [DeepSeek-V4-Pro](/models/deepseek-v4-pro/) (MIT), [GLM-5.3](/models/glm-53/) (Apache-2.0) |
+| Fine-tuning / modification | Open weight | MIT and Apache-2.0 releases permit modification |
+| Steady high volume | Open weight | GPU costs amortize below API at scale |
+| Lowest unit cost now | API | $0.15/1M budget tier (flash models) |
+| Custom license risk tolerance | Read the license | Kimi K3, MiniMax M3, Qwen A95B carry scale-triggered terms |
+
+See the [models database](/models/), the [pricing database](/pricing/) and the [choose-a-model guide](/guides/how-to-choose-a-chinese-ai-model/) for the underlying records.
+
 ## Bottom line
 
 Choose the API when you need speed and simplicity; choose open weights when you need control, residency or fine-tuning — and read the license before you build.

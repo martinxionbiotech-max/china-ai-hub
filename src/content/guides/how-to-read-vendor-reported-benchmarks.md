@@ -54,3 +54,18 @@ The China AI Hub benchmark database (10 benchmarks, last verified 2026-09-22) re
 ## Bottom line
 
 Treat vendor-reported scores as vendor statements, not measurements. China AI Hub labels every score by source type precisely so the two can be told apart at a glance.
+
+## Benchmark reference table
+
+The benchmark database (10 benchmarks, last verified 2026-09-22) records each benchmark's task type, evaluation method and contamination notes as structured fields. These anchors are the quickest way to judge whether a given score is the right kind of evidence for your decision:
+
+| Benchmark | Task type (verified field) | What a score on it evidences |
+|---|---|---|
+| [HLE](/benchmarks/hle/) | Hardest-knowledge exam | Broad world-knowledge ceiling |
+| [GPQA Diamond](/benchmarks/gpqa-diamond/) | Graduate-level, retrieval-resistant Q&A | Reasoning over obscure knowledge |
+| [SWE-bench](/benchmarks/swe-bench/) | Real GitHub issue resolution | Repository-scale coding |
+| [Terminal-Bench](/benchmarks/terminal-bench/) | Terminal/agent task completion | Agentic terminal use |
+| [DeepSWE](/benchmarks/deepswe/) | Deep software engineering | Long-horizon SWE |
+| [MMMU-Pro](/benchmarks/mmmu-pro/) | Multimodal understanding | Vision-language reasoning |
+
+Each benchmark page records its version, scoring and contamination caveats — check those before comparing any two numbers.

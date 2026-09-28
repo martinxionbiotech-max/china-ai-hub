@@ -81,3 +81,19 @@ Check the model's status field: DeepSeek-V4-Pro is listed as deprecated in the d
 - Computer use: Doubao Seed 2.1 Pro (model) or the seven agents listing it.
 
 No single model wins these axes at once; the right choice is a function of your task's weight on each.
+
+## Selection matrix
+
+This matrix maps common requirements to the database record that best matches, per the verified fields (2026-09-22). It is a starting filter, not a ranking — verify pricing and capability on the model page before committing.
+
+| Requirement | Best-documented fit | Why (verified field) |
+|---|---|---|
+| Lowest cost, budget-tier | [DeepSeek-V4.1-Flash](/models/deepseek-v4-1-flash/) / [GLM-5.3-Flash](/models/glm-53-flash/) | $0.15/1M input; $0.50–$0.60 output |
+| Lowest flagship cost | [MiniMax-M3](/models/minimax-m3/) | $0.30/$1.20 — cheapest flagship by a wide margin |
+| Longest output / generation | [Kimi K3](/models/kimi-k3/) | 1,048,576-token output ceiling |
+| Permissive self-hosting | [DeepSeek-V4-Pro](/models/deepseek-v4-pro/) | MIT license, 1.6T open-weight MoE |
+| Vision + video + structured output | [Qwen3.8-Max](/models/qwen38-max/) | Lists vision, video and structured output |
+| Computer use (model) | [Doubao Seed 2.1 Pro](/models/doubao-seed-2-1-pro/) | Lists computer use; cn-beijing only |
+| Multi-region enterprise API | [Model Studio](/api/model-studio/) | Six regions; 30,000 RPM global limits |
+
+See the [pricing database](/pricing/), [models database](/models/) and the [open weight vs API guide](/guides/open-weight-vs-api/) for the underlying records.
