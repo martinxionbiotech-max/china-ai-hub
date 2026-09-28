@@ -114,3 +114,62 @@
 | Fabricated data | 0（所有数值沿用既有 source） |
 | Build | 121 页通过 |
 | Remaining | P1（18 technology 页加深 + 6 company/10 agent/6 API 页加答案前置 + 3 guides 轻量优化） |
+
+---
+
+# China AI Hub — Phase 2 Change Log（P1 Technology 页加深 + Company/Agent/API 页升级 + 指南轻量）
+
+**日期**：2026-09-28 · **范围**：主站 `china-ai-hub`
+**依据**：战略 §7/§2/§3/§8/§10 + `docs/content-audit.md` P1 清单
+**验证方式**：零编造（全部数值取自既有 frontmatter 事实与官方源）+ `npm run build` 121 页通过 + 内链逐条 grep 核对存在
+
+## A · 18 个 Technology 页深化（B 级，不重写已达标页）
+
+每页增量（不重写结构）：补「What the available evidence actually shows」诚实证据小结节 + 加深中国 AI 证据密度（引具体模型/公司/benchmark/价格锚点）+ 补 related_models/companies 双向内链 + 文末四层标签。全部数值沿用既有实体页已刊载事实。
+
+| File | 证据锚点 | 内链 | 说明 |
+|---|---|---|---|
+| `a2a.md` | 1 | 3（companies） | 无 A2A 采用为数据缺口非趋势；MCP 7/10 不对称 |
+| `ai-agents.md` | 9 | 已有 | 补定价锚点（GLM Coding Plan ¥118–1078、Kimi K3 2.8T）|
+| `ai-chips.md` | 2 | 2 | MLA/FlashMLA/DeepGEMM/MSA 效率工程为硬件压力代理 |
+| `ai-infrastructure.md` | 3 | 2 | $0.15/1M 价格地板为基础设施成就 |
+| `computer-use.md` | 4 | 已有 | Doubao Work 订阅定价 + AutoGLM 安全模式 |
+| `deep-research.md` | 4 | 3+3 | 无专用产品；393K/1M 输出为构件能力 |
+| `distillation.md` | 2 | 2+2 | Qwen 35B-A3B/2.4T-A95B 蒸馏产品锚点 |
+| `function-calling.md` | 5 | 2+2 | 五 API 平台 OpenAI 兼容 tool 面 |
+| `inference.md` | 3 | 1+1 | off-peak 2x 为容量管理决策 |
+| `long-context.md` | 7 | 已有 | 11 模型 1M；输入/输出不对称 131K→1M |
+| `mcp.md` | 2 | 3+5 | 7/10 开源 agent 采用 vs 3 闭源不列 |
+| `mixture-of-experts.md` | 6 | 4+3 | 五公司旗舰 MoE；3.1% 激活比成本逻辑 |
+| `multimodal-ai.md` | 7 | 已有 | V4-Pro 无视觉 vs V4.1-Flash 有视觉 |
+| `quantization.md` | 3 | 已有 | 30B 4-bit 单卡 + MoE 量化不均 |
+| `rag.md` | 3 | 已有 | 长上下文替代检索的设计选择 |
+| `reasoning-models.md` | 6 | 已有 | 旗舰价差 $0.30→$6.00；vendor 分数 |
+| `synthetic-data.md` | 5 | 3+3 | R1 配方 + A3B 产品线；无逐模型数据构成字段 |
+| `tool-calling.md` | 5 | 已有 | 五 API 平台 tool 面；可用性普遍/可靠性无证 |
+
+## B · 22 个实体页升级（6 Company + 10 Agent + 6 API，C 级）
+
+每页补：答案前置块（§3 首 100–180 词 What/Why/Characteristics/Professional should know）+ 文末四层标签 +「Why it matters」分析段（公司结构性角色 / agent 与底层模型关系 / API 兼容性与成本取舍）+ 内链到相关模型/公司/技术页。22 页全部覆盖（answer-first=1、labels=1、why-it-matters=1）。
+
+## C · 3 个指南轻量（A/B 级）
+
+| File | 改动 |
+|---|---|
+| `how-to-choose-a-chinese-ai-model.md` | 补 7 行 Selection matrix 表（需求→最佳匹配模型/API→已验证字段）|
+| `how-to-read-vendor-reported-benchmarks.md` | 补 6 行 Benchmark reference 表（benchmark→task type→分数说明什么）|
+| `open-weight-vs-api.md` | 补 6 行 Decision matrix 表（约束→API/open-weight→已验证字段）|
+
+## 审计结论
+
+| 项 | 结果 |
+|---|---|
+| Pages modified | 43（18 technology + 6 company + 10 agent + 6 API + 3 guides）|
+| Pages added / removed | 0 |
+| 四层标签 | 18 tech 页 + 22 实体页文末全部补「China AI Hub analysis indicates」标签说明 |
+| 答案前置块 | 22 实体页全部补齐 |
+| Why-it-matters 分析 | 22 实体页全部补齐 |
+| Internal links | 18 tech 页 frontmatter 双向内链（related_models/companies）+ 22 实体页内链（全部 grep 核对目标存在）|
+| Fabricated data | 0（所有数值沿用既有 frontmatter/source，缺失字段如实标注）|
+| Build | 121 页通过 |
+| Remaining | P2（数据站历史维度：price/release/benchmark history + 逐字段 verification-date）|
