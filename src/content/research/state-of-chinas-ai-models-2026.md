@@ -96,7 +96,7 @@ The 1M tier is no longer a differentiator; it is the default for flagship and fl
 | Doubao Seed 2.1 Pro | flagship | ¥6 | ¥30 |
 | GLM-5.3 | flagship | $1.40 | $4.40 |
 | Qwen3.8-Max | flagship | $2.00 | $6.00 |
-| Kimi K3 | flagship | $3.00 | $15.00 |
+| [Kimi K3](/models/kimi-k3/) | flagship | $3.00 | $15.00 |
 | DeepSeek V4.1-Flash | flash | $0.15 | $0.60 |
 | Qwen3.8-Flash | flash | $0.15 | $0.47 |
 | GLM-5.3-Flash | flash | $0.15 | $0.50 |
@@ -131,7 +131,7 @@ This is a snapshot of 19 models at a single verification date (2026-09-20); the 
 
 ## China AI Hub View
 
-Our assessment: China's model market in 2026 has matured from a single-axis "capability race" into a three-axis market — openness, context and price — where the axes no longer move together. The most consequential fact in the data is the $0.15 flash floor and the 1M context default, because together they mean frontier-scale context is now cheap, which changes what downstream products are economical to build. We expect the flash tier to consolidate further (three vendors at the same price is not a stable equilibrium), and the flagship tier to keep widening its price spread until independent, shared-methodology evaluation exists to justify the premium. Until then, the rational default for a price-sensitive adopter is a 1M-context flash model at $0.15, not a flagship.
+China AI Hub analysis indicates: China's model market in 2026 has matured from a single-axis "capability race" into a three-axis market — openness, context and price — where the axes no longer move together. The most consequential fact in the data is the $0.15 flash floor and the 1M context default, because together they mean frontier-scale context is now cheap, which changes what downstream products are economical to build. We expect the flash tier to consolidate further (three vendors at the same price is not a stable equilibrium), and the flagship tier to keep widening its price spread until independent, shared-methodology evaluation exists to justify the premium. Until then, the rational default for a price-sensitive adopter is a 1M-context flash model at $0.15, not a flagship.
 
 ## Conclusion
 

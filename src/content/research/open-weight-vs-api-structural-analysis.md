@@ -47,9 +47,9 @@ By September 2026 the Chinese frontier labs have settled into a recognizable str
 
 ## Divergence 1: the open model is not always the API model
 
-Alibaba is the clearest case. Its open release, Qwen3.8-2.4T-A95B, has a 262,144-token context and is text-only and thinking-only. Its API flagship, Qwen3.8-Max, has a 1M-token context and accepts image and video input. A team that downloads the open weights to "get Qwen3.8-Max on-prem" gets a materially different product. In fact the database records the API flagship's benchmark scores from the open model card — one of the methodology divergences covered in the companion research article.
+Alibaba is the clearest case. Its open release, Qwen3.8-2.4T-A95B, has a 262,144-token context and is text-only and thinking-only. Its API flagship, [Qwen3.8-Max](/models/qwen38-max/), has a 1M-token context and accepts image and video input. A team that downloads the open weights to "get Qwen3.8-Max on-prem" gets a materially different product. In fact the database records the API flagship's benchmark scores from the open model card — one of the methodology divergences covered in the companion research article.
 
-DeepSeek inverts the pattern: both V4-Pro (1.6T total / 49B active) and V4.1-Flash (552B / 8B active on input) ship MIT open weights, and V4.1-Flash is also the standard API model (deepseek-flash), with V4-Pro deprecated. Here the open and API products largely coincide — but they are different sizes aimed at different tiers.
+DeepSeek inverts the pattern: both [V4-Pro](/models/deepseek-v4-pro/) (1.6T total / 49B active) and V4.1-Flash (552B / 8B active on input) ship MIT open weights, and V4.1-Flash is also the standard API model (deepseek-flash), with V4-Pro deprecated. Here the open and API products largely coincide — but they are different sizes aimed at different tiers.
 
 ## Divergence 2: license fragmentation
 
@@ -75,6 +75,10 @@ Not every lab opens everything. ByteDance's Doubao Seed 2.1 Pro is proprietary a
 
 The dual-track structure gives adopters a real menu but demands two checks before choosing: (1) is the open model the same product as the API model you evaluated, and (2) does the license survive your scale and your customers' scale. The database fields to compare are open_weight, license, context_window, capabilities (vision/video), api_available and pricing.
 
+## Limitations
+
+Two constraints apply. First, the open-versus-API divergence is documented from model cards, API pages and license files, not from a controlled comparison of the same workload run on both tracks; whether an open release and its API flagship are behaviorally equivalent is not something the database can assert from the recorded fields alone. Second, license terms are transcribed from vendor statements and change between releases, so the thresholds quoted here should be re-checked against each repository's current license file before a commercial decision.
+
 ## China AI Hub view
 
-Our assessment: the 2026 Chinese ecosystem has made "open weights" a marketing signal as much as a technical fact, and the decisive differentiator has shifted from openness to fidelity — how closely the open release matches the API flagship you actually benchmarked. The practical rule that follows: never assume the downloadable weights are the API model. Verify context window, modalities and license against the specific product you will deploy, and treat the open release as a separate product until proven otherwise.
+China AI Hub analysis indicates: the 2026 Chinese ecosystem has made "open weights" a marketing signal as much as a technical fact, and the decisive differentiator has shifted from openness to fidelity — how closely the open release matches the API flagship you actually benchmarked. The practical rule that follows: never assume the downloadable weights are the API model. Verify context window, modalities and license against the specific product you will deploy, and treat the open release as a separate product until proven otherwise.

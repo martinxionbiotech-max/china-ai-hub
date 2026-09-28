@@ -84,7 +84,7 @@ FACT: 1M context is now the default position for new releases across DeepSeek, B
 
 **Finding 1: context tiering now maps to product tiering, not vendor capability.** The 256K/200K models are not failures of capability; they are the cheap or legacy tiers of vendors whose flagships are 1M. MiniMax serves M2.7 at $0.30 alongside M3 at the same price with 1M — the older model's context is a historical artifact, not a pricing signal. The market has not stratified by "who can do long context" (everyone can) but by "where the vendor draws the product line."
 
-**Finding 2: output tokens are the real differentiator.** Among models that publish the limit, the spread is: DeepSeek 393K, Doubao 262K, GLM 131K, Qwen 131K, Kimi K3 1M. A 1M-input model with a 131K output cap (GLM-5.3, Qwen3.8) is not a long-form generation tool; it is a long-input analysis tool. Kimi K3's 1M input / 1M output pairing is unique in the collection — it is the only model documented as capable of generating a million tokens of output, which reframes its $3/$15 pricing: per-token output pricing on a 1M-output model implies a different cost ceiling for any single request than a 131K-output competitor.
+**Finding 2: output tokens are the real differentiator.** Among models that publish the limit, the spread is: DeepSeek 393K, Doubao 262K, GLM 131K, Qwen 131K, Kimi K3 1M. A 1M-input model with a 131K output cap (GLM-5.3, Qwen3.8) is not a long-form generation tool; it is a long-input analysis tool. [Kimi K3](/models/kimi-k3/)'s 1M input / 1M output pairing is unique in the collection — it is the only model documented as capable of generating a million tokens of output, which reframes its $3/$15 pricing: per-token output pricing on a 1M-output model implies a different cost ceiling for any single request than a 131K-output competitor.
 
 **Finding 3: open-weight long context is cheaper but capped.** The open Qwen3.8-2.4T-A95B carries 256K — below its closed sibling's 1M. GLM-5.3-Flash (open, 1M) is the exception that proves the pattern: Zhipu published the open model with the full 1M context, making it the only open-weight 1M-context model in the collection alongside GLM-5.3. Self-hosters chasing long context have a short list.
 
@@ -101,7 +101,7 @@ The trajectory from the database's older entries:
 
 ## Why It Matters
 
-- **For long-document analysis** (legal, financial, codebase review): any of the ten 1M models works, but output caps decide the deliverable. If the deliverable is a summary, 131K output is ample; if it is a generated report longer than ~100K tokens, only DeepSeek (393K) and Kimi K3 (1M) publish enough headroom.
+- **For long-document analysis** (legal, financial, codebase review; see the [long-context technology](/technology/long-context/) explainer): any of the ten 1M models works, but output caps decide the deliverable. If the deliverable is a summary, 131K output is ample; if it is a generated report longer than ~100K tokens, only DeepSeek (393K) and Kimi K3 (1M) publish enough headroom.
 - **For agent workloads**: 1M context plus cache pricing is the agent-economics sweet spot — the flash trio (DeepSeek/Qwen/GLM) all combine 1M with cache-hit discounts, which is why agent tooling has standardized on them.
 - **For self-hosting**: the 1M open-weight list is GLM-5.3 (744B/40B) and GLM-5.3-Flash (320B/18B). Nothing else in the collection combines open weights with 1M. This is a real constraint for enterprises that cannot use APIs.
 - **For latency-sensitive chat**: ByteDance Turbo's 256K at the low-latency tier shows a vendor explicitly trading context for speed — context and latency are still a trade in production, even if the spec sheet says otherwise.
@@ -124,7 +124,7 @@ Three caveats. (1) **Output limits are under-disclosed**: nine of nineteen model
 
 ## China AI Hub View
 
-Our assessment: context length has completed its transition from differentiator to baseline — 1M is now the price of entry for any serious 2026 release, available at $0.15 input. The frontier has moved to two secondary battles: output-token headroom (where Kimi K3's 1M stands alone) and the economics of long context under load (where cache pricing and linear-attention architectures matter more than the window number itself). For Q4, the database will watch three signals: whether any vendor pushes beyond 1M input; whether open-weight 1M options expand beyond Zhipu; and whether maximum_output disclosure becomes universal — currently the collection's biggest documentation gap.
+China AI Hub analysis indicates: context length has completed its transition from differentiator to baseline — 1M is now the price of entry for any serious 2026 release, available at $0.15 input. The frontier has moved to two secondary battles: output-token headroom (where Kimi K3's 1M stands alone) and the economics of long context under load (where cache pricing and linear-attention architectures matter more than the window number itself). For Q4, the database will watch three signals: whether any vendor pushes beyond 1M input; whether open-weight 1M options expand beyond Zhipu; and whether maximum_output disclosure becomes universal — currently the collection's biggest documentation gap.
 
 ## Conclusion
 

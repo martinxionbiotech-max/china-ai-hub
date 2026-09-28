@@ -58,10 +58,10 @@ The database records one agent each from DeepSeek (DeepSeek Harness), ByteDance 
 
 Category by category:
 
-- **Coding (4)**: GLM Coding Plan, Kimi Code, MiniMax Code, Qwen Code. The most contested category — every major lab except DeepSeek (whose coding agent runs on Harness) and ByteDance has a dedicated product here.
+- **Coding (4)**: GLM Coding Plan, Kimi Code, MiniMax Code, Qwen Code. The most contested category — every major lab except DeepSeek (whose coding agent runs on Harness) and ByteDance has a dedicated product here. See the [GLM Coding Plan](/agents/glm-coding-plan/), [Kimi Code](/agents/kimi-code/) and [Qwen Code](/agents/qwen-code/) agent pages.
 - **Platforms (2)**: MiniMax Agent (a cloud platform with skills, schedules, websites and research capabilities) and Qoder (a commercial coding platform with IDE, CLI, JetBrains plugin and cloud).
-- **Frameworks (2)**: DeepSeek Harness (the Cordis-based "Everything is a Plugin" runtime) and Qwen-Agent (a Python framework with Assistant, FnCallAgent and ReActChat agents).
-- **Autonomous assistants (2)**: AutoGLM (the first phone-use agent, open source, runs on-device via ADB/HDC/WebDriverAgent) and Doubao (ByteDance's consumer app, whose "Work" mode operates a virtual desktop autonomously).
+- **Frameworks (2)**: [DeepSeek Harness](/agents/deepseek-harness/) (the Cordis-based "Everything is a Plugin" runtime) and Qwen-Agent (a Python framework with Assistant, FnCallAgent and ReActChat agents).
+- **Autonomous assistants (2)**: [AutoGLM](/agents/autoglm/) (the first phone-use agent, open source, runs on-device via ADB/HDC/WebDriverAgent) and Doubao (ByteDance's consumer app, whose "Work" mode operates a virtual desktop autonomously).
 
 ## What the Data Shows
 
@@ -97,7 +97,7 @@ This analysis covers 10 agents — a snapshot of the most prominent offerings, n
 
 ## China AI Hub View
 
-Our assessment: China's agent market is mirroring its model market — the same labs, the same dual-track logic, one layer up. Open source is the acquisition funnel; closed subscriptions are the monetization. The genuinely distinctive element is the phone/desktop autonomy category, where AutoGLM and Doubao Work operate at opposite ends of the openness spectrum with no middle ground yet. We expect the coding category to consolidate first, because it is the only one where multiple vendors are competing with nearly identical open-source products differentiated mainly by billing mechanics.
+China AI Hub analysis indicates: China's agent market is mirroring its model market — the same labs, the same dual-track logic, one layer up. Open source is the acquisition funnel; closed subscriptions are the monetization. The genuinely distinctive element is the phone/desktop autonomy category, where AutoGLM and Doubao Work operate at opposite ends of the openness spectrum with no middle ground yet. We expect the coding category to consolidate first, because it is the only one where multiple vendors are competing with nearly identical open-source products differentiated mainly by billing mechanics.
 
 ## Conclusion
 

@@ -95,7 +95,7 @@ Three shifts are visible across the GLM record:
 
 Zhipu's structure answers a question the whole market is asking: where does agent value concentrate? Four implications:
 
-- **For agent developers**: GLM-5.3-Flash is the only model in the China AI Hub collection whose cheapest tier carries the full agent-capability flag set (computer_use, vision, video). Building on it means the capability you prototype is the capability you can deploy at scale without switching to a premium tier.
+- **For agent developers**: [GLM-5.3-Flash](/models/glm-53-flash/) is the only model in the China AI Hub collection whose cheapest tier carries the full agent-capability flag set (computer_use, vision, video). Building on it means the capability you prototype is the capability you can deploy at scale without switching to a premium tier.
 - **For coding-tool vendors**: the GLM Coding Plan's 20+ third-party integrations (Claude Code, Codex, Cursor, OpenClaw) make GLM a drop-in backend for existing tools — but with quota caps and peak-hour multipliers, the effective cost depends on when your agents run.
 - **For self-hosters**: open weights for both the flagship (GLM-5.3 FP8/BF16) and the agent-capable flash (GLM-5.3-Flash) mean the agent stack is self-hostable end to end — framework (Open-AutoGLM, Apache-2.0), models (MIT/Apache-2.0), and a local phone agent on ~24GB VRAM.
 - **For buyers evaluating agent benchmarks**: the vendor-reported scores here (Terminal-Bench 28.3, DeepSWE 66.9, AutomationBench 48.8) cannot be compared across labs directly — evaluation conditions differ — which is why the China AI Hub benchmark collection tags every vendor-reported score explicitly.
@@ -132,7 +132,7 @@ Four honest gaps. (1) **Benchmark provenance**: every GLM benchmark score here i
 
 ## China AI Hub View
 
-Our assessment: Zhipu is running the most coherent agent-strategy experiment among the six Chinese frontier labs. The bet is explicit — put agent capability in the cheapest open model, give the framework away, monetize the subscription, and accept that open weights cannibalize API revenue in exchange for developer mindshare. The experiment's outcome is not yet knowable: the vendor-reported agent benchmarks are modest (28.3 on Terminal-Bench 3.0), the phone agent's paid economics are undisclosed, and the Coding Plan's quota mechanics will determine whether subscriptions scale. What is knowable now: any team building agent tooling in 2026 has a testable, self-hostable reference stack in GLM-5.3-Flash + Open-AutoGLM at effectively zero licensing cost. That alone makes the ecosystem a baseline to evaluate against, regardless of whether it wins.
+China AI Hub analysis indicates: Zhipu is running the most coherent agent-strategy experiment among the six Chinese frontier labs. The bet is explicit — put agent capability in the cheapest open model, give the framework away, monetize the subscription, and accept that open weights cannibalize API revenue in exchange for developer mindshare. The experiment's outcome is not yet knowable: the vendor-reported agent benchmarks are modest (28.3 on Terminal-Bench 3.0), the phone agent's paid economics are undisclosed, and the Coding Plan's quota mechanics will determine whether subscriptions scale. What is knowable now: any team building agent tooling in 2026 has a testable, self-hostable reference stack in GLM-5.3-Flash + Open-AutoGLM at effectively zero licensing cost. That alone makes the ecosystem a baseline to evaluate against, regardless of whether it wins.
 
 ## Conclusion
 

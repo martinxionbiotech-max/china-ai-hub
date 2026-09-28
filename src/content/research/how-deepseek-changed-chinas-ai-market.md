@@ -65,7 +65,7 @@ DeepSeek's influence on China's AI market is not primarily about any single mode
 
 ## What We Know
 
-DeepSeek's public model history in the database runs from DeepSeek-V3.2 (2025-12-01, MIT) through the V4 family. The V4 Preview opened weights on 2026-04-24 with a 1.6T-total / 49B-active mixture-of-experts design. The GA checkpoint (V4-Pro-0813) shipped on 2026-08-13. On 2026-09-10 DeepSeek released V4.1-Flash — a 552B-parameter MoE that activates only 8B parameters per token on input (16B on output) — and announced MIT open weights for it, plus a reversal of the V4-Pro API retirement.
+DeepSeek's public model history in the database runs from DeepSeek-V3.2 (2025-12-01, MIT) through the V4 family. The [V4 Preview](/models/deepseek-v4-pro/) opened weights on 2026-04-24 with a 1.6T-total / 49B-active mixture-of-experts design. The GA checkpoint (V4-Pro-0813) shipped on 2026-08-13. On 2026-09-10 DeepSeek released V4.1-Flash — a 552B-parameter MoE that activates only 8B parameters per token on input (16B on output) — and announced MIT open weights for it, plus a reversal of the V4-Pro API retirement.
 
 Three facts anchor the story:
 
@@ -138,7 +138,7 @@ Several points constrain this analysis. DeepSeek's serving regions are not state
 
 ## China AI Hub View
 
-Our assessment: DeepSeek's durable contribution to China's AI market is the *permissionless floor* — MIT weights, a $0.15 flash price and a 1M context default that force every rival to justify charging more or gating more. The peak/off-peak scheme is the one piece of DeepSeek's pricing the market has not copied, and we read that as the difference between a price cut (easy to match) and a pricing *mechanism* (harder to match without the same demand profile). We expect the V4-Pro continuation to be temporary — the deprecation signal itself remains in the database — but the fact that DeepSeek felt compelled to reverse it is a measure of how dependent its API customers have become. The next test of DeepSeek's influence is whether the V4.1-Pro launch (referenced in the change log as the eventual V4-Pro replacement) holds the MIT-and-$0.15 line or finally introduces conditions of its own.
+China AI Hub analysis indicates: DeepSeek's durable contribution to China's AI market is the *permissionless floor* — MIT weights, a $0.15 flash price and a 1M context default that force every rival to justify charging more or gating more. The peak/off-peak scheme is the one piece of DeepSeek's pricing the market has not copied, and we read that as the difference between a price cut (easy to match) and a pricing *mechanism* (harder to match without the same demand profile). We expect the V4-Pro continuation to be temporary — the deprecation signal itself remains in the database — but the fact that DeepSeek felt compelled to reverse it is a measure of how dependent its API customers have become. The next test of DeepSeek's influence is whether the V4.1-Pro launch (referenced in the change log as the eventual V4-Pro replacement) holds the MIT-and-$0.15 line or finally introduces conditions of its own.
 
 ## Conclusion
 

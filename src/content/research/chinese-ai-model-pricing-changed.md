@@ -123,7 +123,7 @@ For buyers, the practical implications are concrete:
 - **If your workload is cache-friendly** (long system prompts, document Q&A, agent loops with stable context), your effective input cost can be 80-98% below list. Optimize for cache-hit rate before negotiating list price.
 - **If your workload is batch or latency-tolerant**, ByteDance's low-priority tier and Alibaba's Beijing batch discount (50%) are the strongest documented levers.
 - **If your workload is China-region**, compare in CNY on the provider's own platform: the international price lists do not govern domestic consumption.
-- **If you need the absolute floor**, DeepSeek V4.1-Flash off-peak at $0.15/$0.60 with $0.003 cache is the cheapest general flash configuration documented in the collection.
+- **If you need the absolute floor**, [DeepSeek V4.1-Flash](/models/deepseek-v4-1-flash/) off-peak at $0.15/$0.60 with $0.003 cache is the cheapest general flash configuration documented in the collection.
 - **If you need top-tier reasoning**, Moonshot K3 at $3/$15 is an outlier on price — verify whether the premium buys measurable capability for your task before committing.
 
 ## Comparison / Evidence
@@ -144,7 +144,7 @@ Three cautions. First, **no complete historical series**: the pricing collection
 
 ## China AI Hub View
 
-Our assessment: Chinese API pricing has stopped being a race to the bottom and become a **tiered grid** — flash/fast, flagship, and cache-discounted variants of each, with time and region as two more axes. The meaningful negotiation is no longer "who is cheaper" but "which cell of the grid does my workload sit in." A provider's cache-hit multiplier and peak-hour policy now matter more than its headline rate. We expect the next pricing moves to be structured (cache write fees, longer off-peak windows, batch tiers) rather than headline cuts, because the flash floor at $0.15 input leaves little room for another order-of-magnitude drop without reworking the cost structure itself.
+China AI Hub analysis indicates: Chinese API pricing has stopped being a race to the bottom and become a **tiered grid** — flash/fast, flagship, and cache-discounted variants of each, with time and region as two more axes. The meaningful negotiation is no longer "who is cheaper" but "which cell of the grid does my workload sit in." A provider's cache-hit multiplier and peak-hour policy now matter more than its headline rate. We expect the next pricing moves to be structured (cache write fees, longer off-peak windows, batch tiers) rather than headline cuts, because the flash floor at $0.15 input leaves little room for another order-of-magnitude drop without reworking the cost structure itself.
 
 ## Conclusion
 

@@ -56,7 +56,7 @@ Coding is the single most contested category in China's AI market. Five of the s
 
 The agent layer is crowded. Zhipu's GLM Coding Plan is a quota-based subscription running GLM-5.3 with 1M-token context, and it powers 20+ third-party tools including Claude Code, Codex and Cursor. Kimi Code (Moonshot) is an open-source TypeScript terminal agent, successor to the deprecated kimi-cli, with subagents, MCP, browser control and multimodal input. MiniMax Code is an open-source desktop app and CLI. Qwen Code is an open-source multi-protocol agent supporting OpenAI, Anthropic, Gemini and Qwen APIs plus DeepSeek, MiniMax, Z.AI, Kimi, OpenRouter and local models. Qoder (Alibaba) is a commercial platform with IDE, CLI and cloud, smart-routing tasks across model tiers at 1.6x/1.1x/0.3x credit multipliers. DeepSeek Harness is the open-source runtime ("Everything is a Plugin") that powers DeepSeek's own coding agent.
 
-The model layer behind these agents: GLM-5.3, Kimi K3 and K2.7-Code, Qwen3.8-Max, DeepSeek-V4.1-Flash — the same flagships that dominate the general model database.
+The model layer behind these agents: [GLM-5.3](/models/glm-53/), [Kimi K3](/models/kimi-k3/) and K2.7-Code, Qwen3.8-Max, DeepSeek-V4.1-Flash — the same flagships that dominate the general model database.
 
 ## What the Data Shows
 
@@ -82,7 +82,7 @@ Every score in this article is vendor-reported and not independently verified �
 
 ## China AI Hub View
 
-Our assessment: the coding market is where Chinese labs are converging fastest, and the convergence is on product form, not performance claims. Four open-source terminal agents plus two commercial subscriptions competing on billing mechanics is a maturing market; the benchmark noise — version splits, variant cherry-picking, absent scores — is a symptom of how immature the measurement layer remains. We treat the coding agent layer as the single strongest signal of where the Chinese ecosystem is heading: productized, developer-facing, and priced like tools rather than APIs.
+China AI Hub analysis indicates: the coding market is where Chinese labs are converging fastest, and the convergence is on product form, not performance claims. Four open-source terminal agents plus two commercial subscriptions competing on billing mechanics is a maturing market; the benchmark noise — version splits, variant cherry-picking, absent scores — is a symptom of how immature the measurement layer remains. We treat the coding agent layer as the single strongest signal of where the Chinese ecosystem is heading: productized, developer-facing, and priced like tools rather than APIs.
 
 ## Conclusion
 

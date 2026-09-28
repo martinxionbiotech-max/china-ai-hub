@@ -94,7 +94,7 @@ The trajectory from the database's older models to the 2026 frontier:
 
 Practical implications for builders:
 
-- **If you need vision at minimum cost**, the candidates are DeepSeek V4.1-Flash and GLM-5.3-Flash — both $0.15 input with vision, and GLM adds video and computer use. There is no reason to pay flagship prices for image understanding in this market.
+- **If you need vision at minimum cost**, the candidates are [DeepSeek V4.1-Flash](/models/deepseek-v4-1-flash/) and [GLM-5.3-Flash](/models/glm-53-flash/) — both $0.15 input with vision, and GLM adds video and computer use. There is no reason to pay flagship prices for image understanding in this market.
 - **If you need video input**, the field is Qwen3.8 (Max or Flash), Kimi K3 and MiniMax M3. GLM-5.3-Flash is the budget option. Qwen3.8-Max's Singapore price of $2/$6 is the premium end; Qwen3.8-Flash at $0.15/$0.47 is the cheapest video-capable API in the collection.
 - **If you need computer use**, the model-level options are the Doubao Seed family (Ark platform, China region, CNY pricing) and GLM-5.3-Flash (international USD pricing, open weights). The two are not substitutes — they live on different platforms with different licensing.
 - **If you assumed flagships are the most capable**, re-check: at DeepSeek and Zhipu the cheapest tier now carries the broadest modality set. Capability selection is per-model, not per-tier.
@@ -120,7 +120,7 @@ Three cautions. (1) **Flag absence ≠ capability absence**: a model without a v
 
 ## China AI Hub View
 
-Our assessment: multimodal capability in China's 2026 market is best described as **baseline, not premium**. Vision has settled into the flash tier at two vendors; video is spreading at $0.15-2.00; computer use remains the only genuinely scarce flag, concentrated at ByteDance and Zhipu. The strategic reading is that Chinese vendors are using modality breadth to differentiate cheap models rather than to justify expensive ones — the opposite of the Western pattern. For the database, the monitoring question for Q4 2026 is whether computer_use spreads beyond its current four models, and whether ByteDance ever publishes architecture or modality documentation comparable to what open-weight vendors disclose.
+China AI Hub analysis indicates: multimodal capability in China's 2026 market is best described as **baseline, not premium**. Vision has settled into the flash tier at two vendors; video is spreading at $0.15-2.00; computer use remains the only genuinely scarce flag, concentrated at ByteDance and Zhipu. The strategic reading is that Chinese vendors are using modality breadth to differentiate cheap models rather than to justify expensive ones — the opposite of the Western pattern. For the database, the monitoring question for Q4 2026 is whether computer_use spreads beyond its current four models, and whether ByteDance ever publishes architecture or modality documentation comparable to what open-weight vendors disclose.
 
 ## Conclusion
 

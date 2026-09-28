@@ -65,11 +65,11 @@ China's open-weight frontier models do not share a single license. The China AI 
 
 The database classifies 11 of 19 models as open-weight, 5 as proprietary, and 3 (the Kimi K2.x series) as undisclosed. The open-weight licenses break into five buckets:
 
-- **MIT — DeepSeek.** V3.2, V4-Pro and V4.1-Flash all carry MIT with no revenue trigger, no attribution mandate and no Model-as-a-Service carve-out.
+- **MIT — DeepSeek.** V3.2, V4-Pro and V4.1-Flash all carry MIT with no revenue trigger, no attribution mandate and no Model-as-a-Service carve-out. See the [DeepSeek-V4-Pro model page](/models/deepseek-v4-pro/).
 - **Apache-2.0 — Zhipu.** GLM-5.2, GLM-5.3 and GLM-5.3-Flash are Apache-2.0 per the GitHub repo metadata. The database adds a caveat: the repo README has no separate weights-license section, so adopters should verify each model's Hugging Face card before reuse.
-- **Kimi K3 License — Moonshot.** A permissive, MIT-style license with two named triggers (details below).
-- **MiniMax Community License — MiniMax M3.** Free for non-commercial use; commercial use requires attribution plus conditional authorization.
-- **Qwen3.8-Max License — Alibaba.** A custom MIT-style license governing the open Qwen3.8-2.4T-A95B weights, with display and MaaS triggers.
+- **Kimi K3 License — Moonshot.** A permissive, MIT-style license with two named triggers (details below). See the [Kimi K3 model page](/models/kimi-k3/).
+- **MiniMax Community License — MiniMax M3.** Free for non-commercial use; commercial use requires attribution plus conditional authorization. See the [MiniMax M3 model page](/models/minimax-m3/).
+- **Qwen3.8-Max License — Alibaba.** A custom MIT-style license governing the open Qwen3.8-2.4T-A95B weights, with display and MaaS triggers. See the [Qwen3.8-Max model page](/models/qwen38-max/).
 
 There is a sixth and seventh category worth naming explicitly: MiniMax's M2.7 family uses a *stricter* custom non-commercial license (not the same as the M3 Community License), and the proprietary models — Doubao Seed 2.1 (Pro/Turbo/Evolving), Qwen3.8-Flash and Qwen3.8-Max (the API flagships) — are closed, with no downloadable weights at all.
 
@@ -132,7 +132,7 @@ The license strings in the database are transcribed from vendor sources and date
 
 ## China AI Hub View
 
-Our view: the meaningful divide in Chinese model licensing is no longer open versus closed, but *MIT versus conditional-permissive*. DeepSeek's MIT is the reference point that makes every conditional license a deliberate choice rather than a default. The conditional licenses are not anti-developer — they preserve permissive everyday use — but they are a bet that the lab, not the downstream builder, should capture a share of value at the point where a business built on the weights becomes large. The practical advice that follows from the data is specific: if you are a Model-as-a-Service operator, the Kimi K3 ($20M/12mo) and Qwen ($50M/12mo) triggers are the ones to track before you choose weights; if you want zero licensing friction at any scale, only DeepSeek's MIT and (subject to verification) Zhipu's Apache-2.0 deliver that today.
+China AI Hub analysis indicates: the meaningful divide in Chinese model licensing is no longer open versus closed, but *MIT versus conditional-permissive*. DeepSeek's MIT is the reference point that makes every conditional license a deliberate choice rather than a default. The conditional licenses are not anti-developer — they preserve permissive everyday use — but they are a bet that the lab, not the downstream builder, should capture a share of value at the point where a business built on the weights becomes large. The practical advice that follows from the data is specific: if you are a Model-as-a-Service operator, the Kimi K3 ($20M/12mo) and Qwen ($50M/12mo) triggers are the ones to track before you choose weights; if you want zero licensing friction at any scale, only DeepSeek's MIT and (subject to verification) Zhipu's Apache-2.0 deliver that today.
 
 ## Conclusion
 

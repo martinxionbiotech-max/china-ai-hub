@@ -65,7 +65,7 @@ The six official Chinese AI API platforms — DeepSeek, Volcengine Ark (ByteDanc
 
 The six platforms and their headline properties:
 
-- **DeepSeek API** — `api.deepseek.com`, Bearer API key, OpenAI-compatible plus a native Responses API and an Anthropic-compatible endpoint at `/anthropic`. Serves only DeepSeek models (V4-Pro and V4.1-Flash). Peak/off-peak pricing.
+- **DeepSeek API** — `api.deepseek.com`, Bearer API key, OpenAI-compatible plus a native Responses API and an Anthropic-compatible endpoint at `/anthropic`. Serves only DeepSeek models ([V4-Pro](/models/deepseek-v4-pro/) and V4.1-Flash). Peak/off-peak pricing.
 - **Volcengine Ark** — `ark.cn-beijing.volces.com/api/v3`, Bearer API key plus AK/SK, Responses API and OpenAI-compatible Chat API. Serves the Doubao Seed family and also hosts third-party models including DeepSeek and GLM.
 - **Model Studio** — `dashscope-us.aliyuncs.com/compatible-mode/v1`, region-bound `DASHSCOPE_API_KEY`, OpenAI-compatible. Serves the Qwen family across six named regions.
 - **Moonshot (Kimi)** — `api.moonshot.ai/v1`, `MOONSHOT_API_KEY` Bearer, OpenAI Chat Completions, Responses and an Anthropic-compatible Messages endpoint. Serves the Kimi K-series.
@@ -98,7 +98,7 @@ We read three structural patterns.
 
 **Pattern one: compatibility is table stakes, differentiation is operational.** Every platform has OpenAI compatibility, so it cannot be a differentiator. What differs is the *shape* of the key, the *scope* of the region, and the *granularity* of the rate limit — all operational details that surface only when a workload scales or a compliance requirement appears.
 
-**Pattern two: Alibaba is the global-first platform.** Six named regions, region-bound keys, the highest documented rate limits (30,000 RPM / 5,000,000 TPM globally), and a managed product at qwencloud.com. Alibaba's cloud-distribution background shows in the API design. ByteDance's Ark is the inverse — a single cn-beijing region, which reflects a domestic-first posture.
+**Pattern two: [Alibaba](/companies/alibaba-cloud/) is the global-first platform.** Six named regions, region-bound keys, the highest documented rate limits (30,000 RPM / 5,000,000 TPM globally), and a managed product at qwencloud.com. Alibaba's cloud-distribution background shows in the API design. ByteDance's Ark is the inverse — a single cn-beijing region, which reflects a domestic-first posture.
 
 **Pattern three: MiniMax and Moonshot optimize for migration.** MiniMax's Anthropic-style auth and endpoint, and Moonshot's triple protocol surface (OpenAI + Responses + Anthropic), are both designed to let a developer point an existing Anthropic or OpenAI client at a Chinese model with a one-line base-URL and key change. This is an acquisition strategy, not a technical coincidence.
 
@@ -121,7 +121,7 @@ The database records capabilities and limits as published by each vendor on 2026
 
 ## China AI Hub View
 
-Our view: for most international developers, the practical shortlist is DeepSeek, Model Studio and Z.ai — DeepSeek for price and permissive licensing, Model Studio for region coverage and throughput, Z.ai for GLM's balance. Ark matters mainly if you need a single platform to reach multiple Chinese model families from within China. MiniMax and Moonshot are best for teams already invested in the Anthropic SDK or in long-context workloads respectively. The deeper point is that the Chinese API market has reached the same state as the model market: the interfaces have converged, so the decision is now about the operational details — key scoping, region disclosure, rate limits and routing — that no benchmark table captures.
+China AI Hub analysis indicates: for most international developers, the practical shortlist is DeepSeek, Model Studio and Z.ai — DeepSeek for price and permissive licensing, Model Studio for region coverage and throughput, Z.ai for GLM's balance. Ark matters mainly if you need a single platform to reach multiple Chinese model families from within China. MiniMax and Moonshot are best for teams already invested in the Anthropic SDK or in long-context workloads respectively. The deeper point is that the Chinese API market has reached the same state as the model market: the interfaces have converged, so the decision is now about the operational details — key scoping, region disclosure, rate limits and routing — that no benchmark table captures.
 
 ## Conclusion
 

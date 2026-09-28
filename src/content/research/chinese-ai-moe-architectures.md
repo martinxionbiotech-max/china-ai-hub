@@ -81,7 +81,7 @@ FACT: activation ratio is not quality; it is a cost dial. The database records i
 
 Three patterns are legible in the architecture records:
 
-**Pattern 1: activation ratios cluster in two bands.** The cheap-tier models (V4.1-Flash, GLM-5.3-Flash, MiniMax M3) activate 1.4-5.6% of parameters; the flagship tier (V4-Pro, K3, Qwen3.8) activates 3-4.3%. But the clustering is not by tier — it is by release date. The newest models are the sparsest. V4.1-Flash at 1.4% activation is the most extreme example: only 8B parameters compute on each input token. This matters for inference cost because active parameters, not total parameters, determine per-token FLOPs.
+**Pattern 1: activation ratios cluster in two bands.** The cheap-tier models ([V4.1-Flash](/models/deepseek-v4-1-flash/), [GLM-5.3-Flash](/models/glm-53-flash/), MiniMax M3) activate 1.4-5.6% of parameters; the flagship tier (V4-Pro, K3, Qwen3.8) activates 3-4.3%. But the clustering is not by tier — it is by release date. The newest models are the sparsest. V4.1-Flash at 1.4% activation is the most extreme example: only 8B parameters compute on each input token. This matters for inference cost because active parameters, not total parameters, determine per-token FLOPs.
 
 **Pattern 2: linear attention is replacing part of the dense attention stack.** Four documented designs move in the same direction: Qwen3.8's Gated DeltaNet + Gated Attention hybrid; Kimi K3's 69 KDA (Kimi Delta Attention) layers alongside 24 Gated MLA layers; MiniMax's MSA with claimed 9x prefill / 15x decode speedups at 1M context; GLM-5.3-Flash described as the first open-source frontier model combining sparse and linear attention with mHC hyper-connections. This is an architectural answer to the long-context economics problem: quadratic attention at 1M context is the dominant serving cost, and linear variants trade some fidelity for scaling.
 
@@ -119,7 +119,7 @@ Three honest caveats. (1) **Disclosure is uneven**: ten of nineteen models publi
 
 ## China AI Hub View
 
-Our assessment: MoE with aggressive sparsity and linear-attention hybrids is the signature engineering pattern of China's 2026 frontier, and it exists because the market prizes token economics above everything else. The open-weight releases of GLM-5.3-Flash and Qwen3.8-2.4T-A95B mean the architecture itself is now inspectable — a development with no US parallel at this scale in 2026. The strategic question for the rest of the year is whether the sparsity frontier (sub-1.5% activation, as in V4.1-Flash) becomes the new normal for flash tiers, and whether linear-attention hybrids hold up quality-wise as context windows stretch further. The database will track both questions via the architecture field as vendors publish updates.
+China AI Hub analysis indicates: MoE with aggressive sparsity and linear-attention hybrids is the signature engineering pattern of China's 2026 frontier, and it exists because the market prizes token economics above everything else. The open-weight releases of GLM-5.3-Flash and Qwen3.8-2.4T-A95B mean the architecture itself is now inspectable — a development with no US parallel at this scale in 2026. The strategic question for the rest of the year is whether the sparsity frontier (sub-1.5% activation, as in V4.1-Flash) becomes the new normal for flash tiers, and whether linear-attention hybrids hold up quality-wise as context windows stretch further. The database will track both questions via the architecture field as vendors publish updates.
 
 ## Conclusion
 

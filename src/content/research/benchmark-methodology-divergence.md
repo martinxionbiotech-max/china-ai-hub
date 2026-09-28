@@ -48,7 +48,7 @@ Terminal-Bench is the clearest case. DeepSeek reports V4.1-Flash at 90.6 on Term
 
 ## Lever 2: tools
 
-The same vendor can report two HLE numbers for the same model: DeepSeek-V4-Pro is listed at 42.7 on HLE, and 60.0 "with tools"; Qwen3.8-Max is listed at 43.6, and 56.2 "with tools". The tool-augmented number is not dishonest — it is a different measurement — but a 17-point gap between the two modes of the same model dwarfs the gaps between competing models. A score is only meaningful if the mode is stated.
+The same vendor can report two HLE numbers for the same model: [DeepSeek-V4-Pro](/models/deepseek-v4-pro/) is listed at 42.7 on HLE, and 60.0 "with tools"; Qwen3.8-Max is listed at 43.6, and 56.2 "with tools". The tool-augmented number is not dishonest — it is a different measurement — but a 17-point gap between the two modes of the same model dwarfs the gaps between competing models. A score is only meaningful if the mode is stated.
 
 ## Lever 3: subsets
 
@@ -56,7 +56,7 @@ DeepSeek reports V4.1-Flash at 36.8 on HLE with a footnote: "tested only on the 
 
 ## Lever 4: which product the score describes
 
-This is the subtlest and most consequential divergence in the Chinese ecosystem. Qwen3.8-Max's benchmark scores (Terminal-Bench 2.1 86.6, SWE-bench Pro 67.7, GPQA Diamond 92.6, HLE 43.6, MRCR v2 256K 92.9) are taken from the Hugging Face model card for Qwen3.8-2.4T-A95B — the open-weights release. But the open model is text-only and thinking-only, while the Qwen3.8-Max API flagship accepts image and video input. The scores describe a product with a different capability surface than the one an API customer calls. That is a real, and easily missed, gap between the score and the product.
+This is the subtlest and most consequential divergence in the Chinese ecosystem. [Qwen3.8-Max](/models/qwen38-max/)'s benchmark scores (Terminal-Bench 2.1 86.6, SWE-bench Pro 67.7, GPQA Diamond 92.6, HLE 43.6, MRCR v2 256K 92.9) are taken from the Hugging Face model card for Qwen3.8-2.4T-A95B — the open-weights release. But the open model is text-only and thinking-only, while the Qwen3.8-Max API flagship accepts image and video input. The scores describe a product with a different capability surface than the one an API customer calls. That is a real, and easily missed, gap between the score and the product.
 
 ## Lever 5: what is not published
 
@@ -66,9 +66,13 @@ A missing benchmark is a data point. Vendors publish different subsets: DeepSeek
 
 China AI Hub records every benchmark result with: score, metric, benchmark version, model version, date, source type (vendor_reported / independent / academic / community) and source URL. It never aggregates across incompatible versions and never ranks models from a single number.
 
+## Limitations
+
+Two gaps constrain this analysis. First, the divergence patterns here are observed in vendor disclosures and model cards, not from a controlled re-measurement of any score; converting these observations into quantitative corrections would require independently re-running each benchmark. Second, the database records benchmark results only for the models and benchmarks vendors chose to publish, so the comparison is conditioned on self-reported coverage rather than a complete benchmark-by-model matrix.
+
 ## China AI Hub view
 
-Our assessment: the most underrated risk in model selection is not a wrong score but an unstated methodology. A vendor's headline number is usually accurate as a vendor statement; the failure mode is the reader treating it as a measurement. The three levers above — version, tools, subset — can each move a score by more than the entire gap between leading models. Before any purchase or integration decision, check the benchmark version, the tool mode, the subset, and whether the score describes the product you can actually call. For your own workload, ten private test cases beat a thousand vendor numbers.
+China AI Hub analysis indicates: the most underrated risk in model selection is not a wrong score but an unstated methodology. A vendor's headline number is usually accurate as a vendor statement; the failure mode is the reader treating it as a measurement. The three levers above — version, tools, subset — can each move a score by more than the entire gap between leading models. Before any purchase or integration decision, check the benchmark version, the tool mode, the subset, and whether the score describes the product you can actually call. For your own workload, ten private test cases beat a thousand vendor numbers.
 
 ## Reading procedure
 
