@@ -40,7 +40,7 @@ RAG grounds answers in evidence that can be checked, updated and permissioned �
 
 ## Chinese adoption
 
-RAG is widely deployed across Chinese enterprise AI offerings. In the China AI Hub ecosystem, the pattern is enabled by long-context APIs: models such as Kimi K3, Qwen3.8-Max and DeepSeek-V4.1-Flash list 1M-token context windows (last verified 2026-09-22), which lets pipelines load far more retrieved evidence per request than earlier generations. Embedding and reranking endpoints are offered by the same API providers.
+RAG is widely deployed across Chinese enterprise AI offerings. In the China AI Hub ecosystem, the pattern is enabled by long-context APIs: models such as Kimi K3, Qwen3.8-Max and DeepSeek-V4.1-Flash list 1M-token context windows (last verified 2026-09-22), which lets pipelines load far more retrieved evidence per request than earlier generations. Embedding and reranking endpoints are offered by the same API providers. The long-context capability has a documented consequence: it lets some pipelines replace chunk-and-rank retrieval with direct context loading, a design choice the [long-context technology page](/technology/long-context/) details.
 
 ## Major Chinese companies and models
 
@@ -60,6 +60,12 @@ Retrieval quality caps answer quality: chunking strategy, embedding model and re
 
 Measure end-to-end retrieval accuracy on your own corpus, not public benchmarks; keep a reranking stage; store chunk provenance for citations; and consider agentic retrieval (multiple search steps) for multi-hop queries.
 
+## What the available evidence actually shows
+
+The database evidences RAG's enabling conditions — 1M-token contexts and function calling on the flagships of Moonshot AI, Alibaba Cloud and DeepSeek — but it does not track RAG itself as an entity: there is no field recording retrieval accuracy, embedding quality or reranking effectiveness. RAG is a pattern deployed *on top of* the tracked models and APIs, so the database can describe the substrate but not the pattern's real-world performance. China AI Hub analysis indicates the honest reading is that the Chinese ecosystem's contribution to RAG is the cheap long-context substrate that makes context-stuffing a viable alternative to retrieval, rather than any vendor-specific RAG product recorded in the database.
+
 ## Future development
 
 RAG is converging with long-context models (fewer, bigger evidence blocks), agentic search loops, and memory systems that persist retrieved knowledge across sessions.
+
+*Labels used above: **Official fact** (from the Lewis et al. and Meta RAG sources and the China AI Hub database), **Vendor-reported claim** (context-window figures), and **China AI Hub analysis** (our synthesis, always introduced as such).*

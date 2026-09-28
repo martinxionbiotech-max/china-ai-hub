@@ -47,7 +47,7 @@ Most enterprise documents are not text: scans, screenshots, diagrams, video. Mul
 
 ## Chinese adoption
 
-Multimodal support is broad across the China AI Hub database (last verified 2026-09-22). Models listing vision: DeepSeek-V4.1-Flash, Qwen3.8-Max and Qwen3.8-Flash, GLM-5.3-Flash, Kimi K3, MiniMax M3 and the Doubao Seed 2.1 series. Models listing video: Qwen3.8-Max/Flash, GLM-5.3-Flash, Kimi K3 and MiniMax M3. Company projects include Zhipu's GLM-V/CogVideo, MiniMax's video models and ByteDance's Seed multimodal line.
+Multimodal support is broad across the China AI Hub database (last verified 2026-09-22). Models listing vision: DeepSeek-V4.1-Flash, Qwen3.8-Max and Qwen3.8-Flash, GLM-5.3-Flash, Kimi K3, MiniMax M3 and the Doubao Seed 2.1 series. Models listing video: Qwen3.8-Max/Flash, GLM-5.3-Flash, Kimi K3 and MiniMax M3. Company projects include Zhipu's GLM-V/CogVideo, MiniMax's video models and ByteDance's Seed multimodal line. Notably, DeepSeek-V4-Pro is vision-less (a documented limitation) while its V4.1-Flash successor adds vision — a concrete case of capability arriving via the flash tier rather than the flagship.
 
 ## Major Chinese companies and models
 
@@ -69,6 +69,12 @@ Perceptual errors persist (fine print, charts, counting); video understanding is
 
 Choose model per modality mix (text-only work rarely justifies multimodal cost); benchmark on your own document types; pair with OCR pre-processing where precision is critical.
 
+## What the available evidence actually shows
+
+The database records modality coverage as capability flags, and the picture is broad: vision on the flash/consumer-facing tiers and video on the flagship reasoning/coding tiers. But the flags are binary and vendor-reported — the database does not record perceptual accuracy on any shared benchmark, so "lists vision" is a coverage fact, not a quality fact. China AI Hub analysis indicates the structural pattern is clear (multimodal has moved from specialist VLMs to a standard capability of general flagships), while the quality pattern remains unmeasurable from recorded data.
+
 ## Future development
 
 Convergence of understanding and generation (omni-models), native video reasoning, and multimodal agents that see and act in the same loop.
+
+*Labels used above: **Official fact** (from the Qwen2-VL and LLaVA papers and the China AI Hub database), **Vendor-reported claim** (modality capability flags), and **China AI Hub analysis** (our synthesis, always introduced as such).*

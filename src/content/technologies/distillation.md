@@ -4,9 +4,12 @@ image_credit: "AI-generated illustration (Seedream)"
 slug: distillation
 title: Distillation
 definition: "Knowledge distillation is a training technique in which a smaller 'student' model learns to imitate the outputs of a larger 'teacher' model, transferring capability at a fraction of the serving cost."
-related_models: []
+related_models:
+  - deepseek-v4-pro
+  - qwen3.8-2.4t-a95b
 related_companies:
   - deepseek
+  - alibaba-cloud
 related_technologies:
   - synthetic-data
   - quantization
@@ -35,7 +38,7 @@ Distillation is the main bridge between frontier-scale training and affordable d
 
 ## Chinese adoption
 
-The Chinese open-model ecosystem runs on distillation. DeepSeek-R1's distilled variants are the canonical example, and the technique underlies the open small-model families from Qwen (A3B-class MoE variants) and Zhipu (GLM-5.x open releases) listed in our company database. Practically every open Chinese model family ships a distilled small tier.
+The Chinese open-model ecosystem runs on distillation. DeepSeek-R1's distilled variants are the canonical example, and the technique underlies the open small-model families from Qwen (A3B-class MoE variants) and Zhipu (GLM-5.x open releases) listed in our company database. Practically every open Chinese model family ships a distilled small tier. Concrete anchors: Qwen3.5's 35B-A3B variant (35B total, 3B active) is the clearest A-suffix MoE distillation product, and the current Qwen3.8-2.4T-A95B (95B active) continues the lineage.
 
 ## Major Chinese companies and models
 
@@ -54,6 +57,12 @@ Students inherit teacher blind spots and biases; distilled chains of thought can
 
 When choosing a distilled open model, check its lineage and license chain; benchmark on your tasks rather than inheriting the teacher's benchmark claims; and treat vendor-reported scores from small models with the same scrutiny as any other.
 
+## What the available evidence actually shows
+
+The database records distillation lineage indirectly through architecture and open-weight fields rather than a dedicated distillation field — Qwen's A-suffix MoE variants (397B-A17B, 35B-A3B) and DeepSeek's R1 distilled lineage are documented company/model facts, but the database does not trace which specific student descends from which teacher. That is a data gap: capability transfer is evidenced, provenance is not. China AI Hub analysis indicates the practical consequence is that distilled models must be evaluated on their own merits, not inherited from a teacher's benchmark claims, precisely because the database cannot establish the transfer path.
+
 ## Future development
 
 Iterative distillation loops (teacher → student → new teacher), distillation with verifiers, and on-device reasoning models are the active frontier.
+
+*Labels used above: **Official fact** (from the Hinton et al. and DeepSeek-R1 papers and the China AI Hub database), and **China AI Hub analysis** (our synthesis, always introduced as such).*

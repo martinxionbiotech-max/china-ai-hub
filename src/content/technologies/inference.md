@@ -7,8 +7,10 @@ definition: "Inference is the process of running a trained model to generate out
 related_models:
   - deepseek-v4-pro
   - deepseek-v4-1-flash
+  - minimax-m3
 related_companies:
   - deepseek
+  - minimax
 related_technologies:
   - quantization
   - mixture-of-experts
@@ -34,7 +36,7 @@ The key resources: prefill (processing the prompt) and decode (generating tokens
 
 ## Why it matters
 
-Inference economics decide API prices, and API prices decide what gets built. The Chinese API market's price competition (DeepSeek's flash tier lists $0.15/1M input tokens in our database) is, at root, an inference-engineering competition.
+Inference economics decide API prices, and API prices decide what gets built. The Chinese API market's price competition (DeepSeek-V4.1-Flash lists $0.15/1M input tokens, GLM-5.3-Flash $0.15/1M input in our database) is, at root, an inference-engineering competition. DeepSeek's off-peak discount model — where listed prices are off-peak and peak windows bill 2x — is itself an inference-capacity-management decision, not just a marketing one.
 
 ## Chinese adoption
 
@@ -57,6 +59,12 @@ Serving optimizations are workload-dependent; prefix caching helps repetitive pr
 
 Choose runtime by workload (vLLM for GPU serving, llama.cpp-family for CPU/edge); enable prefix caching for agent loops with stable system prompts; and measure end-to-end cost per completed task.
 
+## What the available evidence actually shows
+
+The database records the artifacts of inference engineering — MLA attention (DeepSeek-V2 paper), open kernels (FlashMLA/DeepGEMM/DeepEP), MSA sparse attention (MiniMax), and the resulting price floor ($0.15/1M input on two flash models). What it does not record is throughput: the database has no tokens-per-second or batch-size field, because vendor t/s claims are not comparable without hardware and batch context. China AI Hub analysis indicates price is the database's most reliable inference-economics signal — architecture and kernels explain why the price floor exists, but any throughput comparison would require controlled benchmarking the database deliberately does not perform.
+
 ## Future development
 
 Expect attention compression (MLA/MSA-style) to spread, speculative decoding as default, and disaggregated prefill/decode serving across fleets.
+
+*Labels used above: **Official fact** (from the DeepSeek-V2 and PagedAttention papers and the China AI Hub database), **Vendor-reported claim** (pricing and speedup figures), and **China AI Hub analysis** (our synthesis, always introduced as such).*

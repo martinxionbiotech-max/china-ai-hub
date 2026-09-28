@@ -46,7 +46,7 @@ Tool calling is the primitive that turns models into actors: without it, no brow
 
 ## Chinese adoption
 
-Tool calling is broadly listed across the China AI Hub database (last verified 2026-09-22). Models listing it include DeepSeek-V4-Pro and V4.1-Flash, Qwen3.8-Max, Kimi K3, MiniMax M3 (and M2.7), and the Doubao Seed 2.1 series. On the agent side, seven of ten tracked Chinese agents list MCP support, and coding agents such as Qwen Code, Kimi Code and MiniMax Code implement tool loops as their core design.
+Tool calling is broadly listed across the China AI Hub database (last verified 2026-09-22). Models listing it include DeepSeek-V4-Pro and V4.1-Flash, Qwen3.8-Max, Kimi K3, MiniMax M3 (and M2.7), and the Doubao Seed 2.1 series. On the agent side, seven of ten tracked Chinese agents list MCP support, and coding agents such as Qwen Code, Kimi Code and MiniMax Code implement tool loops as their core design. At the API layer, Ark, Model Studio, DeepSeek, Kimi and Z.ai all document tool calling with structured output on their OpenAI-compatible endpoints.
 
 ## Major Chinese companies and models
 
@@ -68,6 +68,12 @@ Tool reliability varies with schema design and model tier; long loops drift and 
 
 Keep tool descriptions precise (models read them literally); validate arguments before execution; add loop budgets and approval gates for irreversible actions; test tool choice on your real schemas, not demo ones.
 
+## What the available evidence actually shows
+
+Tool calling is the most uniformly evidenced capability in the database: it is listed on the flagship models of all six tracked companies and documented on all five API platforms, so "tool calling is broadly available" is a directly supported claim. What is not evidenced is selection reliability — the database holds no independent measure of tool-choice accuracy or argument validity across vendors. The distinction matters because tool calling is now commodity plumbing: China AI Hub analysis indicates the differentiator has shifted from availability (universally evidenced) to reliability under real schemas (unevidenced), which is why deployment guidance stresses validating arguments and testing on your own tool schemas rather than demos.
+
 ## Future development
 
 Tool calling is merging with computer use (operating arbitrary software through screens), standardized tool registries via MCP, and model-native tool selection improvements.
+
+*Labels used above: **Official fact** (from OpenAI's function-calling guide and Anthropic's tool-use docs), **Vendor-reported claim** (tool-calling capability flags), and **China AI Hub analysis** (our synthesis, always introduced as such).*

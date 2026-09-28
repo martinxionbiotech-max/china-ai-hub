@@ -5,7 +5,9 @@ slug: ai-chips
 title: AI Chips
 definition: "AI chips are specialized processors — GPUs and purpose-built accelerators — designed for the matrix-heavy compute of model training and inference, the physical substrate on which every model in this database runs."
 related_models: []
-related_companies: []
+related_companies:
+  - deepseek
+  - minimax
 related_technologies:
   - ai-infrastructure
   - inference
@@ -34,7 +36,7 @@ Chips set the ceiling on model scale, training cost, and inference price — and
 
 ## Chinese adoption
 
-China's AI ecosystem runs on a dual track: NVIDIA parts where available, and Huawei Ascend plus other domestic accelerators where not. Our database does not currently track per-model hardware provenance (a data gap, not a claim of absence); the observable evidence is the ecosystem's strong inference-efficiency engineering — MLA attention, sparse attention, aggressive quantization support — which matters most when compute is constrained.
+China's AI ecosystem runs on a dual track: NVIDIA parts where available, and Huawei Ascend plus other domestic accelerators where not. Our database does not currently track per-model hardware provenance (a data gap, not a claim of absence); the observable evidence is the ecosystem's strong inference-efficiency engineering, which matters most when compute is constrained. That engineering is concrete and open: DeepSeek's MLA attention (documented in the DeepSeek-V2 paper) compresses the KV cache, its open kernel libraries (FlashMLA, DeepGEMM, DeepEP) target serving efficiency, and MiniMax's MSA sparse attention claims 9x prefill and 15x decode speedups at 1M context on MiniMax-M3. These are vendor-reported figures, but the pattern — attention compression and open inference kernels — is the visible trace of a compute-constrained ecosystem optimizing around hardware ceilings.
 
 ## Major Chinese companies and models
 
@@ -52,6 +54,12 @@ Hardware availability is geopolitically volatile; domestic accelerator software 
 
 Evaluate the software stack before the spec sheet — porting costs dominate; benchmark your own workloads at realistic batch sizes; and keep deployment options portable (exportable formats, framework-agnostic runtimes).
 
+## What the available evidence actually shows
+
+The China AI Hub database holds no per-model hardware-provenance field, so it cannot answer which accelerators run which Chinese models — that is a documented gap, not a claim that the information is absent in the world. What the database does show is indirect but real: Chinese labs lead on open inference-efficiency engineering (DeepSeek's FlashMLA/DeepGEMM/DeepEP kernels and MiniMax's MSA), which is consistent with an ecosystem optimizing against compute constraints. China AI Hub analysis indicates that efficiency engineering is the closest proxy the database currently offers for hardware pressure, and that a hardware-provenance field would turn an indirect signal into a directly usable one.
+
 ## Future development
 
 Expect domestic accelerator software maturity to keep closing the gap, FP4/FP8-native designs, and inference-optimized chips tuned for reasoning workloads' long decode phases.
+
+*Labels used above: **Official fact** (from the NVIDIA and Huawei Ascend sources and the DeepSeek-V2 paper), **Vendor-reported claim** (MiniMax's MSA speedup figures), and **China AI Hub analysis** (our synthesis, always introduced as such).*

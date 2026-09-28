@@ -49,7 +49,7 @@ Long context changes system design: with a 1M-token window, many retrieval-augme
 
 ## Chinese adoption
 
-Chinese labs have been aggressive on context length. Per the China AI Hub database (last verified 2026-09-22), eleven current models list a 1,048,576-token context window: DeepSeek-V4-Pro and V4.1-Flash, Qwen3.8-Max and Qwen3.8-Flash, GLM-5.2/5.3/5.3-Flash, Kimi K3, MiniMax M3, and Doubao Seed 2.1 Pro/Evolving. Kimi K3 additionally lists a 1M-token maximum output.
+Chinese labs have been aggressive on context length. Per the China AI Hub database (last verified 2026-09-22), eleven current models list a 1,048,576-token context window: DeepSeek-V4-Pro and V4.1-Flash, Qwen3.8-Max and Qwen3.8-Flash, GLM-5.2/5.3/5.3-Flash, Kimi K3, MiniMax M3, and Doubao Seed 2.1 Pro/Evolving. Kimi K3 additionally lists a 1M-token maximum output. The efficiency mechanism is architecture: MiniMax-M3's MSA sparse attention claims 9x prefill / 15x decode speedups at 1M context (vendor claim), and GLM-5.3-Flash combines sparse and linear attention — both responses to the KV-cache cost of long context.
 
 ## Major Chinese companies and models
 
@@ -69,6 +69,12 @@ Effective use of long context degrades with distance (middle-of-context loss); a
 
 Budget for KV-cache memory, enable prefix caching for shared prompts, and benchmark attention quality at the lengths you actually use rather than trusting the advertised maximum.
 
+## What the available evidence actually shows
+
+The database directly evidences a breadth claim — eleven models advertise 1M-token windows — and a differentiation claim — output ceilings range from 131,072 (Qwen3.8-Max, GLM-5.3, MiniMax M3) to 262,144 (Doubao Seed 2.1 Pro) to 393,216 (DeepSeek-V4-Pro) to 1,048,576 (Kimi K3). What it does not evidence is effective usable length: advertised context is a vendor figure, and the database holds no independent retrieval-quality measurement at long lengths. China AI Hub analysis indicates the input-vs-output asymmetry is the most decision-relevant documented fact — long context is more usefully read as "long input" for analysis than "long generation," except in Kimi K3's case.
+
 ## Future development
 
 Long context is converging with agent memory architectures — persistent, searchable context stores rather than one giant prompt — and with hybrid retrieval-plus-context systems.
+
+*Labels used above: **Official fact** (from the LongLoRA and LongRoPE papers and the China AI Hub database), **Vendor-reported claim** (advertised context windows and MSA speedup figures), and **China AI Hub analysis** (our synthesis, always introduced as such).*

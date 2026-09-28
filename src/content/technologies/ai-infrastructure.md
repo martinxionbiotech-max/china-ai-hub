@@ -7,6 +7,7 @@ definition: "AI infrastructure is the systems layer beneath models — compute c
 related_models: []
 related_companies:
   - deepseek
+  - minimax
 related_technologies:
   - ai-chips
   - inference
@@ -36,7 +37,7 @@ Infrastructure converts model capability into availability and price. The Chines
 
 ## Chinese adoption
 
-Chinese labs open-source infrastructure unusually aggressively. DeepSeek's project list includes FlashMLA (attention kernel), DeepGEMM (GEMM library), DeepEP (expert-parallel communication) and 3FS (filesystem) — tools the community uses to serve open models at scale. MiniMax open-sources sparse-attention components (MSA). Combined with open weights (MIT/Apache-2.0 models from DeepSeek and Zhipu in our database), this makes self-hosted Chinese-model stacks viable outside China.
+Chinese labs open-source infrastructure unusually aggressively. DeepSeek's project list includes FlashMLA (attention kernel), DeepGEMM (GEMM library), DeepEP (expert-parallel communication) and 3FS (filesystem) — tools the community uses to serve open models at scale. MiniMax open-sources sparse-attention components (MSA). Combined with open weights (MIT/Apache-2.0 models from DeepSeek and Zhipu in our database), this makes self-hosted Chinese-model stacks viable outside China. The price floor this enables is concrete: DeepSeek-V4.1-Flash lists $0.15/1M input and GLM-5.3-Flash $0.15/1M input in the database, the lowest budget tier recorded.
 
 ## Major Chinese companies and models
 
@@ -55,6 +56,12 @@ Cluster engineering is hard to replicate (reports omit operational details); ope
 
 Start with managed serving unless scale justifies the ops burden; adopt the open kernels only where they match your runtime; and treat vendor infrastructure announcements as engineering signals, not product guarantees.
 
+## What the available evidence actually shows
+
+The database records open infrastructure projects as company-level facts (DeepSeek's FlashMLA/DeepGEMM/DeepEP/3FS; MiniMax's MSA) and open weights as model-level facts (DeepSeek-V4-Pro and V4.1-Flash MIT; GLM-5.2/5.3 Apache-2.0), so the claim that Chinese-model self-hosting is practical is directly evidenced. What is not evidenced is the operational economics: the DeepSeek-V3 technical report documents cluster engineering but omits the operational details that determine whether a given team can reproduce those results. China AI Hub analysis indicates the open-infrastructure signal is strong and unusual — few Western labs release kernel-level inference libraries — but treat it as an engineering signal, not a guarantee that any specific self-hosting deployment will hit the database's listed price floor.
+
 ## Future development
 
 Expect continued open-sourcing of inference kernels, disaggregated serving architectures, and infrastructure tuned specifically for long-reasoning workloads.
+
+*Labels used above: **Official fact** (from the DeepSeek-V3 technical report, vLLM, and the China AI Hub database), and **China AI Hub analysis** (our synthesis, always introduced as such).*

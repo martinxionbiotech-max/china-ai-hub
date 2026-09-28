@@ -6,9 +6,16 @@ title: Mixture of Experts
 definition: "Mixture of Experts (MoE) is a model architecture where each layer contains many small 'expert' networks and a router activates only a few per token, so total parameters can scale up while per-token compute stays roughly flat."
 related_models:
   - qwen3.8-2.4t-a95b
+  - deepseek-v4-pro
+  - kimi-k3
+  - minimax-m3
+  - glm-5.3
 related_companies:
   - alibaba-cloud
   - deepseek
+  - moonshot-ai
+  - minimax
+  - zhipu-ai
 related_technologies:
   - inference
   - quantization
@@ -40,7 +47,7 @@ MoE decouples capacity from compute: a 2.4-trillion-parameter MoE can run with r
 
 ## Chinese adoption
 
-MoE is widely used across the Chinese open-model ecosystem. Alibaba's Qwen line is the clearest public example: Qwen3.5 ships MoE variants such as 397B-A17B, 122B-A10B and 35B-A3B (the A suffix denoting active parameters), and the current Qwen3.8-2.4T-A95B open release continues the pattern. DeepSeek's architecture work on economical MoE training is documented in the DeepSeek-V2 paper.
+MoE is widely used across the Chinese open-model ecosystem. Alibaba's Qwen line is the clearest public example: Qwen3.5 ships MoE variants such as 397B-A17B, 122B-A10B and 35B-A3B (the A suffix denoting active parameters), and the current Qwen3.8-2.4T-A95B open release continues the pattern. DeepSeek's architecture work on economical MoE training is documented in the DeepSeek-V2 paper. Across the database, most current flagships are MoE: DeepSeek-V4-Pro (1.6T/49B active), Kimi K3 (2.8T/104B active), Qwen3.8-Max (2.4T/95B active), GLM-5.3 (744B/40B active), and MiniMax-M3 (~428B/~23B active).
 
 ## Major Chinese companies and models
 
@@ -59,6 +66,12 @@ High memory footprint for serving (all experts resident); routing can be unstabl
 
 Plan memory around total parameters, not active parameters. Use MoE-aware serving stacks and vLLM-class runtimes that offload idle experts. Verify quantization quality on MoE specifically, since router and expert quantization interact.
 
+## What the available evidence actually shows
+
+The database directly evidences both MoE's breadth (five of the six companies' flagships are MoE) and its cost logic (DeepSeek-V4-Pro runs 49B active out of 1.6T total — a 3.1% activation ratio — which is why it can list $0.66/$1.98 off-peak). What is harder to evidence is the memory consequence: total parameters still dictate serving memory, so a 2.4T MoE is not a cheap-to-self-host model despite its low activation. China AI Hub analysis indicates MoE is now the default architecture for Chinese frontier flagships because it decouples capability from per-token cost — but the "capability at reduced cost" story must be read alongside the "all experts resident in memory" constraint that the parameter fields make visible.
+
 ## Future development
 
 Deeper integration of sparsity with attention (e.g., MiniMax's MSA sparse-attention work), expert specialization, and MoE-aware compression continue to develop. Treat sparsity claims as architecture details, not quality guarantees.
+
+*Labels used above: **Official fact** (from the Shazeer et al. and DeepSeek-V2 papers and the China AI Hub database), **Vendor-reported claim** (architecture and parameter figures published by vendors), and **China AI Hub analysis** (our synthesis, always introduced as such).*

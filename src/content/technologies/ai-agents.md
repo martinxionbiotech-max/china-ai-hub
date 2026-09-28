@@ -45,6 +45,8 @@ Agents turn language models from answerers into workers: they can operate softwa
 
 China's agent ecosystem is deep. The China AI Hub agent database tracks ten Chinese agents (last verified 2026-09-22) spanning coding agents (Qwen Code, Kimi Code, MiniMax Code), frameworks (DeepSeek Harness, Qwen-Agent), autonomous agents (AutoGLM, Doubao App), and coding plans (GLM Coding Plan, Qoder). Seven of ten list MCP support; seven list computer use. On the model side, Kimi K3, Qwen3.8-Max, Doubao Seed 2.1 Pro and MiniMax M3 all list agent capability.
 
+Pricing evidence shows how agents have been productized. GLM Coding Plan runs on GLM-5.3 / GLM-5.3-Flash with 1M-token context and bills ¥118–¥1,078/month in China (from $18/month internationally). Kimi Code runs on Kimi K3 (2.8T-parameter MoE) under Kimi membership. MiniMax Code runs on MiniMax-M3 (~428B/~23B-active MoE). Qoder's Auto tier smart-routes across Qwen3.8-Max, DeepSeek-V4-Pro, GLM-5.3, Kimi K3 and MiniMax M3 with 1.6x/1.1x/0.3x credit multipliers.
+
 ## Major Chinese companies and models
 
 - **DeepSeek** — DeepSeek Harness: open-source agent framework (Cordis-based), MIT, self-hosted.
@@ -66,6 +68,12 @@ Autonomy implies failure modes: loops that burn tokens, tool misuse, and compoun
 
 Use simpler workflow patterns where they suffice; add budgets, checkpoints and human approval for irreversible actions; sandbox code and browser tools; monitor token spend per completed task, not per call.
 
+## What the available evidence actually shows
+
+The China AI Hub database establishes that agents are a broad, multi-vendor product category in China — ten tracked agents across six companies, with open-source frameworks (DeepSeek Harness MIT, Qwen Code Apache-2.0, Qwen-Agent Apache-2.0, AutoGLM Apache-2.0 code) alongside closed products (Doubao App, GLM Coding Plan, Qoder, MiniMax Agent). What the database does not yet show is independent evaluation of agent reliability: capability flags (agent, tool calling, computer use, MCP) are vendor-reported, and long-horizon reliability is untested against a common benchmark. China AI Hub analysis indicates the structural story — models gaining first-class agent capability while agent products consolidate around MCP and computer use — is well evidenced; the quality story (how reliably these agents complete multi-hour tasks) is not yet measurable from recorded data.
+
 ## Future development
 
 Agents are absorbing computer use and browser control as standard tools, standardizing inter-agent communication (MCP, A2A), and moving toward persistent memory and multi-day task execution.
+
+*Labels used above: **Official fact** (from Anthropic's agent engineering guidance and the China AI Hub entity database), **Vendor-reported claim** (capability and pricing figures published by each vendor), and **China AI Hub analysis** (our synthesis, always introduced as such).*

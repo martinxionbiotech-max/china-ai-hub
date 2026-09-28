@@ -40,7 +40,7 @@ Quantization decides what hardware can run what model: a 70B model that needs ~1
 
 ## Chinese adoption
 
-Quantization is community infrastructure around Chinese open models rather than a vendor product. The open-weight models in the China AI Hub database — DeepSeek-V3.2 (MIT), GLM-5.2/5.3 (Apache-2.0), Qwen3.8-2.4T-A95B and others — are routinely distributed in community-quantized GGUF/GPTQ/AWQ formats for local deployment. Model pages list license and self-hosting status precisely because quantization is how self-hosting actually happens.
+Quantization is community infrastructure around Chinese open models rather than a vendor product. The open-weight models in the China AI Hub database — DeepSeek-V3.2 (MIT), GLM-5.2/5.3 (Apache-2.0), Qwen3.8-2.4T-A95B (custom MIT-style) and others — are routinely distributed in community-quantized GGUF/GPTQ/AWQ formats for local deployment. Model pages list license and self-hosting status precisely because quantization is how self-hosting actually happens. The guide on [open weight vs API](/guides/open-weight-vs-api/) notes a 4-bit quantized 30B-class open model runs on a single high-memory GPU — the concrete deployment consequence.
 
 ## Major Chinese companies and models
 
@@ -60,6 +60,12 @@ Quality loss is task-dependent and hard to predict (math and long-context degrad
 
 Benchmark at the bit level you plan to serve; prefer AWQ/GPTQ for GPU serving and GGUF for CPU/edge; and re-evaluate after any framework upgrade, since kernels change results.
 
+## What the available evidence actually shows
+
+The database evidences the license/precision pairing — MIT and Apache-2.0 open models are the quantization targets — but holds no quantization-quality field: it does not record per-model benchmark accuracy at 4-bit or 8-bit. MoE models (the majority of Chinese flagships) are exactly where quantization is most uneven, because router and expert layers compress differently. China AI Hub analysis indicates the database can tell you *which* models are legally and practically quantizable, but not *how much* quality a given quantization level costs — that remains a self-benchmarking obligation for the deployer.
+
 ## Future development
 
 FP8/FP4 native training and serving, quantization-aware training loops, and hardware-adaptive mixed precision are making lower precision safer.
+
+*Labels used above: **Official fact** (from the GPTQ and AWQ papers and the China AI Hub database), and **China AI Hub analysis** (our synthesis, always introduced as such).*

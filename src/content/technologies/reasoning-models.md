@@ -49,7 +49,7 @@ Reasoning training is the main driver of post-2024 gains on hard benchmarks: com
 
 ## Chinese adoption
 
-China adopted reasoning training at scale and, with DeepSeek-R1, was the first to publish the full recipe openly. In the China AI Hub database (last verified 2026-09-22), nearly every current flagship lists reasoning capability: DeepSeek-V4-Pro and V4.1-Flash, Qwen3.8-Max, GLM-5.3, Kimi K3, MiniMax M3, and the Doubao Seed 2.1 series all report reasoning support.
+China adopted reasoning training at scale and, with DeepSeek-R1, was the first to publish the full recipe openly. In the China AI Hub database (last verified 2026-09-22), nearly every current flagship lists reasoning capability: DeepSeek-V4-Pro and V4.1-Flash, Qwen3.8-Max, GLM-5.3, Kimi K3, MiniMax M3, and the Doubao Seed 2.1 series all report reasoning support. The flagship price spread — from MiniMax M3's $0.30/$1.20 to Doubao Seed 2.1 Pro's $6.00/$30.00 per 1M tokens — matters most for reasoning workloads, where long chains of thought multiply output-token spend.
 
 ## Major Chinese companies and models
 
@@ -71,6 +71,12 @@ High token consumption and latency; reasoning is not guaranteed to be faithful t
 
 Serving reasoning models multiplies output-token costs, so measure price-per-completed-task, not price-per-token. Off-peak discounts (e.g., DeepSeek's listed off-peak pricing) can matter for batch workloads. Hidden chains of thought are also a compliance consideration where auditability is required.
 
+## What the available evidence actually shows
+
+Reasoning is the most consistently evidenced capability in the database — nearly every flagship lists it — and the DeepSeek-R1 paper provides an open, replicable recipe for how it is induced. What the database does not evidence is reasoning *quality*: the benchmark scores it holds are vendor-reported (for example DeepSeek-V4-Pro's HLE 42.7 and Terminal-Bench 87.9), with no independent re-measurement recorded. China AI Hub analysis indicates reasoning has moved from a differentiator to a baseline capability across Chinese flagships, so the operative question for a buyer has shifted from "does it reason" to "how does reasoning cost multiply output spend on my workload" — a question the pricing fields make calculable but the benchmark fields cannot yet answer independently.
+
 ## Future development
 
 Reasoning budgets are becoming controllable (low/medium/high modes), reasoning is merging with tool use and computer use inside agents, and cost per reasoning token keeps falling as efficiency techniques mature.
+
+*Labels used above: **Official fact** (from the OpenAI o1 announcement and the DeepSeek-R1 paper), **Vendor-reported claim** (reasoning capability flags and benchmark scores), and **China AI Hub analysis** (our synthesis, always introduced as such).*

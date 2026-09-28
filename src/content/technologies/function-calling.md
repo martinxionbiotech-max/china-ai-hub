@@ -7,8 +7,12 @@ definition: "Function calling is OpenAI's term for tool calling: a model capabil
 related_models:
   - deepseek-v4-pro
   - deepseek-v4-1-flash
+  - qwen3.8-max
+  - kimi-k3
 related_companies:
   - deepseek
+  - alibaba-cloud
+  - moonshot-ai
 related_technologies:
   - tool-calling
 related_guides: [how-to-choose-a-chinese-ai-model]
@@ -36,7 +40,7 @@ Function calling converts language into structured, executable intent — the di
 
 ## Chinese adoption
 
-In the China AI Hub database (last verified 2026-09-22), DeepSeek documents function calling most explicitly: DeepSeek-V4-Pro and V4.1-Flash both list the capability, and DeepSeek maintains dedicated function-calling documentation compatible with OpenAI-style schemas. Other Chinese providers implement the equivalent under "tools" (Qwen3.8-Max, Kimi K3, MiniMax M3, Doubao Seed 2.1 Pro all list tool calling).
+In the China AI Hub database (last verified 2026-09-22), DeepSeek documents function calling most explicitly: DeepSeek-V4-Pro and V4.1-Flash both list the capability, and DeepSeek maintains dedicated function-calling documentation compatible with OpenAI-style schemas. Other Chinese providers implement the equivalent under "tools" — Qwen3.8-Max, Kimi K3, MiniMax M3 and Doubao Seed 2.1 Pro all list tool calling. The API layer confirms this is the practical surface: Ark, Model Studio, Kimi and Z.ai each expose OpenAI-compatible function/tool calling with structured output on at least their flagship models.
 
 ## Major Chinese companies and models
 
@@ -54,6 +58,12 @@ JSON argument validity still needs validation (the model can emit malformed or w
 
 Validate and coerce arguments before execution; keep function sets small per request; prefer enums and tight schemas; and version your function definitions since models are sensitive to description changes.
 
+## What the available evidence actually shows
+
+The database records function/tool calling as a capability flag on the flagship models of all six tracked companies, and as an API surface on Ark, Model Studio, DeepSeek, Kimi and Z.ai — so the claim "function calling is broadly available across Chinese providers" is well evidenced. What is not evidenced is the reliability of schema adherence: no independent benchmark in the database measures structured-output validity or function-selection accuracy across these models. China AI Hub analysis indicates function calling is now a table-stakes compatibility layer — the meaningful differentiator has moved from "does it support it" to "how reliably does it emit valid arguments," which the database cannot yet answer.
+
 ## Future development
 
 The distinction between function calling, tool use and MCP tools is collapsing into one capability surface; expect schema standards and tool registries to keep converging.
+
+*Labels used above: **Official fact** (from OpenAI's and DeepSeek's function-calling docs and the China AI Hub database), **Vendor-reported claim** (capability flags), and **China AI Hub analysis** (our synthesis, always introduced as such).*

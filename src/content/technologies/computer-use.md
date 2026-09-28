@@ -37,6 +37,8 @@ Computer use is the generality endgame for automation: one capability covers bro
 
 Computer use is present at both model and agent layers in the China AI Hub database (last verified 2026-09-22). Models listing it: Doubao Seed 2.1 Pro (and Turbo/Evolving) and GLM-5.3-Flash. Agents listing it: AutoGLM (Zhipu AI), DeepSeek Harness, Kimi Code, MiniMax Code, Qwen Code, Qoder and Doubao App (which ships a computer-use "Work" mode). That is seven of the ten tracked agents.
 
+Commercialization is furthest at ByteDance, where Doubao App exposes computer use as the subscription-gated "Doubao Work" virtual-desktop mode (paid tiers 68/200/500 CNY per month), and at Zhipu AI, where AutoGLM is an open phone-use agent (AutoGLM-Phone-9B VLM) available free as a framework.
+
 ## Major Chinese companies and models
 
 - **ByteDance** — Doubao Seed 2.1 Pro lists computer use; Doubao App exposes it as the "Work" virtual-desktop mode.
@@ -55,6 +57,12 @@ Slow and token-hungry (screenshots every step); brittle on pixel-level precision
 
 Run in isolated VMs or sandboxes; add human approval for writes, payments and sends; log screenshots for audit; and start with read-only observation tasks before granting action permissions.
 
+## What the available evidence actually shows
+
+The database records computer use as a capability flag across two models (Doubao Seed 2.1 series, GLM-5.3-Flash) and seven of ten agents — so its presence in the Chinese ecosystem is well evidenced. What is not evidenced is its production reliability: every computer-use flag is vendor-reported, and the database holds no independent, shared-benchmark evaluation of GUI-task success rates. AutoGLM is the only tracked product with an explicit, published safety model (sensitive screens trigger human takeover), which is itself a vendor statement. China AI Hub analysis indicates computer use has moved from novelty to a shipping product category in China, but the evidence for "it works reliably" lags the evidence for "it is offered."
+
 ## Future development
 
 Expect tighter integration with browser automation, shared computer-use benchmarks, and OS-level agent sandboxes becoming a standard product category.
+
+*Labels used above: **Official fact** (from Anthropic's computer-use announcement and the China AI Hub database), **Vendor-reported claim** (computer-use capability flags and AutoGLM's safety behavior), and **China AI Hub analysis** (our synthesis, always introduced as such).*
