@@ -97,6 +97,7 @@ const models = defineCollection({
     benchmark_results: z.array(benchmarkResultSchema).default([]),
     known_limitations: z.array(z.string()).default([]),
     superseded_by: z.string().optional(),
+    canonical_model: z.string().optional(),
     image: z.string().optional(),
     image_credit: z.string().optional(),
     image_source: z.string().optional(),

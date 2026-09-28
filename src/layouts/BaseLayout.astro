@@ -6,10 +6,11 @@ interface Props {
   description: string;
   type?: 'website' | 'article';
   extraJsonLd?: Record<string, unknown>[];
+  canonicalPath?: string;
 }
 
-const { title, description, type = 'website', extraJsonLd = [] } = Astro.props;
-const canonical = new URL(Astro.url.pathname, Astro.site);
+const { title, description, type = 'website', extraJsonLd = [], canonicalPath } = Astro.props;
+const canonical = new URL(canonicalPath ?? Astro.url.pathname, Astro.site);
 const ogImage = new URL('/og-image.png', Astro.site);
 ---
 

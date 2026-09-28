@@ -32,6 +32,13 @@ const [allModels, allBenchmarks, allAgents, allApis, allCompanies] = await Promi
 
 const companyRec = allCompanies.find((c) => c.id === d.provider || c.data.aliases?.includes(d.provider));
 
+/* Superseded / merged (canonical) target resolution. */
+const supersededBy = d.superseded_by ?? d.canonical_model ?? null;
+const supersededHref = supersededBy ? modelHref(modelMap, supersededBy) : null;
+const supersededName = supersededBy
+  ? (allModels.find((m) => m.id === supersededBy || m.data.model_id === supersededBy)?.data.model_name ?? supersededBy)
+  : null;
+
 /* Entity definition — derived from verified DB fields only. */
 const hqShort = (companyRec?.data.headquarters ?? '').split(';')[0].trim().replace(/^China platform:\s*/i, '');
 const definition = `${d.model_name} is a ${d.model_family ?? ''} model developed by ${d.provider}, a Chinese AI company${hqShort ? ` headquartered in ${hqShort}` : ''}${d.release_date ? `, released ${d.release_date}` : ''}${d.context_window != null ? ` with a ${d.context_window.toLocaleString()}-token context window` : ''}${d.open_weight === true ? ' and open weights' : d.open_weight === false ? ' and closed weights' : ''}.`;
@@ -106,6 +113,7 @@ const evidenceLabel: Record<string, string> = {
   title={d.model_name}
   description={`${d.model_name} by ${d.provider}: context window, capabilities, pricing, benchmarks and verified sources.`}
   type="article"
+  canonicalPath={d.canonical_model ? modelHref(modelMap, d.canonical_model) : undefined}
 >
   <article class="max-w-none">
     <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
@@ -121,6 +129,23 @@ const evidenceLabel: Record<string, string> = {
     </p>
 
     <p class="text-gray-700 border-l-4 border-[#0f4c81] pl-4 mb-6">{definition}</p>
+
+    {supersededHref && supersededName && (
+      <div class="mb-6 rounded-md border border-amber-300 bg-amber-50 px-4 py-3 text-sm text-amber-900">
+        {d.canonical_model ? (
+          <>
+            <strong>Canonical page:</strong> this entry is a sibling SKU or speed variant documented under{' '}
+            <a href={supersededHref} class="font-semibold underline">{supersededName}</a>. See that page for the full
+            model definition; this page records only the billing/speed differentiation.
+          </>
+        ) : (
+          <>
+            <strong>Superseded by <a href={supersededHref} class="font-semibold underline">{supersededName}</a>.</strong>{' '}
+            This page is kept for historical and pricing reference.
+          </>
+        )}
+      </div>
+    )}
 
     {d.image && (
       <figure class="mb-6">
