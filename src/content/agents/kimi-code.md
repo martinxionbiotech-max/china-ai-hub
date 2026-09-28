@@ -63,8 +63,16 @@ sources:
     last_verified: "2026-09-20"
     confidence: high
 ---
+**What it is.** Kimi Code is Moonshot AI's terminal AI coding agent, the successor to the deprecated kimi-cli, shipped as a TypeScript CLI (MIT), VS Code extension and Desktop app. **Why it matters.** It is the coding front-end for [Kimi K3](/models/kimi-k3/)'s 1M-token context — the agent layer that turns K3's long-context generation strength into long-horizon whole-repo work. **Key characteristics.** Subagents, MCP, Kimi Computer Use, browser control and multimodal input (text, images, video) built in. **What a professional should know.** Billing follows Kimi membership (Plus and above), and the Open Platform API is pay-as-you-go at $3.00/$15.00 per 1M tokens for kimi-k3; cloud inference only, not self-hostable as a model service.
+
 Kimi Code is Moonshot AI's terminal AI coding agent and the successor to the deprecated kimi-cli. It ships as a TypeScript CLI (MIT), a VS Code extension and a Desktop app, and can read and edit code, run shell commands, search files, fetch web pages, and plan and adjust actions autonomously. Subagents, MCP, Kimi Computer Use, browser control and multimodal input (text, images, video) are built in.
 
 It runs on [Kimi K3](/models/kimi-k3/), [Kimi K2.7-Code](/models/kimi-k27-code/) and [Kimi K2.7-Code-HighSpeed](/models/kimi-k27-code-highspeed/) — K3's 1M-token context enables long-horizon whole-repo work.
 
 Billing follows Kimi membership (Plus and above); the Open Platform API is pay-as-you-go at $3.00/M input / $15.00/M output for kimi-k3. See the [Moonshot AI](/companies/moonshot-ai/) profile.
+
+## Why it matters
+
+Kimi Code is the agent manifestation of Kimi K3's distinguishing capability: the database's only 1M-token maximum *output* ceiling is exactly what a long-horizon coding agent needs, because it lets the model emit large multi-file edits and long reasoning traces in one pass. The agent therefore matters as evidence of model capability being *operationalized* — K3's long context is an abstract spec until an agent like Kimi Code consumes it for whole-repo work. China AI Hub analysis indicates Kimi Code is best read as Moonshot's bet that the coding-agent market will reward output-length and long-horizon reliability over raw price, a bet that runs directly on K3's differentiated capacity.
+
+*Labels used above: **Official fact** (from the Kimi Code GitHub repo and docs), **Vendor-reported claim** (pricing and capability statements by Moonshot AI), and **China AI Hub analysis** (our synthesis, always introduced as such).*

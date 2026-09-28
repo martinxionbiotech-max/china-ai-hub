@@ -63,8 +63,16 @@ sources:
     last_verified: "2026-09-20"
     confidence: high
 ---
+**What it is.** DeepSeek Harness is DeepSeek's open-source agent harness ("Everything is a Plugin") that powers its coding agent — models, tools, skills, sessions, sandbox, storage, loops, scheduling and UI are all composed from replaceable plugins on the Cordis framework. **Why it matters.** It is DeepSeek's framework layer, the open MIT counterpart to its low-cost [DeepSeek-V4.1-Flash](/models/deepseek-v4-1-flash/) and [V4-Pro](/models/deepseek-v4-pro/) models, and ships as CLI (dsh), Web UI, Electron Desktop app, Python SDK and ACP server. **Key characteristics.** Free and self-hosted; model usage billed by the configured provider with DeepSeek's peak/off-peak pricing. **What a professional should know.** It is a developer preview — not security-audited, not production-ready — and its sandboxing/approvals do not guarantee isolation, so run untrusted work in a disposable VM.
+
 DeepSeek Harness is DeepSeek's open-source agent harness ("Everything is a Plugin") that powers its coding agent. Models, tools, skills, sessions, sandbox, storage, loops, scheduling and the UI are all composed from replaceable plugins on the Cordis framework. It is a developer preview that ships as a CLI (dsh), Web UI, Electron Desktop app, Python SDK and ACP server.
 
 The software is free and self-hosted; model usage is billed by the provider you configure. DeepSeek API pay-as-you-go ranges from $0.15–$0.30/M input (cache-miss) for flash up to $1.98–$3.96/M output for V4-Pro, with off-peak at half price.
 
 See the [DeepSeek](/companies/deepseek/) profile and the [DeepSeek-V4-Pro](/models/deepseek-v4-pro/) model page.
+
+## Why it matters
+
+DeepSeek Harness is the clearest case of an agent whose value is its *modularity* rather than its models: it is model-agnostic by design (you configure the provider), but its natural pairing is DeepSeek's own flash and V4-Pro tiers, which is why its documented pricing mirrors DeepSeek's pay-as-you-go structure. The relationship to the underlying models is therefore one of economics — the harness inherits DeepSeek's price floor and its peak/off-peak billing — not of hard coupling. China AI Hub analysis indicates the harness matters as DeepSeek's bet on the framework layer: it extends the company's openness-and-cost strategy from models into agent orchestration, while its developer-preview status signals that the layer is still experimental.
+
+*Labels used above: **Official fact** (from the DeepSeek Harness GitHub repo and docs), **Vendor-reported claim** (pricing and capability statements by DeepSeek), and **China AI Hub analysis** (our synthesis, always introduced as such).*

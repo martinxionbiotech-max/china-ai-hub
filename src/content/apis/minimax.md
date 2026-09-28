@@ -42,6 +42,7 @@ sources:
     last_verified: "2026-09-20"
     confidence: high
 ---
+**What it is.** The MiniMax API serves the M-series through Anthropic-compatible and OpenAI-compatible endpoints, with international (api.minimax.io) and China (api.minimax.cn) bases. **Why it matters.** It is the primary way to access [MiniMax-M3](/models/minimax-m3/)'s 1M-token context and multimodal input at the database's lowest flagship price ($0.30/$1.20 per 1M tokens). **Key characteristics.** Anthropic-compatible endpoint with `ANTHROPIC_API_KEY`-style auth; streaming with thinking/text deltas; `service_tier` (standard | priority, priority = 1.5x price); automatic prompt caching. **What a professional should know.** Rate limits are published on a JS-rendered page (not extractable), and structured output is not publicly documented — both are known limitations to verify before production use.
 
 The MiniMax API serves the M-series through Anthropic-compatible and OpenAI-compatible endpoints:
 international base `https://api.minimax.io/anthropic` (China: `https://api.minimax.cn/anthropic`), plus
@@ -52,3 +53,9 @@ max_tokens, temperature (0-2, recommended 1.0), top_p, tools/tool_choice, servic
 (standard | priority, priority = 1.5x price). M3 supports the thinking parameter (disabled by default,
 adaptive to enable) and multimodal Anthropic content blocks (image/video via URL, base64 or
 mm_file://{file_id}). Prompt caching is automatic with explicit cache_control support.
+
+## Why it matters
+
+The MiniMax API matters as the Anthropic-compatibility play: by exposing an `ANTHROPIC_API_KEY`-style endpoint, it lets teams already on the Claude ecosystem switch models with minimal code change — a deliberate contrast to DeepSeek's OpenAI-first surface. The cost trade-off is the `service_tier` structure (priority = 1.5x) layered on top of already-low M3 pricing, plus automatic prompt caching that lowers repeat-query cost. China AI Hub analysis indicates the API's structural role is the value-compatible option: Anthropic-style integration at the database's cheapest flagship price, with the gaps being structured output and published rate limits.
+
+*Labels used above: **Official fact** (from MiniMax's Anthropic-compatible API and pricing docs), **Vendor-reported claim** (pricing and capability statements by MiniMax), and **China AI Hub analysis** (our synthesis, always introduced as such).*

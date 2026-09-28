@@ -59,8 +59,16 @@ sources:
     last_verified: "2026-09-20"
     confidence: high
 ---
+**What it is.** Doubao is ByteDance's consumer AI assistant app (豆包), the largest consumer-to-model surface in the database, plus its "Doubao Work" autonomous desktop agent. **Why it matters.** It is the entry point for ByteDance's closed-API [Doubao Seed](/models/doubao-seed-2-1-pro/) models — consumer users reach the models only through the app, not through open weights. **Key characteristics.** Q&A, study help, office automation, and image/video creation backed by Seedream/Seedance; a computer-use "Work" mode operating a virtual desktop with Feishu integration. **What a professional should know.** It is mainland-China-focused (overseas users are redirected to Dola), subscription-billed (68/200/500 CNY/month), and has no public consumer API — developer access to Doubao models is via Volcengine Ark only.
+
 Doubao is ByteDance's consumer AI assistant app: Q&A and explanations, study help, office automation (documents, spreadsheets, PPT, data analysis, code), and image and video creation backed by the Seedream and Seedance models. It also supports voice calls, photo recognition and web search.
 
 "Doubao Work" mode runs an autonomous planning-and-executing agent that operates a virtual desktop on the local computer, with real-time watching, pause and takeover, plus Feishu integration for enterprise context.
 
 Doubao is mainland-China-focused (overseas users are redirected to Dola) and billed by subscription: Basic is free; paid tiers are 68 / 200 / 500 CNY per month with quota-based usage and separately sold creation packs. See the [ByteDance](/companies/bytedance/) profile.
+
+## Why it matters
+
+Doubao matters as the demand-side complement to ByteDance's closed model strategy: where Ark sells Doubao Seed models to developers, Doubao App sells their *output* to consumers through a subscription and a computer-use desktop mode. The app's underlying chat LLM is not named in official pages — a documented gap that reinforces the closed-API posture. China AI Hub analysis indicates Doubao's structural role is consumer distribution: it demonstrates that ByteDance's Seed models are productized for mainstream users, while the [computer use](/technology/computer-use/) capability shows up in a shipping consumer surface rather than only in a developer SDK.
+
+*Labels used above: **Official fact** (from the Doubao website and App Store listing), **Vendor-reported claim** (capability and pricing statements by ByteDance), and **China AI Hub analysis** (our synthesis, always introduced as such).*

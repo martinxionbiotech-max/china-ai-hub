@@ -71,6 +71,8 @@ sources:
     confidence: high
 ---
 
+**What it is.** Zhipu AI is the company behind the GLM model family, sold internationally as Z.ai and in China as BigModel. **Why it matters.** Zhipu ships genuinely open Apache-2.0 weights ([GLM-5.3](/models/glm-53/), [GLM-5.3-Flash](/models/glm-53-flash/), GLM-5.2) while pairing them with an unusually broad agent surface ([AutoGLM](/agents/autoglm/), [GLM Coding Plan](/agents/glm-coding-plan/)). **Key characteristics.** GLM-5.3 is a 744B/40B-active MoE with 1M-token context and always-on reasoning; GLM-5.3-Flash was the first open frontier model combining sparse and linear attention. **What a professional should know.** The Apache-2.0 labeling comes from GitHub metadata — the README has no separate weights-license section, so verify the per-model Hugging Face card before commercial reuse.
+
 Zhipu AI (智谱) develops the GLM model family, sold internationally as Z.ai and in China as BigModel
 (open.bigmodel.cn). The current flagship is GLM-5.3 (released 2026-08-18, 1M context, open weights on
 Hugging Face), alongside the multimodal coding model GLM-5.3-Flash/FlashX (2026-08-26).
@@ -78,3 +80,9 @@ Hugging Face), alongside the multimodal coding model GLM-5.3-Flash/FlashX (2026-
 The international operator is JINGSHENG HENGXING TECHNOLOGY PTE.LTD (Singapore); the China platform is
 run by 北京智谱华章科技股份有限公司. The company also offers the GLM Coding Plan subscription and the
 Open-AutoGLM phone-agent framework. A founding date is not stated on the official pages fetched.
+
+## Why it matters
+
+Zhipu AI's structural role is the open-weight-plus-agents combination: it is the only major lab pairing Apache-2.0 open weights with a first-party phone-use agent (AutoGLM) and a coding-plan product that routes third-party tools (Claude Code, Codex, Cursor, OpenClaw) onto GLM models. That positions it as the strongest open alternative for builders who want both downloadable weights and a managed agent layer. China AI Hub analysis indicates Zhipu's distinctive bet is breadth of *surface* — models, phone agents, coding plans, image/video — unified by the GLM family, with openness (Apache-2.0) as the shared thread.
+
+*Labels used above: **Official fact** (from Z.ai docs and the GLM-5 GitHub repository), **Vendor-reported claim** (model capabilities and pricing published by Zhipu AI), and **China AI Hub analysis** (our synthesis, always introduced as such).*

@@ -58,8 +58,16 @@ sources:
     last_verified: "2026-09-20"
     confidence: high
 ---
+**What it is.** Qwen Code is the Qwen team's open-source AI coding agent (Apache-2.0) for terminal, editor, desktop, browser and chat, built as a multi-protocol, multi-platform TypeScript framework. **Why it matters.** It is Alibaba's flagship open coding agent and the most model-agnostic surface in its portfolio — supporting OpenAI, Anthropic, Gemini and Qwen APIs plus DeepSeek, MiniMax, Z.AI, Kimi, OpenRouter and local models. **Key characteristics.** Five permission modes, Seatbelt/Docker sandboxing, auto-memory, subagents, MCP, computer use; CLI (npm), Desktop app, VS Code companion, Web UI and IM channels (Telegram/DingTalk/WeChat/Feishu). **What a professional should know.** The CLI is free (Apache-2.0) and the user pays the model provider; Alibaba billing runs through its international Coding Plan (Pro $50/month), China Token Plan (Personal ¥39–¥499/month) or pay-as-you-go Model Studio keys.
+
 Qwen Code is the Qwen team's open-source AI coding agent (Apache-2.0) for terminal, editor, desktop, browser and chat. Its multi-protocol TypeScript framework supports OpenAI, Anthropic, Gemini and Qwen APIs plus DeepSeek, MiniMax, Z.AI, Kimi, OpenRouter and local models (Ollama/vLLM).
 
 The CLI is free and the user pays the model provider. Alibaba Cloud billing options include the international Coding Plan (Pro $50/month), the China Token Plan (Personal ¥39–¥499/month, team seats ¥150–¥1,398) or pay-as-you-go Model Studio API keys.
 
 See the [Alibaba Cloud](/companies/alibaba-cloud/) profile.
+
+## Why it matters
+
+Qwen Code is the most model-agnostic agent in Alibaba's portfolio — its multi-protocol framework explicitly supports competitors' models (DeepSeek, Kimi, Z.AI, MiniMax) alongside Qwen, which makes it the opposite of [Qwen-Agent](/agents/qwen-agent/)'s Qwen-native design and complementary to [Qoder](/agents/qoder/)'s closed multi-model routing. Its relationship to underlying models is therefore one of *optionality*: the agent's value is the framework (sandboxing, permission modes, MCP, computer use), not any single model. China AI Hub analysis indicates Qwen Code matters as Alibaba's bet that open tooling wins developer mindshare even when those developers ultimately route to other vendors' models.
+
+*Labels used above: **Official fact** (from the Qwen Code GitHub repo and docs), **Vendor-reported claim** (pricing and capability statements by Alibaba Cloud), and **China AI Hub analysis** (our synthesis, always introduced as such).*

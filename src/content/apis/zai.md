@@ -43,6 +43,7 @@ sources:
     last_verified: "2026-09-20"
     confidence: high
 ---
+**What it is.** The Z.ai API is Zhipu AI's international platform serving the GLM family through an OpenAI-compatible Chat Completions endpoint, with Responses and Anthropic Messages protocols on GLM-5.3. **Why it matters.** It is the international distribution path for [GLM-5.3](/models/glm-53/) and [GLM-5.3-Flash](/models/glm-53-flash/), the latter at a budget-tier $0.15/$0.50 per 1M tokens. **Key characteristics.** Three protocol surfaces (Chat Completions, Responses, Anthropic Messages) plus a dedicated coding-plan endpoint; `tool_stream: true` for tool streaming (recommended for Flash models); 1M-token context. **What a professional should know.** The China platform (BigModel, open.bigmodel.cn) is operated separately, and the rate-limit documentation page was not located (docs.z.ai paths 404) — a gap to verify before production use.
 
 The Z.ai API (Zhipu's international platform) serves the GLM family via an OpenAI-compatible Chat
 Completions endpoint at `https://api.z.ai/api/paas/v4/chat/completions`. GLM-5.3 additionally supports
@@ -51,3 +52,9 @@ the OpenAI Responses protocol (base `https://api.z.ai/api/v1`) and the Anthropic
 
 Authentication is a Bearer API key. Streaming is supported, with `tool_stream: true` for tool-streaming
 (recommended for Flash models). The China platform (BigModel, open.bigmodel.cn) is operated separately.
+
+## Why it matters
+
+The Z.ai API matters as the multi-protocol surface for open-weight GLM models: it is one of the few tracked APIs exposing OpenAI, Anthropic *and* a coding-plan endpoint from a single provider, which lowers migration cost for teams that want both general and coding access to the same GLM-5.3 family. The cost trade-off is favorable at the flash tier ($0.15/$0.50) and moderate at the flagship ($1.40/$4.40), while the documented gap — no located rate-limit page — is an operational uncertainty. China AI Hub analysis indicates the API's structural role is the international, protocol-flexible entry to Zhipu's open model family, with the BigModel split meaning China and international are managed as separate surfaces.
+
+*Labels used above: **Official fact** (from Z.ai Quick Start and GLM-5.3 docs), **Vendor-reported claim** (pricing and capability statements by Zhipu AI), and **China AI Hub analysis** (our synthesis, always introduced as such).*

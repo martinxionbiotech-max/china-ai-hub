@@ -62,8 +62,16 @@ sources:
     last_verified: "2026-09-20"
     confidence: high
 ---
+**What it is.** MiniMax Code is MiniMax's desktop AI agent app and CLI (mcode) for software development, everyday workflows, automation and remote collaboration, on macOS and Windows. **Why it matters.** It is MiniMax's open-source (MIT) coding front-end for its [MiniMax-M3](/models/minimax-m3/) / [M2.7](/models/minimax-m27/) models — the developer-facing counterpart to the closed [MiniMax Agent](/agents/minimax-agent/). **Key characteristics.** Coding and Work modes, built-in browser, Agent Team, memory, MCP servers, scheduled tasks, remote control from phone and messaging apps; CLI with interactive TUI, headless mode and ACP server. **What a professional should know.** Browser/Computer Use are desktop-only (not in the CLI), the desktop app is macOS/Windows-only (no Linux), and billing runs on Token Plan subscriptions (Plus $22 / Max $55 / Ultra $132 per month).
+
 MiniMax Code is MiniMax's desktop AI agent app and CLI (mcode) for software development, everyday workflows, automation and remote collaboration, available on macOS and Windows. The code is open source under the MIT license.
 
 Billing runs through MiniMax Token Plan subscriptions (Plus $22 / Max $55 / Ultra $132 per month) with 5-hour rolling and weekly quota windows; enterprise API pay-as-you-go is also available.
 
 See the [MiniMax](/companies/minimax/) profile.
+
+## Why it matters
+
+MiniMax Code is the open, developer-side of MiniMax's agent strategy, and its capability is directly downstream of the M-series models: M3's MSA sparse attention and 1M-token context are what the CLI consumes for repository-scale work. Its relationship to the underlying models is the clearest in the MiniMax family — the CLI defaults to M2.7 in the rendered UI while M3 is available, a pairing that shows how MiniMax tiers its open models against its agent surface. China AI Hub analysis indicates MiniMax Code matters as MiniMax's commitment to the open coding-agent ecosystem (MIT code, MCP, ACP), which anchors the company's developer credibility even as its flagship M3 remains under a conditional Community License.
+
+*Labels used above: **Official fact** (from the MiniMax Code GitHub repo and docs), **Vendor-reported claim** (capability and pricing statements by MiniMax), and **China AI Hub analysis** (our synthesis, always introduced as such).*

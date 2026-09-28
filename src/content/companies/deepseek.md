@@ -68,6 +68,8 @@ sources:
     confidence: high
 ---
 
+**What it is.** DeepSeek is the Chinese AI company behind the DeepSeek-V4 family of open-weight models and the low-cost DeepSeek API platform. **Why it matters.** DeepSeek set the price floor for the Chinese API market — its flash tier lists $0.15/1M input tokens — and publishes frontier models under MIT, the most permissive license in the ecosystem. **Key characteristics.** Current API lineup is [DeepSeek-V4.1-Flash](/models/deepseek-v4-1-flash/) and [DeepSeek-V4-Pro](/models/deepseek-v4-pro/), both with 1M-token context; OpenAI-, Responses- and Anthropic-compatible endpoints; peak/off-peak pricing. **What a professional should know.** V4-Pro is marked deprecated with conflicting official pages on whether its API continues after 2026-09-14 — resolve that against the current change log before committing production workloads.
+
 DeepSeek is a Chinese AI company (杭州深度求索人工智能基础技术研究有限公司) known for open-weight
 models and low-cost APIs. Its current API lineup is the DeepSeek-V4.1 family: `deepseek-flash`
 (DeepSeek-V4.1-Flash, released 2026-09-10, multimodal, MIT open weights) and `deepseek-v4-pro`
@@ -76,3 +78,9 @@ models and low-cost APIs. Its current API lineup is the DeepSeek-V4.1 family: `d
 The API platform (platform.deepseek.com) offers OpenAI-compatible, Responses and Anthropic-compatible
 endpoints with automatic KV caching and peak/off-peak pricing in USD. The founding date is not stated on
 the official pages fetched.
+
+## Why it matters
+
+DeepSeek is the ecosystem's price-and-openness reference point: MIT open weights (V4.1-Flash, V4-Pro, V3.2) plus the lowest budget-tier pricing ($0.15/1M input) make it the default anchor against which every other vendor's cost and license are measured. Its open inference infrastructure (FlashMLA, DeepGEMM, DeepEP, 3FS) extends that influence below the model layer, as the [AI infrastructure](/technology/ai-infrastructure/) page details. China AI Hub analysis indicates DeepSeek's structural role is the cost-and-openness floor — its 49B-active MoE design and off-peak discounts shaped the market's pricing expectations, and its MIT releases shaped its licensing expectations, even as the V4-Pro deprecation ambiguity shows how quickly that frontier layer now turns over.
+
+*Labels used above: **Official fact** (from DeepSeek API docs and the official site), **Vendor-reported claim** (pricing and model capabilities published by DeepSeek), and **China AI Hub analysis** (our synthesis, always introduced as such).*

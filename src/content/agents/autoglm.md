@@ -56,8 +56,16 @@ sources:
     last_verified: "2026-09-20"
     confidence: high
 ---
+**What it is.** AutoGLM is Zhipu AI's open-source phone-use agent: a vision-language model reads the phone screen, plans a chain-of-thought action sequence, and executes it over ADB (Android), HDC (HarmonyOS NEXT) or WebDriverAgent (iOS). **Why it matters.** It was the first phone agent with true Phone Use capabilities (2024-10-25) and is the only tracked Chinese agent built specifically around GUI phone operation. **Key characteristics.** Ships as a Python framework built on the AutoGLM-Phone-9B VLM (GLM-4.1V-9B family); free framework, Apache-2.0 code / MIT models; a hosted API on BigModel was free during its promotional period as of 2026-09-20. **What a professional should know.** It is research/learning-only by license, auto-detects sensitive screens (payment, password, banking) and requests human takeover, and needs ~24GB+ VRAM for local deployment.
+
 AutoGLM is Zhipu AI's open-source phone-use agent ([Open-AutoGLM](https://github.com/zai-org/Open-AutoGLM)): the vision-language model reads the phone screen, plans a chain-of-thought action sequence, and executes it over ADB (Android), HDC (HarmonyOS NEXT) or WebDriverAgent (iOS). It was the first phone agent with true Phone Use capabilities (2024-10-25); the commercial AutoGLM 2.0 product runs the same approach on cloud virtual phones.
 
 The framework ships as a Python package (PhoneAgent API + CLI) built around AutoGLM-Phone-9B, a 9B VLM from the GLM-4.1V-9B family. The open-source framework is free, and the hosted AutoGLM-Phone API on BigModel was free during its promotional period as of 2026-09-20.
 
 Local deployment needs a GPU with roughly 24GB+ VRAM; Android use requires developer mode and USB debugging, and iOS needs a separate WebDriverAgent setup. See the [Zhipu AI](/companies/zhipu-ai/) profile for the wider GLM ecosystem.
+
+## Why it matters
+
+AutoGLM is the purest demonstration of [computer use](/technology/computer-use/) as a product in the Chinese ecosystem: its capability is inseparable from the underlying VLM's screen-reading and action-planning ability, rather than from any API or tool registry. That makes it the reference for how GUI operation depends on a vision model's grounding quality — a relationship the database captures by tying the agent to Zhipu AI while the GLM-4.1V-9B lineage sits outside the tracked flagship models. China AI Hub analysis indicates AutoGLM matters less as a production tool (it is research/learning-licensed) and more as the clearest evidence that phone-level computer use is technically mature in China's open ecosystem.
+
+*Labels used above: **Official fact** (from the Open-AutoGLM GitHub repo, AutoGLM blog and model card), **Vendor-reported claim** (capability and pricing statements by Zhipu AI), and **China AI Hub analysis** (our synthesis, always introduced as such).*

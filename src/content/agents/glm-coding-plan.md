@@ -53,8 +53,16 @@ sources:
     last_verified: "2026-09-20"
     confidence: high
 ---
+**What it is.** GLM Coding Plan is Zhipu AI's coding-agent subscription: one plan that powers ZCode (Zhipu's own client), AutoClaw (office agent) and 20+ third-party tools including Claude Code, Codex, Cursor and OpenClaw. **Why it matters.** It is the clearest example of a Chinese model vendor monetizing its models through *third-party* coding tools — routing external agents onto [GLM-5.3](/models/glm-53/) / [GLM-5.3-Flash](/models/glm-53-flash/) rather than competing with them. **Key characteristics.** Runs on GLM-5.3 / GLM-5.3-Flash with 1M-token context; credits refresh in 5-hour windows and weekly; peak hours cost 2x credits. **What a professional should know.** It is valid only inside officially supported coding tools (self-built apps use the standard API), and China billing (¥118–¥1,078/month) is separate from the international Z.AI plan (from $18/month).
+
 GLM Coding Plan is Zhipu AI's coding-agent subscription: one plan that powers ZCode (Zhipu's own coding client), AutoClaw (office agent) and more than 20 third-party coding tools including Claude Code, Codex, Cursor and OpenClaw. It runs on GLM-5.3 / GLM-5.3-Flash with 1M-token context; credits refresh in 5-hour windows and weekly.
 
 China billing on bigmodel.cn has Lite / Pro / Max tiers at ¥118 / ¥538 / ¥1,078 per month with team seats available; the international Z.AI counterpart starts at $18/month. Off-peak usage costs half the credits, and peak hours (Mon–Fri 14:00–18:00 UTC+8) cost double.
 
 See the [Zhipu AI](/companies/zhipu-ai/) profile and the [GLM-5.3](/models/glm-53/) model page.
+
+## Why it matters
+
+GLM Coding Plan inverts the usual agent-vs-model relationship: instead of shipping its own coding agent as the primary surface (as DeepSeek Harness or Kimi Code do), Zhipu makes its models available *inside* the tools developers already use. That makes the plan's value inseparable from GLM-5.3's capability — the 1M-token context and reasoning are what those third-party tools actually consume — while the pricing structure (5-hour and weekly credit windows, peak 2x) is a consumption-control layer on top of the model. China AI Hub analysis indicates the plan is Zhipu's distribution strategy: it monetizes GLM models by embedding them in the coding-agent ecosystem rather than by winning the client war.
+
+*Labels used above: **Official fact** (from the BigModel Coding Plan and Z.AI docs), **Vendor-reported claim** (pricing and capability statements by Zhipu AI), and **China AI Hub analysis** (our synthesis, always introduced as such).*

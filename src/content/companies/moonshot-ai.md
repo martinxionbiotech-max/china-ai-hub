@@ -62,6 +62,8 @@ sources:
     confidence: high
 ---
 
+**What it is.** Moonshot AI is the Beijing-based company behind the Kimi assistant and the open-weight Kimi K-series models, sold through the Kimi API platform. **Why it matters.** Its flagship [Kimi K3](/models/kimi-k3/) is a 2.8T-parameter MoE with the database's only 1M-token *output* ceiling — the strongest long-context generation position among Chinese flagships. **Key characteristics.** Native vision; open weights under a permissive MIT-style license with revenue-triggered conditions; the [Kimi Code](/agents/kimi-code/) coding agent and kimi-cli. **What a professional should know.** The K3 license requires Model-as-a-Service operators above $20M revenue to sign a separate agreement and products above 100M MAU to display the name — so the openness is conditioned at scale, despite the permissive base text.
+
 Moonshot AI (月之暗面), founded in spring 2023, develops the Kimi assistant and the open-weight Kimi
 K-series models. Its API platform is platform.kimi.ai (global; platform.kimi.com in China), with the
 API base at api.moonshot.ai. The flagship Kimi K3 (2.8T-parameter MoE, 1M context, native vision,
@@ -70,3 +72,9 @@ open weights) was released 2026-07-16.
 The company also maintains Kimi K2/K2.5 research releases, the kimi-cli coding agent, and publishes
 benchmarks (WorldVQA, PerceptionBench, CombiBench, Kimi Code Bench 2.0). Older API models (kimi-k2.5,
 moonshot-v1*, kimi-k2*) have been discontinued.
+
+## Why it matters
+
+Moonshot AI's structural role is the long-context specialist: Kimi K3 is the only flagship in the database listing a full 1M-token maximum output, which makes it the reference choice for long-form generation and whole-repo rewriting rather than merely long-input analysis. Its open-weight stance (K3, K2.x, Kimi-VL, Kimi-Audio) keeps it in the open ecosystem alongside DeepSeek and Zhipu AI, while its custom license conditions distinguish it from DeepSeek's clean MIT. China AI Hub analysis indicates Moonshot competes on the output-length axis — a differentiated, documented strength — rather than on the price-floor axis where DeepSeek and MiniMax-M3 set the terms.
+
+*Labels used above: **Official fact** (from Moonshot AI's official sites and the Kimi K3 README), **Vendor-reported claim** (model capabilities and pricing published by Moonshot AI), and **China AI Hub analysis** (our synthesis, always introduced as such).*
