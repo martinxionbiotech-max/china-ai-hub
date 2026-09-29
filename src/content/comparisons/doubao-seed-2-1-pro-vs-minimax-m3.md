@@ -101,4 +101,16 @@ China AI Hub analysis indicates the following per-dimension implications, drawn 
 
 The price difference is large enough to dominate most decisions; choose Doubao Seed 2.1 Pro only if computer use is the core requirement. Verify current prices on the official pages before committing.
 
+## What is uncertain
+
+- The single Doubao benchmark record makes head-to-head comparison unreliable.
+- MiniMax M3 does not publicly disclose a maximum output figure.
+
+## Sources
+
+- [Volcengine Ark — Model list](https://docs.volcengine.com/docs/ark/model-list?lang=zh)
+- [Volcengine Ark — Model pricing](https://docs.volcengine.com/docs/ark/model-pricing?lang=zh)
+- [MiniMax — Models introduction](https://platform.minimaxi.com/docs/guides/models-intro)
+- [MiniMax — MiniMax M3 announcement](https://www.minimax.cn/blog/minimax-m3)
+
 *Labels used above: **Official fact** (prices, context windows, capabilities and license terms from primary provider sources), **Vendor-reported claim** (benchmark scores), and **China AI Hub analysis** (the "why each difference matters" reasoning, introduced as analysis). No third-party benchmark evidence is currently recorded for these models.*

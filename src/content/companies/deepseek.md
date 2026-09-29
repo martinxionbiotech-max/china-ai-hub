@@ -136,4 +136,16 @@ DeepSeek is the ecosystem's price-and-openness reference point: MIT open weights
 - [HLE](/benchmarks/hle/)
 - [Terminal-Bench](/benchmarks/terminal-bench/)
 
+## What is uncertain
+
+- The founding date is not stated on the official pages fetched.
+- V4-Pro's deprecation is conflicting across official pages (news page vs change log).
+
+## Sources
+
+- [DeepSeek API docs — Models & Pricing](https://api-docs.deepseek.com/quick_start/pricing)
+- [DeepSeek API Change Log](https://api-docs.deepseek.com/updates)
+- [DeepSeek official site (EN)](https://www.deepseek.com/en/)
+- [DeepSeek Transparency Center](https://www.deepseek.com/en/transparency/)
+
 *Labels used above: **Official fact** (from DeepSeek API docs and the official site), **Vendor-reported claim** (pricing and model capabilities published by DeepSeek), and **China AI Hub analysis** (our synthesis, always introduced as such).*

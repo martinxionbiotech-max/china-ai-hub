@@ -97,4 +97,17 @@ China AI Hub analysis indicates the following per-dimension implications, drawn 
 
 Choose by deployment constraints and workload: self-hosting and budget favor GLM-5.3's openness and price; vision/video and tool-heavy pipelines favor Qwen3.8-Max's listed capabilities. Verify prices on the official pages before committing.
 
+## What is uncertain
+
+- Benchmark comparability is limited — different versions, harnesses and partial coverage.
+- GLM-5.3 lists no tool calling or structured output — an absence of documentation, not a verified lack of capability.
+
+## Sources
+
+- [Alibaba Cloud Model Studio — Qwen3.8-Max](https://www.alibabacloud.com/help/en/model-studio/qwen3-8-max)
+- [Alibaba Cloud Model Studio — Model pricing](https://www.alibabacloud.com/help/en/model-studio/model-pricing)
+- [Z.ai — GLM-5.3 documentation](https://docs.z.ai/guides/llm/glm-5.3)
+- [Z.ai — Pricing overview](https://docs.z.ai/guides/overview/pricing)
+- [Z.ai — GLM-5 (GitHub)](https://github.com/zai-org/GLM-5)
+
 *Labels used above: **Official fact** (prices, context windows, capabilities and license terms from primary provider sources), **Vendor-reported claim** (benchmark scores), and **China AI Hub analysis** (the "why each difference matters" reasoning, introduced as analysis). No third-party benchmark evidence is currently recorded for these models.*

@@ -135,4 +135,16 @@ MiniMax's structural role is the cost-efficient challenger that competes on both
 - [SWE-bench](/benchmarks/swe-bench/)
 - [Terminal-Bench](/benchmarks/terminal-bench/)
 
+## What is uncertain
+
+- Funding-round details are not listed on official pages.
+- The user counts (230+ countries, 300M+ users) are vendor claims stated on the CN site.
+
+## Sources
+
+- [MiniMax official site (international)](https://www.minimax.io/)
+- [MiniMax official site (China)](https://www.minimax.cn/about)
+- [MiniMax API platform — model overview (CN)](https://platform.minimaxi.com/docs/guides/models-intro)
+- [MiniMax official release notes](https://platform.minimaxi.com/docs/release-notes/models.md)
+
 *Labels used above: **Official fact** (from MiniMax's official sites and platform docs), **Vendor-reported claim** (the MSA speedup figures and user counts stated on the CN site), and **China AI Hub analysis** (our synthesis, always introduced as such).*

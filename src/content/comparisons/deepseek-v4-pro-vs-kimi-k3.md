@@ -97,4 +97,17 @@ China AI Hub analysis indicates the following per-dimension implications, drawn 
 
 Choose by workload: long-form generation and media favor Kimi K3's listed capabilities; price-sensitive text workloads favor the DeepSeek pricing, with the caveat of its deprecated status. Verify current prices and status on the official pages before committing.
 
+## What is uncertain
+
+- Benchmark scores are vendor-reported and not independently re-measured.
+- DeepSeek-V4-Pro is listed deprecated with conflicting official pages on its post-2026-09-14 status.
+- No third-party benchmark evidence is recorded for either model.
+
+## Sources
+
+- [DeepSeek API pricing](https://api-docs.deepseek.com/quick_start/pricing)
+- [DeepSeek V4 Preview announcement](https://www.deepseek.com/en/news/v4-preview/)
+- [Moonshot AI — Kimi K3 (GitHub)](https://github.com/MoonshotAI/Kimi-K3)
+- [Kimi platform — Models documentation](https://platform.kimi.ai/docs/models.md)
+
 *Labels used above: **Official fact** (prices, context windows, capabilities and license terms from primary provider sources), **Vendor-reported claim** (benchmark scores), and **China AI Hub analysis** (the "why each difference matters" reasoning, introduced as analysis). No third-party benchmark evidence is currently recorded for these models.*

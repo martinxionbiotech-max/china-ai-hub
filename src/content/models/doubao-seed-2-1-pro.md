@@ -106,6 +106,21 @@ A single preview-version arena score does not characterize the current GA model,
 
 **Well-suited:** agent and computer-use applications within ByteDance's China ecosystem, GUI task handling, multimodal document analysis, and long-horizon agent tasks served from cn-beijing. **Less suited:** international API consumers (no verified international endpoint), open-weight/self-hosting needs, and any adoption decision requiring published architecture or benchmark evidence.
 
+## Where this model fits
+
+| Workload | Relevance |
+|---|---|
+| Long-context analysis | High |
+| Coding | Moderate |
+| Structured API workflows | High |
+| Agent orchestration | High |
+| Local self-hosted deployment | No evidence |
+| GUI automation | High |
+| Video generation | No evidence |
+| Enterprise cloud | Moderate |
+
+Relevance judgments are China AI Hub analysis based on documented capabilities, not vendor claims.
+
 ## China AI Hub analysis
 
 China AI Hub analysis indicates Seed 2.1 Pro is the database's most opaque flagship: a full agent and multimodal surface with zero architecture disclosure and near-zero benchmark evidence for the production version. That opacity is a strategy, not an accident — ByteDance competes on product integration and the Ark platform rather than open technical documentation. For buyers inside the China ecosystem it may be a strong agent substrate, but international adopters face a documentation gap that makes independent verification effectively impossible as of the last check.
@@ -113,5 +128,19 @@ China AI Hub analysis indicates Seed 2.1 Pro is the database's most opaque flags
 ## Market position and outlook
 
 China AI Hub analysis indicates Seed 2.1 Pro is the database's most opaque flagship, and that opacity is itself a strategic signal: ByteDance runs the purest closed strategy of the six labs tracked, disclosing no architecture and publishing essentially no production benchmarks, while open labs like Moonshot ship full architecture cards. The model compensates with the broadest documented agent surface — tool calling, structured output, GUI task handling and computer use are all listed — which positions it as a product-integration play on the Ark platform rather than an open technical benchmark play. The 5x input-to-output ratio (¥6.00 / ¥30.00) is the highest in the collection alongside Kimi K3, signaling a generation-premium pricing posture. For buyers inside ByteDance's China ecosystem it may be a strong agent substrate; for international adopters, the cn-beijing-only serving and near-absent benchmark evidence make independent verification effectively impossible as of the last check. See the [state of China's AI models](/research/state-of-chinas-ai-models-2026/) and [AI agents](/research/rise-of-chinese-ai-agents/) research.
+
+## What is uncertain
+
+- Architecture and parameter counts are not publicly disclosed for the Seed 2.1 series.
+- Only one benchmark (Code Arena Frontend, a preview-version score) is recorded; no GA benchmark evidence exists.
+- The exact release day of the 260915 version is not stated (month 2026-09 only).
+- No international endpoint was verified — the API is cn-beijing only.
+
+## Sources
+
+- [Ark official model list](https://docs.volcengine.com/docs/ark/model-list?lang=zh)
+- [Ark official model pricing](https://docs.volcengine.com/docs/ark/model-pricing?lang=zh)
+- [Ark model release announcements](https://docs.volcengine.com/docs/ark/model-release-announcement)
+- [ByteDance Seed official blog — Seed 2.1 release](https://seed.bytedance.com/en/blog/seed2-1-officially-released-advancing-ai-productivity)
 
 *Labels used above: **Official fact** (from primary sources), **Vendor-reported claim** (the single preview-version benchmark score), and **China AI Hub analysis** (our synthesis, always introduced as such). No third-party benchmark evidence is currently recorded for this model.*

@@ -95,4 +95,16 @@ China AI Hub analysis indicates the following per-dimension implications, drawn 
 
 Choose by cost profile and output-length needs, and by which license you can actually operate under. Verify current prices on the official pages before committing.
 
+## What is uncertain
+
+- MiniMax M3 does not publicly disclose a maximum output figure.
+- Benchmark comparability is limited — different versions, harnesses and partial coverage.
+
+## Sources
+
+- [Moonshot AI — Kimi K3 (GitHub)](https://github.com/MoonshotAI/Kimi-K3)
+- [Kimi platform — Models documentation](https://platform.kimi.ai/docs/models.md)
+- [MiniMax — Models introduction](https://platform.minimaxi.com/docs/guides/models-intro)
+- [MiniMax — MiniMax M3 announcement](https://www.minimax.cn/blog/minimax-m3)
+
 *Labels used above: **Official fact** (prices, context windows, capabilities and license terms from primary provider sources), **Vendor-reported claim** (benchmark scores), and **China AI Hub analysis** (the "why each difference matters" reasoning, introduced as analysis). No third-party benchmark evidence is currently recorded for these models.*

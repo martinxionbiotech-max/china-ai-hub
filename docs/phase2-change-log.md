@@ -1,3 +1,40 @@
+# China AI Hub — Phase 2 Change Log（B2-b Answer Blocks 标准化 + Where this model fits 负载表）
+
+**日期**：2026-09-29 · **范围**：主站 `china-ai-hub`（20 页）
+**依据**：`phase2/39-chinaaihub-upgrade-plan.md` P1 后两件套（§17/§5）+ `phase2/38-chinaaihub-audit-report.md` §5/§17
+**验证方式**：增量插入（不重写正文）· `npm run build` 121 页通过 · dist grep 确认负载表/五段块渲染 · 负载表判定仅取页内既有事实（零编造）
+
+## A · Answer Blocks 标准化（§17）
+
+20 个已深化页（8 核心模型 + 6 对比 + 6 公司）统一五段块：Short answer → Key facts → What this means → What is uncertain → Sources。前三段已由既有答案前置块承载（模型/公司页 `**What it is / Key characteristics / Why it matters**` 粗体块 + 对比页 `At a glance` 表 + `Why each difference matters` 节），本批**增量补缺两段**：`## What is uncertain`（明确未知/未公开项，逐页从页内既有 `known_limitations` + 正文「not publicly disclosed」提取，不编造）+ `## Sources`（页内既有来源列表，链接沿用 frontmatter `sources` 的 source_url）。格式统一（小标题一致），保留全部既有内容与内链。
+
+| 段 | 覆盖 | 说明 |
+|---|---|---|
+| Short answer | 20/20（既有） | 答案前置块「What it is」/对比页导语 |
+| Key facts | 20/20（既有） | 「Key characteristics」/对比页 At a glance 表 |
+| What this means | 20/20（既有） | 「Why it matters」/Why each difference matters |
+| What is uncertain | 20/20（本批新增） | 0→20 页 |
+| Sources | 20/20（本批新增） | 0→20 页（答案块内来源列表，与模板底部 SourceBadge 区并存） |
+
+## B · Where this model fits 负载表（§5）
+
+8 核心模型页各补 `## Where this model fits` 表：Workload | Relevance（High / Moderate / Unknown / No evidence），8 维固定：long-context analysis / coding / structured API workflows / agent orchestration / local-self-hosted deployment / GUI automation / video generation / enterprise cloud。**只按页内既有事实判定**（如页内无 GUI 证据 → No evidence；无 self-hosting → No evidence）。表后附一句「Relevance judgments are China AI Hub analysis based on documented capabilities, not vendor claims.」。无 Best overall 排名。
+
+维度分布（8 页 × 8 维 = 64 格）：
+
+| 判定 | 计数 | 占比 |
+|---|---|---|
+| High | 35 | 54.7% |
+| Moderate | 11 | 17.2% |
+| No evidence | 18 | 28.1% |
+| Unknown | 0 | 0% |
+
+**No evidence 集中维度**：video generation 8/8（8 页均非视频生成模型）、GUI automation 7/8（仅 Doubao 有 computer-use 证据）。**Unknown 0 格**——所有维度均有页内事实可判定（无「查不到」的悬空格）。
+
+辅助脚本 `scripts/b2b_insert.py` 新增（一次性插入，可复跑校验）。
+
+---
+
 # China AI Hub — Phase 2 Change Log（B2-a 公司页 Entity Hub + Agent 字段深化）
 
 **日期**：2026-09-29 · **范围**：主站 `china-ai-hub` + 数据站 `china-ai-hub-data`

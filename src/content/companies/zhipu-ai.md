@@ -139,4 +139,17 @@ Zhipu AI's structural role is the open-weight-plus-agents combination: it is the
 - [DeepSWE](/benchmarks/deepswe/)
 - [Terminal-Bench](/benchmarks/terminal-bench/)
 
+## What is uncertain
+
+- No official funding disclosure located; IPO/funding reports are not confirmed on official channels.
+- The founding date is not stated on the official pages fetched.
+- The Apache-2.0 label comes from GitHub metadata; the README has no separate weights-license section.
+
+## Sources
+
+- [Z.ai docs — GLM-5.3 model page](https://docs.z.ai/guides/llm/glm-5.3)
+- [Z.ai docs — GLM-5.3-Flash model page](https://docs.z.ai/guides/vlm/glm-5.3-flash)
+- [Z.ai release notes](https://docs.z.ai/release-notes/new-released)
+- [GLM-5 GitHub repository](https://github.com/zai-org/GLM-5)
+
 *Labels used above: **Official fact** (from Z.ai docs and the GLM-5 GitHub repository), **Vendor-reported claim** (model capabilities and pricing published by Zhipu AI), and **China AI Hub analysis** (our synthesis, always introduced as such).*

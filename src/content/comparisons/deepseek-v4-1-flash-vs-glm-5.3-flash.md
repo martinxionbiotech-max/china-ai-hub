@@ -103,4 +103,16 @@ China AI Hub analysis indicates the following per-dimension implications, drawn 
 
 The right pick depends on whether the workload is structured API/agent-tool pipelines or GUI/video automation — the prices are close enough that capability fit should decide. Verify current prices on the official pages before committing.
 
+## What is uncertain
+
+- Benchmark comparability is limited — different versions, harnesses and partial coverage.
+- GLM-5.3-Flash lists tool calling, function calling and structured output as "Not listed" — an absence of documentation, not a verified lack of capability.
+
+## Sources
+
+- [DeepSeek API pricing](https://api-docs.deepseek.com/quick_start/pricing)
+- [DeepSeek — V4.1-Flash announcement](https://www.deepseek.com/en/news/deepseek-v4-1-flash/)
+- [Z.ai — GLM-5.3-Flash documentation](https://docs.z.ai/guides/vlm/glm-5.3-flash)
+- [Z.ai — Pricing overview](https://docs.z.ai/guides/overview/pricing)
+
 *Labels used above: **Official fact** (prices, context windows, capabilities and license terms from primary provider sources), **Vendor-reported claim** (benchmark scores), and **China AI Hub analysis** (the "why each difference matters" reasoning, introduced as analysis). No third-party benchmark evidence is currently recorded for these models.*

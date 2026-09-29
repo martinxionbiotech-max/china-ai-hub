@@ -134,8 +134,36 @@ These scores do not independently verify K3 against competitors, and the modalit
 
 **Well-suited:** long-form document and code generation, deep reasoning, multimodal (vision/video) analysis, and agent workloads that benefit from 1M output headroom. **Less suited:** high-volume low-cost chat (priced at flagship tier), latency/reproducibility-sensitive batch work (fixed sampling), and commercial self-hosting above the license thresholds.
 
+## Where this model fits
+
+| Workload | Relevance |
+|---|---|
+| Long-context analysis | High |
+| Coding | High |
+| Structured API workflows | High |
+| Agent orchestration | High |
+| Local self-hosted deployment | High |
+| GUI automation | No evidence |
+| Video generation | No evidence |
+| Enterprise cloud | Moderate |
+
+Relevance judgments are China AI Hub analysis based on documented capabilities, not vendor claims.
+
 ## China AI Hub analysis
 
 China AI Hub analysis indicates that K3 occupies the top of the flagship tier on two axes — parameter scale (2.8T) and output ceiling (1M) — but pays for both in the highest output pricing and the most constrained sampling controls. The KDA/Gated-MLA architecture and 896-expert topology are the most technically transparent open release in the collection, which is an asset for researchers even if the $15 output price limits practical reach. The fixed temperature/top_p is a genuine, under-appreciated limitation for production users expecting standard sampling controls.
+
+## What is uncertain
+
+- The input-modality boundary is inconsistent across official sources: the architecture table says Text+Image, while the README, launch blog and API guide also list video input.
+- Some comparison benchmark scores are cited from Artificial Analysis (third-party); the K3-specific rows here are vendor-reported.
+- Sampling is fixed (temperature 1.0, top_p 0.95) and cannot be changed through the API.
+
+## Sources
+
+- [Kimi K3 GitHub README](https://github.com/MoonshotAI/Kimi-K3)
+- [Kimi API platform — model list](https://platform.kimi.ai/docs/models.md)
+- [Kimi API — Chat Completions spec](https://platform.kimi.ai/docs/api/chat.md)
+- [Kimi K3 launch blog](https://www.kimi.com/blog/kimi-k3)
 
 *Labels used above: **Official fact** (from primary sources), **Vendor-reported claim** (benchmark scores published by Moonshot), **Third-party evidence** (Artificial Analysis, where cited), and **China AI Hub analysis** (our synthesis, always introduced as such).*

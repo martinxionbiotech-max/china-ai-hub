@@ -131,4 +131,16 @@ Moonshot AI's structural role is the long-context specialist: Kimi K3 is the onl
 - [Terminal-Bench](/benchmarks/terminal-bench/)
 - [Video-MME](/benchmarks/video-mme/)
 
+## What is uncertain
+
+- No official funding disclosure located.
+- The K3 license requires a separate agreement above $20M revenue and UI attribution above 100M MAU — conditioned at scale.
+
+## Sources
+
+- [Moonshot AI official site (EN)](https://www.moonshot.ai/)
+- [Moonshot AI company profile (CN)](https://www.moonshot.cn/about)
+- [Kimi API platform — model list](https://platform.kimi.ai/docs/models.md)
+- [Kimi K3 GitHub README](https://github.com/MoonshotAI/Kimi-K3)
+
 *Labels used above: **Official fact** (from Moonshot AI's official sites and the Kimi K3 README), **Vendor-reported claim** (model capabilities and pricing published by Moonshot AI), and **China AI Hub analysis** (our synthesis, always introduced as such).*

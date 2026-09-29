@@ -132,4 +132,15 @@ Alibaba Cloud occupies a structurally unique position in the Chinese ecosystem: 
 - [SWE-bench](/benchmarks/swe-bench/)
 - [Terminal-Bench](/benchmarks/terminal-bench/)
 
+## What is uncertain
+
+- The older "Tongyi Qianwen / 通义千问" branding was not confirmed on the fetched English pages.
+- The open A95B release carries a custom MIT-style license with scale-triggered obligations for large operators.
+
+## Sources
+
+- [Alibaba Cloud Model Studio — text generation model list](https://www.alibabacloud.com/help/en/model-studio/text-generation-model)
+- [Qwen3.8 open-model repository README](https://github.com/QwenLM/Qwen3.8)
+- [Hugging Face model card — Qwen3.8-2.4T-A95B](https://huggingface.co/Qwen/Qwen3.8-2.4T-A95B)
+
 *Labels used above: **Official fact** (from Alibaba Cloud Model Studio and Qwen's GitHub/Hugging Face sources), and **China AI Hub analysis** (our synthesis, always introduced as such).*

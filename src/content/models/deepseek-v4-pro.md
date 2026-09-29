@@ -127,8 +127,37 @@ These numbers do not establish that V4-Pro beats any specific competitor, and th
 
 **Well-suited:** agentic coding, repository-scale software work, long-document analysis, math/STEM reasoning, and any open-weight deployment where a permissive license and self-hosting matter. **Less suited:** vision and multimodal tasks (not supported), low-latency or low-cost chat where the flash tier is cheaper, and any production dependency that cannot tolerate the post-2026-09-14 deprecation ambiguity.
 
+## Where this model fits
+
+| Workload | Relevance |
+|---|---|
+| Long-context analysis | High |
+| Coding | High |
+| Structured API workflows | High |
+| Agent orchestration | High |
+| Local self-hosted deployment | High |
+| GUI automation | No evidence |
+| Video generation | No evidence |
+| Enterprise cloud | Moderate |
+
+Relevance judgments are China AI Hub analysis based on documented capabilities, not vendor claims.
+
 ## China AI Hub analysis
 
 China AI Hub analysis indicates that V4-Pro's situation — a large, MIT-licensed flagship marked deprecated while its API status is in flux — illustrates how quickly China's frontier layer turns over. Its off-peak $0.66/$1.98 pricing and 49B-active MoE design made it a strong cost/performance point at launch, but the V4.1 family's asymmetric, cheaper architecture superseded it within months. The model remains relevant to self-hosters who want a permissive 1.6T checkpoint, but API buyers should treat it as legacy and verify the current routing before reliance.
+
+## What is uncertain
+
+- The deprecation status is conflicting: the news page says V4-Pro routes to V4.1-Flash after 2026-09-14, but the same-day change log says the API continues unchanged.
+- Whether the Hugging Face checkpoint (last modified 2026-06-22) matches the 0813 GA checkpoint is not documented.
+- Serving regions are not disclosed.
+- All four benchmark scores are vendor-reported; no independent third-party measurement is recorded.
+
+## Sources
+
+- [DeepSeek API docs — Models & Pricing](https://api-docs.deepseek.com/quick_start/pricing)
+- [DeepSeek API Change Log](https://api-docs.deepseek.com/updates)
+- [DeepSeek-V4 Preview release](https://www.deepseek.com/en/news/v4-preview/)
+- [Hugging Face model card — DeepSeek-V4-Pro](https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro)
 
 *Labels used above: **Official fact** (from primary sources), **Vendor-reported claim** (benchmark scores published by DeepSeek), and **China AI Hub analysis** (our synthesis, always introduced as such). No third-party benchmark evidence is currently recorded for this model.*

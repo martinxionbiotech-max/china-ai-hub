@@ -131,6 +131,21 @@ The scores are vendor-reported and not independently verified; the MSA speedup c
 
 **Well-suited:** cost-sensitive agentic work, MCP/tool-use applications, multimodal input (image/video) analysis, browsing agents, and long-context tasks within the 512K guaranteed band. **Less suited:** frontier-level deep reasoning, workloads requiring a documented output ceiling, and commercial self-hosting above the license thresholds.
 
+## Where this model fits
+
+| Workload | Relevance |
+|---|---|
+| Long-context analysis | High |
+| Coding | High |
+| Structured API workflows | Moderate |
+| Agent orchestration | High |
+| Local self-hosted deployment | High |
+| GUI automation | No evidence |
+| Video generation | No evidence |
+| Enterprise cloud | Moderate |
+
+Relevance judgments are China AI Hub analysis based on documented capabilities, not vendor claims.
+
 ## China AI Hub analysis
 
 China AI Hub analysis indicates M3's competitive edge is price-per-capability in the agentic tier: it delivers multimodal input, MCP tool use and a 1M window at the lowest flagship input price tracked. The trade-offs are verification depth (vendor-only benchmarks, unpublished max output, unmeasured speed claims) and the 512K pricing split, which means the advertised 1M context costs 2x in the upper band. For budget-constrained agent deployments it is a strong candidate; for workloads where a hard, documented output ceiling or independently verified performance is required, the gaps are real.
@@ -138,5 +153,18 @@ China AI Hub analysis indicates M3's competitive edge is price-per-capability in
 ## Market position and outlook
 
 China AI Hub analysis indicates M3's edge is price-per-capability in the agentic tier: it delivers multimodal input (text plus JPEG/PNG/GIF/WEBP images up to 10MB and video up to 50MB direct or 512MB via the Files API), MCP tool use and a 1M window at the lowest flagship input price tracked ($0.30). The MCP Atlas score (74.2) is worth singling out because it measures the model's ability to drive MCP-connected tools, which is exactly the integration pattern agent builders use. The trade-offs are verification depth — vendor-only benchmarks, an unpublished maximum-output ceiling, and unmeasured 9x/15x speed claims — plus the 512K pricing split that doubles cost in the upper context band. For budget-constrained agent and multimodal deployments it is a strong candidate; for workloads needing a hard documented output ceiling or independent performance evidence, those gaps remain. See the [pricing-changed](/research/chinese-ai-model-pricing-changed/) and [multimodal capabilities](/research/chinese-ai-multimodal-capabilities/) research.
+
+## What is uncertain
+
+- Maximum output tokens are not publicly disclosed; the 131,072 figure is derived from the official card's evaluation config.
+- The MSA speedup claims (9x prefill / 15x decode) are vendor claims, not independently measured.
+- Benchmark scores are vendor-reported and not independently verified.
+
+## Sources
+
+- [MiniMax API platform — model overview (CN)](https://platform.minimaxi.com/docs/guides/models-intro)
+- [MiniMax official M3 model page](https://www.minimax.cn/models/text/m3)
+- [MiniMax M3 official blog post](https://www.minimax.cn/blog/minimax-m3)
+- [Hugging Face model card — MiniMax-M3](https://huggingface.co/MiniMaxAI/MiniMax-M3)
 
 *Labels used above: **Official fact** (from primary sources), **Vendor-reported claim** (benchmark scores and MSA speedup claims published by MiniMax), and **China AI Hub analysis** (our synthesis, always introduced as such). No third-party benchmark evidence is currently recorded for this model.*

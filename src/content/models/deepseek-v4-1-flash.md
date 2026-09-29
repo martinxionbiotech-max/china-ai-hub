@@ -129,6 +129,21 @@ Vendor-reported scores under a specific harness do not generalize to your worklo
 
 **Well-suited:** high-volume API workloads, agentic coding, long-context analysis at low cost, multimodal (vision) tasks, and anything where cache-friendly re-reading dominates. **Less suited:** peak-time latency-sensitive or budget-critical jobs that cannot avoid the 2x peak window, and self-hosters without the GPU capacity for a 552B sparse model.
 
+## Where this model fits
+
+| Workload | Relevance |
+|---|---|
+| Long-context analysis | High |
+| Coding | High |
+| Structured API workflows | High |
+| Agent orchestration | High |
+| Local self-hosted deployment | High |
+| GUI automation | No evidence |
+| Video generation | No evidence |
+| Enterprise cloud | Moderate |
+
+Relevance judgments are China AI Hub analysis based on documented capabilities, not vendor claims.
+
 ## China AI Hub analysis
 
 China AI Hub analysis indicates that V4.1-Flash is the clearest expression of the market's price-per-token economics: a 1.4%-activation MoE that delivers frontier-adjacent coding scores at the $0.15 floor. It inherits the V4-Pro's agentic-coding strengths while cutting active compute roughly 6x. The main risk is verification — every headline number is vendor-reported — and the peak/off-peak structure, which quietly doubles cost outside off-peak hours. As the successor to the now-deprecated V4-Pro API, it is the model DeepSeek's platform is standardizing on.
@@ -136,5 +151,18 @@ China AI Hub analysis indicates that V4.1-Flash is the clearest expression of th
 ## Market position and outlook
 
 China AI Hub analysis indicates V4.1-Flash is where DeepSeek's price-per-token strategy becomes explicit: at 1.4% activation it is the most aggressively sparse model in the collection, and its $0.15 off-peak input price is part of a three-way convergence the database documents — DeepSeek, Alibaba (Qwen3.8-Flash) and Zhipu (GLM-5.3-Flash) all list the same $0.15 flash-tier input. What distinguishes V4.1-Flash in that trio is the combination of 1M context, native vision and a 393K output ceiling at the floor price, which is why it has become the default entry point for DeepSeek's API. Legacy routing (`deepseek-v4-flash` and `deepseek-v4-flash-vision-exp` → V4.1-Flash) further consolidates that position. See the [state of China's AI models](/research/state-of-chinas-ai-models-2026/) and [context-window](/research/chinese-ai-context-windows/) research for the cross-lab comparison.
+
+## What is uncertain
+
+- Benchmark scores are vendor-reported via the DeepSeek Harness and not independently verified.
+- The HLE score differs between the full set (36.8) and the pure-text subset (39.1).
+- Serving regions are not disclosed.
+
+## Sources
+
+- [DeepSeek API docs — Models & Pricing](https://api-docs.deepseek.com/quick_start/pricing)
+- [DeepSeek API Change Log](https://api-docs.deepseek.com/updates)
+- [DeepSeek-V4.1-Flash release announcement](https://www.deepseek.com/en/news/deepseek-v4-1-flash/)
+- [Hugging Face model card — DeepSeek-V4.1-Flash](https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash)
 
 *Labels used above: **Official fact** (from primary sources), **Vendor-reported claim** (benchmark scores published by DeepSeek), and **China AI Hub analysis** (our synthesis, always introduced as such). No third-party benchmark evidence is currently recorded for this model.*

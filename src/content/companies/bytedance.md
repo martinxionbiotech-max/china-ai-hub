@@ -125,4 +125,17 @@ ByteDance is the purest expression of the closed-API model in the database: it p
 
 - [ByteDance pricing](/pricing/bytedance/)
 
+## What is uncertain
+
+- Funding rounds are not officially disclosed.
+- No Doubao LLM weights are public — every user routes through ByteDance's own infrastructure.
+
+## Sources
+
+- [Ark (Volcengine) official documentation](https://docs.volcengine.com/docs/ark/product-overview?lang=zh)
+- [Ark official model list](https://docs.volcengine.com/docs/ark/model-list?lang=zh)
+- [Ark model release announcements](https://docs.volcengine.com/docs/ark/model-release-announcement)
+- [ByteDance Seed official blog — Seed 2.1 release](https://seed.bytedance.com/en/blog/seed2-1-officially-released-advancing-ai-productivity)
+- [ByteDance Seed GitHub organization](https://github.com/ByteDance-Seed)
+
 *Labels used above: **Official fact** (from Ark documentation and ByteDance Seed's official blog/GitHub), **Vendor-reported claim** (model capabilities and pricing published by ByteDance), and **China AI Hub analysis** (our synthesis, always introduced as such).*

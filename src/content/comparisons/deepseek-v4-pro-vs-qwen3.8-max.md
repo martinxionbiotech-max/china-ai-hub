@@ -98,4 +98,17 @@ China AI Hub analysis indicates the following per-dimension implications, drawn 
 
 The right choice depends on the workload — vision requirements, self-hosting needs, price sensitivity and how much output a task generates. Verify prices on the official pages before committing, as both change frequently.
 
+## What is uncertain
+
+- Benchmark comparability is limited — different versions, harnesses and partial coverage.
+- DeepSeek-V4-Pro is listed deprecated (preview 2026-04-24, GA 2026-08-13); verify the current lineup.
+- No third-party benchmark evidence is recorded for either model.
+
+## Sources
+
+- [DeepSeek API pricing](https://api-docs.deepseek.com/quick_start/pricing)
+- [DeepSeek V4 Preview announcement](https://www.deepseek.com/en/news/v4-preview/)
+- [Alibaba Cloud Model Studio — Qwen3.8-Max](https://www.alibabacloud.com/help/en/model-studio/qwen3-8-max)
+- [Alibaba Cloud Model Studio — Model pricing](https://www.alibabacloud.com/help/en/model-studio/model-pricing)
+
 *Labels used above: **Official fact** (prices, context windows, capabilities and license terms from primary provider sources), **Vendor-reported claim** (benchmark scores), and **China AI Hub analysis** (the "why each difference matters" reasoning, introduced as analysis). No third-party benchmark evidence is currently recorded for these models.*

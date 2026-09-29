@@ -119,6 +119,21 @@ Scores are vendor-reported and predate the 5.3 successor; they say nothing about
 
 **Well-suited:** text-only long-context analysis where an MIT-licensed (no-verification) open checkpoint is specifically required, and historical/regression baselines against GLM-5.3. **Less suited:** any new production workload (deprecated, superseded), vision/multimodal input, and cost-optimization (same price as the better successor).
 
+## Where this model fits
+
+| Workload | Relevance |
+|---|---|
+| Long-context analysis | High |
+| Coding | High |
+| Structured API workflows | Moderate |
+| Agent orchestration | High |
+| Local self-hosted deployment | High |
+| GUI automation | No evidence |
+| Video generation | No evidence |
+| Enterprise cloud | Moderate |
+
+Relevance judgments are China AI Hub analysis based on documented capabilities, not vendor claims.
+
 ## China AI Hub analysis
 
 China AI Hub analysis indicates GLM-5.2's residual value is almost entirely as a licensing option and a historical baseline: its MIT "pure open" label is cleaner than its successor's Apache-2.0-with-caveat, and its benchmark set is the reference point for GLM-5.3's claimed gains. For everyone else, the model is deprecated at identical pricing, which makes staying on it a strictly dominated choice — the successor costs the same and improves on the same base.
@@ -126,5 +141,18 @@ China AI Hub analysis indicates GLM-5.2's residual value is almost entirely as a
 ## Market position and outlook
 
 China AI Hub analysis indicates GLM-5.2 illustrates a recurring pattern in the database: deprecation is not retirement. The 2026-09-10 DeepSeek change-log reversal kept DeepSeek-V4-Pro's API running past its announced cutoff, and GLM-5.2 similarly remains billable on Z.ai's pricing page at the same $1.40/$4.40 as its successor. The practical consequences are threefold: existing integrations continue to function, the model stays useful as a regression baseline for measuring GLM-5.3's claimed post-training gains, and its MIT "pure open, no regional limits" label keeps it relevant for teams that specifically want a permissive, no-verification 1M-context GLM checkpoint. For everyone else the model is a strictly dominated choice — the successor costs the same and improves on the same base. See the [state of China's AI models](/research/state-of-chinas-ai-models-2026/) and [licensing explained](/research/chinese-ai-model-licensing-explained/) research.
+
+## What is uncertain
+
+- It is superseded by GLM-5.3 but remains billable at the same price — a deprecation without retirement.
+- Benchmark scores are vendor-reported and predate the GLM-5.3 successor.
+- GLM-5.3's claimed gains rest on the private Z.ai Code Bench and cannot be independently reproduced.
+
+## Sources
+
+- [Z.ai docs — GLM-5.3 model page](https://docs.z.ai/guides/llm/glm-5.3)
+- [Z.ai pricing](https://docs.z.ai/guides/overview/pricing)
+- [Z.ai release notes](https://docs.z.ai/release-notes/new-released)
+- [Hugging Face model card — GLM-5.2](https://huggingface.co/zai-org/GLM-5.2)
 
 *Labels used above: **Official fact** (from primary sources), **Vendor-reported claim** (benchmark scores published by Zhipu), and **China AI Hub analysis** (our synthesis, always introduced as such). No third-party benchmark evidence is currently recorded for this model.*
