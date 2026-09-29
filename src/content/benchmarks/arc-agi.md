@@ -54,6 +54,12 @@ ARC-AGI is a deliberately narrow probe of a specific cognitive ability. It does 
 
 China AI Hub analysis: ARC-AGI is best read as a measure of *fluid abstraction*, not overall model quality, and only within a single benchmark version. Its value is diagnostic — separating memorisation-driven performance from generalisation — rather than as a buying criterion. See [Benchmark Methodology Divergence](/research/benchmark-methodology-divergence/), [How to read vendor-reported benchmarks](/guides/how-to-read-vendor-reported-benchmarks/) and the [state of China's AI models](/research/state-of-chinas-ai-models-2026/).
 
+## ARC-AGI and the AGI debate
+
+ARC-AGI is tied to a specific theoretical position. Its author, François Chollet, argues in *On the Measure of Intelligence* that intelligence is **skill-acquisition efficiency** — the ability to learn a new rule from few examples — rather than accumulated skill, and that scaling and memorisation do not by themselves produce it. ARC-AGI is the operational test of that claim: tasks whose rules a human grasps almost instantly but which defeated large language models for years.
+
+That framing is why ARC-AGI's score should be read differently from a knowledge or coding benchmark. A model that scores near zero on ARC-AGI-1 can still be an excellent assistant, and a model that scores well demonstrates a specific kind of fluid abstraction, not general competence. As reasoning systems began to close the gap on ARC-AGI-1, the benchmark released harder successor families — ARC-AGI-2 and ARC-AGI-3 — which is the standard arms race between a benchmark and the models it measures, and another reason scores are only meaningful within one version. See [ARC Prize](https://arcprize.org) for the current leaderboard.
+
 ## Related entities
 
 - Models: [DeepSeek-V4-Pro](/models/deepseek-v4-pro/) · [Qwen3.8-Max](/models/qwen38-max/) · [Kimi K3](/models/kimi-k3/) — the reasoning flagships that would be the natural ARC-AGI candidates.

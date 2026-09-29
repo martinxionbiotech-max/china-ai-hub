@@ -53,6 +53,12 @@ IFEval measures only **mechanical, rule-checkable** instruction following. It do
 
 China AI Hub analysis: IFEval is best read as a **reliability** metric for instruction and function-calling discipline, most relevant to developers building structured pipelines. Distinguish strict accuracy from prompt-level accuracy — the stricter the aggregation, the more it rewards complete compliance. As with every benchmark, confirm the exact setting before comparing; see [Benchmark Methodology Divergence](/research/benchmark-methodology-divergence/) and [How to read vendor-reported benchmarks](/guides/how-to-read-vendor-reported-benchmarks/).
 
+## IFEval and function calling
+
+IFEval matters for the same reason function calling and structured output matter in this database: a model that paraphrases an instruction but ignores a hard constraint will break a downstream pipeline, however fluent its answer. IFEval isolates exactly that risk by testing only **rule-checkable** constraints and grading them with a deterministic program. This is its defining virtue — it removes the evaluator bias and irreproducibility of LLM-judged benchmarks — and its defining limit: it says nothing about whether the answer content is actually good.
+
+The three aggregation levels deserve emphasis when reading a score. **Strict accuracy** requires every instruction in a prompt to be followed; **instruction-level accuracy** counts individual instructions satisfied even within a partially-failed prompt. A model can post a high instruction-level number and a much lower strict number, so the aggregation must be stated. For models in this database that advertise function-calling and structured output — such as [Qwen3.8-Max](/models/qwen38-max/) — an IFEval-style measure would be the natural reliability check, though none publishes one yet.
+
 ## Related entities
 
 - Models: [Qwen3.8-Max](/models/qwen38-max/) · [GLM-5.3](/models/glm-53/) · [DeepSeek-V4-Pro](/models/deepseek-v4-pro/) — the structured-output and function-calling flagships that would be the natural IFEval candidates.

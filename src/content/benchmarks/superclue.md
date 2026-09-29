@@ -54,6 +54,12 @@ Three limits are worth stating. First, the composite total **hides** capability-
 
 China AI Hub analysis: SuperCLUE's composite is best read by its **quadrant sub-scores**, not the headline total, and only within a single leaderboard snapshot. Its agent and safety tracks are its most distinctive contributions, because they measure capabilities that pure multiple-choice benchmarks miss. As with every benchmark here, confirm the version and date before comparing; see [Benchmark Methodology Divergence](/research/benchmark-methodology-divergence/) and [How to read vendor-reported benchmarks](/guides/how-to-read-vendor-reported-benchmarks/).
 
+## SuperCLUE's distinctive role
+
+SuperCLUE is the third pillar of Chinese-native evaluation, and it plays a role the two static datasets do not. Where C-Eval and CMMLU are fixed multiple-choice corpora whose scores are self-reported, SuperCLUE is a **team-run, periodically released** evaluation that mixes objective questions with multi-turn open questions and agent/tool-use tasks — and the CLUE team grades the answers itself. That makes it closer in spirit to a human-graded arena than to a downloadable dataset, with the caveat that its rubric and human scoring evolve between releases.
+
+Its most distinctive contributions are the **agent** and **safety** tracks (SuperCLUE-Agent and SuperCLUE-Safety), which measure capabilities — tool use, task planning, multi-turn adversarial robustness — that a pure knowledge benchmark cannot see. This is why SuperCLUE's headline composite is best read through its quadrant sub-scores: two models with the same total can be strong and weak in opposite quadrants, and only the breakdown reveals that.
+
 ## Related entities
 
 - Models: [Doubao Seed 2.1 Pro](/models/doubao-seed-2-1-pro/) · [GLM-5.3](/models/glm-53/) · [Qwen3.8-Max](/models/qwen38-max/) — Chinese flagships that would be the natural SuperCLUE subjects.

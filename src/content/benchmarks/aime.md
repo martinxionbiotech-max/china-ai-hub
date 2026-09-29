@@ -48,6 +48,12 @@ AIME does not measure general language ability, coding, agentic skill or breadth
 
 China AI Hub analysis: AIME is a high-signal but narrow math metric, and its scores are only meaningful when the **year** is stated and matched against a model's training cutoff. It is best used to compare mathematical-reasoning strength, not overall model quality. The same year-and-mode discipline applies here as elsewhere in the database: see [Benchmark Methodology Divergence](/research/benchmark-methodology-divergence/) and [How to read vendor-reported benchmarks](/guides/how-to-read-vendor-reported-benchmarks/).
 
+## AIME as a year-labelled benchmark
+
+Because AIME is a public exam administered annually (as AIME I and AIME II) rather than a versioned benchmark, the **year is the version**. In practice this matters more than it sounds: as frontier reasoning models began scoring at or near the ceiling on the older papers, evaluators shifted toward the freshest exam — AIME 2025 — as the harder, less-contaminated target. A score reported as simply "AIME" without a year therefore conflates measurements of very different difficulty.
+
+The same dynamic explains why AIME became a reasoning benchmark rather than a knowledge benchmark. Its integer-answer, no-partial-credit format rewards models that can derive a correct answer end-to-end, which is exactly what reasoning models were built for. That is also its limit: AIME says little about a model's breadth, coding, or real-world usefulness, only about its competition-math reasoning depth. For reading math-related claims elsewhere in this database, the same version-discipline applies — see [Benchmark Methodology Divergence](/research/benchmark-methodology-divergence/).
+
 ## Related entities
 
 - Models: [DeepSeek-V4-Pro](/models/deepseek-v4-pro/) · [Kimi K3](/models/kimi-k3/) · [Qwen3.8-Max](/models/qwen38-max/) — the reasoning flagships that would be the natural AIME candidates.

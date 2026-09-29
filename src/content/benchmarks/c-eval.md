@@ -58,6 +58,12 @@ C-Eval is also a *dataset*, not an independent evaluation service. Scores are se
 
 China AI Hub analysis: a C-Eval score is a breadth-of-Chinese-knowledge signal, not a general-intelligence ranking. Before citing one, confirm (1) whether it is the full set or C-Eval Hard, (2) whether it is an overall average or a specific level, and (3) the training cutoff relative to the July 2025 test-set release. The same discipline that applies to every benchmark here — match versions, subsets and modes before comparing — applies to C-Eval; see [Benchmark Methodology Divergence](/research/benchmark-methodology-divergence/) and [How to read vendor-reported benchmarks](/guides/how-to-read-vendor-reported-benchmarks/).
 
+## Where C-Eval sits among Chinese benchmarks
+
+C-Eval is one of three prominent Chinese-native benchmarks, each answering a different question. **C-Eval** is the curriculum-based multiple-choice knowledge suite; **CMMLU** is the multitask-understanding analogue, structured like MMLU with few-shot settings and China-specific subjects; **SuperCLUE** is the team-run comprehensive system that adds agent and safety tracks on top of knowledge. The three are complementary, not interchangeable — C-Eval says "does the model know Chinese exam content", CMMLU says "does the model understand Chinese-domain tasks", and SuperCLUE says "is the model good all-round in Chinese".
+
+Two methodology events shaped how C-Eval numbers should be read. First, C-Eval was accepted to NeurIPS 2023, which fixed its design as an academic reference. Second, and more consequentially for contamination, the full test set was released to the community in July 2025 — before that, evaluation was effectively self-reported against a partially held-out set. The release enabled community reproduction via `lm-evaluation-harness`, but it also means post-2025 models may have seen the answers. Any C-Eval figure should state which set (full or C-Eval Hard) and the model's training cutoff relative to that release.
+
 ## Related entities
 
 - Models: [Qwen3.8-Max](/models/qwen38-max/) · [GLM-5.3](/models/glm-53/) · [Kimi K3](/models/kimi-k3/) — Chinese general-purpose flagships that would be the natural C-Eval candidates.

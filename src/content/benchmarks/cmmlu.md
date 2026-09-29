@@ -58,6 +58,12 @@ Like C-Eval, CMMLU is a dataset whose scores are self-reported by model builders
 
 China AI Hub analysis: a CMMLU score is a Chinese-domain knowledge signal, most useful for questions about localised knowledge tasks (education, regulation, consumer content). Before citing a number, confirm the shot setting (zero-shot vs five-shot), the subject coverage, and whether chain-of-thought was used. The version-and-setting discipline that applies across this database — never compare scores from different modes — applies here too; see [Benchmark Methodology Divergence](/research/benchmark-methodology-divergence/) and [How to read vendor-reported benchmarks](/guides/how-to-read-vendor-reported-benchmarks/).
 
+## CMMLU vs C-Eval
+
+CMMLU and C-Eval are frequently mentioned together, and the distinction matters for reading either. C-Eval is built from Chinese **exam** material across four difficulty levels, so it leans toward curriculum knowledge. CMMLU is structured after MMLU — a **multitask** benchmark evaluated few-shot and zero-shot across 67 subjects — and it deliberately includes China-specific subjects such as Chinese driving rules and Chinese law, whose answers do not transfer from English training corpora. That China-specificity is CMMLU's defining design choice: it is built to reveal whether a model holds genuine Chinese-domain knowledge rather than a translation of English knowledge.
+
+A second practical difference is the shot setting. CMMLU reports zero-shot and five-shot results separately, and the two are not the same measurement — five-shot gives the model in-context Chinese examples, which tests adaptation as much as knowledge. When a CMMLU number circulates without its shot setting, it is incomplete. Both CMMLU and C-Eval are static datasets whose scores are self-reported or community-reproduced; neither is an independent grading service.
+
 ## Related entities
 
 - Models: [Qwen3.8-Max](/models/qwen38-max/) · [DeepSeek-V4-Pro](/models/deepseek-v4-pro/) · [GLM-5.3](/models/glm-53/) — Chinese general-purpose flagships, the natural CMMLU candidates.

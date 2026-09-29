@@ -49,6 +49,12 @@ GAIA does not measure raw knowledge or reasoning in isolation — a model with e
 
 China AI Hub analysis: GAIA is best read as an **agentic-capability** signal, not a general model ranking. Before citing a number, confirm the tool scaffolding, the difficulty-level mix, and whether the answer was graded by exact match. The same scaffolding-and-mode discipline that governs this database applies: see [Benchmark Methodology Divergence](/research/benchmark-methodology-divergence/), [How to read vendor-reported benchmarks](/guides/how-to-read-vendor-reported-benchmarks/) and the [agent ecosystem research](/research/rise-of-chinese-ai-agents/).
 
+## Why GAIA matters for agent evaluation
+
+GAIA sits at the intersection of two trends this database tracks closely: the shift from knowledge benchmarks to **agent capability**, and the growing gap between what a model knows and what it can actually *do*. Its headline contrast — humans at 92% versus GPT-4-with-plugins at roughly 15% at release — quantified that gap and made GAIA a reference for "agentic competence" rather than raw intelligence.
+
+The benchmark's real lesson for model selection is the **scaffolding dependency**. GAIA questions are easy for a human precisely because they are hard for a tool-limited AI; the same model scores very differently depending on which search, browser and code-execution tools it is allowed to call. This is the same theme as the agent ecosystem's tool-use findings — see the [agent ecosystem research](/research/china-ai-agent-ecosystem-structure-and-gaps/). A GAIA number without a description of the scaffolding is, in effect, a number about the scaffolding, not the model.
+
 ## Related entities
 
 - Models: [DeepSeek-V4-Pro](/models/deepseek-v4-pro/) · [Qwen3.8-Max](/models/qwen38-max/) — the agent-capable flagships that would be the natural GAIA candidates.

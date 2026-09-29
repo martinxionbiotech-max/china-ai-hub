@@ -54,6 +54,12 @@ LiveCodeBench does not measure general reasoning, knowledge or non-coding agenti
 
 China AI Hub analysis: LiveCodeBench's value is its contamination control, which makes it a more trustworthy coding signal than older static benchmarks — provided the score's snapshot date and pass@1 setting are stated. For choosing a coding model, pair it with agentic-coding signals rather than reading it in isolation; see [Choosing a coding model](/guides/choosing-a-coding-model/), [Benchmark Methodology Divergence](/research/benchmark-methodology-divergence/) and [Chinese AI coding models](/research/chinese-ai-coding-models/).
 
+## Contamination as a moving target
+
+LiveCodeBench exists because the coding benchmark field had a specific failure mode: static suites like HumanEval and MBPP became saturated and memorisable, so their scores stopped meaning what they claimed. LiveCodeBench's answer is structural — draw problems from **recent contests after a cutoff date**, so a model cannot have trained on them, and keep adding new problems as old ones age into training corpora. The benchmark is therefore not a fixed snapshot but a continuously refreshed one, which is both its strength and the reason a score must carry its snapshot date.
+
+The same contamination logic applies across this database's coding benchmarks: [SWE-bench](/benchmarks/swe-bench/) and [DeepSWE](/benchmarks/deepswe/) test repository-scale and long-horizon software engineering, while LiveCodeBench tests competitive-programming problem solving under a pass@1 budget. They measure different things and should not be merged into a single "coding score". See [Choosing a coding model](/guides/choosing-a-coding-model/) and [Chinese AI coding models](/research/chinese-ai-coding-models/).
+
 ## Related entities
 
 - Models: [DeepSeek-V4.1-Flash](/models/deepseek-v4-1-flash/) · [Kimi K2.7 Code](/models/kimi-k27-code/) · [GLM-5.3-Flash](/models/glm-53-flash/) — the coding-focused models that would be the natural LiveCodeBench candidates.
