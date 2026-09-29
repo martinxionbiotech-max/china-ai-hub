@@ -41,7 +41,7 @@ Public benchmarks leak into training data. GPQA was designed to be "Google-proof
 
 ## What the database actually records
 
-The China AI Hub benchmark database (10 benchmarks, last verified 2026-09-22) records per-result: score, metric, benchmark version, model version, date, source type and source URL. Models publish different subsets of benchmarks — the database holds 5-6 records for the most-published models and 0-1 for others. Counts reflect what vendors chose to publish, which is itself information.
+The China AI Hub benchmark database (18 benchmarks, last verified 2026-09-29) records per-result: score, metric, benchmark version, model version, date, source type and source URL. Models publish different subsets of benchmarks — the database holds 5-6 records for the most-published models and 0-1 for others. Counts reflect what vendors chose to publish, which is itself information.
 
 ## A reading procedure
 
@@ -58,7 +58,7 @@ Treat vendor-reported scores as vendor statements, not measurements. China AI Hu
 
 ## Benchmark reference table
 
-The benchmark database (10 benchmarks, last verified 2026-09-22) records each benchmark's task type, evaluation method and contamination notes as structured fields. These anchors are the quickest way to judge whether a given score is the right kind of evidence for your decision:
+The benchmark database (18 benchmarks, last verified 2026-09-29) records each benchmark's task type, evaluation method and contamination notes as structured fields. These anchors are the quickest way to judge whether a given score is the right kind of evidence for your decision:
 
 | Benchmark | Task type (verified field) | What a score on it evidences |
 |---|---|---|

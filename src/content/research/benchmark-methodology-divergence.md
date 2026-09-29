@@ -11,6 +11,14 @@ related_entities:
   - terminal-bench
   - swe-bench
   - deepswe
+  - c-eval
+  - cmmlu
+  - superclue
+  - gaia
+  - livecodebench
+  - aime
+  - arc-agi
+  - ifeval
 author_view: true
 image: "/images/cc/neural-glow.webp"
 image_credit: "Michael Gaylard / CC BY 4.0, via Wikimedia Commons"
@@ -66,6 +74,23 @@ A missing benchmark is a data point. Vendors publish different subsets: DeepSeek
 ## What the database does about it
 
 China AI Hub records every benchmark result with: score, metric, benchmark version, model version, date, source type (vendor_reported / independent / academic / community) and source URL. It never aggregates across incompatible versions and never ranks models from a single number.
+
+## Methodology anchors for the expanded benchmark set (2C-C2)
+
+Phase 2C-C2 added eight benchmarks to the database. Each carries one primary methodology anchor — the lever above that most determines whether a score on it is comparable — recorded as a structured field on its benchmark page:
+
+| Benchmark | Primary comparability anchor |
+|---|---|
+| C-Eval | Subset (full average vs C-Eval Hard) + contamination (test set released July 2025) |
+| CMMLU | Setting (zero-shot vs five-shot) |
+| SuperCLUE | Version (time-stamped leaderboard snapshots); composite total hides quadrant strength |
+| GAIA | Tools (scaffolding) + exact-match strictness |
+| LiveCodeBench | Version (continuously growing snapshot) + pass@1 |
+| AIME | Version (which year: 2024 vs 2025) |
+| ARC-AGI | Version (ARC-AGI-1 / 2 / 3 task families) |
+| IFEval | Setting (strict vs prompt-level vs instruction-level accuracy) |
+
+None of the eight currently has a recorded evaluation: no tracked Chinese model publishes a score on any of them as of 2026-09-29. That absence is itself the Lever 5 signal — these benchmarks matter to the wider community, but the models in this database do not report on them, so the pages document methodology only and mark Chinese model results "Not publicly documented".
 
 ## Limitations
 

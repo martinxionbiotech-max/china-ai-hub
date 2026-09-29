@@ -22,13 +22,13 @@ Slugs are normalized by stripping dots before comparison, because Astro's glob l
 | Collection | S1 main-files | S2 data-records | S3 sitemap | S4 declared | Verdict |
 |------------|--------------|-----------------|-----------|-------------|---------|
 | models | 21 | 21 | 21 | 21 | ✅ |
-| companies | 6 | 6 | 6 | 6 | ✅ |
-| agents | 10 | 10 | 10 | 10 | ✅ |
+| companies | 12 | 12 | 12 | 12 | ✅ |
+| agents | 18 | 18 | 18 | 18 | ✅ |
 | apis | 6 | 6 | 6 | 6 | ✅ |
 | pricing | 6 | 6 | 6 | 6 | ✅ |
-| benchmarks | 10 | 10 | 10 | 10 | ✅ |
+| benchmarks | 18 | 18 | 18 | 18 | ✅ |
 
-**Total: 59 entities** (21 + 6 + 10 + 6 + 6 + 10), 0 discrepancies.
+**Total: 81 entities** (21 + 12 + 18 + 6 + 6 + 18), 0 discrepancies.
 
 ## The 21-vs-19 models discrepancy (resolved)
 
@@ -72,4 +72,4 @@ Options: `--data-repo PATH` (default `../china-ai-hub-data`), `--sitemap PATH` (
 
 The data hub's "Skeleton (2026-09-21)" declaration and "being migrated" wording are removed. In their place, `docs/index.md` now carries a **formal status section** plus a **completeness self-check** section. `README.md` no longer calls the data hub "future subdomain" / "planned data layer"; it is live at `data.sinoaihub.com`.
 
-Eight-element coverage (B3) was re-audited: all 59 entity pages carry Definition/Description + Key facts + Sources + a canonical main-site link; source-history notes present where applicable. No gaps found.
+Eight-element coverage (B3) was re-audited: all 81 entity pages carry Definition/Description + Key facts + Sources + a canonical main-site link; source-history notes present where applicable. No gaps found.
