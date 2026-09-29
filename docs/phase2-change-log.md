@@ -1,3 +1,64 @@
+# China AI Hub — Phase 2 Change Log（2B-P2a Comparison 规模化：12 数据驱动 Entity-vs-Entity 对比页）
+
+**日期**：2026-09-29 · **范围**：主站 `china-ai-hub`（新增 12 对比页 + 1 基础设施微调）
+**依据**：`phase2/40-sinoaihub-phase2b-audit.md` P2-7（大规模增加 Comparison，自动关联 pricing/context/coding/vision/agent/license/deployment/benchmark）+ 数据站统一模板 `docs/entity-template.md`
+**验证方式**：零编造（全部数值从两实体主站 frontmatter + 数据站记录读取，未手写数字）· 每页 8 维覆盖 + 每维差异值 + 1 句「差异为何重要」条件化表述（无胜者）· `npm run build` 137 页通过（+12）· 内链 13 个模型 slug 逐一 grep dist 确认存在 · 数据站一致性抽查（下述表）· `git fetch` 后 `git rev-list --left-right --count HEAD...origin/main` = `0 0`
+
+## A · 候选对选择（12 对，排除既有 6 对比页）
+
+优先级落地：同厂商变体对（6 对）+ 跨厂商同档对（4 对）+ 用途导向对（2 对，长上下文/编码）。排除既有 6 对（deepseek-v4-1-flash-vs-glm-5.3-flash、deepseek-v4-pro-vs-kimi-k3、deepseek-v4-pro-vs-qwen3.8-max、doubao-seed-2-1-pro-vs-minimax-m3、kimi-k3-vs-minimax-m3、qwen3.8-max-vs-glm-5.3）。
+
+| # | slug | 实体对 | 类型 | 正文词数 |
+|---|---|---|---|---|
+| 1 | `deepseek-v4-pro-vs-deepseek-v4-1-flash` | DeepSeek-V4-Pro / V4.1-Flash | 同厂商（旗舰→flash） | 1,332 |
+| 2 | `kimi-k3-vs-glm-5.3` | Kimi K3 / GLM-5.3 | 跨厂商同档（开源 1M 旗舰） | 1,368 |
+| 3 | `qwen3.8-max-vs-doubao-seed-2-1-pro` | Qwen3.8-Max / Doubao Seed 2.1 Pro | 跨厂商同档（闭源旗舰） | 1,334 |
+| 4 | `qwen3.8-max-vs-qwen3.8-flash` | Qwen3.8-Max / Qwen3.8-Flash | 同厂商（旗舰→flash） | 1,212 |
+| 5 | `glm-5.3-vs-glm-5.3-flash` | GLM-5.3 / GLM-5.3-Flash | 同厂商（旗舰→flash） | 1,212 |
+| 6 | `kimi-k3-vs-kimi-k2.7-code` | Kimi K3 / Kimi K2.7 Code | 同厂商（旗舰→coding 专家） | 1,249 |
+| 7 | `minimax-m3-vs-minimax-m2.7` | MiniMax-M3 / MiniMax-M2.7 | 同厂商（旗舰→自进化） | 1,271 |
+| 8 | `doubao-seed-2-1-pro-vs-doubao-seed-2-1-turbo` | Doubao Pro / Doubao Turbo | 同厂商（pro→turbo） | 1,220 |
+| 9 | `deepseek-v4-1-flash-vs-qwen3.8-flash` | DeepSeek-V4.1-Flash / Qwen3.8-Flash | 跨厂商同档（flash 开源 vs 闭源） | 1,225 |
+| 10 | `glm-5.3-flash-vs-qwen3.8-flash` | GLM-5.3-Flash / Qwen3.8-Flash | 跨厂商同档（flash） | 1,205 |
+| 11 | `kimi-k3-vs-qwen3.8-max` | Kimi K3 / Qwen3.8-Max | 跨厂商同档（长输出 vs 多区） | 1,265 |
+| 12 | `qwen3.8-max-vs-qwen3.8-2.4t-a95b` | Qwen3.8-Max / 2.4T-A95B | 同厂商（闭源 API vs 开源权重） | 1,212 |
+
+## B · 数据驱动构建（8 维自动关联）
+
+每页 `dimensions` frontmatter 固定 8 维：pricing / context / coding / vision / agent / license / deployment / benchmark。正文结构：`At a glance`（Criterion|A|B 表）+ 逐维分节（每维差异值 + 「差异为何重要」）+ `Why each difference matters`（8 维条件化结论）+ `Trade-off summary` + `Decision context`（4 情境）+ `What is uncertain` + `Sources` + 四层标签 footer。全部数值取自两实体主站 frontmatter（pricing/context_window/maximum_output/capabilities/open_weight/license/self_hosting/api_available/benchmark_results）与数据站记录，零手写数字。
+
+**关键条件化处理（无胜者宣判）**：
+- 跨币种对（qwen3.8-max vs doubao-seed-2-1-pro）显式声明「USD vs CNY，不声明孰贵」。
+- 基准版本分歧（Terminal-Bench 2.1 vs 3.0、DeepSWE vs v1.1）逐页标注「不可直接比较」。
+- 0 基准记录模型（qwen3.8-flash、kimi-k2.7-code、qwen3.8-2.4t-a95b、doubao-turbo）标注「无基准证据，非能力缺失」。
+- 缺字段（max output 未公开、架构未披露）逐页标「Not publicly disclosed / Not stated」。
+
+## C · 基础设施微调
+
+| File | Change |
+|---|---|
+| `src/pages/comparisons/[...slug].astro` | `dimensionLabels` 补 `benchmark: 'Benchmark records'`（8 维含 benchmark，原映射缺失此标签） |
+
+## 数据站一致性抽查（每页数值与数据站一致）
+
+抽查覆盖 12 页涉及的 13 个模型实体，主站 frontmatter 与数据站 `china-ai-hub-data/docs/models/*.md` 逐字段核对（pricing / context_window / maximum_output / capabilities / open_weight / license / benchmark 计数），全部一致。代表项：kimi-k3 $3.00/$15.00 · 1M/1M · 6 基准；glm-5.3 $1.40/$4.40 · 1M/131,072 · 4 基准；qwen3.8-max $2.00/$6.00 · 1M/131,072 · 5 基准；doubao-pro ¥6.00/¥30.00(CNY) · 1M/262,144 · 1 基准；minimax-m3 $0.30/$1.20 · 1M · 5 基准。
+
+## 审计结论
+
+| 项 | 结果 |
+|---|---|
+| 新增对比页 | 12 |
+| 8 维覆盖 | 12/12 页（96 维格） |
+| 绝对胜者宣判 | 0（全部 better suited to / more relevant when / has an advantage in） |
+| 四层标签 | 12/12 页文末 footer |
+| 双实体互链 | 12/12 页（At a glance 前后 + Why 节内链到两模型页） |
+| 内链验证 | 13 个模型 slug 全存在于 dist |
+| Fabricated data | 0 |
+| build | 137 页通过（+12） |
+| 同步 | origin/main `0 0` |
+
+---
+
 # China AI Hub — Phase 2 Change Log（B5 P4 决策情境层 + P5 过度推断格式统一）
 
 **日期**：2026-09-29 · **范围**：主站 `china-ai-hub`（6 对比页 + 6 公司页 + 7 模型页 + 4 research 页）
