@@ -1,3 +1,62 @@
+# China AI Hub — Phase 2 Change Log（B3 Data Hub 八要素 + 首页 China AI Market at a Glance）
+
+**日期**：2026-09-29 · **范围**：数据站 `china-ai-hub-data`（59 实体页）+ 主站 `china-ai-hub`（首页）
+**依据**：`phase2/39-chinaaihub-upgrade-plan.md` P2（§13-15 防薄页 + §2 首页）+ `phase2/38-chinaaihub-audit-report.md` §2/§15
+**验证方式**：零编造（Definition/Key facts 全部从页内既有字段合成，名称从目标页 H1 解析）· 数据站 `mkdocs build --clean` 通过（含 git-revision-date-localized 插件自动注入 dateModified）· 主站 `npm run build` 121 页通过 · dist grep 确认八要素/Glance 区块渲染
+
+## A · Data Hub 八要素补全（§13-15 防薄页）
+
+对 6 集合全部 59 个实体页（models 21 / companies 6 / agents 10 / apis 6 / pricing 6 / benchmarks 10）补齐八要素，**缺哪补哪，不重写正文**：
+
+1. **Entity definition**（一句话）→ 全部实体页新增 `## Definition`（agent/benchmark 原有 `## Description` 保留，不再重复加）
+2. **Key facts**（3-6 条）→ 全部实体页新增 `## Key facts`
+3. **Relationships / Related entities** → 既有 `Provider`/`Related Agents`/`Foundation Models`/`Underlying Models`/`API Platform`/`Relevant Models` 等小节承载，本批未重写
+4. **Evidence** → 既有 `Sources` 表承载
+5. **Source history** → 有据的保留（models release_history 4 页 / pricing price_history 6 页 / companies timeline 6 页）；无据的实体页新增诚实标注 `## Source history`：`No documented source-change events located as of <last_verified>`（43 页：models 17 + agents 10 + apis 6 + benchmarks 10）
+6. **Update date** → 新增 `mkdocs-git-revision-date-localized-plugin`（requirements.txt + mkdocs.yml），从 git 历史自动注入 `dateModified`（勿手写死）；移除 pricing/benchmarks JSON-LD 内 16 处硬编码 `dateModified`
+7. **Related entities** → 见 #3
+8. **Canonical main-site link** → 全部实体页已有；本批修复 2 处悬空 canonical（`glm-5.3-flashx`→`glm-53-flashx`、`qwen3.7-plus`→`qwen37-plus`，含 JSON-LD `@id`/`url` 同步）
+
+| 集合 | 页数 | Definition 新增 | Key facts 新增 | Source history 标注 |
+|---|---|---|---|---|
+| models | 21 | 21 | 21 | 17 |
+| companies | 6 | 6 | 6 | 0（6 页全有 timeline）|
+| agents | 10 | 0（已有 Description）| 10 | 10 |
+| apis | 6 | 6 | 6 | 6 |
+| pricing | 6 | 6 | 6 | 0（6 页全有 price_history）|
+| benchmarks | 10 | 0（已有 Description）| 10 | 10 |
+| **合计** | **59** | **39** | **59** | **43** |
+
+辅助脚本 `scripts/b3_eight_elements.py` 新增（可复跑，幂等：先剥离旧块再重插）。
+
+## B · 主站首页 China AI Market at a Glance（§2）
+
+首页新增 `## China AI Market at a Glance` 计数区块，9 项计数**全部从 Astro collection 运行时读取**（`models/companies/agents/apis/pricing/benchmarks.length` + 3 项派生计数 `open_weight===true` / `context_window>=1_000_000` / `capabilities.vision===true`），零硬编码数字；每项链接到对应列表页（`/models/`、`/companies/`、`/agents/`、`/api/`、`/pricing/`、`/benchmarks/`，派生项链接 `/models/`）。
+
+| 计数项 | 当前值 | 链接 |
+|---|---|---|
+| Models tracked | 21 | /models/ |
+| Companies tracked | 6 | /companies/ |
+| AI agents tracked | 10 | /agents/ |
+| API platforms | 6 | /api/ |
+| Pricing providers | 6 | /pricing/ |
+| Benchmarks tracked | 10 | /benchmarks/ |
+| Open-weight models | 12 | /models/ |
+| 1M-context models | 11 | /models/ |
+| Multimodal models | 10 | /models/ |
+
+## 审计结论
+
+| 项 | 结果 |
+|---|---|
+| 实体页改动 | 59（Definition 39 + Key facts 59 + Source history 43 + canonical 修复 2）|
+| 新增基础设施 | 1（git-revision-date-localized 插件）+ 1 辅助脚本 |
+| Fabricated data | 0（全部要素从页内既有字段合成）|
+| 数据站 build | mkdocs build --clean 通过（dateModified 自动注入 2026-09-28）|
+| 主站 build | 121 页通过 |
+
+---
+
 # China AI Hub — Phase 2 Change Log（B2-b Answer Blocks 标准化 + Where this model fits 负载表）
 
 **日期**：2026-09-29 · **范围**：主站 `china-ai-hub`（20 页）
