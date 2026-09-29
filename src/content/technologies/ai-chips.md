@@ -3,6 +3,7 @@ image: "/images/ai/technologies-ai-chips.webp"
 image_credit: "AI-generated illustration (Seedream)"
 slug: ai-chips
 title: AI Chips
+author: "SinoAI Hub Research Team"
 definition: "AI chips are specialized processors — GPUs and purpose-built accelerators — designed for the matrix-heavy compute of model training and inference, the physical substrate on which every model in this database runs."
 related_models: []
 related_companies:

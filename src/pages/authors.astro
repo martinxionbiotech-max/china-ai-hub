@@ -1,0 +1,78 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const team = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  '@id': 'https://sinoaihub.com/authors/',
+  name: 'SinoAI Hub Research Team',
+  url: 'https://sinoaihub.com/authors/',
+  description:
+    'The research and editorial team behind China AI Hub (sinoaihub.com) — an independent English-language reference layer for China\u2019s AI ecosystem.',
+  parentOrganization: {
+    '@type': 'Organization',
+    name: 'China AI Hub',
+    url: 'https://sinoaihub.com',
+  },
+};
+---
+
+<BaseLayout
+  title="Authors & Research Team"
+  description="Who researches and writes China AI Hub: a team-byline model with no invented individual profiles. Contact and accountability for every page."
+  type="article"
+  extraJsonLd={[team]}
+  canonicalPath="/authors/"
+>
+  <article class="prose prose-slate max-w-none">
+    <h1>Authors &amp; Research Team</h1>
+    <p class="text-sm text-gray-500">Last updated: 2026-09-29</p>
+
+    <h2>Who writes this site</h2>
+    <p>
+      China AI Hub is researched, written and maintained by the <strong>SinoAI Hub Research
+      Team</strong> — a team-level byline, not a set of named individuals. Pages are credited to
+      the team collectively (<code>author: SinoAI Hub Research Team</code> in each page's
+      metadata) because the work is collaborative: data collection, source verification, writing
+      and correction are distributed across a small group rather than attributable to a single
+      person.
+    </p>
+    <p>
+      We do not publish invented individual author profiles. The site deliberately avoids the
+      common pattern of fabricating a named "expert" persona with a biography. Where any future
+      page carries an individual byline, that person's real name and credentials will be shown
+      on the page itself; none currently exist.
+    </p>
+
+    <h2>Why team attribution instead of named authors</h2>
+    <p>
+      Named author pages are only trustworthy when the name maps to a real, checkable person.
+      We would rather understate than misstate: a team byline is honest, and it keeps the reader's
+      focus on the evidence rather than on a persona. The accountability mechanism on this site is
+      the source layer — every factual claim carries a source, a source type and a verification
+      date — not an author's reputation.
+    </p>
+
+    <h2>How the team works</h2>
+    <ul>
+      <li><strong>Collection</strong> — data is gathered from official sources first (vendor documentation, model cards, pricing pages, papers, GitHub), following the tier hierarchy in the <a href="/methodology/">methodology</a>.</li>
+      <li><strong>Verification</strong> — values are re-checked against primary sources and date-stamped; records carry a <code>verified</code> or <code>partially_verified</code> status.</li>
+      <li><strong>Writing</strong> — editorial analysis is separated from observed data and labeled (<a href="/editorial-standards/">editorial standards</a>).</li>
+      <li><strong>Correction</strong> — errors are handled through a public process with a record (<a href="/corrections/">corrections policy</a>).</li>
+    </ul>
+
+    <h2>Independence</h2>
+    <p>
+      The team operates without advertising, sponsored listings, or affiliate links, as described
+      in the <a href="/disclosure/">funding disclosure</a>. No Chinese AI vendor pays for placement,
+      ranking, or description.
+    </p>
+
+    <h2>Contact</h2>
+    <p>
+      To reach the team about content, data or corrections: Martin.W —
+      <a href="mailto:admin@sinoaihub.com">admin@sinoaihub.com</a>. For a factual error, see the
+      <a href="/corrections/">corrections policy</a> for the fastest route.
+    </p>
+  </article>
+</BaseLayout>

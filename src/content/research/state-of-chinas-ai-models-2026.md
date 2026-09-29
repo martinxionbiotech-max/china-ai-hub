@@ -1,5 +1,6 @@
 ---
 title: "The State of China's AI Models in 2026: A 19-Model Panorama"
+author: "SinoAI Hub Research Team"
 description: "A cross-sectional view of China's frontier model landscape in September 2026 — 19 models across six labs, mapped by openness, context window and price band, with the structural patterns the distribution reveals."
 published_date: "2026-09-22"
 updated_date: "2026-09-22"

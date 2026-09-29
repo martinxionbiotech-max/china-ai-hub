@@ -1,5 +1,6 @@
 ---
 title: "Kimi K3 vs GLM-5.3: Open-Weight 1M-Context Flagships"
+author: "SinoAI Hub Research Team"
 description: "Evidence-based comparison of Kimi K3 and GLM-5.3: API pricing, context window, output length, capabilities, licenses, deployment and benchmark records from the China AI Hub database."
 entities:
   - kimi-k3

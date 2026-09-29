@@ -1,5 +1,6 @@
 ---
 title: "Multimodal Capability in China's 2026 Model Lineup: Vision, Video and the Computer-Use Frontier"
+author: "SinoAI Hub Research Team"
 description: "A capability-map of multimodal support across 19 Chinese models in September 2026 — which flagships see, which generate video, where computer-use lives, and the counterintuitive pattern that cheap flash models are now more multimodal than some flagships."
 published_date: "2026-09-22"
 updated_date: "2026-09-22"

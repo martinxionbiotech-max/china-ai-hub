@@ -1,5 +1,6 @@
 ---
 title: "Chinese AI Model Licensing Explained: MIT, Apache and the Three Custom Regimes"
+author: "SinoAI Hub Research Team"
 description: "A plain-language breakdown of the five license regimes behind China's open-weight frontier models — MIT, Apache-2.0, and the conditional Kimi, MiniMax and Qwen licenses — with the exact revenue and MAU thresholds that trigger obligations."
 published_date: "2026-09-22"
 updated_date: "2026-09-22"

@@ -2,6 +2,7 @@
 image: "/images/ai/models-deepseek-v4-pro.webp"
 image_credit: "AI-generated illustration (Seedream)"
 title: "Choosing a Chinese Coding Model: SWE Evidence, Tool Calling and Context"
+author: "SinoAI Hub Research Team"
 description: "A decision guide for selecting a Chinese model for software engineering — reading Terminal-Bench, DeepSWE and SWE-bench evidence, and matching tool-calling and context requirements to the right model and coding agent."
 published_date: "2026-09-29"
 updated_date: "2026-09-29"

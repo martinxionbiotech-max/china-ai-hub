@@ -2,6 +2,7 @@
 image: "/images/ai/comparisons-doubao-seed-2-1-pro-vs-minimax-m3.webp"
 image_credit: "AI-generated illustration (Seedream)"
 title: "Doubao Seed 2.1 Pro vs MiniMax M3: Multimodal Flagships at Opposite Price Points"
+author: "SinoAI Hub Research Team"
 description: "Evidence-based comparison of Doubao Seed 2.1 Pro and MiniMax M3: API pricing, context window, capabilities, open weights and benchmark records from the China AI Hub database."
 entities:
   - doubao-seed-2-1-pro

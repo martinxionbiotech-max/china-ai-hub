@@ -1,0 +1,109 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const article = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  '@id': 'https://sinoaihub.com/editorial-standards/',
+  headline: 'China AI Hub Editorial Standards',
+  url: 'https://sinoaihub.com/editorial-standards/',
+  description:
+    'The quality gate every China AI Hub page must pass: no fabrication, no winner verdicts, four claim labels, answer-block structure and internal-link discipline.',
+  datePublished: '2026-09-29',
+  dateModified: '2026-09-29',
+  isPartOf: { '@type': 'WebSite', name: 'China AI Hub', url: 'https://sinoaihub.com' },
+};
+---
+
+<BaseLayout
+  title="Editorial Standards"
+  description="The quality gate every China AI Hub page must pass: no fabrication, no winner verdicts, four claim labels, answer blocks and internal-link discipline."
+  type="article"
+  extraJsonLd={[article]}
+  canonicalPath="/editorial-standards/"
+>
+  <article class="prose prose-slate max-w-none">
+    <h1>Editorial Standards</h1>
+    <p class="text-sm text-gray-500">Last updated: 2026-09-29</p>
+
+    <p>
+      This page states the quality bar that every China AI Hub page must clear before it is
+      published. It is the <em>editorial</em> counterpart to the
+      <a href="/methodology/">methodology</a> page: methodology says <em>how data is collected and
+      verified</em>; this page says <em>what is allowed to be written around that data</em>. The
+      two link to each other because they operate together — data rules feed the writing, and the
+      writing rules reference the data labels.
+    </p>
+
+    <h2>The quality gate</h2>
+    <p>Before any page ships, it is checked against the following, in order:</p>
+    <ol>
+      <li><strong>No fabrication</strong> — every number and named fact traces to a cited source; missing values are marked "Not publicly documented" or "Unknown", never invented.</li>
+      <li><strong>Source quality and freshness</strong> — sources are tiered (L1 first) and date-stamped.</li>
+      <li><strong>Originality</strong> — editorial pages must pass the originality test; assembled-from-elsewhere content is rejected.</li>
+      <li><strong>Completeness</strong> — entity schemas are filled or marked draft; a page over 50% null on core fields is not published.</li>
+      <li><strong>Consistency</strong> — entity IDs resolve and versions agree across the site and the Data Hub.</li>
+      <li><strong>Internal links</strong> — links present and semantically meaningful, with no dangling targets.</li>
+      <li><strong>Structured data</strong> — Schema.org JSON-LD is valid.</li>
+      <li><strong>SEO</strong> — title, meta description and canonical are set.</li>
+    </ol>
+
+    <h2>No winner verdicts</h2>
+    <p>
+      China AI Hub does not declare a "best" model, a "#1" provider, or an overall ranking.
+      Comparisons are allowed to state a measurable difference for a specific metric (with source
+      and date), and are otherwise phrased as trade-offs: "better suited to", "more relevant when",
+      or "has an advantage in" a given workload — never "A &gt; B" in general. This applies to
+      entity pages, comparison pages and guides alike.
+    </p>
+
+    <h2>Four claim labels are required</h2>
+    <p>
+      Every factual or interpretive sentence falls into one of four labeled buckets — <strong>Official
+      fact</strong>, <strong>Vendor-reported claim</strong>, <strong>Third-party evidence</strong>,
+      or <strong>China AI Hub analysis</strong> — so the reader can always tell whose claim they are
+      reading. Analysis is introduced as analysis and never presented as fact. The label definitions
+      are on the <a href="/methodology/">methodology</a> page.
+    </p>
+
+    <h2>Answer-block structure</h2>
+    <p>
+      Substantive pages lead with a direct answer rather than burying it. The standard shape is:
+    </p>
+    <ul>
+      <li><strong>Short answer</strong> — one sentence.</li>
+      <li><strong>Key facts</strong> — the sourced facts behind the answer.</li>
+      <li><strong>What this means</strong> — interpretation, labeled as analysis.</li>
+      <li><strong>What is uncertain</strong> — the honest gaps.</li>
+      <li><strong>Sources</strong> — the evidence.</li>
+    </ul>
+    <p>
+      This keeps pages useful to both readers and AI systems that extract direct answers.
+    </p>
+
+    <h2>Internal-link discipline</h2>
+    <p>
+      Links connect entities to their models, companies, agents, APIs and comparisons so the graph
+      is navigable in one hop. Every link must point at a page that actually exists (verified
+      before publishing), and anchor text must be descriptive rather than "click here". Orphan
+      pages are treated as a defect and re-linked or removed.
+    </p>
+
+    <h2>Analysis formatting</h2>
+    <p>
+      Subjective interpretation is consistently prefixed (<code>China AI Hub analysis:</code> or
+      <code>Our interpretation:</code>) and each conclusion stands on an
+      evidence → reasoning → interpretation chain rather than jumping to a verdict. This keeps
+      E-E-A-T stable: the site's authority comes from traceable reasoning, not assertion.
+    </p>
+
+    <h2>Division of labor with Methodology</h2>
+    <p>
+      To restate the split: <a href="/methodology/">methodology</a> governs <em>data</em> (collection,
+      verification, the 45/14 verification-status distribution, the eight-field evidence layer);
+      this page governs <em>prose</em> (what may be written, how it is labeled, and how it links).
+      Together with the <a href="/authors/">author page</a>, <a href="/data-policy/">data policy</a>,
+      and <a href="/corrections/">corrections policy</a>, they form the site's governance layer.
+    </p>
+  </article>
+</BaseLayout>

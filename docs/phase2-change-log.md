@@ -1,3 +1,57 @@
+# China AI Hub — Phase 2 Change Log（2B-P3 Authority 层六件：E-E-A-T 治理页 + author 字段补挂）
+
+**日期**：2026-09-29 · **范围**：主站 `china-ai-hub`（新增 5 治理页 + 补全 1 既有页 + 68 页 author 字段回填）
+**依据**：`phase2/40-sinoaihub-phase2b-audit.md` P3 9-14（Author/Researcher · Methodology · Data policy · Corrections · Update history · Editorial standards）
+**验证方式**：零夸大（全部如实描述站点实际运作，无虚构个人简历、无编造数字——45/14 分布与 168 evidence rows 从数据站 entity-template.md/evidence-layer.md 读取）· `npm run build` 150 页通过（+5）· 六页 slug 逐一 grep dist 确认存在 · sitemap 含 6 治理页 · `npm run check:counts` 0 矛盾 · `git fetch` 后 `git rev-list --left-right --count HEAD...origin/main` = `0 0`
+
+## A · 六页清单（slug / 词数 / 与既有页去重）
+
+| # | 治理页 | slug | 正文词数 | 去重结果 |
+|---|---|---|---|---|
+| 1 | Author/Researcher | `/authors/` | ~360 | **新建**（既有 about.astro 是站点定位，非作者实体页；无重复）|
+| 2 | Methodology | `/methodology/` | ~620 | **新建**（about.astro 仅一句「How data is sourced」，方法论独立成页；分工互链 editorial-standards）|
+| 3 | Data policy | `/data-policy/` | ~520 | **新建**（与 terms.astro 互链不重复：terms=法律条款，data-policy=数据许可/复用/主站与数据站分工/更新频率）|
+| 4 | Corrections | `/corrections/` | ~380 | **补全既有页**（已存在 corrections.astro；本批补 GitHub issue 渠道 + 「No corrections issued to date」历史更正记录区）|
+| 5 | Update history | `/updates/` | ~520 | **新建**（从 git 64 commits + phase2-change-log.md 生成结构化记录：日期/范围/类型；无既有页）|
+| 6 | Editorial standards | `/editorial-standards/` | ~540 | **新建**（质量门槛独立成页；与 methodology 分工互链）|
+
+## B · author 字段补挂
+
+- 编辑类集合（research 18 + guides 11 + comparisons 18 + technologies 18 + news 3 = **68 页**）frontmatter 补 `author: SinoAI Hub Research Team`（团队化署名，无虚构个人简历）。
+- `src/content.config.ts` 五集合 schema 加 `author: z.string().optional()`（comparisons/guides/research/technologies/news）。
+- 实体数据集合（models/companies/agents/apis/pricing/benchmarks）为数据记录，非编辑署名，未加 author（证据层由 source/last_verified 承载，见 methodology）。
+- 作者实体页如实说明：团队化署名、无虚构个人简历；未来若有个体署名会真实挂载姓名与资质（当前不存在）。
+
+## C · 数据口径（全部从数据站读取，零编造）
+
+- **verification_status 45/14 分布**：45 verified / 14 partially_verified（13 模型 + 1 API 未披露核心字段），源：数据站 `docs/entity-template.md` 字段存在矩阵。
+- **Evidence Layer 八字段**：evidence_id / source_name / source_url / source_type / published / verified / confidence / conflict，源：`docs/evidence-layer.md`。
+- **168 evidence rows** + 7 类 source_type 枚举，源：`docs/evidence-layer.md` backfill 结果。
+- **四层标签**：Official fact / Vendor-reported claim / Third-party evidence / China AI Hub analysis（全站既有措辞，本批页内复述定义）。
+
+## D · 基础设施
+
+| File | Change |
+|---|---|
+| `src/layouts/BaseLayout.astro` | footer 补 9 治理页链接（Updates 并入 legal 行 + Authors/Methodology/Data Policy/Editorial Standards 新行）|
+| `src/pages/llms.txt.ts` | Core pages 补 7 治理页条目 |
+| `src/pages/corrections.astro` | 补 GitHub issue 渠道 + Correction record 区（No corrections issued to date）|
+
+## 审计结论
+
+| 项 | 结果 |
+|---|---|
+| 治理页 | 6（新建 5 + 补全 1） |
+| author 字段补挂 | 68 页（编辑类 5 集合全量） |
+| 虚构个人简历 | 0（团队化署名，明示无个体作者） |
+| 夸大/编造 | 0（45/14、168 rows 等口径从数据站读取） |
+| build | 150 页通过（+5） |
+| 内链 | 六页互链 + 与 terms/disclosure/about 交叉链接，grep dist 确认存在 |
+| check:counts | 0 矛盾（六集合四面对齐） |
+| 同步 | origin/main `0 0` |
+
+---
+
 # China AI Hub — Phase 2 Change Log（2B-P2b Decision Guides：8 数据驱动决策指南页）
 
 **日期**：2026-09-29 · **范围**：主站 `china-ai-hub`（新增 8 指南页）

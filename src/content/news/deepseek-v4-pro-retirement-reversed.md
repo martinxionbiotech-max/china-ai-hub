@@ -1,5 +1,6 @@
 ---
 title: "DeepSeek reverses V4-Pro retirement and keeps the API service running"
+author: "SinoAI Hub Research Team"
 description: "The 2026-09-10 change log says DeepSeek-V4-Pro API service continues past the earlier 09-14 cutoff 'in response to user demand', with billing unchanged."
 published_date: "2026-09-10"
 type: company

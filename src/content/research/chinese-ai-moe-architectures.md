@@ -1,5 +1,6 @@
 ---
 title: "How Chinese Frontier Models Use Mixture-of-Experts: Active Parameters, Linear Attention and the Economics of Sparsity"
+author: "SinoAI Hub Research Team"
 description: "An architecture-level analysis of MoE design across Chinese frontier models in 2026 — activation ratios from 1.4% to 4.3%, hybrid linear-attention variants, and what sparse architectures mean for inference cost, self-hosting and the open-weight ecosystem."
 published_date: "2026-09-22"
 updated_date: "2026-09-22"

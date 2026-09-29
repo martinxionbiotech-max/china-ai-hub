@@ -1,5 +1,6 @@
 ---
 title: "Chinese AI Model Companies Explained: The Six Labs Behind the Frontier"
+author: "SinoAI Hub Research Team"
 description: "Profiles of the six organizations building China's frontier models in 2026 — DeepSeek, Alibaba Cloud (Qwen), ByteDance (Doubao), Moonshot AI (Kimi), MiniMax and Zhipu AI (GLM) — mapped by founding, geography, model strategy, openness and product surface, with the structural patterns that explain how this market works."
 published_date: "2026-09-22"
 updated_date: "2026-09-22"

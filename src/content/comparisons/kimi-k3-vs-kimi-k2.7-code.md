@@ -1,5 +1,6 @@
 ---
 title: "Kimi K3 vs Kimi K2.7 Code: Moonshot's Flagship Against Its Coding Specialist"
+author: "SinoAI Hub Research Team"
 description: "Evidence-based comparison of Kimi K3 and Kimi K2.7 Code: API pricing, context window, output length, capabilities, licensing and benchmark records from the China AI Hub database."
 entities:
   - kimi-k3

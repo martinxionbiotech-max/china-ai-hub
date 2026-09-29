@@ -1,5 +1,6 @@
 ---
 title: "MiniMax-M3 vs MiniMax-M2.7: Flagship Against the Self-Evolving Model"
+author: "SinoAI Hub Research Team"
 description: "Evidence-based comparison of MiniMax-M3 and MiniMax-M2.7: API pricing, context window, capabilities, licenses, deployment and benchmark records from the China AI Hub database."
 entities:
   - minimax-m3

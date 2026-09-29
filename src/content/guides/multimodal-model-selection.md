@@ -2,6 +2,7 @@
 image: "/images/ai/models-glm-5.3-flash.webp"
 image_credit: "AI-generated illustration (Seedream)"
 title: "Choosing a Multimodal Chinese Model: Vision, Video and Computer Use"
+author: "SinoAI Hub Research Team"
 description: "A decision guide for selecting a Chinese model for multimodal work — a capability matrix of vision, video, audio and computer-use flags across the 2026 lineup, and the pricing inversion that changes which model to pick."
 published_date: "2026-09-29"
 updated_date: "2026-09-29"

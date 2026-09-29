@@ -1,5 +1,6 @@
 ---
 title: "How DeepSeek Changed China's AI Market: Open Weights, Price Floors and the Standard It Set"
+author: "SinoAI Hub Research Team"
 description: "DeepSeek did not just ship models — it reset the competitive baseline for China's frontier labs on three axes: permissive licensing, sub-$0.20 flash pricing, and a 1M-token context default. This analysis traces how."
 published_date: "2026-09-22"
 updated_date: "2026-09-22"

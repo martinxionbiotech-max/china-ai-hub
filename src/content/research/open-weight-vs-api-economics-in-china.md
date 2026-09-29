@@ -1,5 +1,6 @@
 ---
 title: "Open Weights and API Economics in China: The Qwen A95B Case"
+author: "SinoAI Hub Research Team"
 description: "An economics analysis of open-weight releases in China's frontier tier, centered on Qwen's A95B open release: why labs give away flagship-class weights, and what the price anchors reveal about open weights as a hedge against API lock-in."
 published_date: "2026-09-29"
 updated_date: "2026-09-29"

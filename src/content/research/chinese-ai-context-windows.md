@@ -1,5 +1,6 @@
 ---
 title: "Context Windows in China's 2026 Model Market: 1M Tokens as Table Stakes and the Stratification Below It"
+author: "SinoAI Hub Research Team"
 description: "An analysis of context-window distribution across 19 Chinese models: the 1M-token flagship norm, the 200K-256K mid tier, the wide output-token spread (131K to 1M), and what the stratification means for long-context workloads and self-hosting."
 published_date: "2026-09-22"
 updated_date: "2026-09-22"

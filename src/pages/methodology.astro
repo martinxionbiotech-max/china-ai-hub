@@ -1,0 +1,141 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const howTo = {
+  '@context': 'https://schema.org',
+  '@type': 'HowTo',
+  name: 'How China AI Hub collects and verifies data',
+  description:
+    'The research methodology behind China AI Hub: official-source-first collection, a verification workflow, four claim labels, and an eight-field evidence layer.',
+  step: [
+    { '@type': 'HowToStep', position: 1, name: 'Collect from primary sources', text: 'Prefer official documentation, model cards, pricing pages, papers and GitHub (source tier L1).' },
+    { '@type': 'HowToStep', position: 2, name: 'Verify against the primary source', text: 'Re-fetch the official source and compare the extracted value with the stored value.' },
+    { '@type': 'HowToStep', position: 3, name: 'Label the claim', text: 'Tag each claim Official fact, Vendor-reported claim, Third-party evidence, or China AI Hub analysis.' },
+    { '@type': 'HowToStep', position: 4, name: 'Record the evidence', text: 'Attach an eight-field evidence record (evidence_id, source_name, source_url, source_type, published, verified, confidence, conflict).' },
+  ],
+};
+---
+
+<BaseLayout
+  title="Research Methodology"
+  description="How China AI Hub collects, verifies and labels data: official sources first, a verification workflow, four claim labels and an eight-field evidence layer."
+  type="article"
+  extraJsonLd={[howTo]}
+  canonicalPath="/methodology/"
+>
+  <article class="prose prose-slate max-w-none">
+    <h1>Research Methodology</h1>
+    <p class="text-sm text-gray-500">Last updated: 2026-09-29</p>
+
+    <h2>What this page covers</h2>
+    <p>
+      This page documents how China AI Hub turns scattered Chinese-language sources into the
+      structured, English-language reference data on the rest of the site. It explains, in order:
+      how data is collected, how it is verified, how claims are labeled, and how evidence is
+      recorded. Editorial quality rules live on a separate page — the
+      <a href="/editorial-standards/">editorial standards</a> — which this page links to and from.
+    </p>
+
+    <h2>1 · Data collection: official sources first</h2>
+    <p>
+      Every important factual claim must be traceable to a source, and sources are ranked by a
+      four-tier hierarchy. A community-only source can never carry a critical fact (pricing,
+      license, context window, or benchmark score) on its own.
+    </p>
+    <table>
+      <caption>Source tier hierarchy</caption>
+      <thead>
+        <tr><th>Tier</th><th>Type</th><th>Examples</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>L1</td><td>Primary sources</td><td>Official docs, model cards, official pricing pages, papers, official GitHub, official announcements</td></tr>
+        <tr><td>L2</td><td>High-quality technical</td><td>Academic papers, benchmark organizations, cloud-provider docs, independent technical research</td></tr>
+        <tr><td>L3</td><td>Major industry media</td><td>Reuters, Bloomberg, Financial Times, TechCrunch, specialist publications</td></tr>
+        <tr><td>L4</td><td>Community</td><td>GitHub discussions, Hugging Face, Reddit, developer communities</td></tr>
+      </tbody>
+    </table>
+    <p>
+      L1 is required for pricing, API availability, license and official release dates. When a fact
+      first surfaces in media, it is traced back to its L1 source before it is published.
+    </p>
+
+    <h2>2 · Verification workflow</h2>
+    <p>
+      Verification means an agent actually re-fetches the primary source and compares the extracted
+      value against the stored value — it is not a guess. The per-update sequence is:
+    </p>
+    <ol>
+      <li>Open the official source URL(s).</li>
+      <li>Extract the exact statement or structured value.</li>
+      <li>Compare it with the current stored value.</li>
+      <li>If unchanged, refresh the <code>last_verified</code> date.</li>
+      <li>If changed, create a change proposal recording old → new, effective date and source; pricing and benchmark changes are appended to history rather than silently overwritten.</li>
+      <li>If the source is unreachable, leave the data unchanged and flag it for follow-up.</li>
+    </ol>
+    <p>
+      Each entity record carries a <strong>verification status</strong>: <code>verified</code> or
+      <code>partially_verified</code>. A record is <code>partially_verified</code> when a core field
+      (context window, architecture, parameters, capabilities, or benchmarks) is documented as not
+      publicly disclosed — the gap is stated, never hidden. Across the reference dataset this is
+      currently a <strong>45 / 14 split</strong>: 45 records fully <code>verified</code> and 14
+      records <code>partially_verified</code> (13 models plus 1 API whose vendors decline to
+      disclose one or more core fields).
+    </p>
+
+    <h2>3 · Four claim labels</h2>
+    <p>
+      Every sentence that carries a fact or an interpretation is placed in one of four buckets, so
+      the reader can always tell <em>whose</em> claim they are reading:
+    </p>
+    <table>
+      <caption>The four claim labels</caption>
+      <thead><tr><th>Label</th><th>Meaning</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Official fact</strong></td><td>Stated in a primary (L1) source.</td></tr>
+        <tr><td><strong>Vendor-reported claim</strong></td><td>Published by the vendor (e.g. a benchmark score) and not independently re-verified.</td></tr>
+        <tr><td><strong>Third-party evidence</strong></td><td>From an independent evaluation or academic source.</td></tr>
+        <tr><td><strong>China AI Hub analysis</strong></td><td>Our own synthesis and interpretation, always introduced as analysis, never as fact.</td></tr>
+      </tbody>
+    </table>
+    <p>
+      Analysis is kept out of the fact columns. Where a third-party label would be required but no
+      third-party evidence exists, the page says so rather than implying one.
+    </p>
+
+    <h2>4 · The evidence layer: eight fields</h2>
+    <p>
+      Every source attached to an entity record is normalized into a single eight-field shape.
+      This is what the Data Hub (<code>data.sinoaihub.com</code>) exposes, and what the main site's
+      source tables are derived from.
+    </p>
+    <table>
+      <caption>The eight evidence fields</caption>
+      <thead><tr><th>Field</th><th>Meaning</th><th>Rules</th></tr></thead>
+      <tbody>
+        <tr><td><code>evidence_id</code></td><td>Stable, globally-unique identifier</td><td><code>src-&lt;collection&gt;-&lt;entity&gt;-&lt;n&gt;</code></td></tr>
+        <tr><td><code>source_name</code></td><td>Human-readable provenance label</td><td>—</td></tr>
+        <tr><td><code>source_url</code></td><td>Canonical locator</td><td>—</td></tr>
+        <tr><td><code>source_type</code></td><td>Type of source</td><td>See enumeration below</td></tr>
+        <tr><td><code>published</code></td><td>Source publication date</td><td>Filled only where documented; <code>—</code> otherwise (never guessed)</td></tr>
+        <tr><td><code>verified</code></td><td>Verification date</td><td>Formerly <code>last_verified</code></td></tr>
+        <tr><td><code>confidence</code></td><td><code>high</code> | <code>medium</code> | <code>low</code></td><td>—</td></tr>
+        <tr><td><code>conflict</code></td><td>Contradiction flag</td><td><code>—</code> unless the record documents a conflict between sources</td></tr>
+      </tbody>
+    </table>
+    <p>
+      The <code>source_type</code> enumeration is: <code>Official</code>,
+      <code>Official documentation</code>, <code>Model card</code>, <code>Vendor-reported</code>,
+      <code>Independent benchmark</code>, <code>China AI Hub analysis</code>, and
+      <code>Literature</code>. Across the 59 entity records this produces 168 evidence rows.
+    </p>
+
+    <h2>5 · What is never published</h2>
+    <p>
+      Fabricated prices, benchmarks, parameters, context windows, capabilities, licenses, release
+      dates, company details, customer counts or market share are never published. Neither are
+      "best model" verdicts from a single benchmark, nor vendor-reported scores presented as
+      independent findings. See the <a href="/editorial-standards/">editorial standards</a> for the
+      full quality gate.
+    </p>
+  </article>
+</BaseLayout>

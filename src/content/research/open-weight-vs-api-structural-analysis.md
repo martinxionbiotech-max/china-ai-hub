@@ -1,5 +1,6 @@
 ---
 title: "Open Weights and API Models in China's 2026 Ecosystem: A Structural Analysis"
+author: "SinoAI Hub Research Team"
 description: "A data-backed analysis of how Chinese labs run dual-track strategies — open-weight releases alongside API-only flagships — and where the two tracks diverge."
 published_date: "2026-09-22"
 updated_date: "2026-09-22"

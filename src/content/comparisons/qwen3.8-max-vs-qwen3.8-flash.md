@@ -1,5 +1,6 @@
 ---
 title: "Qwen3.8-Max vs Qwen3.8-Flash: Alibaba's Flagship Against Its Flash Tier"
+author: "SinoAI Hub Research Team"
 description: "Evidence-based comparison of Qwen3.8-Max and Qwen3.8-Flash: API pricing, context window, capabilities, coding support, deployment and benchmark records from the China AI Hub database."
 entities:
   - qwen3.8-max

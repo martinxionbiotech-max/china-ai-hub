@@ -1,5 +1,6 @@
 ---
 title: "Benchmark Methodology Divergence Across Chinese Model Vendors"
+author: "SinoAI Hub Research Team"
 description: "How DeepSeek, Alibaba and other Chinese vendors report benchmark scores differently — versions, tool modes, subsets and product mismatches — and how to read them."
 published_date: "2026-09-22"
 updated_date: "2026-09-22"

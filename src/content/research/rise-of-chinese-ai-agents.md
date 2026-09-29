@@ -1,5 +1,6 @@
 ---
 title: "The Rise of Chinese AI Agents: What the 2026 Landscape Actually Looks Like"
+author: "SinoAI Hub Research Team"
 description: "A structural analysis of China's AI agent ecosystem based on the China AI Hub agent database: who builds what, which categories are contested, and how openness maps to monetization."
 published_date: "2026-09-22"
 updated_date: "2026-09-22"

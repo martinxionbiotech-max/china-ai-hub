@@ -38,6 +38,12 @@ export const GET: APIRoute = async ({ site }) => {
   L.push(`- [Comparisons](${base}/comparisons/): Evidence-based model comparisons (no rankings).`);
   L.push(`- [Guides](${base}/guides/): Decision frameworks for choosing and evaluating models.`);
   L.push(`- [About](${base}/about/): Sourcing policy, source tiers and methodology.`);
+  L.push(`- [Authors](${base}/authors/): The SinoAI Hub Research Team and how pages are attributed.`);
+  L.push(`- [Methodology](${base}/methodology/): Data collection, verification workflow, claim labels and the evidence layer.`);
+  L.push(`- [Data Policy](${base}/data-policy/): Licensing, reuse terms, main-site vs Data Hub division, update cadence.`);
+  L.push(`- [Corrections](${base}/corrections/): How to report an error and the correction record.`);
+  L.push(`- [Update History](${base}/updates/): Structured record of site changes by date and scope.`);
+  L.push(`- [Editorial Standards](${base}/editorial-standards/): The quality gate for every published page.`);
   L.push('');
   L.push('## Models');
   for (const m of models) {

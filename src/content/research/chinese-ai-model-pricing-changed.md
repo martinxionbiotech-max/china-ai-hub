@@ -1,5 +1,6 @@
 ---
 title: "How Chinese AI Model Pricing Has Changed: Flash Tiers, Cache Discounts and the $0.15 Input Standard"
+author: "SinoAI Hub Research Team"
 description: "A price-structure analysis of Chinese frontier API pricing in September 2026: the emergence of a $0.15 flash tier across three providers, cache-hit discounts of 80-98%, peak/off-peak differentials, regional splits, and what the documented price events of 2026 reveal about where this market is heading."
 published_date: "2026-09-22"
 updated_date: "2026-09-22"

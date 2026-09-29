@@ -1,5 +1,6 @@
 ---
 title: "GLM and Agent-Oriented AI: How Zhipu Built an Agent Stack Around Open Weights"
+author: "SinoAI Hub Research Team"
 description: "An analysis of Zhipu AI's agent-oriented strategy: GLM-5.3 and GLM-5.3-Flash open weights with computer-use capability, the Open-AutoGLM phone agent, and the GLM Coding Plan subscription — and what the combination reveals about where Chinese AI vendors think value will concentrate."
 published_date: "2026-09-22"
 updated_date: "2026-09-22"

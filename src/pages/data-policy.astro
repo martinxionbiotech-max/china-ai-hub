@@ -1,0 +1,102 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const ds = {
+  '@context': 'https://schema.org',
+  '@type': 'Dataset',
+  '@id': 'https://sinoaihub.com/data-policy/',
+  name: 'China AI Hub Data Policy',
+  url: 'https://sinoaihub.com/data-policy/',
+  description:
+    'How China AI Hub licenses and updates its data: reuse terms, main-site vs data-hub division of labor, update cadence, and source principles.',
+};
+---
+
+<BaseLayout
+  title="Data Policy"
+  description="Data licensing, reuse terms, the main site vs Data Hub division of labor, update frequency and source principles for China AI Hub."
+  type="article"
+  extraJsonLd={[ds]}
+  canonicalPath="/data-policy/"
+>
+  <article class="prose prose-slate max-w-none">
+    <h1>Data Policy</h1>
+    <p class="text-sm text-gray-500">Last updated: 2026-09-29</p>
+
+    <h2>What data this site publishes</h2>
+    <p>
+      China AI Hub publishes structured reference data on China's AI ecosystem: model
+      specifications, pricing, benchmark results, company and agent relationships, and API
+      capabilities. Every record is sourced, date-stamped, and carries a verification status. The
+      same facts are served two ways, which are covered below.
+    </p>
+
+    <h2>Main site vs Data Hub</h2>
+    <p>
+      The project splits content across two properties on purpose, to keep analysis and data
+      separable:
+    </p>
+    <table>
+      <caption>Division of labor</caption>
+      <thead><tr><th>Property</th><th>Role</th><th>Content</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><strong>Main site</strong><br /><code>sinoaihub.com</code></td>
+          <td>Editorial authority</td>
+          <td>Why / what it means / analysis — entity pages, comparisons, guides, research</td>
+        </tr>
+        <tr>
+          <td><strong>Data Hub</strong><br /><code>data.sinoaihub.com</code></td>
+          <td>Reference layer</td>
+          <td>What is known / exact data / evidence — machine-readable entity records</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>
+      Every Data Hub record links back to its canonical main-site page, and the two layers are kept
+      in agreement by automated cross-checks. The Data Hub is not a second blog: it carries facts
+      and evidence, while interpretation lives on the main site.
+    </p>
+
+    <h2>Licensing and reuse</h2>
+    <ul>
+      <li>Original text, analysis and the data structure are the project's intellectual property.</li>
+      <li>Short excerpts may be quoted with attribution and a link.</li>
+      <li>Bulk scraping or wholesale republishing of the database is not permitted without permission.</li>
+      <li>Model names, benchmark names and trademarks belong to their owners and are used for identification only.</li>
+      <li>The Data Hub publishes machine-readable reference records for research use; see its pages for applicable terms.</li>
+    </ul>
+    <p>
+      These terms mirror the <a href="/terms/">Terms of Use</a>, which govern the whole site.
+    </p>
+
+    <h2>Update frequency</h2>
+    <p>
+      Data changes on three cadences, and staleness is shown to the reader rather than hidden:
+    </p>
+    <ul>
+      <li><strong>Weekly (light)</strong> — re-verify pricing and status for the top models and providers.</li>
+      <li><strong>Monthly (full)</strong> — crawl all monitored targets and apply validated change proposals.</li>
+      <li><strong>Event-driven</strong> — major releases, price cuts or license changes trigger a proposal within 24 hours; the <a href="/news/">news</a> section logs these triggers.</li>
+    </ul>
+    <p>
+      A <code>last_verified</code> date is shown on every record. Under 30 days counts as current;
+      30–90 days is flagged "may be outdated"; over 90 days is marked prominently for verification
+      before reliance. See the <a href="/methodology/">methodology</a> for how verification works.
+    </p>
+
+    <h2>Source principles</h2>
+    <p>
+      Data is gathered from official sources first, then high-quality technical sources, then major
+      media, then community — in that order, and community sources never carry a critical fact
+      alone. The full hierarchy and the eight-field evidence record are documented in the
+      <a href="/methodology/">methodology</a> page.
+    </p>
+
+    <h2>Corrections</h2>
+    <p>
+      Data errors are corrected through a public process with a written record — see the
+      <a href="/corrections/">corrections policy</a>.
+    </p>
+  </article>
+</BaseLayout>

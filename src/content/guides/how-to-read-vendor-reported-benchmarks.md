@@ -2,6 +2,7 @@
 image: "/images/ai/guides-how-to-read-vendor-reported-benchmarks.webp"
 image_credit: "AI-generated illustration (Seedream)"
 title: "How to Read Vendor-Reported Benchmarks"
+author: "SinoAI Hub Research Team"
 description: "A guide to interpreting benchmark scores for Chinese AI models: what vendor-reported means, why versions cannot be mixed, and how China AI Hub labels scores by source type."
 published_date: "2026-09-22"
 updated_date: "2026-09-22"

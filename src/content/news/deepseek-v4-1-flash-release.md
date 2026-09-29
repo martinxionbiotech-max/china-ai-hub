@@ -1,5 +1,6 @@
 ---
 title: "DeepSeek releases V4.1-Flash with multimodal vision and lower API prices"
+author: "SinoAI Hub Research Team"
 description: "DeepSeek ships V4.1-Flash, the smallest model of its new asymmetric-architecture family, with MIT weights and reduced API pricing as V4-Flash retires."
 published_date: "2026-09-10"
 type: model_release

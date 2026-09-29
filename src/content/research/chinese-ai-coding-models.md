@@ -1,5 +1,6 @@
 ---
 title: "Chinese AI Coding Models: The Agent-Led Race"
+author: "SinoAI Hub Research Team"
 description: "An analysis of China's coding-agent market and vendor-reported coding benchmarks: which labs compete, what the scores do and don't show, and how to read them."
 published_date: "2026-09-22"
 updated_date: "2026-09-22"

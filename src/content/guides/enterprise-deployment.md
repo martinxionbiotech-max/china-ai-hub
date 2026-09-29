@@ -2,6 +2,7 @@
 image: "/images/ai/apis-ark.webp"
 image_credit: "AI-generated illustration (Seedream)"
 title: "Enterprise Deployment of Chinese AI Models: Regions, SLA and Compliance"
+author: "SinoAI Hub Research Team"
 description: "A decision guide for enterprises evaluating Chinese AI models — what the database can and cannot verify about regions, SLA, data residency and compliance, and which platforms document the options."
 published_date: "2026-09-29"
 updated_date: "2026-09-29"

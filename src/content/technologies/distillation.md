@@ -3,6 +3,7 @@ image: "/images/ai/technologies-distillation.webp"
 image_credit: "AI-generated illustration (Seedream)"
 slug: distillation
 title: Distillation
+author: "SinoAI Hub Research Team"
 definition: "Knowledge distillation is a training technique in which a smaller 'student' model learns to imitate the outputs of a larger 'teacher' model, transferring capability at a fraction of the serving cost."
 related_models:
   - deepseek-v4-pro

@@ -3,6 +3,7 @@ image: "/images/ai/technologies-multimodal-ai.webp"
 image_credit: "AI-generated illustration (Seedream)"
 slug: multimodal-ai
 title: Multimodal AI
+author: "SinoAI Hub Research Team"
 definition: "Multimodal AI refers to models that process more than one input type — text, images, audio, video — in a unified model, enabling tasks like image understanding, OCR, and video analysis alongside language."
 related_models:
   - kimi-k3

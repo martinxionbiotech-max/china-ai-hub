@@ -1,5 +1,6 @@
 ---
 title: "Alibaba ships Qwen3.8-Max-0902 snapshot focused on coding and multi-tool orchestration"
+author: "SinoAI Hub Research Team"
 description: "An upgraded snapshot of the Qwen3.8-Max API flagship, dated 2026-09-02, improving coding, collaborative agents and vision at an unchanged $2/$6 price."
 published_date: "2026-09-02"
 type: model_release

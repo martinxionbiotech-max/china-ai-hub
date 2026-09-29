@@ -1,5 +1,6 @@
 ---
 title: "Doubao Seed 2.1 Pro vs Doubao Seed 2.1 Turbo: ByteDance's Pro Against Its Turbo"
+author: "SinoAI Hub Research Team"
 description: "Evidence-based comparison of Doubao Seed 2.1 Pro and Doubao Seed 2.1 Turbo: API pricing, context window, capabilities, deployment and benchmark records from the China AI Hub database."
 entities:
   - doubao-seed-2-1-pro

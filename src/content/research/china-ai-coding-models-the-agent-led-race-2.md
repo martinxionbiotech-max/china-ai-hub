@@ -1,5 +1,6 @@
 ---
 title: "China AI Coding Models 2026 Update: Why the 'Strongest Coding Model' Claim Is Unprovable"
+author: "SinoAI Hub Research Team"
 description: "A follow-up to 'Chinese AI Coding Models: The Agent-Led Race' — how benchmark version splits, variant cherry-picking and private test sets have made the 'strongest coding model' claim unverifiable, and what to trust instead."
 published_date: "2026-09-29"
 updated_date: "2026-09-29"

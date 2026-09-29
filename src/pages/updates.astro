@@ -1,0 +1,140 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const article = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  '@id': 'https://sinoaihub.com/updates/',
+  headline: 'China AI Hub Update History',
+  url: 'https://sinoaihub.com/updates/',
+  description:
+    'Structured record of China AI Hub site changes by date, scope and type, generated from the project git history and changelog.',
+  datePublished: '2026-09-29',
+  dateModified: '2026-09-29',
+  isPartOf: { '@type': 'WebSite', name: 'China AI Hub', url: 'https://sinoaihub.com' },
+};
+---
+
+<BaseLayout
+  title="Update History"
+  description="Structured record of China AI Hub site changes by date, scope and type — generated from git history and the project changelog."
+  type="article"
+  extraJsonLd={[article]}
+  canonicalPath="/updates/"
+>
+  <article class="prose prose-slate max-w-none">
+    <h1>Update History</h1>
+    <p class="text-sm text-gray-500">Generated 2026-09-29 from project git history and changelog</p>
+
+    <p>
+      This page is a structured record of what has changed on China AI Hub, grouped by date and
+      scope. It is generated from the project's git history and the detailed
+      <code>docs/phase2-change-log.md</code>, so the record is auditable rather than hand-kept.
+      Routine data updates (prices, new versions) are reflected here only at the phase level;
+      per-record changes live in the Data Hub's history dimensions.
+    </p>
+
+    <h2>2026-09-29 — Authority layer (Phase 2B P3)</h2>
+    <ul>
+      <li><strong>Type:</strong> editorial / governance</li>
+      <li><strong>Scope:</strong> main site</li>
+      <li><strong>Change:</strong> added author entity page, methodology, data policy, corrections record, update history, and editorial standards; backfilled the <code>author</code> field across editorial content.</li>
+    </ul>
+
+    <h2>2026-09-29 — Decision guides (Phase 2B P2b)</h2>
+    <ul>
+      <li><strong>Type:</strong> content</li>
+      <li><strong>Scope:</strong> main site</li>
+      <li><strong>Change:</strong> added 8 data-driven decision guides (coding, agent, API, self-hosting, enterprise, long-context, multimodal, pricing).</li>
+    </ul>
+
+    <h2>2026-09-29 — Comparison scale-up (Phase 2B P2a)</h2>
+    <ul>
+      <li><strong>Type:</strong> content</li>
+      <li><strong>Scope:</strong> main site</li>
+      <li><strong>Change:</strong> added 12 entity-vs-entity comparison pages with 8-dimension coverage and no-winner phrasing.</li>
+    </ul>
+
+    <h2>2026-09-29 — Entity consistency (Phase 2B P0)</h2>
+    <ul>
+      <li><strong>Type:</strong> data integrity</li>
+      <li><strong>Scope:</strong> main site + Data Hub</li>
+      <li><strong>Change:</strong> four-way entity-count consistency check script and data-integrity documentation.</li>
+    </ul>
+
+    <h2>2026-09-29 — Decision-context + format (B5)</h2>
+    <ul>
+      <li><strong>Type:</strong> content</li>
+      <li><strong>Scope:</strong> main site</li>
+      <li><strong>Change:</strong> added decision-context sections to 6 comparison pages and unified 19 over-inference sentences with an analysis prefix.</li>
+    </ul>
+
+    <h2>2026-09-29 — Original research (B4)</h2>
+    <ul>
+      <li><strong>Type:</strong> research</li>
+      <li><strong>Scope:</strong> main site</li>
+      <li><strong>Change:</strong> added 4 original research articles (API pricing change, agent ecosystem, open-weight economics, coding benchmark divergence).</li>
+    </ul>
+
+    <h2>2026-09-29 — Data Hub completion (B3)</h2>
+    <ul>
+      <li><strong>Type:</strong> data infrastructure</li>
+      <li><strong>Scope:</strong> Data Hub + main site</li>
+      <li><strong>Change:</strong> completed the Data Hub eight-element entity pages (59 records) and added the homepage "China AI Market at a Glance" count block.</li>
+    </ul>
+
+    <h2>2026-09-29 — Answer blocks + fit tables (B2)</h2>
+    <ul>
+      <li><strong>Type:</strong> content</li>
+      <li><strong>Scope:</strong> main site</li>
+      <li><strong>Change:</strong> standardized answer blocks ("What is uncertain" + "Sources") and added "Where this model fits" workload tables to 8 model pages.</li>
+    </ul>
+
+    <h2>2026-09-29 — Company hub + agent fields (B2a)</h2>
+    <ul>
+      <li><strong>Type:</strong> content / entity graph</li>
+      <li><strong>Scope:</strong> main site + Data Hub</li>
+      <li><strong>Change:</strong> 6 company pages became Entity Hubs and 10 agent pages gained a 19-field reference.</li>
+    </ul>
+
+    <h2>2026-09-29 — Relationship audit (B1)</h2>
+    <ul>
+      <li><strong>Type:</strong> data integrity</li>
+      <li><strong>Scope:</strong> main site + Data Hub</li>
+      <li><strong>Change:</strong> full-library entity-relationship consistency audit and repair (Company ↔ Model ↔ Agent ↔ API).</li>
+    </ul>
+
+    <h2>2026-09-28 — Content deepening (P0/P1)</h2>
+    <ul>
+      <li><strong>Type:</strong> content</li>
+      <li><strong>Scope:</strong> main site</li>
+      <li><strong>Change:</strong> deepened 8 core model pages, governed 5 low-quality pages, upgraded 6 comparison pages, and enriched 18 technology pages plus 22 entity pages with four-layer labels and answer-first blocks.</li>
+    </ul>
+
+    <h2>2026-09-27 — Compliance + brand</h2>
+    <ul>
+      <li><strong>Type:</strong> governance</li>
+      <li><strong>Scope:</strong> main site</li>
+      <li><strong>Change:</strong> added 5 compliance pages (privacy, terms, cookies, disclosure, corrections) and migrated the domain to sinoaihub.com.</li>
+    </ul>
+
+    <h2>2026-09-22 — Data + research foundation</h2>
+    <ul>
+      <li><strong>Type:</strong> data / research</li>
+      <li><strong>Scope:</strong> main site</li>
+      <li><strong>Change:</strong> added technology pages, comparisons, guides, original research and news collections; added entity JSON-LD, llms.txt, and FAQ markup.</li>
+    </ul>
+
+    <h2>2026-09-20 — Launch</h2>
+    <ul>
+      <li><strong>Type:</strong> infrastructure</li>
+      <li><strong>Scope:</strong> main site</li>
+      <li><strong>Change:</strong> Astro scaffold and the first batches of models, APIs, pricing, benchmarks, agents and companies from official sources.</li>
+    </ul>
+
+    <p class="text-sm text-gray-500">
+      The granular commit list is available in the project repository; the narrative detail behind
+      each phase is in <code>docs/phase2-change-log.md</code>.
+    </p>
+  </article>
+</BaseLayout>

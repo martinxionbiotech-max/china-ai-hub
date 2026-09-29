@@ -284,6 +284,7 @@ const technologies = defineCollection({
     slug: z.string(),
     title: z.string(),
     definition: z.string(),
+    author: z.string().optional(),
     related_models: z.array(z.string()).default([]),
     related_companies: z.array(z.string()).default([]),
     related_technologies: z.array(z.string()).default([]),
@@ -301,6 +302,7 @@ const comparisons = defineCollection({
   schema: z.object({
     title: z.string(),
     description: z.string().optional(),
+    author: z.string().optional(),
     entities: z.array(z.string()),
     dimensions: z.array(z.string()).default([]),
     image: z.string().optional(),
@@ -317,6 +319,7 @@ const guides = defineCollection({
   schema: z.object({
     title: z.string(),
     description: z.string(),
+    author: z.string().optional(),
     image: z.string().optional(),
     image_credit: z.string().optional(),
     image_source: z.string().optional(),
@@ -332,6 +335,7 @@ const research = defineCollection({
   schema: z.object({
     title: z.string(),
     description: z.string(),
+    author: z.string().optional(),
     published_date: z.string().optional(),
     updated_date: z.string().optional(),
     research_question: z.string().optional(),
@@ -349,6 +353,7 @@ const news = defineCollection({
   schema: z.object({
     title: z.string(),
     description: z.string(),
+    author: z.string().optional(),
     published_date: z.string(),
     type: z.enum(['model_release', 'price_change', 'company', 'agent', 'other']),
     trigger_updates: z.array(z.string()).default([]),

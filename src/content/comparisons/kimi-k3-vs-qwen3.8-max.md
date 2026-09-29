@@ -1,5 +1,6 @@
 ---
 title: "Kimi K3 vs Qwen3.8-Max: Long Output Against Broad Multi-Region Flagship"
+author: "SinoAI Hub Research Team"
 description: "Evidence-based comparison of Kimi K3 and Qwen3.8-Max: API pricing, context window, output length, capabilities, licenses, deployment and benchmark records from the China AI Hub database."
 entities:
   - kimi-k3

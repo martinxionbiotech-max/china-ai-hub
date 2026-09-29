@@ -1,5 +1,6 @@
 ---
 title: "DeepSeek-V4-Pro vs DeepSeek-V4.1-Flash: Deprecated Flagship to the Current Flash"
+author: "SinoAI Hub Research Team"
 description: "Evidence-based comparison of DeepSeek-V4-Pro and DeepSeek-V4.1-Flash: API pricing, context window, capabilities, licenses, deployment and benchmark records from the China AI Hub database."
 entities:
   - deepseek-v4-pro

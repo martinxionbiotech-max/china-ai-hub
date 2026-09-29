@@ -1,5 +1,6 @@
 ---
 title: "GLM-5.3 vs GLM-5.3-Flash: Zhipu's Flagship Against Its Multimodal Flash"
+author: "SinoAI Hub Research Team"
 description: "Evidence-based comparison of GLM-5.3 and GLM-5.3-Flash: API pricing, context window, capabilities, agent surfaces, licenses, deployment and benchmark records from the China AI Hub database."
 entities:
   - glm-5.3

@@ -2,6 +2,7 @@
 image: "/images/ai/comparisons-deepseek-v4-1-flash-vs-glm-5.3-flash.webp"
 image_credit: "AI-generated illustration (Seedream)"
 title: "DeepSeek-V4.1-Flash vs GLM-5.3-Flash: The Open-Weight Budget Tier"
+author: "SinoAI Hub Research Team"
 description: "Evidence-based comparison of DeepSeek-V4.1-Flash and GLM-5.3-Flash: API pricing, context window, capabilities, licenses and benchmark records from the China AI Hub database."
 entities:
   - deepseek-v4-1-flash

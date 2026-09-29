@@ -2,6 +2,7 @@
 image: "/images/ai/comparisons-deepseek-v4-pro-vs-qwen3.8-max.webp"
 image_credit: "AI-generated illustration (Seedream)"
 title: "DeepSeek-V4-Pro vs Qwen3.8-Max: Pricing, Reasoning, Coding and Deployment"
+author: "SinoAI Hub Research Team"
 description: "Evidence-based comparison of DeepSeek-V4-Pro and Qwen3.8-Max: API pricing, context window, capabilities, open weights, licenses and benchmark records from the China AI Hub database."
 entities:
   - deepseek-v4-pro
