@@ -6,9 +6,25 @@ import { datasetJsonLd } from '../lib/seo';
 const models = await getCollection('models');
 const companies = await getCollection('companies');
 const agents = await getCollection('agents');
+const apis = await getCollection('apis');
+const pricing = await getCollection('pricing');
+const benchmarks = await getCollection('benchmarks');
 const comparisons = await getCollection('comparisons');
 const research = await getCollection('research');
 const activeModels = models.filter((m) => m.data.status === 'active');
+
+// China AI Market at a Glance — all counts derived from the collections (no hardcoded numbers).
+const glance = [
+  { label: 'Models tracked', value: models.length, href: '/models/' },
+  { label: 'Companies tracked', value: companies.length, href: '/companies/' },
+  { label: 'AI agents tracked', value: agents.length, href: '/agents/' },
+  { label: 'API platforms', value: apis.length, href: '/api/' },
+  { label: 'Pricing providers', value: pricing.length, href: '/pricing/' },
+  { label: 'Benchmarks tracked', value: benchmarks.length, href: '/benchmarks/' },
+  { label: 'Open-weight models', value: models.filter((m) => m.data.open_weight === true).length, href: '/models/' },
+  { label: '1M-context models', value: models.filter((m) => (m.data.context_window ?? 0) >= 1000000).length, href: '/models/' },
+  { label: 'Multimodal models', value: models.filter((m) => m.data.capabilities.vision === true).length, href: '/models/' },
+];
 
 // P1: 首页 Dataset JSON-LD —— 全站数据库概览（与 models/index 的 Dataset 一致口径）
 const hubDataset = datasetJsonLd({
@@ -35,6 +51,19 @@ const hubDataset = datasetJsonLd({
     <div class="mt-8 flex gap-3">
       <a href="/models/" class="bg-[#0f4c81] text-white px-5 py-2.5 rounded-md text-sm font-medium hover:no-underline">Explore Models</a>
       <a href="/comparisons/" class="border border-gray-300 px-5 py-2.5 rounded-md text-sm font-medium text-gray-700 hover:no-underline">Compare Models</a>
+    </div>
+  </section>
+
+  <!-- China AI Market at a Glance -->
+  <section class="py-6 border-t border-gray-200">
+    <h2 class="text-xl font-semibold text-gray-900 mb-4">China AI Market at a Glance</h2>
+    <div class="grid gap-4 sm:grid-cols-3 lg:grid-cols-3">
+      {glance.map((g) => (
+        <a href={g.href} class="block border border-gray-200 rounded-lg bg-white p-4 hover:border-[#0f4c81] transition-colors">
+          <div class="text-2xl font-bold text-[#0f4c81]">{g.value}</div>
+          <div class="text-sm text-gray-600 mt-1">{g.label}</div>
+        </a>
+      ))}
     </div>
   </section>
 
