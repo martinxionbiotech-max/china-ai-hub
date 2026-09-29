@@ -86,7 +86,7 @@ platform.minimaxi.com (China, CNY) and platform.minimax.io (international, USD).
 
 ## Why it matters
 
-MiniMax's structural role is the cost-efficient challenger that competes on both capability breadth and price without going full-open. It runs a broad product surface — [MiniMax Code](/agents/minimax-code/) and [MiniMax Agent](/agents/minimax-agent/) on the agent side, plus video/audio/image generation — while keeping its flagship M3 at the lowest flagship price point in the database. China AI Hub analysis indicates MiniMax's distinctive bet is architectural efficiency (MSA sparse attention) translating directly into price, which positions it as the value alternative to Alibaba Cloud's integration breadth and ByteDance's consumer premium.
+China AI Hub analysis: MiniMax's structural role is the cost-efficient challenger that competes on both capability breadth and price without going full-open. It runs a broad product surface — [MiniMax Code](/agents/minimax-code/) and [MiniMax Agent](/agents/minimax-agent/) on the agent side, plus video/audio/image generation — while keeping its flagship M3 at the lowest flagship price point in the database. China AI Hub analysis indicates MiniMax's distinctive bet is architectural efficiency (MSA sparse attention) translating directly into price, which positions it as the value alternative to Alibaba Cloud's integration breadth and ByteDance's consumer premium.
 
 ## Entity hub
 

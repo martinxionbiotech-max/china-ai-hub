@@ -112,7 +112,7 @@ K3 is the database's unique 1M-in / 1M-out pairing. Most 1M-input models cap out
 
 ## Pricing implications
 
-$3.00 input / $15.00 output per 1M tokens with automatic prefix caching ($0.30 cached input). The 5x input-to-output ratio is the highest in the flagship tier, reflecting the premium on generation. The $15 output price, combined with a 1M output ceiling, means K3's worst-case single-request cost is the highest in the database — budget-sensitive deployments should cap `max_completion_tokens` (default 131,072) rather than rely on the ceiling. API access requires a $1 minimum top-up. See the [MiniMax M3 comparison](/comparisons/kimi-k3-vs-minimax-m3/).
+$3.00 input / $15.00 output per 1M tokens with automatic prefix caching ($0.30 cached input). China AI Hub analysis: the 5x input-to-output ratio is the highest in the flagship tier, reflecting the premium on generation. The $15 output price, combined with a 1M output ceiling, means K3's worst-case single-request cost is the highest in the database — budget-sensitive deployments should cap `max_completion_tokens` (default 131,072) rather than rely on the ceiling. API access requires a $1 minimum top-up. See the [MiniMax M3 comparison](/comparisons/kimi-k3-vs-minimax-m3/).
 
 ## API, coding, and agent implications
 

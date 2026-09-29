@@ -80,7 +80,7 @@ The six platforms and their headline properties:
 
 **Region coverage is the sharpest divide.** Model Studio lists six regions (Beijing, Singapore, Hong Kong, Tokyo, US Virginia, Frankfurt). Ark serves China (cn-beijing). MiniMax and Z.ai serve both international and China endpoints. DeepSeek and Moonshot do not state serving regions in official documentation — a material gap for data-residency or latency planning.
 
-**Model routing separates Ark from the rest.** Ark is the only platform in the set that hosts third-party models (DeepSeek and GLM) alongside its own Doubao family. The other five are single-vendor. This makes Ark the closest thing to a Chinese model router in the official-platform category.
+**Model routing separates Ark from the rest.** Ark is the only platform in the set that hosts third-party models (DeepSeek and GLM) alongside its own Doubao family. The other five are single-vendor. China AI Hub analysis: this makes Ark the closest thing to a Chinese model router in the official-platform category.
 
 **Rate limits differ by an order of magnitude.** Ark's flagship Doubao models are documented at 500 RPM / 1,000,000 TPM. Model Studio's global regions are documented at 30,000 RPM / 5,000,000 TPM for qwen3.8-max and qwen3.8-flash (Beijing and Singapore limits are dynamic, tiered by spend). DeepSeek publishes concurrency limits rather than RPM (2,500 for V4.1-Flash, 500 for V4-Pro).
 

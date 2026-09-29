@@ -79,7 +79,7 @@ moonshot-v1*, kimi-k2*) have been discontinued.
 
 ## Why it matters
 
-Moonshot AI's structural role is the long-context specialist: Kimi K3 is the only flagship in the database listing a full 1M-token maximum output, which makes it the reference choice for long-form generation and whole-repo rewriting rather than merely long-input analysis. Its open-weight stance (K3, K2.x, Kimi-VL, Kimi-Audio) keeps it in the open ecosystem alongside DeepSeek and Zhipu AI, while its custom license conditions distinguish it from DeepSeek's clean MIT. China AI Hub analysis indicates Moonshot competes on the output-length axis — a differentiated, documented strength — rather than on the price-floor axis where DeepSeek and MiniMax-M3 set the terms.
+China AI Hub analysis: Moonshot AI's structural role is the long-context specialist — Kimi K3 is the only flagship in the database listing a full 1M-token maximum output, which makes it the reference choice for long-form generation and whole-repo rewriting rather than merely long-input analysis. Its open-weight stance (K3, K2.x, Kimi-VL, Kimi-Audio) keeps it in the open ecosystem alongside DeepSeek and Zhipu AI, while its custom license conditions distinguish it from DeepSeek's clean MIT. China AI Hub analysis indicates Moonshot competes on the output-length axis — a differentiated, documented strength — rather than on the price-floor axis where DeepSeek and MiniMax-M3 set the terms.
 
 ## Entity hub
 

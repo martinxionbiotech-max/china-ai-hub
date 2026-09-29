@@ -75,7 +75,7 @@ Category by category:
 
 ## What Has Changed
 
-The database timeline records AutoGLM's phone-use debut on 2024-10-25 as the earliest event in this collection. By September 2026 the structural shift is visible: agents stopped being demos and became products with pricing pages. Zhipu's GLM Coding Plan is the clearest example — one subscription that powers not only Zhipu's own clients but 20+ third-party coding tools including Claude Code, Codex and Cursor, positioning Zhipu as infrastructure rather than just a product vendor. Doubao's Work mode marks the same shift on the consumer side: an assistant that plans and executes on a virtual desktop rather than answering prompts.
+The database timeline records AutoGLM's phone-use debut on 2024-10-25 as the earliest event in this collection. China AI Hub analysis: by September 2026 the structural shift is visible — agents stopped being demos and became products with pricing pages. Zhipu's GLM Coding Plan is the clearest example — one subscription that powers not only Zhipu's own clients but 20+ third-party coding tools including Claude Code, Codex and Cursor, positioning Zhipu as infrastructure rather than just a product vendor. Doubao's Work mode marks the same shift on the consumer side: an assistant that plans and executes on a virtual desktop rather than answering prompts.
 
 ## Why It Matters
 

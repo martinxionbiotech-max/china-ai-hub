@@ -89,7 +89,7 @@ Open-AutoGLM phone-agent framework. A founding date is not stated on the officia
 
 ## Why it matters
 
-Zhipu AI's structural role is the open-weight-plus-agents combination: it is the only major lab pairing Apache-2.0 open weights with a first-party phone-use agent (AutoGLM) and a coding-plan product that routes third-party tools (Claude Code, Codex, Cursor, OpenClaw) onto GLM models. That positions it as the strongest open alternative for builders who want both downloadable weights and a managed agent layer. China AI Hub analysis indicates Zhipu's distinctive bet is breadth of *surface* — models, phone agents, coding plans, image/video — unified by the GLM family, with openness (Apache-2.0) as the shared thread.
+China AI Hub analysis: Zhipu AI's structural role is the open-weight-plus-agents combination — it is the only major lab pairing Apache-2.0 open weights with a first-party phone-use agent (AutoGLM) and a coding-plan product that routes third-party tools (Claude Code, Codex, Cursor, OpenClaw) onto GLM models, which positions it as the strongest open alternative for builders who want both downloadable weights and a managed agent layer. China AI Hub analysis indicates Zhipu's distinctive bet is breadth of *surface* — models, phone agents, coding plans, image/video — unified by the GLM family, with openness (Apache-2.0) as the shared thread.
 
 ## Entity hub
 

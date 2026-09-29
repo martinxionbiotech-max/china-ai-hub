@@ -1,3 +1,56 @@
+# China AI Hub — Phase 2 Change Log（B5 P4 决策情境层 + P5 过度推断格式统一）
+
+**日期**：2026-09-29 · **范围**：主站 `china-ai-hub`（6 对比页 + 6 公司页 + 7 模型页 + 4 research 页）
+**依据**：`phase2/39-chinaaihub-upgrade-plan.md` P4（§9 决策情境对比层）+ P5（§24 过度推断格式统一）+ `phase2/38-chinaaihub-audit-report.md` §9/§24
+**验证方式**：零编造（决策情境只写页内既有事实，缺据维度标 Not publicly documented / not publicly documented; confirm with vendor）· 分析句统一加前缀不改事实结论 · `npm run build` 125 页通过（无增删页）· 终检 grep 过度推断短语无标注残留 = 0
+
+## A · P4 决策情境层（6 对比页，§9）
+
+对 6 个对比页各加 `## Decision context` 分节，按四类情境分块（每块 2-4 句 + 条件化表述，不宣判胜者）：
+
+| 对比页 | For API developers | For self-hosting | For coding agents | For enterprise |
+|---|---|---|---|---|
+| deepseek-v4-1-flash-vs-glm-5.3-flash | ✅ | ✅ | ✅ | ✅ |
+| deepseek-v4-pro-vs-kimi-k3 | ✅ | ✅ | ✅ | ✅ |
+| deepseek-v4-pro-vs-qwen3.8-max | ✅ | ✅ | ✅ | ✅ |
+| doubao-seed-2-1-pro-vs-minimax-m3 | ✅ | ✅ | ✅ | ✅ |
+| kimi-k3-vs-minimax-m3 | ✅ | ✅ | ✅ | ✅ |
+| qwen3.8-max-vs-glm-5.3 | ✅ | ✅ | ✅ | ✅ |
+
+四类情境覆盖维度（只写页内既有事实，缺据如实标）：
+- **For API developers**：price/tool calling/structured output/API 兼容性——按页内既有字段；latency 全 6 页均「Not publicly documented on this page」（页内无 latency 数据）。
+- **For self-hosting**：weights/license——按页内既有；hardware requirements/quantization/inference ecosystem 全 6 页均「Not publicly documented」（页内无此三维数据）。
+- **For coding agents**：SWE/terminal 分项均「not broken out on this page」（对比页只有 aggregate benchmark 计数），只写页内 tool calling/agent capability/context 既有事实。
+- **For enterprise**：region/SLA/data residency/compliance 全 6 页均「not publicly documented — confirm with the vendor」。
+
+每块开头统一 `China AI Hub analysis indicates the following decision-context implications, drawn from the listed facts above.` 标注为分析；全节零编造、零胜者宣判（用 better suited to / more relevant when / has an advantage in）。
+
+## B · P5 过度推断格式统一（§24，全站 19 句补前缀）
+
+扫描全站分析性语句（grep 关键词：natural default / distinctive bet / structural role is / is the purest / signaling a / reflecting the premium / clearest market position / deliberate closed-strategy / a genuine moat / is itself a structural fact / the closest thing / positions … as / makes the pair a clean / This makes both candidates 等），统一补 `China AI Hub analysis: ` 前缀，共 **19 句**：
+
+| 文件 | 补前缀句数 | 代表性分析句 |
+|---|---|---|
+| companies/（6 页） | 6 | "China AI Hub analysis: Alibaba Cloud occupies a structurally unique position…"（原 "That makes Qwen the natural default"）· MiniMax/Zhipu/ByteDance/DeepSeek/Moonshot 各 structural role 句 |
+| models/（7 页） | 8 | doubao-seed-2-1-pro「deliberate closed-strategy」「signaling a generation-premium」「purest closed strategy」· kimi-k3「reflecting the premium」· glm-5.2「makes the pair a clean」· glm-5.3「distinguishing factor」· minimax-m3「clearest market position」· deepseek-v4-1-flash「architectural logic is cost」 |
+| comparisons/（1 页） | 1 | deepseek-v4-1-flash「This makes both candidates for local deployment」 |
+| research/（4 页） | 4 | chinese-ai-apis-compared「closest thing to a Chinese model router」· how-deepseek「pattern is clear / genuine moat」· rise-of-chinese-ai-agents「structural shift visible / positions Zhipu as infrastructure」· agent-ecosystem「concentration is itself a structural fact」 |
+
+原则：不改任何事实与结论，只加标注；每结论证据链（Evidence → Reasoning → Interpretation）在原文已成立，本批只补标注前缀。research 页既有「China AI Hub View」「Our interpretation:」正确标注不动。
+
+终检：`grep -rn "natural default|distinctive bet|structural role is|…" src/content/ | grep -v "China AI Hub analysis" | grep -v "Our interpretation"` 返回 0 残留。
+
+## 审计结论
+
+| 项 | 结果 |
+|---|---|
+| 对比页决策情境节 | 6（每页 4 块全覆盖 = 24 块） |
+| 未公开标注（Not publicly documented / confirm with vendor） | 每页 self-hosting 3 维 + enterprise 4 维 + API latency 1 维，全如实标注 |
+| P5 分析句补前缀 | 19 句（company 6 + model 8 + comparison 1 + research 4） |
+| 残留未标注分析句 | 0 |
+| build | 125 页通过（无增删页） |
+| Fabricated data | 0 |
+
 # China AI Hub — Phase 2 Change Log（B4 P3 Research 原创 4 篇）
 
 **日期**：2026-09-29 · **范围**：主站 `china-ai-hub`（src/content/research/ 新增 4 篇原创研究）

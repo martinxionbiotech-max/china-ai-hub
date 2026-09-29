@@ -128,7 +128,7 @@ The strongest comparative evidence is the licensing table. Across the open-weigh
 | MiniMax M2.7 | Custom non-commercial | Any commercial use → prior authorization |
 | Qwen3.8-2.4T-A95B | Qwen3.8-Max License | >100M MAU or >$20M/mo display; >$50M/12mo MaaS |
 
-The pattern is clear: DeepSeek is the only lab whose open models carry a license that a Fortune-500 legal team can clear in one pass. That is a genuine moat in the enterprise segment, and it is a moat built on *not* extracting revenue from licensing.
+China AI Hub analysis: the pattern is clear — DeepSeek is the only lab whose open models carry a license that a Fortune-500 legal team can clear in one pass. That is a genuine moat in the enterprise segment, and it is a moat built on *not* extracting revenue from licensing.
 
 Benchmark evidence must be treated carefully. DeepSeek reports V4.1-Flash at GPQA Diamond 90.9, Terminal-Bench 2.1 90.6 and DeepSWE v1.1 74.2, and V4-Pro at HLE 42.7 (60.0 with tools) and Terminal-Bench 2.1 87.9 — all vendor-reported, with the caveat that DeepSeek's code-agent benchmarks used DeepSeek Harness in minimal mode and DSBench-FullStack/Hard are internal test sets. These numbers are not independently verified, and they should not be compared across vendors without a shared methodology (the database's own benchmark-methodology research covers this problem).
 

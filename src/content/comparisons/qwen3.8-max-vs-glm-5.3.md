@@ -97,6 +97,18 @@ China AI Hub analysis indicates the following per-dimension implications, drawn 
 
 Choose by deployment constraints and workload: self-hosting and budget favor GLM-5.3's openness and price; vision/video and tool-heavy pipelines favor Qwen3.8-Max's listed capabilities. Verify prices on the official pages before committing.
 
+## Decision context
+
+China AI Hub analysis indicates the following decision-context implications, drawn from the listed facts above.
+
+**For API developers.** GLM-5.3 lists ~30% lower input and output prices, and the output gap compounds on reasoning workloads. Qwen3.8-Max lists tool calling, structured output, vision and video, which is more relevant when the pipeline needs structured/tool-driven or media input; GLM-5.3 lists none of these. Context is identical (1M / 131,072). Latency is not publicly documented on this page.
+
+**For self-hosting.** GLM-5.3 is Apache-2.0 open weight and self-hostable; Qwen3.8-Max is proprietary and API-only. Hardware requirements and quantization are Not publicly documented on this page.
+
+**For coding agents.** Both list coding; Qwen3.8-Max additionally lists tool calling and structured output, which is more relevant for structured, tool-driven coding pipelines. Context is identical. SWE-benchmark and terminal scores are not broken out (aggregate counts 5 vs 4).
+
+**For enterprise.** Region, SLA, data-residency and compliance terms are not publicly documented — confirm with the vendor. Deployment is the key split: GLM-5.3 is self-hostable (Apache-2.0) with a data-residency option, while Qwen3.8-Max is API-only.
+
 ## What is uncertain
 
 - Benchmark comparability is limited — different versions, harnesses and partial coverage.

@@ -91,7 +91,7 @@ GLM-5.3 is a 744B-total / 40B-active MoE (~5.4% activation), the same base model
 
 ## What the context window actually means
 
-The 1M-token context with a 131,072 output cap is the standard flagship split: long-input analysis, not long-form generation. The distinguishing factor is that this 1M window is available in *open weights* — GLM-5.3 and GLM-5.3-Flash are the only open-weight 1M-context models in the collection, which matters for enterprises that cannot use APIs. See the [context-window research](/research/chinese-ai-context-windows/).
+The 1M-token context with a 131,072 output cap is the standard flagship split: long-input analysis, not long-form generation. China AI Hub analysis: the distinguishing factor is that this 1M window is available in *open weights* — GLM-5.3 and GLM-5.3-Flash are the only open-weight 1M-context models in the collection, which matters for enterprises that cannot use APIs. See the [context-window research](/research/chinese-ai-context-windows/).
 
 ## Pricing implications
 

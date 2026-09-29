@@ -109,7 +109,7 @@ The 1M-token window comes with a practical qualifier: at least 512K is guarantee
 
 ## Pricing implications
 
-International pay-as-you-go standard tier is $0.30 input / $1.20 output per 1M tokens up to 512K input (double above 512K), cache reads $0.06, and a permanent 50% off list — the priority tier costs 1.5x. At $0.30, M3 is the cheapest flagship input price in the database, which is its clearest market position. The 4x input-to-output ratio is standard. See the [pricing-changed research](/research/chinese-ai-model-pricing-changed/).
+International pay-as-you-go standard tier is $0.30 input / $1.20 output per 1M tokens up to 512K input (double above 512K), cache reads $0.06, and a permanent 50% off list — the priority tier costs 1.5x. China AI Hub analysis: at $0.30, M3 is the cheapest flagship input price in the database, which is its clearest market position. The 4x input-to-output ratio is standard. See the [pricing-changed research](/research/chinese-ai-model-pricing-changed/).
 
 ## API, coding, and agent implications
 

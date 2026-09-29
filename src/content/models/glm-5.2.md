@@ -85,7 +85,7 @@ sources:
 
 ## Architecture and parameters
 
-GLM-5.2 is a 744B-total / 40B-active MoE (~5.4% activation), with open weights in BF16 and FP8. It shares this base with GLM-5.3, which means the entire GLM-5.2→5.3 delta is post-training, not architecture. That makes the pair a clean controlled comparison for how much post-training alone can move a fixed model. See [Mixture-of-Experts](/technology/mixture-of-experts/).
+GLM-5.2 is a 744B-total / 40B-active MoE (~5.4% activation), with open weights in BF16 and FP8. It shares this base with GLM-5.3, which means the entire GLM-5.2→5.3 delta is post-training, not architecture. China AI Hub analysis: that makes the pair a clean controlled comparison for how much post-training alone can move a fixed model. See [Mixture-of-Experts](/technology/mixture-of-experts/).
 
 ## What the context window actually means
 

@@ -97,6 +97,18 @@ China AI Hub analysis indicates the following per-dimension implications, drawn 
 
 Choose by workload: long-form generation and media favor Kimi K3's listed capabilities; price-sensitive text workloads favor the DeepSeek pricing, with the caveat of its deprecated status. Verify current prices and status on the official pages before committing.
 
+## Decision context
+
+China AI Hub analysis indicates the following decision-context implications, drawn from the listed facts above.
+
+**For API developers.** Price is the sharpest split: DeepSeek-V4-Pro lists ~4.5x lower input and ~7.5x lower output price, which compounds on reasoning workloads that multiply output tokens. Both list tool calling; Kimi K3 additionally lists structured output. DeepSeek-V4-Pro is listed deprecated, which is the operational caveat to verify before committing. Latency is not publicly documented for either model on this page.
+
+**For self-hosting.** Both are open weight but under different licenses — MIT (DeepSeek-V4-Pro, no revenue thresholds) versus the Kimi K3 License (a separate agreement above $20M revenue, and UI attribution above 100M MAU / $20M monthly revenue). Hardware requirements and quantization are Not publicly documented on this page.
+
+**For coding agents.** Both list coding and tool calling. Kimi K3 lists agent capability where DeepSeek-V4-Pro does not, and adds vision/video for multimodal coding. Both list a 1M-token context. SWE-benchmark and terminal scores are not broken out on this page (aggregate counts 4 vs 6).
+
+**For enterprise.** Region, SLA, data-residency and compliance terms are not publicly documented — confirm with the vendor. Deployment and license differ materially: MIT has no revenue thresholds, while the Kimi K3 License imposes obligations for large operators, which may matter in enterprise legal review. DeepSeek-V4-Pro's deprecated status is the other operational risk to verify.
+
 ## What is uncertain
 
 - Benchmark scores are vendor-reported and not independently re-measured.

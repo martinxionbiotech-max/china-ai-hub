@@ -86,7 +86,7 @@ Video generation (Seedance) and image generation (Seedream) are separate dedicat
 
 ## Why it matters
 
-ByteDance is the purest expression of the closed-API model in the database: it publishes open training *tooling* (VeOmni, Triton-distributed) but no open model weights, in deliberate contrast to DeepSeek, Alibaba Cloud and Zhipu AI. That position shapes its structural role — ByteDance competes on consumer reach ([Doubao App](/agents/doubao-app/)) and on generation (Seedance/Seedream), not on the open-weight or price-floor axis. China AI Hub analysis indicates Doubao's distinctiveness is the consumer-to-model vertical integration: the same Seed models that power the Doubao assistant are sold through Ark, which is why its pricing reflects a generation-premium strategy rather than a cost-minimization one.
+China AI Hub analysis: ByteDance is the purest expression of the closed-API model in the database — it publishes open training *tooling* (VeOmni, Triton-distributed) but no open model weights, in deliberate contrast to DeepSeek, Alibaba Cloud and Zhipu AI, and that position shapes its structural role — ByteDance competes on consumer reach ([Doubao App](/agents/doubao-app/)) and on generation (Seedance/Seedream), not on the open-weight or price-floor axis. China AI Hub analysis indicates Doubao's distinctiveness is the consumer-to-model vertical integration: the same Seed models that power the Doubao assistant are sold through Ark, which is why its pricing reflects a generation-premium strategy rather than a cost-minimization one.
 
 ## Entity hub
 

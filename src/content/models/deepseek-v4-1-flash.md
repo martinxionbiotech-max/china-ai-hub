@@ -99,7 +99,7 @@ sources:
 
 ## Architecture and parameters
 
-V4.1-Flash is the most aggressively sparse model in the database: 552B total parameters but only 8B active on input and 16B on output — a roughly 1.4% / 2.9% activation split, the only published input/output activation asymmetry in the collection. DeepSeek describes it as a Causal Encoder-Decoder MoE and claims 1/4 the HBM and 1/8 the SSD KV-cache storage of the previous generation. The architectural logic is cost: at $0.15 input, only a model this sparse can sustain margin. See [Mixture-of-Experts](/technology/mixture-of-experts/) and the [MoE architectures research](/research/chinese-ai-moe-architectures/).
+V4.1-Flash is the most aggressively sparse model in the database: 552B total parameters but only 8B active on input and 16B on output — a roughly 1.4% / 2.9% activation split, the only published input/output activation asymmetry in the collection. DeepSeek describes it as a Causal Encoder-Decoder MoE and claims 1/4 the HBM and 1/8 the SSD KV-cache storage of the previous generation. China AI Hub analysis: the architectural logic is cost — at $0.15 input, only a model this sparse can sustain margin. See [Mixture-of-Experts](/technology/mixture-of-experts/) and the [MoE architectures research](/research/chinese-ai-moe-architectures/).
 
 ## What the context window actually means
 

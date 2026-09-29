@@ -101,6 +101,18 @@ China AI Hub analysis indicates the following per-dimension implications, drawn 
 
 The price difference is large enough to dominate most decisions; choose Doubao Seed 2.1 Pro only if computer use is the core requirement. Verify current prices on the official pages before committing.
 
+## Decision context
+
+China AI Hub analysis indicates the following decision-context implications, drawn from the listed facts above.
+
+**For API developers.** Price is the dominant factor: MiniMax M3 lists ~1/20 the input and ~1/25 the output price — the widest gap in the database. Both list tool calling and agent capability; MiniMax M3 lists coding and video, while Doubao Seed 2.1 Pro lists computer use. Latency is not publicly documented on this page.
+
+**For self-hosting.** MiniMax M3 is open weight under the MiniMax Community License (non-commercial free; commercial use requires attribution/authorization above revenue thresholds), so self-hosting is an option for one and not the other — Doubao Seed 2.1 Pro is proprietary and API-only. Hardware requirements and quantization are Not publicly documented on this page.
+
+**For coding agents.** MiniMax M3 lists coding where Doubao Seed 2.1 Pro does not, so MiniMax M3 is more relevant for coding workloads; Doubao Seed 2.1 Pro lists computer use for GUI automation. SWE-benchmark and terminal scores are not broken out (aggregate counts 1 vs 5, and the single Doubao record makes head-to-head comparison unreliable).
+
+**For enterprise.** Region, SLA, data-residency and compliance terms are not publicly documented — confirm with the vendor. Deployment differs: MiniMax M3 is self-hostable (community license), while Doubao is API-only. The MiniMax Community License's commercial boundaries (attribution/authorization thresholds) may matter in enterprise review.
+
 ## What is uncertain
 
 - The single Doubao benchmark record makes head-to-head comparison unreliable.

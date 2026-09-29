@@ -95,6 +95,18 @@ China AI Hub analysis indicates the following per-dimension implications, drawn 
 
 Choose by cost profile and output-length needs, and by which license you can actually operate under. Verify current prices on the official pages before committing.
 
+## Decision context
+
+China AI Hub analysis indicates the following decision-context implications, drawn from the listed facts above.
+
+**For API developers.** MiniMax M3 lists ~1/10 the input and ~1/12 the output price — on long reasoning or generation the per-task cost difference can be an order of magnitude. Capability profiles are closely matched (both list reasoning, coding, vision, video, tool calling and agent capability), so cost and output-length profile decide. Kimi K3 lists a full 1M-token maximum output where MiniMax M3 does not disclose one. Latency is not publicly documented on this page.
+
+**For self-hosting.** Both are open weight with custom licenses — the Kimi K3 License (revenue-triggered obligations) versus the MiniMax Community License (non-commercial boundary). Choose by which license you can actually operate under. Hardware requirements and quantization are Not publicly documented on this page.
+
+**For coding agents.** Both list coding, tool calling and agent capability, so this axis does not differentiate. Both list a 1M-token context. SWE-benchmark and terminal scores are not broken out (aggregate counts 6 vs 5).
+
+**For enterprise.** Region, SLA, data-residency and compliance terms are not publicly documented — confirm with the vendor. Deployment is comparable (both self-hostable open weight), but the licenses differ: MiniMax's has a non-commercial boundary, Kimi's has revenue-triggered obligations — verify which you can legally operate under.
+
 ## What is uncertain
 
 - MiniMax M3 does not publicly disclose a maximum output figure.

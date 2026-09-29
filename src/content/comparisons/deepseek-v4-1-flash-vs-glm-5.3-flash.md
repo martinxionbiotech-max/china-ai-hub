@@ -73,7 +73,7 @@ For structured-output pipelines, DeepSeek-V4.1-Flash lists the relevant capabili
 
 ## Openness and deployment
 
-Both are open weight with permissive licenses: MIT for DeepSeek-V4.1-Flash, Apache-2.0 for GLM-5.3-Flash. Both can be self-hosted. This makes both candidates for local deployment with community quantization.
+Both are open weight with permissive licenses: MIT for DeepSeek-V4.1-Flash, Apache-2.0 for GLM-5.3-Flash. Both can be self-hosted. China AI Hub analysis: this makes both candidates for local deployment with community quantization.
 
 ## Benchmarks and verification
 
@@ -102,6 +102,18 @@ China AI Hub analysis indicates the following per-dimension implications, drawn 
 - License: both permissive open weight (MIT vs Apache-2.0).
 
 The right pick depends on whether the workload is structured API/agent-tool pipelines or GUI/video automation — the prices are close enough that capability fit should decide. Verify current prices on the official pages before committing.
+
+## Decision context
+
+China AI Hub analysis indicates the following decision-context implications, drawn from the listed facts above.
+
+**For API developers.** Both list $0.15 input pricing, so cost is a weak discriminator at this tier; the $0.50 vs $0.60 output gap matters only at high output volume. DeepSeek-V4.1-Flash lists tool calling, function calling and structured output, which is more relevant when the pipeline needs structured or tool-driven responses; GLM-5.3-Flash lists none of these. DeepSeek-V4.1-Flash additionally lists half-price off-peak rates for schedulable workloads. Latency is not publicly documented for either model on this page.
+
+**For self-hosting.** Both are open weight with permissive licenses — MIT (DeepSeek-V4.1-Flash) and Apache-2.0 (GLM-5.3-Flash) — and both can be self-hosted. Hardware requirements, quantization and inference-ecosystem support are Not publicly documented on this page; community quantization is the only deployment detail recorded.
+
+**For coding agents.** DeepSeek-V4.1-Flash lists tool calling, function calling and structured output, which is more relevant when the agent needs tool-driven or structured responses; GLM-5.3-Flash lists agent capability and computer use but not the tool-calling surface. Both list a 1M-token context. SWE-benchmark and terminal scores are not broken out on this page (only aggregate benchmark-record counts: 5 vs 3).
+
+**For enterprise.** Region, SLA, data-residency and compliance terms are not publicly documented for either model — confirm with the vendor. Deployment options differ on license: both are self-hostable open weight, with Apache-2.0 carrying an explicit patent grant that may matter in legal review.
 
 ## What is uncertain
 

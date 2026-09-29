@@ -98,6 +98,18 @@ China AI Hub analysis indicates the following per-dimension implications, drawn 
 
 The right choice depends on the workload — vision requirements, self-hosting needs, price sensitivity and how much output a task generates. Verify prices on the official pages before committing, as both change frequently.
 
+## Decision context
+
+China AI Hub analysis indicates the following decision-context implications, drawn from the listed facts above.
+
+**For API developers.** DeepSeek-V4-Pro lists ~3x lower input and output prices, and output-token-heavy reasoning amplifies that gap. Both list tool calling and structured output; Qwen3.8-Max adds vision/video for media input. DeepSeek-V4-Pro is listed deprecated. Latency is not publicly documented on this page.
+
+**For self-hosting.** This is the clearest split on the page: DeepSeek-V4-Pro is MIT open weight and self-hostable; Qwen3.8-Max is proprietary with API access only. Hardware requirements and quantization are Not publicly documented on this page.
+
+**For coding agents.** Both list coding, tool calling and structured output. DeepSeek-V4-Pro's ~3x lower price is more relevant for high-volume code generation; Qwen3.8-Max adds vision/video for multimodal coding. Both list a 1M-token context. SWE-benchmark and terminal scores are not broken out (aggregate counts 4 vs 5).
+
+**For enterprise.** Region, SLA, data-residency and compliance terms are not publicly documented — confirm with the vendor. Deployment differs: DeepSeek-V4-Pro is self-hostable (MIT) with a data-residency option, while Qwen3.8-Max is API-only. DeepSeek-V4-Pro's deprecated status is an operational caveat to verify.
+
 ## What is uncertain
 
 - Benchmark comparability is limited — different versions, harnesses and partial coverage.

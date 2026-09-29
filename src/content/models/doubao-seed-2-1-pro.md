@@ -76,7 +76,7 @@ sources:
 
 ## Architecture and parameters
 
-ByteDance discloses no architecture or parameter counts for the Seed 2.1 series — the database records this absence rather than estimating. This is a deliberate closed-strategy choice and the mirror image of the open labs: no weights, no architecture card, benchmarks instead. See [Mixture-of-Experts](/technology/mixture-of-experts/) for the architectural context that ByteDance does not provide, and the [MoE architectures research](/research/chinese-ai-moe-architectures/) for the disclosure gradient across labs.
+ByteDance discloses no architecture or parameter counts for the Seed 2.1 series — the database records this absence rather than estimating. China AI Hub analysis: this is a deliberate closed-strategy choice and the mirror image of the open labs — no weights, no architecture card, benchmarks instead. See [Mixture-of-Experts](/technology/mixture-of-experts/) for the architectural context that ByteDance does not provide, and the [MoE architectures research](/research/chinese-ai-moe-architectures/) for the disclosure gradient across labs.
 
 ## What the context window actually means
 
@@ -84,7 +84,7 @@ The 1M-token context (with 262,144 max output) positions Seed 2.1 Pro for the wo
 
 ## Pricing implications
 
-Tiered CNY pricing: ¥6.00 input / ¥30.00 output per 1M tokens, cache hits ¥1.20. The 5x input-to-output ratio is the highest in the database alongside Kimi K3, signaling a generation-premium pricing strategy. As a China-region-only model, international buyers must also account for cross-border serving and currency. See the [Doubao vs MiniMax M3 comparison](/comparisons/doubao-seed-2-1-pro-vs-minimax-m3/).
+Tiered CNY pricing: ¥6.00 input / ¥30.00 output per 1M tokens, cache hits ¥1.20. China AI Hub analysis: the 5x input-to-output ratio is the highest in the database alongside Kimi K3, signaling a generation-premium pricing strategy. As a China-region-only model, international buyers must also account for cross-border serving and currency. See the [Doubao vs MiniMax M3 comparison](/comparisons/doubao-seed-2-1-pro-vs-minimax-m3/).
 
 ## API, coding, and agent implications
 
@@ -92,7 +92,7 @@ Seed 2.1 Pro is built for agent and computer-use workloads: tool calling, struct
 
 ## Open weights and license
 
-Proprietary, closed weight, no self-hosting. Like all Doubao Seed API models, no downloadable weights are offered. ByteDance runs the purest closed strategy of the six labs tracked. See [open weight vs API](/research/open-weight-vs-api-structural-analysis/).
+Proprietary, closed weight, no self-hosting. Like all Doubao Seed API models, no downloadable weights are offered. China AI Hub analysis: ByteDance runs the purest closed strategy of the six labs tracked. See [open weight vs API](/research/open-weight-vs-api-structural-analysis/).
 
 ## Benchmark interpretation
 

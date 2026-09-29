@@ -85,7 +85,7 @@ the official pages fetched.
 
 ## Why it matters
 
-DeepSeek is the ecosystem's price-and-openness reference point: MIT open weights (V4.1-Flash, V4-Pro, V3.2) plus the lowest budget-tier pricing ($0.15/1M input) make it the default anchor against which every other vendor's cost and license are measured. Its open inference infrastructure (FlashMLA, DeepGEMM, DeepEP, 3FS) extends that influence below the model layer, as the [AI infrastructure](/technology/ai-infrastructure/) page details. China AI Hub analysis indicates DeepSeek's structural role is the cost-and-openness floor — its 49B-active MoE design and off-peak discounts shaped the market's pricing expectations, and its MIT releases shaped its licensing expectations, even as the V4-Pro deprecation ambiguity shows how quickly that frontier layer now turns over.
+China AI Hub analysis: DeepSeek is the ecosystem's price-and-openness reference point — MIT open weights (V4.1-Flash, V4-Pro, V3.2) plus the lowest budget-tier pricing ($0.15/1M input) make it the default anchor against which every other vendor's cost and license are measured, and its open inference infrastructure (FlashMLA, DeepGEMM, DeepEP, 3FS) extends that influence below the model layer, as the [AI infrastructure](/technology/ai-infrastructure/) page details. China AI Hub analysis indicates DeepSeek's structural role is the cost-and-openness floor — its 49B-active MoE design and off-peak discounts shaped the market's pricing expectations, and its MIT releases shaped its licensing expectations, even as the V4-Pro deprecation ambiguity shows how quickly that frontier layer now turns over.
 
 ## Entity hub
 
