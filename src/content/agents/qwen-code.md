@@ -70,4 +70,28 @@ See the [Alibaba Cloud](/companies/alibaba-cloud/) profile.
 
 Qwen Code is the most model-agnostic agent in Alibaba's portfolio — its multi-protocol framework explicitly supports competitors' models (DeepSeek, Kimi, Z.AI, MiniMax) alongside Qwen, which makes it the opposite of [Qwen-Agent](/agents/qwen-agent/)'s Qwen-native design and complementary to [Qoder](/agents/qoder/)'s closed multi-model routing. Its relationship to underlying models is therefore one of *optionality*: the agent's value is the framework (sandboxing, permission modes, MCP, computer use), not any single model. China AI Hub analysis indicates Qwen Code matters as Alibaba's bet that open tooling wins developer mindshare even when those developers ultimately route to other vendors' models.
 
+## Field reference
+
+| Field | Value | Evidence type |
+|---|---|---|
+| Underlying model | Not pinned (multi-protocol: OpenAI, Anthropic, Gemini, Qwen, DeepSeek, MiniMax, Z.AI, Kimi, OpenRouter, local) | Official |
+| Target users | Developers (terminal, editor, desktop, browser, chat) | Official |
+| Platform | CLI (npm), Desktop app, VS Code companion, Web UI, IM channels | Official |
+| OS | Cross-platform (CLI/Desktop); Docker sandbox | Official |
+| Browser / computer use | Browser and Computer Use | Vendor-reported |
+| Coding | Yes (coding agent) | Official |
+| Autonomous task execution | Yes (planning, multi-agent subagents) | Vendor-reported |
+| MCP | Yes | Official |
+| Tool calling | Yes | Official |
+| Memory | Yes (auto-memory, QWEN.md) | Official |
+| Workflow | 5 permission modes; Seatbelt/Docker sandboxing; multi-protocol model routing | Official |
+| API | Yes (user pays model provider) | Official |
+| Pricing | CLI free; Alibaba Cloud Coding Plan Pro $50/month or Token Plan ¥39–¥499/month | Vendor-reported |
+| Region | Not publicly documented | Not publicly documented |
+| Open-source | Yes — Apache-2.0 | Official |
+| Deployment | Self-hosted | Official |
+| Limitations | Web UI/daemon experimental; sandboxing reduces but not eliminates risk | Official |
+| Source | [Qwen Code GitHub](https://github.com/QwenLM/qwen-code) | Official |
+| Last verified | 2026-09-20 | Official |
+
 *Labels used above: **Official fact** (from the Qwen Code GitHub repo and docs), **Vendor-reported claim** (pricing and capability statements by Alibaba Cloud), and **China AI Hub analysis** (our synthesis, always introduced as such).*

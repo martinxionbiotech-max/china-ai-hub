@@ -65,4 +65,28 @@ See the [Zhipu AI](/companies/zhipu-ai/) profile and the [GLM-5.3](/models/glm-5
 
 GLM Coding Plan inverts the usual agent-vs-model relationship: instead of shipping its own coding agent as the primary surface (as DeepSeek Harness or Kimi Code do), Zhipu makes its models available *inside* the tools developers already use. That makes the plan's value inseparable from GLM-5.3's capability — the 1M-token context and reasoning are what those third-party tools actually consume — while the pricing structure (5-hour and weekly credit windows, peak 2x) is a consumption-control layer on top of the model. China AI Hub analysis indicates the plan is Zhipu's distribution strategy: it monetizes GLM models by embedding them in the coding-agent ecosystem rather than by winning the client war.
 
+## Field reference
+
+| Field | Value | Evidence type |
+|---|---|---|
+| Underlying model | [GLM-5.3](/models/glm-53/), [GLM-5.3-Flash](/models/glm-53-flash/) | Official |
+| Target users | Developers using coding tools | Official |
+| Platform | Coding-agent subscription (ZCode, AutoClaw, 20+ third-party tools) | Official |
+| OS | Not publicly documented (via supported coding tools) | Not publicly documented |
+| Browser / computer use | Not publicly documented | Not publicly documented |
+| Coding | Yes (coding-agent subscription) | Official |
+| Autonomous task execution | Yes (Agentic Engineering plan-implement-iterate) | Vendor-reported |
+| MCP | Yes | Official |
+| Tool calling | Yes | Official |
+| Memory | Yes | Official |
+| Workflow | Plan-implement-iterate; credits refresh per 5-hour window and weekly | Official |
+| API | Yes | Official |
+| Pricing | China ¥118/¥538/¥1,078 per month; international from $18/month | Vendor-reported |
+| Region | China (bigmodel.cn) and international (Z.AI) | Official |
+| Open-source | No — proprietary | Official |
+| Deployment | Cloud | Official |
+| Limitations | Quota caps; valid only in supported tools; peak 2x credits | Official |
+| Source | [BigModel Coding Plan](https://bigmodel.cn/glm-coding) | Official |
+| Last verified | 2026-09-20 | Official |
+
 *Labels used above: **Official fact** (from the BigModel Coding Plan and Z.AI docs), **Vendor-reported claim** (pricing and capability statements by Zhipu AI), and **China AI Hub analysis** (our synthesis, always introduced as such).*

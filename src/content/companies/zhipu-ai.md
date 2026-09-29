@@ -91,4 +91,52 @@ Open-AutoGLM phone-agent framework. A founding date is not stated on the officia
 
 Zhipu AI's structural role is the open-weight-plus-agents combination: it is the only major lab pairing Apache-2.0 open weights with a first-party phone-use agent (AutoGLM) and a coding-plan product that routes third-party tools (Claude Code, Codex, Cursor, OpenClaw) onto GLM models. That positions it as the strongest open alternative for builders who want both downloadable weights and a managed agent layer. China AI Hub analysis indicates Zhipu's distinctive bet is breadth of *surface* — models, phone agents, coding plans, image/video — unified by the GLM family, with openness (Apache-2.0) as the shared thread.
 
+## Entity hub
+
+### Models
+
+- [GLM-5.3](/models/glm-53/)
+- [GLM-5.3-Flash](/models/glm-53-flash/)
+- [GLM-5.3-FlashX](/models/glm-53-flashx/)
+- [GLM-5.2](/models/glm-52/)
+
+### Products
+
+- [GLM Coding Plan](/agents/glm-coding-plan/)
+- [AutoGLM](/agents/autoglm/)
+- [BigModel platform](/api/zai/)
+
+### API
+
+- [Z.ai](/api/zai/)
+
+### Agents
+
+- [AutoGLM](/agents/autoglm/)
+- [GLM Coding Plan](/agents/glm-coding-plan/)
+
+### Research / Technology
+
+- [AI Agents](/technology/ai-agents/)
+- [Computer Use](/technology/computer-use/)
+- [Mixture of Experts](/technology/mixture-of-experts/)
+- [Reasoning Models](/technology/reasoning-models/)
+- [GLM and Agent-Oriented AI](/research/glm-agent-oriented-ai/)
+
+### Comparisons
+
+- [DeepSeek-V4.1-Flash vs GLM-5.3-Flash](/comparisons/deepseek-v4-1-flash-vs-glm-53-flash/)
+- [Qwen3.8-Max vs GLM-5.3](/comparisons/qwen38-max-vs-glm-53/)
+
+### Pricing
+
+- [Zhipu AI pricing](/pricing/zhipu-ai/)
+
+### Benchmarks
+
+- [AutomationBench](/benchmarks/automationbench/)
+- [CyberGym](/benchmarks/cybergym/)
+- [DeepSWE](/benchmarks/deepswe/)
+- [Terminal-Bench](/benchmarks/terminal-bench/)
+
 *Labels used above: **Official fact** (from Z.ai docs and the GLM-5 GitHub repository), **Vendor-reported claim** (model capabilities and pricing published by Zhipu AI), and **China AI Hub analysis** (our synthesis, always introduced as such).*

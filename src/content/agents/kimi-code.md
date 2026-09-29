@@ -75,4 +75,28 @@ Billing follows Kimi membership (Plus and above); the Open Platform API is pay-a
 
 Kimi Code is the agent manifestation of Kimi K3's distinguishing capability: the database's only 1M-token maximum *output* ceiling is exactly what a long-horizon coding agent needs, because it lets the model emit large multi-file edits and long reasoning traces in one pass. The agent therefore matters as evidence of model capability being *operationalized* — K3's long context is an abstract spec until an agent like Kimi Code consumes it for whole-repo work. China AI Hub analysis indicates Kimi Code is best read as Moonshot's bet that the coding-agent market will reward output-length and long-horizon reliability over raw price, a bet that runs directly on K3's differentiated capacity.
 
+## Field reference
+
+| Field | Value | Evidence type |
+|---|---|---|
+| Underlying model | [Kimi K3](/models/kimi-k3/), [Kimi K2.7 Code](/models/kimi-k27-code/), [Kimi K2.7 Code Highspeed](/models/kimi-k27-code-highspeed/) | Official |
+| Target users | Developers (terminal/IDE coding) | Official |
+| Platform | CLI (TypeScript), VS Code extension, Desktop app | Official |
+| OS | macOS, Windows, Linux (CLI) | Official |
+| Browser / computer use | Browser control and Kimi Computer Use | Vendor-reported |
+| Coding | Yes (terminal coding agent) | Official |
+| Autonomous task execution | Yes (planning, multi-agent subagents) | Vendor-reported |
+| MCP | Yes | Official |
+| Tool calling | Yes | Official |
+| Memory | Not publicly documented | Not publicly documented |
+| Workflow | Plan-implement-iterate; long-horizon whole-repo work via 1M-token context | Official |
+| API | Yes (Open Platform API pay-as-you-go) | Official |
+| Pricing | Kimi membership (Plus and above); API $3.00/$15.00 per 1M tokens (kimi-k3) | Vendor-reported |
+| Region | Global (api.kimi.com / api.kimi.ai) | Official |
+| Open-source | Yes — MIT | Official |
+| Deployment | Cloud and self-hosted | Official |
+| Limitations | No OS-level sandbox engine; cloud inference only; Windows needs Git for Windows | Official |
+| Source | [Kimi Code GitHub](https://github.com/MoonshotAI/kimi-code) | Official |
+| Last verified | 2026-09-20 | Official |
+
 *Labels used above: **Official fact** (from the Kimi Code GitHub repo and docs), **Vendor-reported claim** (pricing and capability statements by Moonshot AI), and **China AI Hub analysis** (our synthesis, always introduced as such).*

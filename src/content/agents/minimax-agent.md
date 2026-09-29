@@ -62,4 +62,28 @@ See the [MiniMax](/companies/minimax/) profile and the [MiniMax-M3](/models/mini
 
 MiniMax Agent represents the managed-consumption side of MiniMax's dual strategy: [MiniMax Code](/agents/minimax-code/) is the open, developer-facing surface, while MiniMax Agent is the closed, subscription-facing surface for the same underlying M-series models. Its value proposition — persistent memory, evolving skills, always-on assistants — is a *product* layer on top of MiniMax-M3's capability, not a new model capability itself. China AI Hub analysis indicates MiniMax Agent matters as evidence of how a Chinese lab productizes one model family across both an open CLI and a closed cloud platform, using subscriptions rather than API pricing to capture non-developer demand.
 
+## Field reference
+
+| Field | Value | Evidence type |
+|---|---|---|
+| Underlying model | [MiniMax-M3](/models/minimax-m3/), [MiniMax-M2.7](/models/minimax-m27/) | Official |
+| Target users | Non-developers and daily users (web app) | Official |
+| Platform | Web app (agent.minimax.io); always-on cloud agents MaxClaw/MaxHermes | Official |
+| OS | Not publicly documented (cloud web app) | Not publicly documented |
+| Browser / computer use | Not publicly documented | Not publicly documented |
+| Coding | Not publicly documented | Not publicly documented |
+| Autonomous task execution | Yes (always-on cloud agents; self-evolution) | Vendor-reported |
+| MCP | Not publicly documented | Not publicly documented |
+| Tool calling | Yes | Official |
+| Memory | Yes (persistent memory) | Official |
+| Workflow | Skills, Schedules, Websites, Research, AI PPT capability areas | Official |
+| API | Not publicly documented | Not publicly documented |
+| Pricing | Token Plan: Plus $22 / Max $55 / Ultra $132 per month | Vendor-reported |
+| Region | Not publicly documented | Not publicly documented |
+| Open-source | No — proprietary | Official |
+| Deployment | Cloud | Official |
+| Limitations | Cloud-hosted only; MaxHermes in Beta; web pricing needs sign-in | Official |
+| Source | [MiniMax Agent homepage](https://agent.minimax.io/) | Official |
+| Last verified | 2026-09-20 | Official |
+
 *Labels used above: **Official fact** (from the MiniMax Agent homepage and Token Plan pricing guide), **Vendor-reported claim** (capability and pricing statements by MiniMax), and **China AI Hub analysis** (our synthesis, always introduced as such).*

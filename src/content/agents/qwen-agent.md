@@ -56,4 +56,28 @@ See the [Alibaba Cloud](/companies/alibaba-cloud/) profile.
 
 Qwen-Agent is the foundational-framework layer of Alibaba's agent portfolio: it is model-bound (built on Qwen≥3.0 models, per the official README) in a way that [Qoder](/agents/qoder/) (multi-model) and [Qwen Code](/agents/qwen-code/) (multi-protocol) are not. Its relationship to the underlying models is therefore the most direct — its agent abstractions are designed around Qwen's instruction-following, tool-use, planning and memory capabilities. China AI Hub analysis indicates Qwen-Agent matters as the low-level, Qwen-native integration point, and its slowed release cadence (last release 2025-05-29) is itself a documented signal that Alibaba's agent investment has shifted toward Qwen Code and Qoder.
 
+## Field reference
+
+| Field | Value | Evidence type |
+|---|---|---|
+| Underlying model | Qwen>=3.0 models (framework-level; not pinned to a single model) | Official |
+| Target users | Developers building LLM applications | Official |
+| Platform | Python framework (pip install qwen-agent) | Official |
+| OS | Cross-platform (Python 3.10+ for GUI) | Official |
+| Browser / computer use | Browser (BrowserQwen) | Vendor-reported |
+| Coding | Yes (Docker-isolated Code Interpreter example) | Vendor-reported |
+| Autonomous task execution | Yes (planning, ReActChat agent) | Vendor-reported |
+| MCP | Yes | Official |
+| Tool calling | Yes (@register_tool) | Official |
+| Memory | Yes | Official |
+| Workflow | Assistant / FnCallAgent / ReActChat agents; RAG over 1M-token documents | Official |
+| API | Yes (DashScope API, or self-hosted via vLLM/Ollama) | Official |
+| Pricing | Framework free; model usage per token | Vendor-reported |
+| Region | Not publicly documented | Not publicly documented |
+| Open-source | Yes — Apache-2.0 | Official |
+| Deployment | Self-hosted | Official |
+| Limitations | Code interpreter only basic sandbox; slowed release cadence (last 2025-05-29) | Official |
+| Source | [Qwen-Agent GitHub](https://github.com/QwenLM/Qwen-Agent) | Official |
+| Last verified | 2026-09-20 | Official |
+
 *Labels used above: **Official fact** (from the Qwen-Agent GitHub repo and docs), **Vendor-reported claim** (capability statements by the Qwen team), and **China AI Hub analysis** (our synthesis, always introduced as such).*

@@ -74,4 +74,28 @@ See the [MiniMax](/companies/minimax/) profile.
 
 MiniMax Code is the open, developer-side of MiniMax's agent strategy, and its capability is directly downstream of the M-series models: M3's MSA sparse attention and 1M-token context are what the CLI consumes for repository-scale work. Its relationship to the underlying models is the clearest in the MiniMax family — the CLI defaults to M2.7 in the rendered UI while M3 is available, a pairing that shows how MiniMax tiers its open models against its agent surface. China AI Hub analysis indicates MiniMax Code matters as MiniMax's commitment to the open coding-agent ecosystem (MIT code, MCP, ACP), which anchors the company's developer credibility even as its flagship M3 remains under a conditional Community License.
 
+## Field reference
+
+| Field | Value | Evidence type |
+|---|---|---|
+| Underlying model | [MiniMax-M3](/models/minimax-m3/), [MiniMax-M2.7](/models/minimax-m27/), [MiniMax-M2.7-Highspeed](/models/minimax-m27-highspeed/) | Official |
+| Target users | Developers (desktop app and CLI) | Official |
+| Platform | Desktop app (macOS/Windows), CLI (mcode) | Official |
+| OS | macOS, Windows (desktop); CLI cross-platform | Official |
+| Browser / computer use | Built-in browser and Computer Use (desktop-host) | Vendor-reported |
+| Coding | Yes (coding agent) | Official |
+| Autonomous task execution | Yes (planning, multi-agent Agent Team) | Vendor-reported |
+| MCP | Yes | Official |
+| Tool calling | Yes | Official |
+| Memory | Yes | Official |
+| Workflow | Coding and Work modes; scheduled tasks; remote control from phone | Official |
+| API | Yes (enterprise pay-as-you-go) | Official |
+| Pricing | Token Plan: Plus $22 / Max $55 / Ultra $132 per month | Vendor-reported |
+| Region | Not publicly documented | Not publicly documented |
+| Open-source | Yes — MIT (desktop app proprietary) | Official |
+| Deployment | Cloud and self-hosted | Official |
+| Limitations | Browser/Computer Use desktop-only; no Linux desktop; no Alpine/musl | Official |
+| Source | [MiniMax Code GitHub](https://github.com/MiniMax-AI/minimax-code) | Official |
+| Last verified | 2026-09-20 | Official |
+
 *Labels used above: **Official fact** (from the MiniMax Code GitHub repo and docs), **Vendor-reported claim** (capability and pricing statements by MiniMax), and **China AI Hub analysis** (our synthesis, always introduced as such).*

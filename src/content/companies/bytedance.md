@@ -88,4 +88,41 @@ Video generation (Seedance) and image generation (Seedream) are separate dedicat
 
 ByteDance is the purest expression of the closed-API model in the database: it publishes open training *tooling* (VeOmni, Triton-distributed) but no open model weights, in deliberate contrast to DeepSeek, Alibaba Cloud and Zhipu AI. That position shapes its structural role — ByteDance competes on consumer reach ([Doubao App](/agents/doubao-app/)) and on generation (Seedance/Seedream), not on the open-weight or price-floor axis. China AI Hub analysis indicates Doubao's distinctiveness is the consumer-to-model vertical integration: the same Seed models that power the Doubao assistant are sold through Ark, which is why its pricing reflects a generation-premium strategy rather than a cost-minimization one.
 
+## Entity hub
+
+### Models
+
+- [Doubao Seed 2.1 Pro](/models/doubao-seed-2-1-pro/)
+- [Doubao Seed 2.1 Turbo](/models/doubao-seed-2-1-turbo/)
+- [Doubao Seed Evolving](/models/doubao-seed-evolving/)
+
+### Products
+
+- [Doubao (consumer AI assistant)](/agents/doubao-app/)
+- [Volcengine Ark (AI API platform)](/api/ark/)
+
+### API
+
+- [Volcengine Ark](/api/ark/)
+
+### Agents
+
+- [Doubao](/agents/doubao-app/)
+
+### Research / Technology
+
+- [AI Agents](/technology/ai-agents/)
+- [Computer Use](/technology/computer-use/)
+- [Long Context](/technology/long-context/)
+- [Multimodal AI](/technology/multimodal-ai/)
+- [Tool Calling](/technology/tool-calling/)
+
+### Comparisons
+
+- [Doubao Seed 2.1 Pro vs MiniMax M3](/comparisons/doubao-seed-2-1-pro-vs-minimax-m3/)
+
+### Pricing
+
+- [ByteDance pricing](/pricing/bytedance/)
+
 *Labels used above: **Official fact** (from Ark documentation and ByteDance Seed's official blog/GitHub), **Vendor-reported claim** (model capabilities and pricing published by ByteDance), and **China AI Hub analysis** (our synthesis, always introduced as such).*

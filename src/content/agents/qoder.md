@@ -79,4 +79,28 @@ See the [Alibaba Cloud](/companies/alibaba-cloud/) profile.
 
 Qoder is the multi-model aggregator in Alibaba's coding portfolio: unlike Qwen Code (Qwen-first, open) or Qwen-Agent (framework, open), Qoder is closed and deliberately routes work across Qwen3.8-Max, DeepSeek, GLM, Kimi and MiniMax models by credit tier. That makes its relationship to underlying models one of *selection* rather than *binding* — its value is the routing and governance layer, not any single model's capability. China AI Hub analysis indicates Qoder matters as evidence of the maturing Chinese agent market's enterprise tier, where the differentiator shifts from raw model access to managed multi-model orchestration and governance.
 
+## Field reference
+
+| Field | Value | Evidence type |
+|---|---|---|
+| Underlying model | [Qwen3.8-Max](/models/qwen38-max/), [Qwen3.8-Flash](/models/qwen38-flash/), [DeepSeek-V4-Pro](/models/deepseek-v4-pro/), [DeepSeek-V4.1-Flash](/models/deepseek-v4-1-flash/), [GLM-5.3](/models/glm-53/), [GLM-5.3-Flash](/models/glm-53-flash/), [Kimi K3](/models/kimi-k3/), [MiniMax-M3](/models/minimax-m3/) | Official |
+| Target users | Developers and enterprises (commercial platform) | Official |
+| Platform | Desktop app (Qoder IDE), CLI (qodercli), JetBrains plugin, Cloud Agents API | Official |
+| OS | Not publicly documented | Not publicly documented |
+| Browser / computer use | Built-in browser and Computer Use | Vendor-reported |
+| Coding | Yes (agentic coding platform) | Official |
+| Autonomous task execution | Yes (plan/goal-driven, Expert team multi-agent) | Vendor-reported |
+| MCP | Yes | Official |
+| Tool calling | Yes | Official |
+| Memory | Yes (Memory and Knowledge Base) | Official |
+| Workflow | Understand-plan-execute-verify-iterate; Auto tier smart-routes models | Official |
+| API | Yes (Cloud Agents API) | Official |
+| Pricing | International $20/$60/$200 per month; China via Alibaba Cloud | Vendor-reported |
+| Region | International (qoder.com) and China (qoder.cn) | Official |
+| Open-source | No — proprietary | Official |
+| Deployment | Cloud and self-hosted | Official |
+| Limitations | Closed-source; 500 tool rounds/task; operating entity not Alibaba-disclosed | Official |
+| Source | [Qoder docs](https://docs.qoder.com/qoder/overview.md) | Official |
+| Last verified | 2026-09-20 | Official |
+
 *Labels used above: **Official fact** (from the Qoder site, docs and the Alibaba Cloud Model Studio integration guide), **Vendor-reported claim** (pricing and credit-multiplier statements by Qoder), and **China AI Hub analysis** (our synthesis, always introduced as such).*

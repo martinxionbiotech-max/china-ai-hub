@@ -87,4 +87,53 @@ the official pages fetched.
 
 DeepSeek is the ecosystem's price-and-openness reference point: MIT open weights (V4.1-Flash, V4-Pro, V3.2) plus the lowest budget-tier pricing ($0.15/1M input) make it the default anchor against which every other vendor's cost and license are measured. Its open inference infrastructure (FlashMLA, DeepGEMM, DeepEP, 3FS) extends that influence below the model layer, as the [AI infrastructure](/technology/ai-infrastructure/) page details. China AI Hub analysis indicates DeepSeek's structural role is the cost-and-openness floor — its 49B-active MoE design and off-peak discounts shaped the market's pricing expectations, and its MIT releases shaped its licensing expectations, even as the V4-Pro deprecation ambiguity shows how quickly that frontier layer now turns over.
 
+## Entity hub
+
+### Models
+
+- [DeepSeek-V4.1-Flash](/models/deepseek-v4-1-flash/)
+- [DeepSeek-V4-Pro](/models/deepseek-v4-pro/)
+- [DeepSeek-V3.2](/models/deepseek-v3-2/)
+
+### Products
+
+- [DeepSeek API platform](/api/deepseek/)
+
+### API
+
+- [DeepSeek API](/api/deepseek/)
+
+### Agents
+
+- [DeepSeek Harness](/agents/deepseek-harness/)
+
+### Research / Technology
+
+- [AI Infrastructure](/technology/ai-infrastructure/)
+- [Distillation](/technology/distillation/)
+- [Inference](/technology/inference/)
+- [Mixture of Experts](/technology/mixture-of-experts/)
+- [Quantization](/technology/quantization/)
+- [Reasoning Models](/technology/reasoning-models/)
+- [How DeepSeek Changed China's AI Market](/research/how-deepseek-changed-chinas-ai-market/)
+
+### Comparisons
+
+- [DeepSeek-V4.1-Flash vs GLM-5.3-Flash](/comparisons/deepseek-v4-1-flash-vs-glm-53-flash/)
+- [DeepSeek-V4-Pro vs Kimi K3](/comparisons/deepseek-v4-pro-vs-kimi-k3/)
+- [DeepSeek-V4-Pro vs Qwen3.8-Max](/comparisons/deepseek-v4-pro-vs-qwen38-max/)
+
+### Pricing
+
+- [DeepSeek pricing](/pricing/deepseek/)
+
+### Benchmarks
+
+- [AutomationBench](/benchmarks/automationbench/)
+- [CyberGym](/benchmarks/cybergym/)
+- [DeepSWE](/benchmarks/deepswe/)
+- [GPQA Diamond](/benchmarks/gpqa-diamond/)
+- [HLE](/benchmarks/hle/)
+- [Terminal-Bench](/benchmarks/terminal-bench/)
+
 *Labels used above: **Official fact** (from DeepSeek API docs and the official site), **Vendor-reported claim** (pricing and model capabilities published by DeepSeek), and **China AI Hub analysis** (our synthesis, always introduced as such).*

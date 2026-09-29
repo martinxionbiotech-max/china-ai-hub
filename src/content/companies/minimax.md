@@ -88,4 +88,51 @@ platform.minimaxi.com (China, CNY) and platform.minimax.io (international, USD).
 
 MiniMax's structural role is the cost-efficient challenger that competes on both capability breadth and price without going full-open. It runs a broad product surface — [MiniMax Code](/agents/minimax-code/) and [MiniMax Agent](/agents/minimax-agent/) on the agent side, plus video/audio/image generation — while keeping its flagship M3 at the lowest flagship price point in the database. China AI Hub analysis indicates MiniMax's distinctive bet is architectural efficiency (MSA sparse attention) translating directly into price, which positions it as the value alternative to Alibaba Cloud's integration breadth and ByteDance's consumer premium.
 
+## Entity hub
+
+### Models
+
+- [MiniMax-M3](/models/minimax-m3/)
+- [MiniMax-M2.7](/models/minimax-m27/)
+- [MiniMax-M2.7-Highspeed](/models/minimax-m27-highspeed/)
+
+### Products
+
+- [MiniMax Code](/agents/minimax-code/)
+- [MiniMax Agent](/agents/minimax-agent/)
+- [MiniMax open platform](/api/minimax/)
+
+### API
+
+- [MiniMax API](/api/minimax/)
+
+### Agents
+
+- [MiniMax Agent](/agents/minimax-agent/)
+- [MiniMax Code](/agents/minimax-code/)
+
+### Research / Technology
+
+- [AI Chips](/technology/ai-chips/)
+- [AI Infrastructure](/technology/ai-infrastructure/)
+- [Inference](/technology/inference/)
+- [Mixture of Experts](/technology/mixture-of-experts/)
+- [Multimodal AI](/technology/multimodal-ai/)
+- [Tool Calling](/technology/tool-calling/)
+
+### Comparisons
+
+- [Doubao Seed 2.1 Pro vs MiniMax M3](/comparisons/doubao-seed-2-1-pro-vs-minimax-m3/)
+- [Kimi K3 vs MiniMax M3](/comparisons/kimi-k3-vs-minimax-m3/)
+
+### Pricing
+
+- [MiniMax pricing](/pricing/minimax/)
+
+### Benchmarks
+
+- [BrowseComp](/benchmarks/browsecomp/)
+- [SWE-bench](/benchmarks/swe-bench/)
+- [Terminal-Bench](/benchmarks/terminal-bench/)
+
 *Labels used above: **Official fact** (from MiniMax's official sites and platform docs), **Vendor-reported claim** (the MSA speedup figures and user counts stated on the CN site), and **China AI Hub analysis** (our synthesis, always introduced as such).*

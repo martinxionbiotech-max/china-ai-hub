@@ -71,4 +71,28 @@ Doubao is mainland-China-focused (overseas users are redirected to Dola) and bil
 
 Doubao matters as the demand-side complement to ByteDance's closed model strategy: where Ark sells Doubao Seed models to developers, Doubao App sells their *output* to consumers through a subscription and a computer-use desktop mode. The app's underlying chat LLM is not named in official pages — a documented gap that reinforces the closed-API posture. China AI Hub analysis indicates Doubao's structural role is consumer distribution: it demonstrates that ByteDance's Seed models are productized for mainstream users, while the [computer use](/technology/computer-use/) capability shows up in a shipping consumer surface rather than only in a developer SDK.
 
+## Field reference
+
+| Field | Value | Evidence type |
+|---|---|---|
+| Underlying model | Not publicly documented (chat LLM unnamed; creation models Seedream/Seedance) | Official |
+| Target users | Mainland-China consumers | Official |
+| Platform | Mobile app, desktop app (Doubao Work virtual desktop), web | Official |
+| OS | iOS, Android, desktop | Official |
+| Browser / computer use | Computer use (Doubao Work virtual desktop) | Vendor-reported |
+| Coding | Not publicly documented | Not publicly documented |
+| Autonomous task execution | Yes (Doubao Work planning/executing agent) | Vendor-reported |
+| MCP | Not publicly documented | Not publicly documented |
+| Tool calling | Yes | Official |
+| Memory | Not publicly documented | Not publicly documented |
+| Workflow | Autonomous planning/executing on a virtual desktop with real-time watch/pause/takeover | Vendor-reported |
+| API | No public consumer API (developer access via [Volcengine Ark](/api/ark/)) | Official |
+| Pricing | Basic free; 68/200/500 CNY per month | Vendor-reported |
+| Region | Mainland China (overseas redirected to Dola) | Official |
+| Open-source | No — proprietary | Official |
+| Deployment | Cloud | Official |
+| Limitations | Region-restricted; quota-based membership; creation packs expire | Official |
+| Source | [Doubao website](https://www.doubao.com/) | Official |
+| Last verified | 2026-09-20 | Official |
+
 *Labels used above: **Official fact** (from the Doubao website and App Store listing), **Vendor-reported claim** (capability and pricing statements by ByteDance), and **China AI Hub analysis** (our synthesis, always introduced as such).*

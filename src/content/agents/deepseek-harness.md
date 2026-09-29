@@ -75,4 +75,28 @@ See the [DeepSeek](/companies/deepseek/) profile and the [DeepSeek-V4-Pro](/mode
 
 DeepSeek Harness is the clearest case of an agent whose value is its *modularity* rather than its models: it is model-agnostic by design (you configure the provider), but its natural pairing is DeepSeek's own flash and V4-Pro tiers, which is why its documented pricing mirrors DeepSeek's pay-as-you-go structure. The relationship to the underlying models is therefore one of economics — the harness inherits DeepSeek's price floor and its peak/off-peak billing — not of hard coupling. China AI Hub analysis indicates the harness matters as DeepSeek's bet on the framework layer: it extends the company's openness-and-cost strategy from models into agent orchestration, while its developer-preview status signals that the layer is still experimental.
 
+## Field reference
+
+| Field | Value | Evidence type |
+|---|---|---|
+| Underlying model | [DeepSeek-V4.1-Flash](/models/deepseek-v4-1-flash/), [DeepSeek-V4-Pro](/models/deepseek-v4-pro/) | Official |
+| Target users | Developers (agent/coding-tool builders) | Official |
+| Platform | CLI (dsh), Web UI, Electron Desktop, Python SDK, ACP server | Official |
+| OS | Not publicly documented | Not publicly documented |
+| Browser / computer use | Browser and computer use | Vendor-reported |
+| Coding | Yes (powers DeepSeek's coding agent) | Official |
+| Autonomous task execution | Yes (planning, multi-agent) | Vendor-reported |
+| MCP | Yes | Official |
+| Tool calling | Yes | Official |
+| Memory | No | Official |
+| Workflow | Plugin-composed: models, tools, skills, sessions, sandbox, storage, loops, scheduling, UI | Official |
+| API | Yes (model usage via configured provider) | Official |
+| Pricing | Software free/open-source; model usage billed by provider | Vendor-reported |
+| Region | Not publicly documented | Not publicly documented |
+| Open-source | Yes — MIT | Official |
+| Deployment | Self-hosted | Official |
+| Limitations | Developer preview; not security-audited; sandboxing not isolation-guaranteed | Official |
+| Source | [DeepSeek Harness GitHub](https://github.com/deepseek-ai/deepseek-harness) | Official |
+| Last verified | 2026-09-20 | Official |
+
 *Labels used above: **Official fact** (from the DeepSeek Harness GitHub repo and docs), **Vendor-reported claim** (pricing and capability statements by DeepSeek), and **China AI Hub analysis** (our synthesis, always introduced as such).*

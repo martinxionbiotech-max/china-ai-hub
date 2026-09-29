@@ -82,4 +82,54 @@ docs; the older "Tongyi Qianwen / 通义千问" branding was not confirmed on th
 
 Alibaba Cloud occupies a structurally unique position in the Chinese ecosystem: it is the only hyperscaler that combines frontier closed APIs, a first-party open MoE release, and a multi-region cloud distribution layer ([Model Studio](/api/model-studio/)) under one roof. That makes Qwen the natural default for enterprises that want a single vendor across closed and open workloads. The database evidences this breadth directly: three foundation models, three agents ([Qwen Code](/agents/qwen-code/), [Qwen-Agent](/agents/qwen-agent/), [Qoder](/agents/qoder/)) and one API all resolve to the same company record. China AI Hub analysis indicates Qwen's structural role is the integration anchor — its value to buyers is less any single model and more the consistency of model, tooling and cloud under one provider, with the open A95B release as the hedge against API lock-in.
 
+## Entity hub
+
+### Models
+
+- [Qwen3.8-Max](/models/qwen38-max/)
+- [Qwen3.8-Flash](/models/qwen38-flash/)
+- [Qwen3.8-2.4T-A95B](/models/qwen38-24t-a95b/)
+- [Qwen3.7-Plus](/models/qwen37-plus/)
+
+### Products
+
+- [Alibaba Cloud Model Studio (Bailian)](/api/model-studio/)
+
+### API
+
+- [Model Studio](/api/model-studio/)
+
+### Agents
+
+- [Qwen Code](/agents/qwen-code/)
+- [Qwen-Agent](/agents/qwen-agent/)
+- [Qoder](/agents/qoder/)
+
+### Research / Technology
+
+- [Distillation](/technology/distillation/)
+- [Function Calling](/technology/function-calling/)
+- [Mixture of Experts](/technology/mixture-of-experts/)
+- [Multimodal AI](/technology/multimodal-ai/)
+- [RAG](/technology/rag/)
+- [Tool Calling](/technology/tool-calling/)
+
+### Comparisons
+
+- [DeepSeek-V4-Pro vs Qwen3.8-Max](/comparisons/deepseek-v4-pro-vs-qwen38-max/)
+- [Qwen3.8-Max vs GLM-5.3](/comparisons/qwen38-max-vs-glm-53/)
+
+### Pricing
+
+- [Alibaba Cloud pricing](/pricing/alibaba-cloud/)
+
+### Benchmarks
+
+- [AutomationBench](/benchmarks/automationbench/)
+- [DeepSWE](/benchmarks/deepswe/)
+- [GPQA Diamond](/benchmarks/gpqa-diamond/)
+- [HLE](/benchmarks/hle/)
+- [SWE-bench](/benchmarks/swe-bench/)
+- [Terminal-Bench](/benchmarks/terminal-bench/)
+
 *Labels used above: **Official fact** (from Alibaba Cloud Model Studio and Qwen's GitHub/Hugging Face sources), and **China AI Hub analysis** (our synthesis, always introduced as such).*

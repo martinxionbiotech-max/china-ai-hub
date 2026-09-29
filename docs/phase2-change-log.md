@@ -1,3 +1,45 @@
+# China AI Hub — Phase 2 Change Log（B2-a 公司页 Entity Hub + Agent 字段深化）
+
+**日期**：2026-09-29 · **范围**：主站 `china-ai-hub` + 数据站 `china-ai-hub-data`
+**依据**：`phase2/39-chinaaihub-upgrade-plan.md` P1 前两件套 + `phase2/38-chinaaihub-audit-report.md` §7/§12
+**验证方式**：先 grep 确认站内实体 slug 存在再落链接（0 虚构页）· 主站 `npm run build` 121 页通过 · 数据站 `mkdocs build` 通过 · 逐页 grep dist 确认 Hub/字段表渲染
+
+## A · 6 公司页 → Entity Hub（§7）
+
+每页正文末尾新增 `## Entity hub` 显式结构，分 8 类小节（Models / Products / API / Agents / Research-Technology / Comparisons / Pricing / Benchmarks），**每节只链站内真实存在的实体页**（grep 确认 slug）。目标语义达成：ByteDance → Doubao Seed 模型 → Volcengine Ark API → 模型/产品 单跳可达（页面内链接，不新增页面）。保留既有正文、四层标签与分析不动。
+
+| File | Hub 小节数 | 链接数 | 说明 |
+|---|---|---|---|
+| `src/content/companies/bytedance.md` | 7 | 14 | 无 Benchmarks（站内无 doubao 模型基准）；Products 链 Doubao App/Ark |
+| `src/content/companies/deepseek.md` | 8 | 23 | 唯一含 Research 原创页链接（how-deepseek-changed…） |
+| `src/content/companies/alibaba-cloud.md` | 8 | 22 | Models 含被取代 qwen3.7-plus |
+| `src/content/companies/minimax.md` | 8 | 18 | — |
+| `src/content/companies/moonshot-ai.md` | 8 | 23 | Benchmarks 7 项（kimi-k3 覆盖最广） |
+| `src/content/companies/zhipu-ai.md` | 8 | 18 | Research 链接 glm-agent-oriented-ai |
+
+## B · 10 Agent 页字段深化（§12）
+
+每页正文末尾新增 `## Field reference` 表（Field | Value | Evidence type），统一 19 字段：underlying model / target users / platform / OS / browser-computer use / coding / autonomous task execution / MCP / tool calling / memory / workflow / API / pricing / region / open-source / deployment / limitations / source / last verified。**只填有据值，查不到的显式写 Not publicly documented**（不编造）。Underlying model / API 值内链到对应实体页，建立 Agent→Model→Company→API 关系链。四层标签与既有正文结论不变。
+
+| File | 填值数 | Not publicly documented |
+|---|---|---|
+| `src/content/agents/autoglm.md` | 15 | 4 |
+| `src/content/agents/deepseek-harness.md` | 17 | 2 |
+| `src/content/agents/doubao-app.md` | 14 | 5 |
+| `src/content/agents/glm-coding-plan.md` | 16 | 3 |
+| `src/content/agents/kimi-code.md` | 17 | 2 |
+| `src/content/agents/minimax-agent.md` | 14 | 5 |
+| `src/content/agents/minimax-code.md` | 17 | 2 |
+| `src/content/agents/qoder.md` | 16 | 3 |
+| `src/content/agents/qwen-agent.md` | 17 | 2 |
+| `src/content/agents/qwen-code.md` | 17 | 2 |
+
+## 数据站同步
+
+`data/docs/agents/{10}.md`：①Underlying Models 由纯文本列表改为链到 `../models/{slug}.md` 实体页；②新增 `## API Platform` 关系小节，链到对应 `../apis/{slug}.md`（Agent→API 关系补齐）。与主站 frontmatter `underlying_models`/company.api 真值一致，不矛盾。辅助脚本 `data/scripts/b2a_agent_relations.py` 新增。
+
+---
+
 # China AI Hub — Phase 2 Change Log（B1 实体关系一致性全库审计 + 修复）
 
 **日期**：2026-09-29 · **范围**：主站 `china-ai-hub` + 数据站 `china-ai-hub-data`

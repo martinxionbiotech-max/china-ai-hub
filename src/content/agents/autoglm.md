@@ -68,4 +68,28 @@ Local deployment needs a GPU with roughly 24GB+ VRAM; Android use requires devel
 
 AutoGLM is the purest demonstration of [computer use](/technology/computer-use/) as a product in the Chinese ecosystem: its capability is inseparable from the underlying VLM's screen-reading and action-planning ability, rather than from any API or tool registry. That makes it the reference for how GUI operation depends on a vision model's grounding quality — a relationship the database captures by tying the agent to Zhipu AI while the GLM-4.1V-9B lineage sits outside the tracked flagship models. China AI Hub analysis indicates AutoGLM matters less as a production tool (it is research/learning-licensed) and more as the clearest evidence that phone-level computer use is technically mature in China's open ecosystem.
 
+## Field reference
+
+| Field | Value | Evidence type |
+|---|---|---|
+| Underlying model | AutoGLM-Phone-9B (GLM-4.1V-9B family) | Official |
+| Target users | Researchers and developers (research/learning use) | Official |
+| Platform | Python framework (PhoneAgent API + CLI); AutoGLM 2.0 cloud product | Official |
+| OS | Android (ADB), HarmonyOS NEXT (HDC), iOS (WebDriverAgent) | Official |
+| Browser / computer use | Phone GUI computer use | Vendor-reported |
+| Coding | Not publicly documented | Not publicly documented |
+| Autonomous task execution | Yes (chain-of-thought planning) | Vendor-reported |
+| MCP | Not publicly documented | Not publicly documented |
+| Tool calling | Yes | Official |
+| Memory | No | Official |
+| Workflow | Screen reading → chain-of-thought planning → action execution | Vendor-reported |
+| API | Yes (BigModel `autoglm-phone`) | Official |
+| Pricing | Framework free; API limited-time free as of 2026-09-20 | Vendor-reported |
+| Region | China (BigModel) | Official |
+| Open-source | Yes — Apache-2.0 (code), MIT (models) | Official |
+| Deployment | Cloud and self-hosted | Official |
+| Limitations | Research/learning only; ~24GB+ VRAM for local; sensitive screens need human takeover | Official |
+| Source | [Open-AutoGLM GitHub](https://github.com/zai-org/Open-AutoGLM) | Official |
+| Last verified | 2026-09-20 | Official |
+
 *Labels used above: **Official fact** (from the Open-AutoGLM GitHub repo, AutoGLM blog and model card), **Vendor-reported claim** (capability and pricing statements by Zhipu AI), and **China AI Hub analysis** (our synthesis, always introduced as such).*

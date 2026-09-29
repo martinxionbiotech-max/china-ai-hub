@@ -81,4 +81,54 @@ moonshot-v1*, kimi-k2*) have been discontinued.
 
 Moonshot AI's structural role is the long-context specialist: Kimi K3 is the only flagship in the database listing a full 1M-token maximum output, which makes it the reference choice for long-form generation and whole-repo rewriting rather than merely long-input analysis. Its open-weight stance (K3, K2.x, Kimi-VL, Kimi-Audio) keeps it in the open ecosystem alongside DeepSeek and Zhipu AI, while its custom license conditions distinguish it from DeepSeek's clean MIT. China AI Hub analysis indicates Moonshot competes on the output-length axis — a differentiated, documented strength — rather than on the price-floor axis where DeepSeek and MiniMax-M3 set the terms.
 
+## Entity hub
+
+### Models
+
+- [Kimi K3](/models/kimi-k3/)
+- [Kimi K2.7 Code](/models/kimi-k27-code/)
+- [Kimi K2.7 Code Highspeed](/models/kimi-k27-code-highspeed/)
+- [Kimi K2.6](/models/kimi-k26/)
+
+### Products
+
+- [Kimi Code](/agents/kimi-code/)
+- [Kimi API Platform](/api/moonshot/)
+
+### API
+
+- [Kimi API](/api/moonshot/)
+
+### Agents
+
+- [Kimi Code](/agents/kimi-code/)
+
+### Research / Technology
+
+- [Deep Research](/technology/deep-research/)
+- [Function Calling](/technology/function-calling/)
+- [Long Context](/technology/long-context/)
+- [Mixture of Experts](/technology/mixture-of-experts/)
+- [Multimodal AI](/technology/multimodal-ai/)
+- [Reasoning Models](/technology/reasoning-models/)
+
+### Comparisons
+
+- [DeepSeek-V4-Pro vs Kimi K3](/comparisons/deepseek-v4-pro-vs-kimi-k3/)
+- [Kimi K3 vs MiniMax M3](/comparisons/kimi-k3-vs-minimax-m3/)
+
+### Pricing
+
+- [Moonshot AI pricing](/pricing/moonshot-ai/)
+
+### Benchmarks
+
+- [BrowseComp](/benchmarks/browsecomp/)
+- [DeepSWE](/benchmarks/deepswe/)
+- [GPQA Diamond](/benchmarks/gpqa-diamond/)
+- [HLE](/benchmarks/hle/)
+- [MMMU-Pro](/benchmarks/mmmu-pro/)
+- [Terminal-Bench](/benchmarks/terminal-bench/)
+- [Video-MME](/benchmarks/video-mme/)
+
 *Labels used above: **Official fact** (from Moonshot AI's official sites and the Kimi K3 README), **Vendor-reported claim** (model capabilities and pricing published by Moonshot AI), and **China AI Hub analysis** (our synthesis, always introduced as such).*
