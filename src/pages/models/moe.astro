@@ -1,0 +1,8 @@
+---
+import ModelHub from '../../components/ModelHub.astro';
+import hubsData from '../../data/hubs.json';
+
+const hub = hubsData.hubs.find((h) => h.slug === 'moe')!;
+---
+
+<ModelHub hub={hub} />

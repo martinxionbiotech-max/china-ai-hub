@@ -1,0 +1,114 @@
+{
+  "_comment": "Single source of truth for the six dimension hub pages (/models/<slug>/). Rules are evaluated against src/content/models/*.md frontmatter by scripts/generate-hubs.mjs (authoritative membership) and independently re-evaluated by scripts/check-entity-counts.py (verification). Never edit member lists by hand.",
+  "hubs": [
+    {
+      "slug": "open-weights",
+      "title": "Open-weight Chinese AI models",
+      "description": "Chinese AI models with openly downloadable weights: licenses, context windows and self-hosting status, counted automatically from the models database.",
+      "short_answer": "Open-weight models publish their trained weights for download and self-hosting, unlike API-only models. The database records open-weight status and license terms per model so builders can evaluate deployment rights against the actual license — MIT, Apache-2.0, or a custom regime.",
+      "why_it_matters": "The license, not the weights alone, decides what you can legally do: MIT and Apache-2.0 are permissive, while the custom regimes (Kimi K3, MiniMax M-series, Qwen3.8) attach revenue or attribution thresholds.",
+      "rule": { "op": "eq", "path": "open_weight", "value": true },
+      "rule_description": "open_weight === true",
+      "guides": [
+        { "slug": "open-weight-vs-api", "title": "Open-Weight vs API: Trade-offs for Chinese Models" },
+        { "slug": "self-hosting-chinese-open-weights", "title": "Self-Hosting Chinese Open-Weight Models: Licenses, Hardware and Quantization" }
+      ],
+      "research": [
+        { "slug": "chinese-ai-model-licensing-explained", "title": "Chinese AI Model Licensing Explained: MIT, Apache and the Three Custom Regimes" },
+        { "slug": "open-weight-vs-api-structural-analysis", "title": "Open Weights and API Models in China's 2026 Ecosystem: A Structural Analysis" }
+      ],
+      "technology": []
+    },
+    {
+      "slug": "long-context",
+      "title": "Long-context Chinese AI models (1M tokens)",
+      "description": "Chinese AI models with a documented context window of one million tokens or more, counted automatically from the models database.",
+      "short_answer": "Long-context models accept a million or more input tokens in a single request — enough for whole-repository code review, multi-document analysis and long agent traces. This hub lists models whose documented context window is 1,000,000 tokens or more.",
+      "why_it_matters": "Input context is cheap to advertise but the output ceiling and cache pricing decide real cost. Output limits range from 131,072 (GLM, Qwen) to 1,048,576 (Kimi K3) tokens — the difference between reading a long document and generating one.",
+      "rule": { "op": "gte", "path": "context_window", "value": 1000000 },
+      "rule_description": "context_window >= 1,000,000",
+      "guides": [
+        { "slug": "long-context-model-selection", "title": "Long-Context Model Selection: 1M-Token Windows and What They Actually Mean" }
+      ],
+      "research": [
+        { "slug": "chinese-ai-context-windows", "title": "Context Windows in China's 2026 Model Market: 1M Tokens as Table Stakes and the Stratification Below It" }
+      ],
+      "technology": [
+        { "slug": "long-context", "title": "Long Context" }
+      ]
+    },
+    {
+      "slug": "multimodal",
+      "title": "Multimodal Chinese AI models",
+      "description": "Chinese AI models that accept vision input, with video and computer-use flags shown where documented, counted automatically from the models database.",
+      "short_answer": "Multimodal models accept non-text input — images, and in some cases video or screen control. This hub lists every model that records a vision-input flag, with the rarer video and computer-use flags shown where documented.",
+      "why_it_matters": "Vision has migrated down the price stack: the cheapest tiers are now among the most capable, and two flagships (DeepSeek-V4-Pro, GLM-5.3) are text-only while their $0.15 flash siblings carry vision.",
+      "rule": { "op": "eq", "path": "capabilities.vision", "value": true },
+      "rule_description": "capabilities.vision === true",
+      "guides": [
+        { "slug": "multimodal-model-selection", "title": "Choosing a Multimodal Chinese Model: Vision, Video and Computer Use" }
+      ],
+      "research": [
+        { "slug": "chinese-ai-multimodal-capabilities", "title": "Multimodal Capability in China's 2026 Model Lineup: Vision, Video and the Computer-Use Frontier" }
+      ],
+      "technology": [
+        { "slug": "multimodal-ai", "title": "Multimodal AI" }
+      ]
+    },
+    {
+      "slug": "reasoning",
+      "title": "Reasoning Chinese AI models",
+      "description": "Chinese AI models that record a reasoning capability flag, counted automatically from the models database.",
+      "short_answer": "Reasoning models interleave an extended chain-of-thought before answering, improving performance on math, code and hard knowledge tasks at the cost of latency and output tokens. This hub lists every model that records a reasoning capability flag.",
+      "why_it_matters": "Reasoning is near-universal across the 2026 lineup. The real differentiators are whether it can be disabled, its effort levels (low/high/max) and its price — not whether it exists.",
+      "rule": { "op": "eq", "path": "capabilities.reasoning", "value": true },
+      "rule_description": "capabilities.reasoning === true",
+      "guides": [
+        { "slug": "how-to-choose-a-chinese-ai-model", "title": "How to Choose a Chinese AI Model: A Decision Framework" }
+      ],
+      "research": [],
+      "technology": [
+        { "slug": "reasoning-models", "title": "Reasoning Models" }
+      ]
+    },
+    {
+      "slug": "coding",
+      "title": "Coding Chinese AI models",
+      "description": "Chinese AI models with a documented coding capability flag, counted automatically from the models database.",
+      "short_answer": "Coding models are documented for code generation and agentic software work — the arena where China's frontier race is most intense. This hub lists every model that records a coding capability flag.",
+      "why_it_matters": "Coding evidence is unevenly published: SWE-bench and Terminal-Bench versions differ across vendors, so the coding flag plus each model's documented benchmark scores is the honest signal set — not a single ranking.",
+      "rule": { "op": "eq", "path": "capabilities.coding", "value": true },
+      "rule_description": "capabilities.coding === true",
+      "guides": [
+        { "slug": "choosing-a-coding-model", "title": "Choosing a Chinese Coding Model: SWE Evidence, Tool Calling and Context" }
+      ],
+      "research": [
+        { "slug": "chinese-ai-coding-models", "title": "Chinese AI Coding Models: The Agent-Led Race" }
+      ],
+      "technology": []
+    },
+    {
+      "slug": "moe",
+      "title": "Mixture-of-Experts (MoE) Chinese AI models",
+      "description": "Chinese AI models documented as Mixture-of-Experts, by explicit architecture label or published active-parameter count, counted automatically from the models database.",
+      "short_answer": "Mixture-of-Experts models route each token through a small subset of a much larger parameter set, cutting per-token compute cost. This hub lists models documented as MoE — either by an explicit MoE architecture label or by a published active-parameter count (the sparse-activation signature only MoE models publish).",
+      "why_it_matters": "Active parameters, not total, drive inference cost. Activation ratios from ~1.4% (DeepSeek-V4.1-Flash) to ~5.6% (GLM-5.3-Flash) are a leading indicator of long-run price floors.",
+      "rule": {
+        "op": "any",
+        "rules": [
+          { "op": "contains_ci", "path": "architecture", "value": "MoE" },
+          { "op": "contains_ci", "path": "architecture", "value": "Mixture-of-Experts" },
+          { "op": "present", "path": "parameter_information.active_parameters" }
+        ]
+      },
+      "rule_description": "architecture contains \"MoE\" or \"Mixture-of-Experts\" (case-insensitive) OR parameter_information.active_parameters is present",
+      "guides": [],
+      "research": [
+        { "slug": "chinese-ai-moe-architectures", "title": "How Chinese Frontier Models Use Mixture-of-Experts: Active Parameters, Linear Attention and the Economics of Sparsity" }
+      ],
+      "technology": [
+        { "slug": "mixture-of-experts", "title": "Mixture of Experts" }
+      ]
+    }
+  ]
+}

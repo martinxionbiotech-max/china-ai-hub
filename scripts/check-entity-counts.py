@@ -22,9 +22,12 @@ Env overrides:
   CHINA_AI_HUB_DATA   path to the china-ai-hub-data repo (default: ../china-ai-hub-data)
 """
 
+import json
 import re
 import sys
 from pathlib import Path
+
+import yaml
 
 # collection -> main-site URL prefix (Astro route; note apis -> /api/, singular)
 URL_PREFIX = {
@@ -37,6 +40,72 @@ URL_PREFIX = {
 }
 
 COLLECTIONS = list(URL_PREFIX)
+
+# ---------------------------------------------------------------------------
+# Dimension hub support (Phase 2C C3). Hub pages live under /models/<slug>/
+# but are NOT model entities, so they must be excluded from the sitemap
+# surface (S3). Hub membership is single-sourced in scripts/hub-rules.json
+# and generated into src/data/hubs.json by scripts/generate-hubs.mjs; this
+# script independently re-reads frontmatter and re-applies the same rules to
+# verify the generated count/membership.
+# ---------------------------------------------------------------------------
+
+
+def hub_doc(root: Path) -> dict:
+    """Load scripts/hub-rules.json (rules + editorial) or {} if absent."""
+    p = root / "scripts" / "hub-rules.json"
+    if not p.exists():
+        return {}
+    return json.loads(p.read_text())
+
+
+def hub_slugs(root: Path) -> set[str]:
+    """Non-entity route slugs under /models/ (the six dimension hubs)."""
+    return {h["slug"] for h in hub_doc(root).get("hubs", [])}
+
+
+def resolve_path(obj, dotted: str):
+    cur = obj
+    for key in dotted.split("."):
+        if not isinstance(cur, dict) or key not in cur:
+            return None
+        cur = cur[key]
+    return cur
+
+
+def eval_hub_rule(data: dict, rule: dict) -> bool:
+    op = rule.get("op")
+    if op == "eq":
+        return resolve_path(data, rule["path"]) == rule["value"]
+    if op == "gte":
+        v = resolve_path(data, rule["path"])
+        return isinstance(v, (int, float)) and not isinstance(v, bool) and v >= rule["value"]
+    if op == "contains_ci":
+        v = resolve_path(data, rule["path"])
+        return isinstance(v, str) and str(rule["value"]).lower() in v.lower()
+    if op == "present":
+        v = resolve_path(data, rule["path"])
+        return v is not None and v != ""
+    if op == "any":
+        return any(eval_hub_rule(data, r) for r in rule["rules"])
+    raise ValueError(f"Unknown hub rule op: {op}")
+
+
+def model_frontmatter(root: Path) -> dict[str, dict]:
+    """Parse every model's YAML frontmatter, keyed by model_id."""
+    out = {}
+    d = root / "src" / "content" / "models"
+    if not d.is_dir():
+        return out
+    for f in sorted(d.glob("*.md")):
+        text = f.read_text()
+        m = re.match(r"^---\s*\n(.*?)\n---", text, re.DOTALL)
+        if not m:
+            continue
+        data = yaml.safe_load(m.group(1))
+        if isinstance(data, dict) and data.get("model_id"):
+            out[data["model_id"]] = data
+    return out
 
 
 def norm(slug: str) -> str:
@@ -66,14 +135,20 @@ def data_files(data_root: Path) -> dict[str, set[str]]:
     return out
 
 
-def sitemap_files(sitemap: Path) -> dict[str, set[str]]:
+def sitemap_files(sitemap: Path, exclude: set[str] | None = None) -> dict[str, set[str]]:
+    """S3: entity URLs per collection. `exclude` drops non-entity routes
+    (the six dimension hub pages under /models/)."""
+    exclude = exclude or set()
     out = {c: set() for c in COLLECTIONS}
     if not sitemap.exists():
         return out
     text = sitemap.read_text()
     for coll, prefix in URL_PREFIX.items():
         for m in re.finditer(re.escape(prefix) + r"([a-z0-9.-]+)/", text):
-            out[coll].add(norm(m.group(1)))
+            slug = norm(m.group(1))
+            if slug in exclude:
+                continue
+            out[coll].add(slug)
     return out
 
 
@@ -102,6 +177,54 @@ def diff(a: set[str], b: set[str]) -> tuple[list[str], list[str]]:
     return sorted(a - b), sorted(b - a)
 
 
+def verify_hubs(root: Path) -> bool:
+    """Phase 2C C3: verify each dimension hub's generated count/membership
+    against an independent re-read of the model frontmatter. Returns True when
+    every hub matches exactly (count == member set size == entity count)."""
+    doc = hub_doc(root)
+    hubs = doc.get("hubs", [])
+    if not hubs:
+        return True
+
+    gen_path = root / "src" / "data" / "hubs.json"
+    generated = {}
+    if gen_path.exists():
+        generated = {h["slug"]: set(h.get("members", [])) for h in json.loads(gen_path.read_text()).get("hubs", [])}
+
+    fm = model_frontmatter(root)
+
+    print("Dimension hub verification (hub count == matching entity count)")
+    print(f"  rules   : {root / 'scripts' / 'hub-rules.json'}")
+    print(f"  output  : {gen_path}")
+    print()
+
+    ok = True
+    for hub in hubs:
+        slug = hub["slug"]
+        expected = {mid for mid, data in fm.items() if eval_hub_rule(data, hub["rule"])}
+        declared = generated.get(slug)
+        if declared is None:
+            flag, note = "FAIL", "missing from hubs.json"
+            ok = False
+        elif expected == declared:
+            flag, note = "OK ", ""
+        else:
+            flag = "FAIL"
+            missing = sorted(expected - declared)
+            extra = sorted(declared - expected)
+            note = f"missing={missing} extra={extra}"
+            ok = False
+        declared_s = str(len(declared)) if declared is not None else '—'
+        print(f"[{flag}] {slug:12s} expected={len(expected):3d} declared={declared_s:>3s} {note}")
+
+    print()
+    if ok:
+        print("HUB RESULT: 0 discrepancies (all six hub counts match their entity counts).")
+    else:
+        print("HUB RESULT: discrepancies found (see FAIL rows above).")
+    return ok
+
+
 def main(argv: list[str]) -> int:
     args = argv[1:]
     data_repo = None
@@ -123,7 +246,7 @@ def main(argv: list[str]) -> int:
 
     s1 = main_files(root)
     s2 = data_files(data_root)
-    s3 = sitemap_files(sitemap)
+    s3 = sitemap_files(sitemap, exclude=hub_slugs(root))
     s4 = declared_entities(data_root)
 
     labels = ["S1 main-files", "S2 data-records", "S3 sitemap", "S4 declared"]
@@ -156,7 +279,10 @@ def main(argv: list[str]) -> int:
         print("RESULT: 0 discrepancies across all six collections.")
     else:
         print("RESULT: discrepancies found (see FAIL rows above).")
-    return 0 if ok else 1
+
+    hubs_ok = verify_hubs(root)
+    print()
+    return 0 if (ok and hubs_ok) else 1
 
 
 if __name__ == "__main__":

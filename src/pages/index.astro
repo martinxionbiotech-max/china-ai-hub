@@ -21,9 +21,9 @@ const glance = [
   { label: 'API platforms', value: apis.length, href: '/api/' },
   { label: 'Pricing providers', value: pricing.length, href: '/pricing/' },
   { label: 'Benchmarks tracked', value: benchmarks.length, href: '/benchmarks/' },
-  { label: 'Open-weight models', value: models.filter((m) => m.data.open_weight === true).length, href: '/models/' },
-  { label: '1M-context models', value: models.filter((m) => (m.data.context_window ?? 0) >= 1000000).length, href: '/models/' },
-  { label: 'Multimodal models', value: models.filter((m) => m.data.capabilities.vision === true).length, href: '/models/' },
+  { label: 'Open-weight models', value: models.filter((m) => m.data.open_weight === true).length, href: '/models/open-weights/' },
+  { label: '1M-context models', value: models.filter((m) => (m.data.context_window ?? 0) >= 1000000).length, href: '/models/long-context/' },
+  { label: 'Multimodal models', value: models.filter((m) => m.data.capabilities.vision === true).length, href: '/models/multimodal/' },
 ];
 
 // P1: 首页 Dataset JSON-LD —— 全站数据库概览（与 models/index 的 Dataset 一致口径）

@@ -1,0 +1,148 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+import { datasetJsonLd, breadcrumbJsonLd } from '../lib/seo';
+
+interface HubLink {
+  slug: string;
+  title: string;
+}
+
+interface Hub {
+  slug: string;
+  title: string;
+  description: string;
+  short_answer: string;
+  why_it_matters: string;
+  rule_description: string;
+  guides: HubLink[];
+  research: HubLink[];
+  technology: HubLink[];
+  members: string[];
+}
+
+interface Props {
+  hub: Hub;
+}
+
+const { hub } = Astro.props;
+
+const models = await getCollection('models');
+const byModelId = new Map(models.map((m) => [m.data.model_id, m]));
+
+/* Resolve member model_ids (dotted form) to collection entries; keep only
+   entries that exist and sort by display name. The count is the length of
+   the member list — never a hand-written number. */
+const members = hub.members
+  .map((mid) => byModelId.get(mid))
+  .filter((m): m is NonNullable<typeof m> => Boolean(m))
+  .sort((a, b) => a.data.model_name.localeCompare(b.data.model_name));
+
+const count = hub.members.length;
+
+const fmtInt = (v: number | null | undefined) => (v != null ? v.toLocaleString('en-US') : null);
+const openLabel = (v: boolean | null | undefined) => (v === true ? 'Open weight' : v === false ? 'Closed weight' : 'Weight status unknown');
+
+const pageUrl = new URL(Astro.url.pathname, Astro.site).href;
+const jsonLd = datasetJsonLd({
+  id: pageUrl,
+  name: `${hub.title} — China AI Hub`,
+  description: `${hub.description} Count derived programmatically from the models database: ${hub.rule_description}.`,
+  dateModified: models.map((x) => x.data.last_verified).sort().at(-1),
+});
+const breadcrumb = breadcrumbJsonLd([
+  { name: 'Home', url: new URL('/', Astro.site).href },
+  { name: 'Models', url: new URL('/models/', Astro.site).href },
+  { name: hub.title, url: pageUrl },
+]);
+---
+
+<BaseLayout title={hub.title} description={hub.description}>
+  <article class="max-w-none">
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+    <script type="application/ld+json" set:html={JSON.stringify(breadcrumb)} />
+
+    <p class="text-sm text-gray-500 mb-1">
+      <a href="/models/">Models</a> / {hub.title}
+    </p>
+    <h1 class="text-3xl font-bold text-gray-900 mb-2">{hub.title}</h1>
+
+    <!-- Short answer -->
+    <p class="text-gray-700 border-l-4 border-[#0f4c81] pl-4 mb-6">{hub.short_answer}</p>
+
+    <!-- Automatic count block -->
+    <div class="mb-6 rounded-lg border border-gray-200 bg-white p-4 flex items-center gap-4">
+      <div class="text-4xl font-bold text-[#0f4c81]">{count}</div>
+      <div class="text-sm text-gray-600">
+        <div class="font-medium text-gray-900">models match this dimension</div>
+        <div>Counted automatically from the models database: <code class="font-mono text-xs">{hub.rule_description}</code></div>
+      </div>
+    </div>
+
+    <p class="text-gray-700 mb-8">{hub.why_it_matters}</p>
+
+    <!-- Entity cards -->
+    <h2 class="text-xl font-semibold text-gray-900 mb-3">Matching models</h2>
+    {members.length === 0 ? (
+      <p class="text-gray-500">No models currently match this dimension.</p>
+    ) : (
+      <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 mb-8">
+        {members.map((m) => {
+          const d = m.data;
+          const context = fmtInt(d.context_window);
+          return (
+            <article class="border border-gray-200 rounded-lg bg-white p-4">
+              <h3 class="font-semibold">
+                <a href={`/models/${m.id}/`} class="hover:no-underline">{d.model_name}</a>
+              </h3>
+              <p class="text-sm text-gray-500 mt-0.5">
+                <a href={`/companies/${d.provider}/`}>{d.provider}</a>
+                {d.status && <> · <span class="capitalize">{d.status}</span></>}
+              </p>
+              <ul class="text-sm text-gray-600 mt-2 space-y-1">
+                {context != null && <li>Context: {context} tokens</li>}
+                <li>{openLabel(d.open_weight)}{d.license ? ` · ${d.license}` : ''}</li>
+              </ul>
+            </article>
+          );
+        })}
+      </div>
+    )}
+
+    <!-- Related decision guides / research / technology -->
+    {(hub.guides.length > 0 || hub.research.length > 0 || hub.technology.length > 0) && (
+      <div class="space-y-5 mb-6">
+        {hub.guides.length > 0 && (
+          <div>
+            <h2 class="text-lg font-semibold text-gray-900 mb-2">Decision guides</h2>
+            <ul class="text-sm space-y-1">
+              {hub.guides.map((g) => <li><a href={`/guides/${g.slug}/`}>{g.title}</a></li>)}
+            </ul>
+          </div>
+        )}
+        {hub.research.length > 0 && (
+          <div>
+            <h2 class="text-lg font-semibold text-gray-900 mb-2">Original research</h2>
+            <ul class="text-sm space-y-1">
+              {hub.research.map((r) => <li><a href={`/research/${r.slug}/`}>{r.title}</a></li>)}
+            </ul>
+          </div>
+        )}
+        {hub.technology.length > 0 && (
+          <div>
+            <h2 class="text-lg font-semibold text-gray-900 mb-2">Technology</h2>
+            <ul class="text-sm space-y-1">
+              {hub.technology.map((t) => <li><a href={`/technology/${t.slug}/`}>{t.title}</a></li>)}
+            </ul>
+          </div>
+        )}
+      </div>
+    )}
+
+    <p class="text-xs text-gray-500">
+      This page is generated from the models database; the member list and count are derived from each model's
+      frontmatter fields, not written by hand. See the <a href="/models/">full model database</a> and the{' '}
+      <a href="/methodology/">methodology</a>.
+    </p>
+  </article>
+</BaseLayout>

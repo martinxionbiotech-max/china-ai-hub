@@ -1,3 +1,58 @@
+# China AI Hub — Phase 2 Change Log（2C-C3 收官：6 维度筛选 Hub 页，数据生成页非文章）
+
+**日期**：2026-09-29 · **范围**：主站 `china-ai-hub`（新增 6 维度 hub 页 + 生成脚本 + 校验脚本扩展 + 首页 Glance 链接）
+**依据**：`phase2/41-sinoaihub-phase2c-plan.md` C3（长尾数据生成页，非文章）
+**验证方式**：零手写数字（计数全程序化——判定规则写进 `scripts/hub-rules.json`，生成脚本 `scripts/generate-hubs.mjs` 读 frontmatter 求成员，校验脚本独立复读 frontmatter 交叉核对）· `npm run build` 178 页通过（+6）· `npm run check:counts` 四面对齐 0 矛盾 + 六 hub 计数 0 矛盾 · 六 hub slug 逐一 grep dist 确认存在 · `git fetch` 后 `git rev-list --left-right --count HEAD...origin/main` = `0 0`
+
+## A · 6 维度 Hub 清单（计数 = 判定规则，非手写）
+
+| # | hub | slug | 计数 | 判定规则（程序化） |
+|---|---|---|---|---|
+| 1 | Open-weight | `/models/open-weights/` | 12 | `open_weight === true` |
+| 2 | Long-context | `/models/long-context/` | 11 | `context_window >= 1,000,000` |
+| 3 | Multimodal | `/models/multimodal/` | 10 | `capabilities.vision === true` |
+| 4 | Reasoning | `/models/reasoning/` | 19 | `capabilities.reasoning === true` |
+| 5 | Coding | `/models/coding/` | 11 | `capabilities.coding === true` |
+| 6 | MoE | `/models/moe/` | 11 | `architecture` 含 "MoE"/"Mixture-of-Experts"（大小写不敏感）OR `parameter_information.active_parameters` 存在 |
+
+## B · 每页结构
+
+Short answer（该维度是什么/为何重要，2-3 句）→ 自动计数区块（大字计数 + 判定规则说明；计数 = 成员数组长度）→ 实体卡列表（名称/厂商/状态/context/open-weight·license，从实体 frontmatter 读取）→ 链实体页 → 链相关 Decision Guide / Research / Technology（先 grep 确认 slug 存在再落链接）。
+
+## C · 基础设施
+
+| File | Change |
+|---|---|
+| `scripts/hub-rules.json` | 新增：6 hub 定义（slug/title/短答/why-it-matters/判定规则/关联 guide·research·technology），单一事实源 |
+| `scripts/generate-hubs.mjs` | 新增：读 hub-rules.json + model frontmatter（js-yaml），求成员，写 `src/data/hubs.json`；经 `npm run prebuild` 挂接 |
+| `src/data/hubs.json` | 生成输出（成员数组，计数 = 长度，零手写数字） |
+| `src/components/ModelHub.astro` | 新增：hub 页渲染组件（读 hubs.json 成员 + getCollection 取实体卡数据） |
+| `src/pages/models/{6}.astro` | 新增：6 个薄包装页 |
+| `scripts/check-entity-counts.py` | 扩展：① sitemap S3 排除 6 hub 非实体路由 ② 新增 `verify_hubs`——独立复读 frontmatter + 重跑同一判定规则，核对 hub 计数 = 对应实体数 |
+| `package.json` | 加 `prebuild` 脚本挂接生成器 |
+| `src/pages/index.astro` | 首页 Glance 三项派生计数（open-weight/1M-context/multimodal）链接由 `/models/` 改为对应 hub 页 |
+
+## D · 判定规则说明
+
+- open-weights / reasoning / coding：直接取 frontmatter 布尔字段（`open_weight` / `capabilities.reasoning` / `capabilities.coding` === true）。
+- long-context：`context_window >= 1,000,000`（1M 阈值，与首页 Glance「1M-context」及 `long-context-model-selection` 指南口径一致）。
+- multimodal：`capabilities.vision === true`（vision 为主多模态信号，与首页 Glance「Multimodal」口径一致；video/computer-use 在卡内另标）。
+- moe：`architecture` 含 "MoE"/"Mixture-of-Experts"（大小写不敏感）OR `parameter_information.active_parameters` 存在（active-param 是 MoE 稀疏激活的独有签名，覆盖 GLM-5.2/5.3/5.3-Flash 等 architecture 未显式写 "MoE" 但发布 active params 的模型）。与站内 `research/chinese-ai-moe-architectures` 口径一致。
+
+## 审计结论
+
+| 项 | 结果 |
+|---|---|
+| 新增 hub 页 | 6 |
+| 手写数字 | 0（全部程序化，成员数组长度 = 计数） |
+| hub 改动实体页 | 0（只读 entity frontmatter，不改实体） |
+| 四层标签 | 保持（hub 为数据生成页，无分析断言；实体页标签未动） |
+| build | 178 页通过（+6） |
+| check:counts | 四面对齐 0 矛盾 + 六 hub 计数 0 矛盾 |
+| 同步 | origin/main `0 0` |
+
+---
+
 # China AI Hub — Phase 2 Change Log（2B-P3 Authority 层六件：E-E-A-T 治理页 + author 字段补挂）
 
 **日期**：2026-09-29 · **范围**：主站 `china-ai-hub`（新增 5 治理页 + 补全 1 既有页 + 68 页 author 字段回填）
