@@ -20,6 +20,13 @@ ai_products:
 foundation_models:
   - qwen3.8-max
   - qwen3.8-flash
+  - qwen3.8-2.4t-a95b
+agents:
+  - qwen-code
+  - qwen-agent
+  - qoder
+api:
+  - model-studio
 open_models:
   - qwen3.8-2.4t-a95b
 major_releases:

@@ -20,6 +20,10 @@ foundation_models:
   - kimi-k2.7-code
   - kimi-k2.7-code-highspeed
   - kimi-k2.6
+agents:
+  - kimi-code
+api:
+  - moonshot
 open_models:
   - kimi-k3
 major_releases:

@@ -21,7 +21,13 @@ ai_products:
 foundation_models:
   - glm-5.3
   - glm-5.3-flash
+  - glm-5.3-flashx
   - glm-5.2
+agents:
+  - autoglm
+  - glm-coding-plan
+api:
+  - zai
 open_models:
   - glm-5.3
 major_releases:

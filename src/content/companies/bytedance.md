@@ -19,6 +19,10 @@ foundation_models:
   - doubao-seed-2-1-pro
   - doubao-seed-evolving
   - doubao-seed-2-1-turbo
+agents:
+  - doubao-app
+api:
+  - ark
 cloud_distribution:
   - Volcengine Ark (cn-beijing)
 major_releases:

@@ -15,6 +15,10 @@ ai_products:
 foundation_models:
   - deepseek-v4-1-flash
   - deepseek-v4-pro
+agents:
+  - deepseek-harness
+api:
+  - deepseek
 open_models:
   - deepseek-v3-2
 major_releases:

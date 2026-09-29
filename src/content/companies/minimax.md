@@ -21,6 +21,11 @@ foundation_models:
   - minimax-m3
   - minimax-m2.7
   - minimax-m2.7-highspeed
+agents:
+  - minimax-agent
+  - minimax-code
+api:
+  - minimax
 open_models:
   - minimax-m3
 major_releases:

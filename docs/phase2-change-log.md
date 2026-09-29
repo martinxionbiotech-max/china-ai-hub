@@ -1,3 +1,21 @@
+# China AI Hub — Phase 2 Change Log（B1 实体关系一致性全库审计 + 修复）
+
+**日期**：2026-09-29 · **范围**：主站 `china-ai-hub` + 数据站 `china-ai-hub-data`
+**依据**：`phase2/39-chinaaihub-upgrade-plan.md` P0 + `phase2/38-chinaaihub-audit-report.md` §23
+**验证方式**：程序化交叉审计脚本 `scripts/entity-consistency-audit.py`（六向核对 Company↔Model↔Agent↔API↔Pricing↔Benchmark）+ `npm run build` 121 页通过 + 修后复扫 0 矛盾
+
+| File | Problem | Change | Source | Verification date |
+|---|---|---|---|---|
+| `src/content/companies/{6}.md` | frontmatter `agents`/`api` 字段全空，与 agent.company / api.provider 反向指针矛盾（审计 §23 MiniMax「0 APIs」类，全库 6 家全中） | 补 `agents` + `api` 字段（值取反向指针真值） | agent/api 实体页反向指针 | 2026-09-29 |
+| `src/content/companies/zhipu-ai.md` | `foundation_models` 漏列活跃兄弟 SKU `glm-5.3-flashx` | 补 `glm-5.3-flashx` | Z.ai docs（既有 source） | 2026-09-29 |
+| `data/docs/companies/{6}.md` | 数据站 company 页缺 `## Agents` / `## API` 关系小节，与主站语义层不同步 | 补 `## Agents` + `## API` 小节（链接到实体页）；同步 zhipu Foundation Models | 主站 frontmatter 真值 | 2026-09-29 |
+| `data/docs/companies/bytedance.md` | 悬空 `## Related Entities → volcengine`（非 company 实体） | 移除该小节（Ark 已由 `api: ark` + `cloud_distribution` 覆盖） | — | 2026-09-29 |
+| `scripts/entity-consistency-audit.py` | （新增）无审计基础设施 | 新建六向一致性审计脚本（含 superseded 不计入当前模型口径） | — | 2026-09-29 |
+
+**审计结论**：修复前 26 处矛盾（Company→API 6 + Company→Agent 6 + Company→Model 2 + DataSite Company→API 6 + DataSite Company→Agent 6）；修复后 0 矛盾。详见 `docs/entity-consistency-report.md`。
+
+---
+
 # China AI Hub — Phase 2 Change Log（P0-a 核心模型页深化 + D 级页治理）
 
 **日期**：2026-09-28 · **范围**：主站 `china-ai-hub` 模型页
