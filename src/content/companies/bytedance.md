@@ -21,6 +21,8 @@ foundation_models:
   - doubao-seed-2-1-turbo
 agents:
   - doubao-app
+  - coze
+  - trae
 api:
   - ark
 cloud_distribution:
