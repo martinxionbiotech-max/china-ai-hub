@@ -1,3 +1,34 @@
+# China AI Hub — Phase 2 Change Log（2B-P2b Decision Guides：8 数据驱动决策指南页）
+
+**日期**：2026-09-29 · **范围**：主站 `china-ai-hub`（新增 8 指南页）
+**依据**：`phase2/40-sinoaihub-phase2b-audit.md` P2-8（增加 Decision Guides：coding · agent · API · self-hosting · enterprise · long context · multimodal · pricing）
+**验证方式**：零编造（全部数值从实体页 frontmatter + 数据站记录读取，未手写数字）· 每页结构 Short answer → Decision criteria 矩阵表（Criteria | Relevance/Notes）→ Entity routing 场景路由表 → What the evidence shows → Selection procedure → Limitations → Sources → 四层标签 footer · 正文 1,222–1,363 词 · `npm run build` 145 页通过（+8）· 内链逐一 grep dist 确认存在 · 数据站一致性抽查（下述）· `git fetch` 后 `git rev-list --left-right --count HEAD...origin/main` = `0 0`
+
+## A · 8 指南概览
+
+| slug | 主题 | 正文词数 | 决策矩阵行数 | 路由链接数 |
+|---|---|---|---|---|
+| `choosing-a-coding-model` | 编程模型选择（SWE 证据/工具调用/上下文）| 1,252 | 8 | 9 |
+| `choosing-an-agent` | Agent 搭建（模型依赖/tool calling/MCP）| 1,288 | 7 | 10 |
+| `choosing-an-api-platform` | API 选型（兼容/价格/区域/rate limits）| 1,333 | 7 | 7 |
+| `self-hosting-chinese-open-weights` | 自托管（open weights/license/硬件/量化）| 1,272 | 8 | 10 |
+| `enterprise-deployment` | 企业部署（区域/SLA/数据驻留/合规）| 1,289 | 7 | 7 |
+| `long-context-model-selection` | 长上下文（1M context 与适用负载）| 1,351 | 6 | 7 |
+| `multimodal-model-selection` | 多模态（vision/audio/video 矩阵）| 1,222 | 6 | 7 |
+| `choosing-by-price` | 价格选型（price_history/阶梯/订阅）| 1,363 | 7 | 7 |
+
+## B · 数据源一致性抽查
+
+主站 frontmatter 与数据站 `china-ai-hub-data/docs/` 逐字段核对，全部一致。代表项：kimi-k3 $3.00/$15.00 · 1M/1M · GPQA 93.5 · DeepSWE 67.5 · TB2.1 88.3；glm-5.3 TB3.0 28.3 · DeepSWE v1.1 66.9 · CyberGym 84.5；minimax-m3 $0.30/$1.20 · price_history 0.6→0.3 / 2.4→1.2 / 0.12→0.06。价格史仅 3 条有据事件（DeepSeek billing-structure 08-16、V4.1-Flash 降价 09-10、MiniMax M3 永久 50% 折扣），未造新历史。
+
+## C · 关键诚实标注
+
+- enterprise 指南显式标注 SLA/合规认证「未公开」——6 平台均无公开 SLA/合规条款，诚实记录而非推断。
+- 四层标签 footer 全 8 页；`Third-party` 无据不硬挂（benchmark 全为 vendor_reported）。
+- 内链发现并修正 2 处 slug 错误（kimi-k2.6→kimi-k26、minimax-m2.7→minimax-m27，点号剥除规则）。
+
+---
+
 # China AI Hub — Phase 2 Change Log（2B-P2a Comparison 规模化：12 数据驱动 Entity-vs-Entity 对比页）
 
 **日期**：2026-09-29 · **范围**：主站 `china-ai-hub`（新增 12 对比页 + 1 基础设施微调）
