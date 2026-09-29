@@ -1,3 +1,22 @@
+# China AI Hub — Phase 2 Change Log（B4 P3 Research 原创 4 篇）
+
+**日期**：2026-09-29 · **范围**：主站 `china-ai-hub`（src/content/research/ 新增 4 篇原创研究）
+**依据**：`phase2/39-chinaaihub-upgrade-plan.md` P3（§11/§28 原创模式）+ `phase2/38-chinaaihub-audit-report.md` §10/§11/§5
+**验证方式**：零编造（全部数值取自站内已刊载事实——data 站 JSON/主站实体页/research 既有，查不到如实写 uncertainty）· 每篇 ≥3 处「China AI Hub analysis indicates」主观判断且每判断前有证据链 · `npm run build` 125 页通过（新增 4 页）· 内链逐条 grep 核对目标存在
+
+## 新增 4 篇原创 Research（P3 原创模式）
+
+| Slug | 词数 | 原创观点数 | 数据锚点 | 来源数 | 核心原创观点 |
+|---|---|---|---|---|---|
+| `how-chinese-ai-api-pricing-has-changed` | 1,958 | 3 | price_history 5 条 + 6 家价格锚点 + 订阅产品价 | 8 | 价格战从 DeepSeek 触发→行业转订阅/阶梯定价的结构性迁移 |
+| `china-ai-agent-ecosystem-structure-and-gaps` | 1,857 | 3 | 10 agent 实体 + B2-a 字段（underlying model/platform/MCP） | 8 | 中国 agent 高度依赖自有模型厂商、跨模型中立 agent 稀缺（仅 Qwen Code/Qoder 两家，均为阿里） |
+| `open-weight-vs-api-economics-in-china` | 1,847 | 3 | Qwen A95B 开源案例 + 价格锚点 + 许可触发点 | 6 | 开源权重=对冲 API 锁定的营销资产（保真度缺口是策略） |
+| `china-ai-coding-models-the-agent-led-race-2` | 1,881 | 3 | Terminal-Bench 2.1/3.0 分裂 + SWE-bench 三变体 + DeepSWE/AutomationBench | 7 | coding benchmark 方法学分歧使「最强编程模型」宣称不可验证 |
+
+每篇结构：Research Question → Methodology → Evidence → Data → Analysis → Counterpoints/Limitations → China AI Hub Interpretation（主观观点）→ Conclusion → Sources；四层标签（Official fact / Vendor-reported / Third-party / China AI Hub analysis）贯穿；不写「Best」类断言。
+
+---
+
 # China AI Hub — Phase 2 Change Log（B3 Data Hub 八要素 + 首页 China AI Market at a Glance）
 
 **日期**：2026-09-29 · **范围**：数据站 `china-ai-hub-data`（59 实体页）+ 主站 `china-ai-hub`（首页）
