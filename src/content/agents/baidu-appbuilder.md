@@ -27,35 +27,99 @@ limitations:
   - Pricing is split across a billing page and the Qianfan console rather than a single public price list
   - Cloud-only platform; no self-hosted edition of the platform itself
   - Zero-code / low-code focus means full-code developers must use the OpenAPI/SDK layer
-last_verified: "2026-09-29"
+last_verified: "2026-09-30"
 sources:
   - source_name: Baidu Qianfan AppBuilder documentation
     source_url: https://cloud.baidu.com/doc/AppBuilder/index.html
     source_type: official
-    last_verified: "2026-09-29"
+    last_verified: "2026-09-30"
     confidence: high
   - source_name: Baidu Qianfan model service and agent development platform
     source_url: https://cloud.baidu.com/doc/WENXINWORKSHOP/s/7ltgucw50
     source_type: official
-    last_verified: "2026-09-29"
+    last_verified: "2026-09-30"
     confidence: high
   - source_name: Baidu ERNIE (文心) model product page
     source_url: https://cloud.baidu.com/product/model.html
     source_type: official
-    last_verified: "2026-09-29"
+    last_verified: "2026-09-30"
+    confidence: high
+  - source_name: Baidu Qianfan AI application developer center pricing
+    source_url: https://cloud.baidu.com/doc/qianfan-docs/s/Jm8r1826a
+    source_type: official
+    last_verified: "2026-09-30"
     confidence: high
 ---
-**What it is.** Baidu Qianfan AppBuilder (百度千帆·Agent开发平台) is Baidu's enterprise-grade agent and large-model application development platform, built on the ERNIE (文心) foundation model family. **Why it matters.** It is Baidu's toolchain for turning ERNIE models into deployed enterprise applications — the "last mile" from model to production that Baidu sells through Baidu AI Cloud. **Key characteristics.** An out-of-the-box toolchain of RAG, Agent, workflow and UI Builder; pre-built Baidu AI Search and iRAG components; zero-code, low-code and full-code development paths plus OpenAPI and SDK. **What a professional should know.** The platform is enterprise-focused and cloud-only, its public overview does not name the exact ERNIE model version behind a given agent, and its pricing is distributed across a billing page and the Qianfan console rather than a single public price list.
+**Short answer.** Baidu Qianfan AppBuilder (百度千帆·Agent开发平台) is Baidu's enterprise-grade agent and large-model application development platform, built on the ERNIE (文心) model family — an out-of-the-box RAG/Agent/workflow/UI Builder toolchain with pre-integrated Baidu AI Search and iRAG, spanning zero-code to full-code.
 
-Baidu Qianfan AppBuilder is described in its official documentation as "an enterprise-grade large-model application development and management platform" that provides an out-of-the-box toolchain of RAG, Agent, workflow and UI Builder. It ships pre-built components — Baidu AI Search and iRAG as application-development features, plus document understanding, image understanding and speech recognition as traditional AI components — and it supports zero-code, low-code and full-code development paths to lower the barrier to shipping large-model applications.
+**Key facts.**
 
-The platform sits inside the larger Qianfan (千帆) family of Baidu AI Cloud, which also includes the "Qianfan model service and agent development platform" and the ERNIE model family. Agent development on the platform exposes a knowledge-base and database management layer, an MCP service, and OpenAPI and SDK interfaces for developers who want to leave the visual builder. A "Qianfan Token Plan" personal edition was recently launched with first-purchase discounts, indicating a move toward credit-based personal pricing alongside enterprise contracts.
+- Ships an out-of-the-box toolchain of RAG, Agent, workflow and UI Builder, plus document understanding, image understanding and speech recognition as traditional AI components.
+- Pre-built application components include Baidu AI Search and iRAG (image-generation RAG).
+- Supports zero-code, low-code and full-code development paths, with OpenAPI and SDK for developers who leave the visual builder.
+- Enterprise application development and management platform: knowledge-base and database management, an MCP service, and an agent framework with reasoning and tool use.
+- Built on Baidu's ERNIE foundation-model family; the platform overview does not name the exact ERNIE version behind a given agent.
+- Cloud-only; no self-hosted edition.
+- A "Qianfan Token Plan" personal edition launched with first-purchase discounts, pointing to credit-based personal pricing alongside enterprise contracts.
 
-See the [Baidu](/companies/baidu/) profile.
+**What this means.** AppBuilder is Baidu's "last mile" from ERNIE models to deployed enterprise applications — the managed, single-vendor integration layer that Baidu sells through Baidu AI Cloud, as distinct from the consumer [文心一言](/companies/baidu/) surface and the Qianfan API.
+
+**What is uncertain.** The specific ERNIE version behind each agent, the consolidated pricing (split across a billing page and the console), the scope of the MCP service, and whether agents can route to non-ERNIE models are all not stated on public pages.
+
+**Sources.**
+
+| evidence_id | source_name | source_url | source_type | published | verified | confidence | conflict |
+|---|---|---|---|---|---|---|---|
+| src-agents-baidu-appbuilder-1 | Baidu Qianfan AppBuilder documentation | https://cloud.baidu.com/doc/AppBuilder/index.html | Official documentation | — | 2026-09-30 | high | — |
+| src-agents-baidu-appbuilder-2 | Baidu Qianfan model service and agent development platform | https://cloud.baidu.com/doc/WENXINWORKSHOP/s/7ltgucw50 | Official documentation | — | 2026-09-30 | high | — |
+| src-agents-baidu-appbuilder-3 | Baidu ERNIE (文心) model product page | https://cloud.baidu.com/product/model.html | Official | — | 2026-09-30 | high | — |
+| src-agents-baidu-appbuilder-4 | Baidu Qianfan AI application developer center pricing | https://cloud.baidu.com/doc/qianfan-docs/s/Jm8r1826a | Official documentation | — | 2026-09-30 | high | — |
 
 ## Why it matters
 
-Baidu AppBuilder matters because it is the enterprise leg of Baidu's ERNIE strategy: where [文心一言 (ERNIE Bot)](/companies/baidu/) reaches consumers and the Qianfan API reaches developers, AppBuilder reaches the enterprise application team that wants a deployed agent without assembling an LLM stack itself. China AI Hub analysis indicates its structural role is enterprise application delivery — it bundles RAG, agent orchestration and UI building into one managed platform, in contrast to the open-source self-hosted platforms ([Dify](/agents/dify/), [FastGPT](/agents/fastgpt/)) that compete for the same builders on a bring-your-own-model basis. The key differentiator is that AppBuilder's components are pre-integrated with Baidu's own ERNIE models and search infrastructure, which is a managed, single-vendor integration rather than a neutral tool. China AI Hub analysis: this positions AppBuilder as the enterprise mirror of Tencent's consumer-channel play — where Yuanqi sells WeChat reach, AppBuilder sells enterprise RAG-and-agent delivery on ERNIE — and both compete against the open self-hosted platforms by offering a managed, pre-integrated stack that trades model choice for deployment speed. The practical consequence is that an ERNIE-committed enterprise gets a tighter default experience, while a multi-model buyer must look to Dify or FastGPT.
+AppBuilder matters because it is the enterprise leg of Baidu's ERNIE strategy. Baidu reaches consumers through the ERNIE Bot assistant, developers through the Qianfan API, and enterprise application teams through AppBuilder — the team that wants a deployed agent without assembling an LLM stack itself.
+
+China AI Hub analysis indicates AppBuilder's structural role is enterprise application delivery. It bundles RAG, agent orchestration and UI building into one managed platform, and its components are pre-integrated with Baidu's own ERNIE models and search infrastructure — a managed, single-vendor integration rather than a neutral tool. That puts it in direct competition with the open self-hosted platforms ([Dify](/agents/dify/), [FastGPT](/agents/fastgpt/)) for the same enterprise builders, but on the opposite side of the trade-off: AppBuilder sells deployment speed and pre-integration in exchange for model choice.
+
+China AI Hub analysis: AppBuilder is the enterprise mirror of Tencent's consumer-channel play. Where [Yuanqi](/agents/yuanqi/) sells WeChat reach on Hunyuan, AppBuilder sells enterprise RAG-and-agent delivery on ERNIE — and both compete against the open self-hosted platforms by offering a managed, pre-integrated stack that trades model choice for deployment speed. The practical consequence is a hard split: an ERNIE-committed enterprise gets a tighter default experience, while a multi-model buyer must look to Dify or FastGPT.
+
+## How it differs from Coze and Yuanqi
+
+The three big-lab platforms share a managed-builder shape but optimize for different buyers and channels.
+
+- **[Coze](/agents/coze/)** (ByteDance) optimizes for consumer/SMB reach across WeChat, Feishu and Douyin on Doubao, plus a Volcengine enterprise tier. Its categories are workplace-productivity and channel publishing.
+- **[Yuanqi](/agents/yuanqi/)** (Tencent) optimizes for the WeChat official-account channel on Hunyuan, with customer-service and IP-persona categories.
+- **AppBuilder** (Baidu) optimizes for enterprise application delivery on ERNIE, with an explicit RAG/Agent/workflow/UI Builder toolchain, pre-built Baidu AI Search and iRAG components, and full-code OpenAPI/SDK paths.
+
+China AI Hub analysis: AppBuilder is the most explicitly "enterprise toolchain" of the three — it names RAG, workflow and UI Builder as first-class components and exposes a full-code exit (OpenAPI/SDK), which Coze and Yuanqi de-emphasize in favor of channel publishing. A developer who needs code-level control but stays within a managed Baidu stack is the exact buyer AppBuilder is shaped for, whereas Coze and Yuanqi are shaped for operators who never want to see code.
+
+## Practical implications
+
+**For enterprises on Baidu AI Cloud.** AppBuilder is the native managed path to RAG and agent applications on ERNIE, with pre-integrated search (Baidu AI Search) and image-generation RAG (iRAG) — a tighter default experience than assembling the same stack on a neutral platform.
+
+**For full-code developers.** The visual builder is the front door, but the OpenAPI/SDK layer is the exit: developers who outgrow zero/low-code must move to the API surface, which is documented but not the platform's emphasis.
+
+**For multi-model buyers.** AppBuilder is single-vendor (ERNIE), cloud-only and proprietary. Teams that need to swap models or self-host must weigh [Dify](/agents/dify/) or [FastGPT](/agents/fastgpt/) instead — the neutral platforms that compete for the same builders on a bring-your-own-model basis.
+
+## What the evidence shows
+
+The evidence is strong on AppBuilder's component depth and weak on its model and pricing transparency. The official documentation describes it as "an enterprise-grade large-model application development and management platform" with an out-of-the-box RAG/Agent/workflow/UI Builder toolchain and pre-built Baidu AI Search and iRAG components — the richest named component list of the three bound platforms, which grounds the "enterprise toolchain" reading in primary material.
+
+The gaps mirror the pattern: the ERNIE model version behind a given agent is unnamed on the overview, pricing is distributed across a billing page and the console, and the MCP service appears in the navigation without a detailed scope. China AI Hub analysis indicates this is the same asymmetry the other bound platforms show — the platform documents what it sells (the toolchain) more than what it routes (the specific model), because on a single-vendor stack the model is a default, not a choice to advertise.
+
+## Where this fits
+
+| Workload | Relevance |
+|---|---|
+| Enterprise RAG document/table Q&A application | High |
+| Agent application with reasoning and tool use | High |
+| Zero-code prototyping + low-code delivery | High |
+| Full-code development via OpenAPI/SDK | Moderate (exit path, not emphasis) |
+| AI search and image-generation components | High (Baidu AI Search, iRAG) |
+| Multi-model routing / non-ERNIE models | Not documented |
+| Self-hosted / on-premises deployment | None (cloud-only, proprietary) |
+
+*Relevance judgments are China AI Hub analysis based on documented capabilities, not vendor claims.*
 
 ## Field reference
 
@@ -79,14 +143,8 @@ Baidu AppBuilder matters because it is the enterprise leg of Baidu's ERNIE strat
 | Deployment | Cloud | Official |
 | Limitations | ERNIE version unnamed; pricing split; cloud-only | Official |
 | Source | [AppBuilder docs](https://cloud.baidu.com/doc/AppBuilder/index.html) · [ERNIE](https://cloud.baidu.com/product/model.html) | Official |
-| Last verified | 2026-09-29 | Official |
+| Last verified | 2026-09-30 | Official |
 
-## What is uncertain
+See the [Baidu](/companies/baidu/) company profile, the [choosing-an-agent guide](/guides/choosing-an-agent/), the [enterprise-deployment guide](/guides/enterprise-deployment/), and the site's [AI agents](/technology/ai-agents/), [RAG](/technology/rag/) and [MCP](/technology/mcp/) technology pages. For the structural reading of the three bound platforms, see the research on [the agent ecosystem structure](/research/china-ai-agent-ecosystem-structure-and-gaps/).
 
-- The specific ERNIE model version behind a given agent is not stated on the platform overview.
-- Pricing is distributed across a billing page and the Qianfan console rather than a single public price list.
-- The platform's MCP service scope is listed in the navigation but not detailed in the fetched overview.
-- Whether AppBuilder agents can route to non-ERNIE models is not documented on the public pages.
-- No independent third-party evaluation of AppBuilder agents is recorded in this database.
-
-*Labels used above: **Official fact** (from Baidu Qianfan AppBuilder documentation and ERNIE product pages), **Vendor-reported claim** (capability statements by Baidu), and **China AI Hub analysis** (our synthesis, always introduced as such).*
+*Labels used above: **Official fact** (from Baidu Qianfan AppBuilder documentation and ERNIE product pages), **Vendor-reported claim** (capability statements by Baidu), and **China AI Hub analysis** (our synthesis, always introduced as such). No third-party evaluation evidence is currently recorded for AppBuilder agents.*
