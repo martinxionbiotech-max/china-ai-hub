@@ -21,30 +21,90 @@ limitations:
   - Underlying model(s) powering the coding agent are not named on the public marketing page
   - Public page is thin on feature and pricing detail; detailed documentation requires the product
   - Closed, cloud-first product; no self-hosted or open-source edition documented
-last_verified: "2026-09-29"
+last_verified: "2026-09-30"
 sources:
   - source_name: Trae official site
     source_url: https://www.trae.ai/
     source_type: official
-    last_verified: "2026-09-29"
+    last_verified: "2026-09-30"
     confidence: high
   - source_name: TraeWork web edition
     source_url: https://work.trae.ai/
     source_type: official
-    last_verified: "2026-09-29"
+    last_verified: "2026-09-30"
+    confidence: high
+  - source_name: TraeCode IDE page
+    source_url: https://www.trae.ai/ide/
+    source_type: official
+    last_verified: "2026-09-30"
     confidence: high
 ---
-**What it is.** Trae is ByteDance's AI-native IDE, split into two surfaces: TraeCode, a "10x AI coding engineer" for developers, and TraeWork, a "professional AI work assistant" for non-developers, with a browser-based web edition. **Why it matters.** It is ByteDance's entry into the coding-agent and AI-workspace race, competing with [Kimi Code](/agents/kimi-code/) and [Qwen Code](/agents/qwen-code/) on the developer side while extending into general knowledge work. **Key characteristics.** A "Ship Faster with Trae" framing, a coding agent plus a work assistant under one product line, and a TraeWork Web edition. **What a professional should know.** The public marketing page is thin — it does not name the underlying model powering the coding agent, and pricing tiers are documented in-product rather than on the page — so it is a closed, cloud-first product with fewer publicly documented facts than ByteDance's other agent surfaces.
+**Short answer.** Trae is ByteDance's AI-native IDE, split into two surfaces — TraeCode, a "10x AI coding engineer" for developers, and TraeWork, a "professional AI work assistant" for non-developers, with a browser-based web edition — competing in both the coding-agent and AI-workspace races under a single brand.
 
-Trae presents itself as a unified AI work product line: "Ship Faster with Trae" leads to two downloads — TraeCode ("Your 10x AI Coding Engineer") and TraeWork ("Your Professional AI Work Assistant"), plus a TraeWork Web edition at work.trae.ai. This positions the product as spanning both coding and general knowledge work, in contrast to the coding-only agents in the database.
+**Key facts.**
 
-The public marketing page is deliberately sparse: it states the product split and the download paths but does not name the underlying model, spell out feature tiers or publish pricing. As a ByteDance product, Trae sits alongside [Coze](/agents/coze/) and [Doubao](/agents/doubao-app/) in the company's agent portfolio, but with a developer-IDE posture rather than a no-code platform or consumer assistant posture.
+- Two surfaces under "Ship Faster with Trae": TraeCode (coding agent, with IDE and SOLO autonomous modes) and TraeWork (work assistant, with a web edition at work.trae.ai).
+- Framed as spanning both coding and general knowledge work, in contrast to coding-only agents in the database.
+- The public marketing page is deliberately sparse: it states the product split and download paths but does not name the underlying model, spell out feature tiers or publish pricing.
+- Closed, cloud-first product; no self-hosted or open-source edition documented.
+- Sits in ByteDance's agent portfolio alongside [Coze](/agents/coze/) and [Doubao](/agents/doubao-app/), but with a developer-IDE posture.
 
-See the [ByteDance](/companies/bytedance/) profile.
+**What this means.** Trae is ByteDance's entry into the coding-agent and AI-workspace race — a surface-expansion bet that extends the company's agent portfolio from the consumer assistant and no-code platform into the developer IDE.
+
+**What is uncertain.** The underlying model powering the coding agent, pricing tiers, feature depth, and whether TraeCode routes to ByteDance's own models or third-party models are not documented on the public page.
+
+**Sources.**
+
+| evidence_id | source_name | source_url | source_type | published | verified | confidence | conflict |
+|---|---|---|---|---|---|---|---|
+| src-agents-trae-1 | Trae official site | https://www.trae.ai/ | Official | — | 2026-09-30 | high | — |
+| src-agents-trae-2 | TraeWork web edition | https://work.trae.ai/ | Official | — | 2026-09-30 | high | — |
+| src-agents-trae-3 | TraeCode IDE page | https://www.trae.ai/ide/ | Official | — | 2026-09-30 | high | — |
 
 ## Why it matters
 
-Trae matters as ByteDance's coding-agent and AI-workspace bet. China AI Hub analysis indicates its structural role is surface expansion: ByteDance already has the consumer assistant ([Doubao](/agents/doubao-app/)) and the no-code platform ([Coze](/agents/coze/)), and Trae extends that portfolio into the developer IDE and the general work assistant — the two surfaces where Alibaba ([Qwen Code](/agents/qwen-code/)) and Moonshot ([Kimi Code](/agents/kimi-code/)) already compete. The thin public documentation is itself a signal: unlike ByteDance's model and API pages, which are richly documented, Trae's public page reveals little about model routing or pricing, which is consistent with a product still consolidating its two surfaces rather than a mature, fully documented platform. China AI Hub analysis: the thin public documentation is therefore the key signal — Trae is positioned as a product bet (an AI IDE plus a work assistant under one brand) more than a platform bet, which is why its model routing and pricing sit behind the product rather than in public docs. For a buyer, that means evaluating Trae requires trying the product, not reading a spec sheet — a lower-transparency posture than ByteDance's Ark API or Coze documentation. Its two-surface split (TraeCode for developers, TraeWork for knowledge workers) also means it competes on two fronts at once.
+Trae matters as ByteDance's coding-agent and AI-workspace bet. China AI Hub analysis indicates its structural role is surface expansion: ByteDance already has the consumer assistant ([Doubao](/agents/doubao-app/)) and the no-code platform ([Coze](/agents/coze/)), and Trae extends that portfolio into the developer IDE and the general work assistant — the two surfaces where Alibaba ([Qwen Code](/agents/qwen-code/)) and Moonshot ([Kimi Code](/agents/kimi-code/)) already compete.
+
+China AI Hub analysis: the thin public documentation is itself the signal. Unlike ByteDance's model and API pages, which are richly documented, Trae's public page reveals little about model routing or pricing — consistent with a product still consolidating its two surfaces rather than a mature, fully documented platform. The two-surface split (TraeCode for developers, TraeWork for knowledge workers) also means Trae competes on two fronts at once, diluting a clear single-surface identity in exchange for broader reach.
+
+China AI Hub analysis: Trae is positioned as a product bet more than a platform bet — which is why its model routing and pricing sit behind the product rather than in public docs. For a buyer, that means evaluating Trae requires trying the product, not reading a spec sheet — a lower-transparency posture than ByteDance's Ark API or Coze documentation.
+
+## How it differs from Kimi Code and Qwen Code
+
+Trae is a coding *and* work product, against two coding specialists.
+
+- **[Kimi Code](/agents/kimi-code/)** is a coding agent bound to Moonshot's K3/K2.7-Code models, with a documented 1M-token output ceiling from K3.
+- **[Qwen Code](/agents/qwen-code/)** is an open, multi-protocol coding agent (OpenAI/Anthropic/Gemini/Qwen plus DeepSeek/MiniMax/Z.AI/Kimi/local), notable for model choice.
+- **Trae** is a closed, cloud-first IDE that splits into TraeCode (coding) and TraeWork (general work), with the underlying model undisclosed.
+
+China AI Hub analysis: the contrast is transparency and scope. Kimi Code and Qwen Code document their models (bound to Moonshot, or multi-protocol), so a buyer can reason about the model ceiling; Trae documents neither model nor pricing publicly, so the buyer cannot — but Trae spans general knowledge work through TraeWork, which the two coding specialists do not. Trae competes on breadth of surface; the coding specialists compete on model transparency and depth.
+
+## Practical implications
+
+**For developers.** TraeCode offers IDE and autonomous SOLO modes, but the model powering it is undisclosed — a developer cannot confirm the model ceiling from public docs and must try the product to evaluate it.
+
+**For non-developers.** TraeWork and its web edition extend the same brand into general knowledge work — a surface the coding specialists do not cover — but with the same sparse public documentation.
+
+**For evaluators.** Trae is a closed, cloud-first product with no self-hosted edition, so it is not an option for teams that need data control or model transparency; those teams must look to [Qwen Code](/agents/qwen-code/) (open, multi-protocol) or [Kimi Code](/agents/kimi-code/) (open, but Moonshot-bound).
+
+## What the evidence shows
+
+The evidence for Trae is thin by design. The official site establishes the two-surface structure ("Ship Faster with Trae" leading to TraeCode and TraeWork downloads, plus a TraeWork Web edition) and the TraeCode IDE page documents the IDE/SOLO mode distinction — but the page stops there. No underlying model, no pricing tiers, no feature depth.
+
+China AI Hub analysis indicates this is a transparency gap relative to ByteDance's own other surfaces: Coze documents its Doubao default and its model node, and the Ark API documents its pricing and model tiers, but Trae documents neither. The asymmetry is consistent with a product still consolidating two surfaces, and it means the database can record Trae's structure and positioning but not its model or economics — which is exactly the information a buyer most needs to reason about a coding agent.
+
+## Where this fits
+
+| Workload | Relevance |
+|---|---|
+| AI-assisted coding (TraeCode, IDE + SOLO) | High |
+| General knowledge work (TraeWork + web) | High |
+| Browser-based AI work (TraeWork Web) | High |
+| Model-transparent coding | Low (model undisclosed) |
+| Self-hosted / open-source deployment | None (closed, cloud-first) |
+| Multi-protocol model routing | Not documented |
+
+*Relevance judgments are China AI Hub analysis based on documented capabilities, not vendor claims.*
 
 ## Field reference
 
@@ -68,14 +128,8 @@ Trae matters as ByteDance's coding-agent and AI-workspace bet. China AI Hub anal
 | Deployment | Cloud | Official |
 | Limitations | Underlying model unnamed; thin public docs; closed product | Official |
 | Source | [trae.ai](https://www.trae.ai/) · [TraeWork Web](https://work.trae.ai/) | Official |
-| Last verified | 2026-09-29 | Official |
+| Last verified | 2026-09-30 | Official |
 
-## What is uncertain
+See the [ByteDance](/companies/bytedance/) company profile, the [choosing-a-coding-model guide](/guides/choosing-a-coding-model/), the [choosing-an-agent guide](/guides/choosing-an-agent/), and the site's [AI agents](/technology/ai-agents/) and [tool calling](/technology/tool-calling/) technology pages. For the structural reading of Trae against the coding specialists, see the research on [the agent-led coding race](/research/china-ai-coding-models-the-agent-led-race-2/) and [Chinese AI coding models](/research/chinese-ai-coding-models/).
 
-- The underlying model powering the coding agent is not named on the public marketing page.
-- Pricing tiers are not published on the marketing page and require the product.
-- Feature detail is thin on the public page; deeper documentation requires using the product.
-- Whether TraeCode routes to ByteDance's own models or third-party models is not documented publicly.
-- No independent third-party evaluation of Trae is recorded in this database.
-
-*Labels used above: **Official fact** (from the Trae site and TraeWork Web edition), **Vendor-reported claim** (positioning statements by ByteDance), and **China AI Hub analysis** (our synthesis, always introduced as such).*
+*Labels used above: **Official fact** (from the Trae site, TraeWork Web edition and TraeCode IDE page), **Vendor-reported claim** (positioning statements by ByteDance), and **China AI Hub analysis** (our synthesis, always introduced as such). No third-party evaluation evidence is currently recorded for Trae.*
