@@ -41,15 +41,36 @@ sources:
     last_verified: "2026-09-29"
     confidence: high
 ---
-**What it is.** Labring (环界云计算) is a Chinese cloud-computing company founded in 2022, best known for Sealos — a Kubernetes-based cloud operating system — and the open-source [FastGPT](/agents/fastgpt/) knowledge-base agent platform. **Why it matters.** It is the vendor of China's most prominent open-source knowledge-base agent platform, the self-hosted answer to RAG-heavy enterprise Q&A. **Key characteristics.** Sealos provides one-click cloud deployment; FastGPT offers data processing, RAG retrieval and visual AI workflow orchestration with bidirectional MCP. **What a professional should know.** FastGPT's license is not OSI-approved — commercial use is permitted as a backend service but a SaaS offering or redistribution requires authorization — and the company's Alibaba Cloud investment is media-reported rather than officially confirmed.
+**What it is.** Labring (环界云计算) is a Chinese cloud-computing company founded in 2022, best known for Sealos — a Kubernetes-based cloud operating system — and the open-source [FastGPT](/agents/fastgpt/) knowledge-base agent platform. **Why it matters.** It is the vendor of China's most prominent open-source knowledge-base agent platform, the self-hosted answer to RAG-heavy enterprise Q&A. **Key characteristics.** Sealos provides one-click cloud deployment; FastGPT offers data processing, RAG retrieval and visual AI workflow orchestration with bidirectional MCP; AI Proxy keeps the platform model-agnostic. **What a professional should know.** FastGPT's license is not OSI-approved — commercial use is permitted as a backend service but a SaaS offering or redistribution requires authorization — and the company's Alibaba Cloud investment is media-reported rather than officially confirmed.
 
-Labring (环界云计算) was founded in March 2022. Its core product, Sealos, is a cloud operating system built on Kubernetes, while FastGPT is its AI-knowledge-base platform; the company also operates AI Proxy, a model aggregation and load-balancing service that keeps FastGPT model-agnostic.
-
-The company's open-source footprint is substantial: Sealos and FastGPT are both distributed on GitHub, with FastGPT offering a managed cloud (fastgpt.io), a Docker Compose self-hosted path, and one-click deployment on Sealos Cloud.
+Labring (环界云计算) was founded in March 2022. Its core product, Sealos, is a cloud operating system built on Kubernetes, while FastGPT is its AI-knowledge-base platform; the company also operates AI Proxy, a model aggregation and load-balancing service that keeps FastGPT model-agnostic. The open-source footprint is substantial: Sealos and FastGPT are both distributed on GitHub, with FastGPT offering a managed cloud (fastgpt.io), a Docker Compose self-hosted path, and one-click deployment on Sealos Cloud.
 
 ## Why it matters
 
-China AI Hub analysis: Labring matters as the infrastructure-plus-knowledge combination in the agent ecosystem. Where [Dify](/agents/dify/) leads with general application workflows, FastGPT leads with document ingestion, chunk management and hybrid retrieval — the RAG plumbing for enterprise knowledge assistants — and it does so on a self-hosted, bring-your-own-model basis that suits Chinese enterprises which cannot send internal documents to a managed cloud. Its non-OSI license, however, means "open source" here comes with a commercial boundary that the pure-MIT frameworks do not have.
+China AI Hub analysis indicates Labring matters as the infrastructure-plus-knowledge combination in the agent ecosystem. Where [Dify](/agents/dify/) leads with general application workflows, FastGPT leads with document ingestion, chunk management and hybrid retrieval — the RAG plumbing for enterprise knowledge assistants — and it does so on a self-hosted, bring-your-own-model basis that suits Chinese enterprises which cannot send internal documents to a managed cloud.
+
+China AI Hub analysis indicates Labring's structural role is self-hosted knowledge infrastructure, the bridge between a cloud platform (Sealos) and a knowledge agent (FastGPT). The two reinforce each other: Sealos is the deployment substrate that makes self-hosting FastGPT one click, and FastGPT is the AI workload that makes Sealos relevant to the agent era. No other vendor in this database pairs a Kubernetes operating system with a first-party RAG agent platform.
+
+China AI Hub analysis indicates the non-OSI license is the defining constraint on Labring's openness — "open source" here comes with a commercial boundary that the pure-MIT frameworks do not have. FastGPT permits commercial use as a backend service but reserves authorization for a SaaS offering or redistribution, drawing the line more strictly than [MetaGPT](/agents/metagpt/)'s MIT and closer to [Dify](/agents/dify/)'s own commercial-redistribution gate. That boundary protects the FastGPT cloud and commercial-edition revenue.
+
+## How it differs from Dify, MetaGPT and the closed platforms
+
+Labring's differentiation is depth in one area against breadth or closedness elsewhere.
+
+- **[Dify](/agents/dify/)** (LangGenius) is the general application platform — workflow, RAG, agents, observability — for prototype-to-production shipping across many model providers.
+- **[MetaGPT](/agents/metagpt/)** (DeepWisdom) is a role-based multi-agent *framework* — a pip-installable SDK — not a platform or a knowledge tool.
+- **[Coze](/agents/coze/)** and **[Baidu AppBuilder](/agents/baidu-appbuilder/)** are closed, single-vendor managed platforms with knowledge features, but cloud-only and bound to Doubao and ERNIE respectively.
+- **FastGPT** (Labring) is the knowledge-base specialist: open-source, self-hostable, model-agnostic via AI Proxy, with hybrid retrieval and rerank as first-class — plus bidirectional MCP.
+
+China AI Hub analysis: for an enterprise whose primary need is answering questions over an internal document corpus, FastGPT's self-hosted retrieval stack is the closest direct match among the platforms tracked here — the reverse of Dify's breadth-first bet. The two are complementary: FastGPT for retrieval-heavy knowledge work, Dify for general application scope, and Labring's Sealos layer is what makes the self-hosted path operationally light enough to choose.
+
+## Practical implications and limitations
+
+**For enterprises with sensitive documents.** FastGPT is the documented self-hosted path to keep a document corpus inside the firewall while still getting RAG, rerank and workflow orchestration — with Sealos one-click deployment lowering the operational cost. The trade-off is supplying and paying for your own model via AI Proxy.
+
+**For knowledge-base teams.** The retrieval depth (chunk editing, hybrid retrieval, rerank, multi-format ingestion) is the reason to choose FastGPT over a general platform — it is the primary surface, not an add-on.
+
+**For those who might resell.** The license permits commercial use as a backend service but requires authorization for a SaaS offering or commercial redistribution — a stricter gate than MIT, and a material consideration for anyone building a product on top of it. Corporate details (headquarters) and the Alibaba Cloud investment are media-reported, not officially confirmed.
 
 ## Entity hub
 
@@ -65,17 +86,22 @@ China AI Hub analysis: Labring matters as the infrastructure-plus-knowledge comb
 
 - [AI Agents](/technology/ai-agents/)
 - [MCP](/technology/mcp/)
+- [RAG](/technology/rag/)
+- [Agent ecosystem structure and gaps](/research/china-ai-agent-ecosystem-structure-and-gaps/)
 
 ## What is uncertain
 
 - Headquarters location is not published on official channels.
 - The Alibaba Cloud strategic investment is media-reported (36Kr), not confirmed on official channels.
 - Founding date (March 2022) is media-reported.
+- The commercial edition's feature set and pricing are documented separately from the open-source repo.
 
 ## Sources
 
-- [FastGPT GitHub repository](https://github.com/labring/FastGPT)
-- [FastGPT documentation](https://doc.fastgpt.io/)
-- [Sealos official site](https://sealos.run/)
+| evidence_id | source_name | source_url | source_type | published | verified | confidence | conflict |
+|---|---|---|---|---|---|---|---|
+| src-companies-labring-1 | FastGPT GitHub repository | https://github.com/labring/FastGPT | Official documentation | — | 2026-09-29 | high | — |
+| src-companies-labring-2 | FastGPT documentation | https://doc.fastgpt.io/ | Official documentation | — | 2026-09-29 | high | — |
+| src-companies-labring-3 | Sealos official site | https://sealos.run/ | Official | — | 2026-09-29 | high | — |
 
-*Labels used above: **Official fact** (from the FastGPT GitHub repository, documentation and Sealos site), **Vendor-reported claim** (product statements by Labring), and **China AI Hub analysis** (our synthesis, always introduced as such).*
+*Labels used above: **Official fact** (from the FastGPT GitHub repository, documentation and Sealos site), **Vendor-reported claim** (product statements by Labring), and **China AI Hub analysis** (our synthesis, always introduced as such). No third-party evaluation evidence is currently recorded for FastGPT-built applications.*
