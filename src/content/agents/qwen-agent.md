@@ -44,17 +44,70 @@ sources:
     last_verified: "2026-09-20"
     confidence: high
 ---
-**What it is.** Qwen-Agent is the Qwen team's open-source Python framework for building LLM applications on Qwen models, shipping built-in Assistant, FnCallAgent and ReActChat agents with a @register_tool decorator. **Why it matters.** It is the framework layer beneath Alibaba's Qwen chat and coding products — the open Apache-2.0 plumbing that [Qwen Code](/agents/qwen-code/) and Qwen Chat build on. **Key characteristics.** Connects to the DashScope API or self-hosted models via vLLM/Ollama; ships BrowserQwen, a Docker-isolated code interpreter, RAG over 1M-token documents, and MCP integration. **What a professional should know.** The framework is free (Apache-2.0) with no subscription of its own — model usage is billed per token through DashScope or free with self-hosted open models; the last GitHub release was v0.0.26 on 2025-05-29.
+**Short answer.** Qwen-Agent is the Qwen team's open-source Python framework for building LLM applications on Qwen models — built-in Assistant, FnCallAgent and ReActChat agents with a `@register_tool` decorator, connecting to the DashScope API or self-hosted models via vLLM/Ollama. It is the low-level, Qwen-native plumbing that [Qwen Code](/agents/qwen-code/) and Qwen Chat build on.
 
-Qwen-Agent is the Qwen team's open-source Python framework for building LLM applications: it ships built-in Assistant, FnCallAgent and ReActChat agents with a @register_tool decorator, and connects to the DashScope API or to self-hosted models via vLLM/Ollama.
+**Key facts.**
 
-The framework is free under Apache-2.0 with no subscription of its own; model usage is billed per token through DashScope, or free with self-hosted open models.
+- Apache-2.0 framework built on Qwen≥3.0 models, per the official README ("Agent framework and applications built upon Qwen>=3.0"); `pip install qwen-agent`.
+- Ships example applications: BrowserQwen (browser assistant), a Docker-isolated Code Interpreter, RAG over 1M-token documents, MCP integration, PDF-reading assistants and a Gradio GUI.
+- Model usage billed per token via DashScope, or free with self-hosted open models via vLLM/Ollama; the framework itself has no subscription.
+- Serves as the backend of Qwen Chat (chat.qwen.ai).
+- Last GitHub release v0.0.26 on 2025-05-29; development cadence has slowed since.
 
-See the [Alibaba Cloud](/companies/alibaba-cloud/) profile.
+**What this means.** Qwen-Agent is the framework layer beneath Alibaba's agent portfolio — model-bound (Qwen-native) in a way that [Qoder](/agents/qoder/) (multi-model) and [Qwen Code](/agents/qwen-code/) (multi-protocol) are not, making it the most direct expression of Qwen's own instruction-following, tool-use, planning and memory capabilities.
+
+**What is uncertain.** The slowed release cadence (last release 2025-05-29) leaves open how actively the framework is maintained versus Qwen Code and Qoder, and the Docker-based code interpreter carries only basic sandbox isolation — a production caveat, not a guarantee.
+
+**Sources.**
+
+| evidence_id | source_name | source_url | source_type | published | verified | confidence | conflict |
+|---|---|---|---|---|---|---|---|
+| src-agents-qwen-agent-1 | Qwen-Agent GitHub repository | https://github.com/QwenLM/Qwen-Agent | Official documentation | — | 2026-09-20 | high | — |
+| src-agents-qwen-agent-2 | Qwen-Agent docs guide | https://qwenlm.github.io/Qwen-Agent/en/guide/ | Official documentation | — | 2026-09-20 | high | — |
 
 ## Why it matters
 
-Qwen-Agent is the foundational-framework layer of Alibaba's agent portfolio: it is model-bound (built on Qwen≥3.0 models, per the official README) in a way that [Qoder](/agents/qoder/) (multi-model) and [Qwen Code](/agents/qwen-code/) (multi-protocol) are not. Its relationship to the underlying models is therefore the most direct — its agent abstractions are designed around Qwen's instruction-following, tool-use, planning and memory capabilities. China AI Hub analysis indicates Qwen-Agent matters as the low-level, Qwen-native integration point, and its slowed release cadence (last release 2025-05-29) is itself a documented signal that Alibaba's agent investment has shifted toward Qwen Code and Qoder.
+Qwen-Agent is the foundational-framework layer of Alibaba's agent portfolio, and the reference for how a Qwen-native agent abstraction differs from a model-agnostic one. Its agent classes (Assistant, FnCallAgent, ReActChat) and the `@register_tool` decorator are designed around Qwen's instruction-following, tool-use, planning and memory capabilities — the framework *assumes* the model's strengths rather than routing around them.
+
+China AI Hub analysis indicates Qwen-Agent matters as the low-level, Qwen-native integration point, and its slowed release cadence (last release 2025-05-29) is itself a documented signal that Alibaba's agent investment has shifted toward [Qwen Code](/agents/qwen-code/) and [Qoder](/agents/qoder/). The framework's own repo confirms this: it now positions Qwen-Agent as "the backend of Qwen Chat" — a stable substrate — rather than as the primary forward-looking agent surface.
+
+## How it differs from Qwen Code and Qoder
+
+The three Alibaba surfaces are a ladder from framework to product.
+
+- **[Qwen-Agent](/agents/qwen-agent/)** is the *framework* — a Python library of agent classes and examples (BrowserQwen, Code Interpreter, RAG), Qwen-native, self-hosted, Apache-2.0.
+- **[Qwen Code](/agents/qwen-code/)** is the *open client* — a multi-protocol TypeScript coding agent (CLI, desktop, browser, chat) where the user brings any model, open-source and free.
+- **[Qoder](/agents/qoder/)** is the *closed product* — a commercial platform with Auto-tier multi-model routing, Expert teams, governance and scheduled automations.
+
+China AI Hub analysis: Qwen-Agent is where the Qwen-native design lives, Qwen Code is where model-optionality lives, and Qoder is where governance lives. Qwen-Agent's model-bound design is the opposite of Qwen Code's model-agnostic stance — the framework optimizes for Qwen's specific capabilities, while the client maximizes provider choice. A researcher building a custom Qwen application reaches for Qwen-Agent; a developer who wants one client across many models uses Qwen Code; an enterprise buying managed routing buys Qoder.
+
+## Practical implications
+
+**For builders.** Qwen-Agent is the lowest-level, most flexible path — you assemble Assistant/FnCallAgent/ReActChat with `@register_tool`, connect to DashScope or self-hosted vLLM/Ollama, and ship examples like BrowserQwen or RAG-over-1M-tokens as starting points. The framework is free; you pay only for model usage.
+
+**For production.** The Docker-based code interpreter has only basic sandbox isolation and the TIR math demo executor is not sandboxed (local testing only), so production deployments must add their own isolation rather than trust the examples.
+
+**For maintenance planning.** The slowed release cadence (v0.0.26 on 2025-05-29) is a real signal — teams building new work on Qwen-Agent should weigh whether their needs are better served by the more actively developed Qwen Code.
+
+## What the evidence shows
+
+The evidence is strong on what the framework is and honest about its maintenance state. The GitHub repo and docs document the agent classes, the `@register_tool` decorator, the DashScope/vLLM/Ollama connectivity, the example applications (BrowserQwen, Code Interpreter, RAG, MCP, Gradio) and the Qwen Chat backend role; the README explicitly scopes it to Qwen≥3.0 models.
+
+The gap is sandboxing and cadence. The code interpreter's "basic sandbox isolation" and the un-sandboxed TIR executor are explicit limitations, and the last release predates the database's other Qwen surfaces by more than a year. China AI Hub analysis indicates the honest reading is "stable, Qwen-native substrate, no longer the leading edge" — Qwen-Agent is where the Qwen-native design is preserved and where Qwen Chat's backend lives, but the forward investment has visibly moved to Qwen Code and Qoder, so builders should treat it as foundational rather than cutting-edge.
+
+## Where this fits
+
+| Workload | Relevance |
+|---|---|
+| Custom Qwen-native LLM applications (tool calling) | High |
+| Browser automation (BrowserQwen) | High |
+| RAG over 1M-token documents | High |
+| Self-hosted deployment (vLLM/Ollama) | High |
+| MCP integration and agent evaluation (DeepPlanning) | High |
+| Production sandboxed code execution | Moderate (basic isolation only) |
+| Actively updated agent surface | Low (cadence slowed since 2025-05-29) |
+
+*Relevance judgments are China AI Hub analysis based on documented capabilities, not vendor claims.*
 
 ## Field reference
 
@@ -79,5 +132,7 @@ Qwen-Agent is the foundational-framework layer of Alibaba's agent portfolio: it 
 | Limitations | Code interpreter only basic sandbox; slowed release cadence (last 2025-05-29) | Official |
 | Source | [Qwen-Agent GitHub](https://github.com/QwenLM/Qwen-Agent) | Official |
 | Last verified | 2026-09-20 | Official |
+
+See the [Alibaba Cloud](/companies/alibaba-cloud/) company profile, the [Qwen Code](/agents/qwen-code/) client, the [Qoder](/agents/qoder/) platform, and the site's [AI agents](/technology/ai-agents/) and [tool calling](/technology/tool-calling/) technology pages.
 
 *Labels used above: **Official fact** (from the Qwen-Agent GitHub repo and docs), **Vendor-reported claim** (capability statements by the Qwen team), and **China AI Hub analysis** (our synthesis, always introduced as such).*
