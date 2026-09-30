@@ -80,7 +80,7 @@ docs; the older "Tongyi Qianwen / 通义千问" branding was not confirmed on th
 
 ## Why it matters
 
-China AI Hub analysis: Alibaba Cloud occupies a structurally unique position in the Chinese ecosystem — it is the only hyperscaler that combines frontier closed APIs, a first-party open MoE release, and a multi-region cloud distribution layer ([Model Studio](/api/model-studio/)) under one roof, which makes Qwen the natural default for enterprises that want a single vendor across closed and open workloads. The database evidences this breadth directly: three foundation models, three agents ([Qwen Code](/agents/qwen-code/), [Qwen-Agent](/agents/qwen-agent/), [Qoder](/agents/qoder/)) and one API all resolve to the same company record. China AI Hub analysis indicates Qwen's structural role is the integration anchor — its value to buyers is less any single model and more the consistency of model, tooling and cloud under one provider, with the open A95B release as the hedge against API lock-in.
+China AI Hub analysis: Alibaba Cloud occupies a structurally unique position in the Chinese ecosystem — it is the only hyperscaler that combines frontier closed APIs, a first-party open MoE release, and a multi-region cloud distribution layer ([Model Studio](/api/model-studio/)) under one roof, which makes Qwen the natural default for enterprises that want a single vendor across closed and open workloads. The database evidences this breadth directly: three foundation models, three agents ([Qwen Code](/agents/qwen-code/), [Qwen-Agent](/agents/qwen-agent/), [Qoder](/agents/qoder/)) and one API all resolve to the same company record. China AI Hub analysis indicates Qwen's structural role is the integration anchor — its value to buyers is less any single model and more the consistency of model, tooling and cloud under one provider, with the open A95B release as the hedge against API lock-in. China AI Hub analysis indicates the open A95B release is the strategic hinge — it lets enterprises start on open weights and graduate to the managed cloud without leaving the Qwen stack, hedging the closed Max tier against lock-in. Qwen models are also orchestrated by third parties: [Manus](/agents/manus/) routes to Qwen per third-party descriptions, and the model-neutral platform [Dify](/agents/dify/) serves Qwen weights.
 
 ## Entity hub
 
@@ -139,8 +139,10 @@ China AI Hub analysis: Alibaba Cloud occupies a structurally unique position in 
 
 ## Sources
 
-- [Alibaba Cloud Model Studio — text generation model list](https://www.alibabacloud.com/help/en/model-studio/text-generation-model)
-- [Qwen3.8 open-model repository README](https://github.com/QwenLM/Qwen3.8)
-- [Hugging Face model card — Qwen3.8-2.4T-A95B](https://huggingface.co/Qwen/Qwen3.8-2.4T-A95B)
+| evidence_id | source_name | source_url | source_type | published | verified | confidence | conflict |
+|---|---|---|---|---|---|---|---|
+| src-companies-alibaba-cloud-1 | Alibaba Cloud Model Studio — text generation model list | https://www.alibabacloud.com/help/en/model-studio/text-generation-model | Official documentation | — | 2026-09-20 | high | — |
+| src-companies-alibaba-cloud-2 | Qwen3.8 open-model repository README | https://github.com/QwenLM/Qwen3.8 | Official documentation | — | 2026-09-20 | high | — |
+| src-companies-alibaba-cloud-3 | Hugging Face model card — Qwen3.8-2.4T-A95B | https://huggingface.co/Qwen/Qwen3.8-2.4T-A95B | Model card | — | 2026-09-20 | high | — |
 
 *Labels used above: **Official fact** (from Alibaba Cloud Model Studio and Qwen's GitHub/Hugging Face sources), and **China AI Hub analysis** (our synthesis, always introduced as such).*

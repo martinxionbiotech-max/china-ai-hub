@@ -86,7 +86,7 @@ platform.minimaxi.com (China, CNY) and platform.minimax.io (international, USD).
 
 ## Why it matters
 
-China AI Hub analysis: MiniMax's structural role is the cost-efficient challenger that competes on both capability breadth and price without going full-open. It runs a broad product surface — [MiniMax Code](/agents/minimax-code/) and [MiniMax Agent](/agents/minimax-agent/) on the agent side, plus video/audio/image generation — while keeping its flagship M3 at the lowest flagship price point in the database. China AI Hub analysis indicates MiniMax's distinctive bet is architectural efficiency (MSA sparse attention) translating directly into price, which positions it as the value alternative to Alibaba Cloud's integration breadth and ByteDance's consumer premium.
+China AI Hub analysis: MiniMax's structural role is the cost-efficient challenger that competes on both capability breadth and price without going full-open. It runs a broad product surface — [MiniMax Code](/agents/minimax-code/) and [MiniMax Agent](/agents/minimax-agent/) on the agent side, plus video/audio/image generation — while keeping its flagship M3 at the lowest flagship price point in the database. China AI Hub analysis indicates MiniMax's distinctive bet is architectural efficiency (MSA sparse attention) translating directly into price, which positions it as the value alternative to Alibaba Cloud's integration breadth and ByteDance's consumer premium. China AI Hub analysis indicates MiniMax's Community License mirrors the same scale-conditioned openness as the other open-weight labs — attribution and, above revenue thresholds, written authorization keep it in the open ecosystem while bounding the openness at scale. MiniMax's models are also served through the model-neutral platforms [Dify](/agents/dify/) and [FastGPT](/agents/fastgpt/), which can orchestrate M-series models alongside competitors'.
 
 ## Entity hub
 
@@ -142,9 +142,11 @@ China AI Hub analysis: MiniMax's structural role is the cost-efficient challenge
 
 ## Sources
 
-- [MiniMax official site (international)](https://www.minimax.io/)
-- [MiniMax official site (China)](https://www.minimax.cn/about)
-- [MiniMax API platform — model overview (CN)](https://platform.minimaxi.com/docs/guides/models-intro)
-- [MiniMax official release notes](https://platform.minimaxi.com/docs/release-notes/models.md)
+| evidence_id | source_name | source_url | source_type | published | verified | confidence | conflict |
+|---|---|---|---|---|---|---|---|
+| src-companies-minimax-1 | MiniMax official site (international) | https://www.minimax.io/ | Official | — | 2026-09-20 | high | — |
+| src-companies-minimax-2 | MiniMax official site (China) | https://www.minimax.cn/about | Official | — | 2026-09-20 | high | — |
+| src-companies-minimax-3 | MiniMax API platform — model overview (CN) | https://platform.minimaxi.com/docs/guides/models-intro | Official documentation | — | 2026-09-20 | high | — |
+| src-companies-minimax-4 | MiniMax official release notes | https://platform.minimaxi.com/docs/release-notes/models.md | Official documentation | — | 2026-09-20 | high | — |
 
 *Labels used above: **Official fact** (from MiniMax's official sites and platform docs), **Vendor-reported claim** (the MSA speedup figures and user counts stated on the CN site), and **China AI Hub analysis** (our synthesis, always introduced as such).*

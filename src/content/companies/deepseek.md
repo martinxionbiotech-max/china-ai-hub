@@ -85,7 +85,7 @@ the official pages fetched.
 
 ## Why it matters
 
-China AI Hub analysis: DeepSeek is the ecosystem's price-and-openness reference point — MIT open weights (V4.1-Flash, V4-Pro, V3.2) plus the lowest budget-tier pricing ($0.15/1M input) make it the default anchor against which every other vendor's cost and license are measured, and its open inference infrastructure (FlashMLA, DeepGEMM, DeepEP, 3FS) extends that influence below the model layer, as the [AI infrastructure](/technology/ai-infrastructure/) page details. China AI Hub analysis indicates DeepSeek's structural role is the cost-and-openness floor — its 49B-active MoE design and off-peak discounts shaped the market's pricing expectations, and its MIT releases shaped its licensing expectations, even as the V4-Pro deprecation ambiguity shows how quickly that frontier layer now turns over.
+China AI Hub analysis: DeepSeek is the ecosystem's price-and-openness reference point — MIT open weights (V4.1-Flash, V4-Pro, V3.2) plus the lowest budget-tier pricing ($0.15/1M input) make it the default anchor against which every other vendor's cost and license are measured, and its open inference infrastructure (FlashMLA, DeepGEMM, DeepEP, 3FS) extends that influence below the model layer, as the [AI infrastructure](/technology/ai-infrastructure/) page details. China AI Hub analysis indicates DeepSeek's structural role is the cost-and-openness floor — its 49B-active MoE design and off-peak discounts shaped the market's pricing expectations, and its MIT releases shaped its licensing expectations, even as the V4-Pro deprecation ambiguity shows how quickly that frontier layer now turns over. China AI Hub analysis indicates the V4-Pro deprecation ambiguity is itself a structural signal — DeepSeek's floor-setting now moves fast enough that even its own official pages disagree on whether a frontier tier still runs, the cost of being the market's pace-setter. DeepSeek's models also circulate through third-party surfaces: [Coze](/agents/coze/)'s model node routes to DeepSeek, and the model-neutral platform [Dify](/agents/dify/) runs DeepSeek weights alongside others.
 
 ## Entity hub
 
@@ -143,9 +143,11 @@ China AI Hub analysis: DeepSeek is the ecosystem's price-and-openness reference 
 
 ## Sources
 
-- [DeepSeek API docs — Models & Pricing](https://api-docs.deepseek.com/quick_start/pricing)
-- [DeepSeek API Change Log](https://api-docs.deepseek.com/updates)
-- [DeepSeek official site (EN)](https://www.deepseek.com/en/)
-- [DeepSeek Transparency Center](https://www.deepseek.com/en/transparency/)
+| evidence_id | source_name | source_url | source_type | published | verified | confidence | conflict |
+|---|---|---|---|---|---|---|---|
+| src-companies-deepseek-1 | DeepSeek API docs — Models & Pricing | https://api-docs.deepseek.com/quick_start/pricing | Official documentation | — | 2026-09-20 | high | — |
+| src-companies-deepseek-2 | DeepSeek API Change Log | https://api-docs.deepseek.com/updates | Official documentation | — | 2026-09-20 | high | — |
+| src-companies-deepseek-3 | DeepSeek official site (EN) | https://www.deepseek.com/en/ | Official | — | 2026-09-20 | high | — |
+| src-companies-deepseek-4 | DeepSeek Transparency Center | https://www.deepseek.com/en/transparency/ | Official | — | 2026-09-20 | high | — |
 
 *Labels used above: **Official fact** (from DeepSeek API docs and the official site), **Vendor-reported claim** (pricing and model capabilities published by DeepSeek), and **China AI Hub analysis** (our synthesis, always introduced as such).*

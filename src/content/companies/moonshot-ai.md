@@ -79,7 +79,7 @@ moonshot-v1*, kimi-k2*) have been discontinued.
 
 ## Why it matters
 
-China AI Hub analysis: Moonshot AI's structural role is the long-context specialist — Kimi K3 is the only flagship in the database listing a full 1M-token maximum output, which makes it the reference choice for long-form generation and whole-repo rewriting rather than merely long-input analysis. Its open-weight stance (K3, K2.x, Kimi-VL, Kimi-Audio) keeps it in the open ecosystem alongside DeepSeek and Zhipu AI, while its custom license conditions distinguish it from DeepSeek's clean MIT. China AI Hub analysis indicates Moonshot competes on the output-length axis — a differentiated, documented strength — rather than on the price-floor axis where DeepSeek and MiniMax-M3 set the terms.
+China AI Hub analysis: Moonshot AI's structural role is the long-context specialist — Kimi K3 is the only flagship in the database listing a full 1M-token maximum output, which makes it the reference choice for long-form generation and whole-repo rewriting rather than merely long-input analysis. Its open-weight stance (K3, K2.x, Kimi-VL, Kimi-Audio) keeps it in the open ecosystem alongside DeepSeek and Zhipu AI, while its custom license conditions distinguish it from DeepSeek's clean MIT. China AI Hub analysis indicates Moonshot competes on the output-length axis — a differentiated, documented strength — rather than on the price-floor axis where DeepSeek and MiniMax-M3 set the terms. China AI Hub analysis indicates Moonshot's open-weight-plus-conditions stance places it between DeepSeek's clean MIT and the closed labs — open enough to join the self-hosting ecosystem, but with revenue and MAU triggers that bound the openness at scale. Moonshot's models also circulate through third-party surfaces: [Coze](/agents/coze/)'s model node routes to Kimi, and the model-neutral platform [Dify](/agents/dify/) can orchestrate K-series models alongside others.
 
 ## Entity hub
 
@@ -138,9 +138,11 @@ China AI Hub analysis: Moonshot AI's structural role is the long-context special
 
 ## Sources
 
-- [Moonshot AI official site (EN)](https://www.moonshot.ai/)
-- [Moonshot AI company profile (CN)](https://www.moonshot.cn/about)
-- [Kimi API platform — model list](https://platform.kimi.ai/docs/models.md)
-- [Kimi K3 GitHub README](https://github.com/MoonshotAI/Kimi-K3)
+| evidence_id | source_name | source_url | source_type | published | verified | confidence | conflict |
+|---|---|---|---|---|---|---|---|
+| src-companies-moonshot-ai-1 | Moonshot AI official site (EN) | https://www.moonshot.ai/ | Official | — | 2026-09-20 | high | — |
+| src-companies-moonshot-ai-2 | Moonshot AI company profile (CN) | https://www.moonshot.cn/about | Official | — | 2026-09-20 | high | — |
+| src-companies-moonshot-ai-3 | Kimi API platform — model list | https://platform.kimi.ai/docs/models.md | Official documentation | — | 2026-09-20 | high | — |
+| src-companies-moonshot-ai-4 | Kimi K3 GitHub README | https://github.com/MoonshotAI/Kimi-K3 | Official documentation | — | 2026-09-20 | high | — |
 
 *Labels used above: **Official fact** (from Moonshot AI's official sites and the Kimi K3 README), **Vendor-reported claim** (model capabilities and pricing published by Moonshot AI), and **China AI Hub analysis** (our synthesis, always introduced as such).*

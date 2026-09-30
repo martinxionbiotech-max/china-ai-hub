@@ -88,7 +88,7 @@ Video generation (Seedance) and image generation (Seedream) are separate dedicat
 
 ## Why it matters
 
-China AI Hub analysis: ByteDance is the purest expression of the closed-API model in the database — it publishes open training *tooling* (VeOmni, Triton-distributed) but no open model weights, in deliberate contrast to DeepSeek, Alibaba Cloud and Zhipu AI, and that position shapes its structural role — ByteDance competes on consumer reach ([Doubao App](/agents/doubao-app/)) and on generation (Seedance/Seedream), not on the open-weight or price-floor axis. China AI Hub analysis indicates Doubao's distinctiveness is the consumer-to-model vertical integration: the same Seed models that power the Doubao assistant are sold through Ark, which is why its pricing reflects a generation-premium strategy rather than a cost-minimization one.
+China AI Hub analysis: ByteDance is the purest expression of the closed-API model in the database — it publishes open training *tooling* (VeOmni, Triton-distributed) but no open model weights, in deliberate contrast to DeepSeek, Alibaba Cloud and Zhipu AI, and that position shapes its structural role — ByteDance competes on consumer reach ([Doubao App](/agents/doubao-app/)) and on generation (Seedance/Seedream), not on the open-weight or price-floor axis. China AI Hub analysis indicates Doubao's distinctiveness is the consumer-to-model vertical integration: the same Seed models that power the Doubao assistant are sold through Ark, which is why its pricing reflects a generation-premium strategy rather than a cost-minimization one. China AI Hub analysis indicates ByteDance's open-tooling-but-closed-weights posture (VeOmni and Triton-distributed open, Doubao weights closed) is a deliberate line — it shares training infrastructure to recruit researchers while keeping serving economics fully proprietary.
 
 ## Entity hub
 
@@ -110,6 +110,8 @@ China AI Hub analysis: ByteDance is the purest expression of the closed-API mode
 ### Agents
 
 - [Doubao](/agents/doubao-app/)
+- [Coze](/agents/coze/)
+- [Trae](/agents/trae/)
 
 ### Research / Technology
 
@@ -134,10 +136,12 @@ China AI Hub analysis: ByteDance is the purest expression of the closed-API mode
 
 ## Sources
 
-- [Ark (Volcengine) official documentation](https://docs.volcengine.com/docs/ark/product-overview?lang=zh)
-- [Ark official model list](https://docs.volcengine.com/docs/ark/model-list?lang=zh)
-- [Ark model release announcements](https://docs.volcengine.com/docs/ark/model-release-announcement)
-- [ByteDance Seed official blog — Seed 2.1 release](https://seed.bytedance.com/en/blog/seed2-1-officially-released-advancing-ai-productivity)
-- [ByteDance Seed GitHub organization](https://github.com/ByteDance-Seed)
+| evidence_id | source_name | source_url | source_type | published | verified | confidence | conflict |
+|---|---|---|---|---|---|---|---|
+| src-companies-bytedance-1 | Ark (Volcengine) official documentation | https://docs.volcengine.com/docs/ark/product-overview?lang=zh | Official documentation | — | 2026-09-20 | high | — |
+| src-companies-bytedance-2 | Ark official model list | https://docs.volcengine.com/docs/ark/model-list?lang=zh | Official documentation | — | 2026-09-20 | high | — |
+| src-companies-bytedance-3 | Ark model release announcements | https://docs.volcengine.com/docs/ark/model-release-announcement | Official documentation | — | 2026-09-20 | high | — |
+| src-companies-bytedance-4 | ByteDance Seed official blog — Seed 2.1 release | https://seed.bytedance.com/en/blog/seed2-1-officially-released-advancing-ai-productivity | Official | 2026-06-23 | 2026-09-20 | high | — |
+| src-companies-bytedance-5 | ByteDance Seed GitHub organization | https://github.com/ByteDance-Seed | Official documentation | — | 2026-09-20 | high | — |
 
 *Labels used above: **Official fact** (from Ark documentation and ByteDance Seed's official blog/GitHub), **Vendor-reported claim** (model capabilities and pricing published by ByteDance), and **China AI Hub analysis** (our synthesis, always introduced as such).*

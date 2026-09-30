@@ -89,7 +89,7 @@ Open-AutoGLM phone-agent framework. A founding date is not stated on the officia
 
 ## Why it matters
 
-China AI Hub analysis: Zhipu AI's structural role is the open-weight-plus-agents combination — it is the only major lab pairing Apache-2.0 open weights with a first-party phone-use agent (AutoGLM) and a coding-plan product that routes third-party tools (Claude Code, Codex, Cursor, OpenClaw) onto GLM models, which positions it as the strongest open alternative for builders who want both downloadable weights and a managed agent layer. China AI Hub analysis indicates Zhipu's distinctive bet is breadth of *surface* — models, phone agents, coding plans, image/video — unified by the GLM family, with openness (Apache-2.0) as the shared thread.
+China AI Hub analysis: Zhipu AI's structural role is the open-weight-plus-agents combination — it is the only major lab pairing Apache-2.0 open weights with a first-party phone-use agent (AutoGLM) and a coding-plan product that routes third-party tools (Claude Code, Codex, Cursor, OpenClaw) onto GLM models, which positions it as the strongest open alternative for builders who want both downloadable weights and a managed agent layer. China AI Hub analysis indicates Zhipu's distinctive bet is breadth of *surface* — models, phone agents, coding plans, image/video — unified by the GLM family, with openness (Apache-2.0) as the shared thread. China AI Hub analysis indicates Zhipu's Apache-2.0 weights plus its first-party agent surfaces make it the only lab in this database offering both downloadable models and a managed agent layer under one roof — the combination neither the closed labs nor the neutral platforms provide. GLM models are also consumed by the model-neutral platforms [Dify](/agents/dify/), [FastGPT](/agents/fastgpt/) and [MetaGPT](/agents/metagpt/), which can pair Zhipu's open weights with any workflow.
 
 ## Entity hub
 
@@ -147,9 +147,11 @@ China AI Hub analysis: Zhipu AI's structural role is the open-weight-plus-agents
 
 ## Sources
 
-- [Z.ai docs — GLM-5.3 model page](https://docs.z.ai/guides/llm/glm-5.3)
-- [Z.ai docs — GLM-5.3-Flash model page](https://docs.z.ai/guides/vlm/glm-5.3-flash)
-- [Z.ai release notes](https://docs.z.ai/release-notes/new-released)
-- [GLM-5 GitHub repository](https://github.com/zai-org/GLM-5)
+| evidence_id | source_name | source_url | source_type | published | verified | confidence | conflict |
+|---|---|---|---|---|---|---|---|
+| src-companies-zhipu-ai-1 | Z.ai docs — GLM-5.3 model page | https://docs.z.ai/guides/llm/glm-5.3 | Official documentation | — | 2026-09-20 | high | — |
+| src-companies-zhipu-ai-2 | Z.ai docs — GLM-5.3-Flash model page | https://docs.z.ai/guides/vlm/glm-5.3-flash | Official documentation | — | 2026-09-20 | high | — |
+| src-companies-zhipu-ai-3 | Z.ai release notes | https://docs.z.ai/release-notes/new-released | Official documentation | — | 2026-09-20 | high | — |
+| src-companies-zhipu-ai-4 | GLM-5 GitHub repository | https://github.com/zai-org/GLM-5 | Official documentation | — | 2026-09-20 | high | — |
 
 *Labels used above: **Official fact** (from Z.ai docs and the GLM-5 GitHub repository), **Vendor-reported claim** (model capabilities and pricing published by Zhipu AI), and **China AI Hub analysis** (our synthesis, always introduced as such).*
