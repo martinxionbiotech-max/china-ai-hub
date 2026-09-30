@@ -62,17 +62,71 @@ sources:
     last_verified: "2026-09-20"
     confidence: high
 ---
-**What it is.** MiniMax Code is MiniMax's desktop AI agent app and CLI (mcode) for software development, everyday workflows, automation and remote collaboration, on macOS and Windows. **Why it matters.** It is MiniMax's open-source (MIT) coding front-end for its [MiniMax-M3](/models/minimax-m3/) / [M2.7](/models/minimax-m27/) models — the developer-facing counterpart to the closed [MiniMax Agent](/agents/minimax-agent/). **Key characteristics.** Coding and Work modes, built-in browser, Agent Team, memory, MCP servers, scheduled tasks, remote control from phone and messaging apps; CLI with interactive TUI, headless mode and ACP server. **What a professional should know.** Browser/Computer Use are desktop-only (not in the CLI), the desktop app is macOS/Windows-only (no Linux), and billing runs on Token Plan subscriptions (Plus $22 / Max $55 / Ultra $132 per month).
+**Short answer.** MiniMax Code is MiniMax's desktop AI agent app and CLI (mcode) for software development, everyday workflows, automation and remote collaboration, on macOS and Windows. It is the open-source (MIT) developer surface for [MiniMax-M3](/models/minimax-m3/) / [M2.7](/models/minimax-m27/) models — the counterpart to the closed [MiniMax Agent](/agents/minimax-agent/).
 
-MiniMax Code is MiniMax's desktop AI agent app and CLI (mcode) for software development, everyday workflows, automation and remote collaboration, available on macOS and Windows. The code is open source under the MIT license.
+**Key facts.**
 
-Billing runs through MiniMax Token Plan subscriptions (Plus $22 / Max $55 / Ultra $132 per month) with 5-hour rolling and weekly quota windows; enterprise API pay-as-you-go is also available.
+- Two form factors: a desktop app (macOS/Windows) with Coding and Work modes, built-in browser, Agent Team, memory, MCP servers, scheduled tasks and remote control from phone; and an open-source CLI (mcode) with interactive TUI, headless mode and an ACP server.
+- The CLI is open source (MIT); the desktop app is proprietary (the repo hosts issue tracking only).
+- Runs on [MiniMax-M3](/models/minimax-m3/), [M2.7](/models/minimax-m27/) and [M2.7-HighSpeed](/models/minimax-m27-highspeed/); M3's MSA sparse attention and 1M-token context are what the CLI consumes for repository-scale work.
+- Billed via MiniMax Token Plan (Plus $22 / Max $55 / Ultra $132 per month) with 5-hour rolling and weekly quotas; enterprise API pay-as-you-go also available.
+- Remote collaboration from phone or messaging apps (Telegram, WeChat, Lark, Feishu); multimodal creation via H3 Max.
 
-See the [MiniMax](/companies/minimax/) profile.
+**What this means.** MiniMax Code anchors MiniMax's developer credibility in the open coding-agent ecosystem (MIT CLI, MCP, ACP) while its flagship M3 stays under a conditional Community License — the open *tool* is the bridge to a semi-open *model*.
+
+**What is uncertain.** The CLI's default model is not pinned in docs (the web app defaulted to M2.7 in rendered UI, with M3 available), there are no release tags and no disclosed first release date (repo created 2026-06-01). Browser/Computer Use are desktop-only and absent from the CLI.
+
+**Sources.**
+
+| evidence_id | source_name | source_url | source_type | published | verified | confidence | conflict |
+|---|---|---|---|---|---|---|---|
+| src-agents-minimax-code-1 | MiniMax Code GitHub repository | https://github.com/MiniMax-AI/minimax-code | Official documentation | — | 2026-09-20 | high | — |
+| src-agents-minimax-code-2 | MiniMax Code docs - welcome | https://agent.minimax.io/docs/code/welcome.md | Official documentation | — | 2026-09-20 | high | — |
+| src-agents-minimax-code-3 | MiniMax Code CLI docs - features | https://agent.minimax.io/docs/cli/features.md | Official documentation | — | 2026-09-20 | high | — |
+| src-agents-minimax-code-4 | MiniMax Token Plan pricing guide | https://platform.minimax.io/docs/guides/pricing-token-plan | Official documentation | — | 2026-09-20 | high | — |
 
 ## Why it matters
 
-MiniMax Code is the open, developer-side of MiniMax's agent strategy, and its capability is directly downstream of the M-series models: M3's MSA sparse attention and 1M-token context are what the CLI consumes for repository-scale work. Its relationship to the underlying models is the clearest in the MiniMax family — the CLI defaults to M2.7 in the rendered UI while M3 is available, a pairing that shows how MiniMax tiers its open models against its agent surface. China AI Hub analysis indicates MiniMax Code matters as MiniMax's commitment to the open coding-agent ecosystem (MIT code, MCP, ACP), which anchors the company's developer credibility even as its flagship M3 remains under a conditional Community License.
+MiniMax Code is the open, developer-side of MiniMax's agent strategy, and its capability is directly downstream of the M-series models: M3's MSA sparse attention and 1M-token context are what the CLI consumes for repository-scale work. The GitHub repo's tagline — "Turn a prompt into something that works… with MiniMax or your own model" — makes the openness explicit: the CLI works with MiniMax's models or a self-configured provider.
+
+China AI Hub analysis indicates MiniMax Code matters as MiniMax's commitment to the open coding-agent ecosystem (MIT code, MCP, ACP), which anchors the company's developer credibility even as its flagship M3 remains under a conditional Community License. The asymmetry — open tool, semi-open model — is the point: the free MIT CLI funnels usage toward M3/M2.7, and the enterprise pay-as-you-go path is where MiniMax recovers value from heavy users.
+
+## How it differs from MiniMax Agent
+
+The two MiniMax surfaces are complementary, not competing, and the split is the strategy.
+
+- **[MiniMax Agent](/agents/minimax-agent/)** is the closed cloud platform — a web app of capability areas (Skills, Schedules, Websites, Research, AI PPT) plus always-on assistants MaxClaw/MaxHermes, for non-developers, billed by Token Plan subscription.
+- **MiniMax Code** is the open developer surface — a desktop app and MIT CLI for coding, workflows, automation and remote collaboration, with MCP, memory, Agent Team and an ACP server.
+
+China AI Hub analysis: MiniMax Code is where the company earns developer trust (open code, inspectable, MCP/ACP), and MiniMax Agent is where it captures non-developer spend (closed, subscription, memory, always-on). One model family, two monetization surfaces — the open CLI lowers the bar for developer adoption while the closed platform carries the subscription revenue. A developer picks MiniMax Code; a daily user picks MiniMax Agent; MiniMax wins either way because both consume the same M-series tokens.
+
+## Practical implications
+
+**For developers.** The CLI (mcode) is the open path: interactive TUI for repository/CI work, headless mode for automation, and an ACP server for programmatic use. But Browser/Computer Use are desktop-host only — the CLI does not get them — so GUI automation requires the proprietary desktop app.
+
+**For cross-platform teams.** The desktop app is macOS/Windows only (no Linux), and the installer does not support Alpine/musl; the CLI is the Linux path. Headless mode cannot use the "ask" permission mode, a real constraint for semi-autonomous batch work that needs human approval.
+
+**For cost-sensitive users.** Token Plan subscriptions (Plus $22 / Max $55 / Ultra $132) carry the consumer path; enterprises get API pay-as-you-go. The CLI's default model is not pinned in docs, so teams should explicitly select M3 rather than assume it is the default.
+
+## What the evidence shows
+
+The evidence is strong on the surface and the model lineup, and honest about its own boundaries. The GitHub repo and docs document the desktop/CLI split, Coding and Work modes, built-in browser, Agent Team, memory, MCP, scheduled tasks, remote control, and the H3 Max multimodal creation; the Token Plan guide fixes the pricing. The repo is transparent that the desktop app is proprietary (repo hosts issue tracking only) and that external PRs are accepted only from collaborators.
+
+The gaps are release history and defaults. There are no release tags, no disclosed first release date (repo created 2026-06-01), and the CLI default model is not pinned (the web app rendered M2.7 as default with M3 available). China AI Hub analysis indicates these are not defects but a maturity marker: a young, fast-moving open project that has not yet stabilized versioning or made its default model explicit — buyers should treat the "default model" question as something to configure, not assume.
+
+## Where this fits
+
+| Workload | Relevance |
+|---|---|
+| Repository/CI coding (TUI or headless) | High |
+| Everyday office workflows and scheduled automation | High |
+| Remote collaboration (phone, Telegram/WeChat/Lark/Feishu) | High |
+| Multimodal creation (H3 Max) | High |
+| Browser / Computer Use in the CLI | Low (desktop-host only) |
+| Linux desktop app | Low (macOS/Windows only; CLI covers Linux) |
+| Independent coding benchmark | No evidence recorded |
+
+*Relevance judgments are China AI Hub analysis based on documented capabilities, not vendor claims.*
 
 ## Field reference
 
@@ -97,5 +151,7 @@ MiniMax Code is the open, developer-side of MiniMax's agent strategy, and its ca
 | Limitations | Browser/Computer Use desktop-only; no Linux desktop; no Alpine/musl | Official |
 | Source | [MiniMax Code GitHub](https://github.com/MiniMax-AI/minimax-code) | Official |
 | Last verified | 2026-09-20 | Official |
+
+See the [MiniMax](/companies/minimax/) company profile, the [MiniMax-M3](/models/minimax-m3/) model, the [MiniMax-M3 vs M2.7 comparison](/comparisons/minimax-m3-vs-minimax-m2.7/), the closed [MiniMax Agent](/agents/minimax-agent/) counterpart, the [choosing-a-coding-model guide](/guides/choosing-a-coding-model/), and the site's [AI agents](/technology/ai-agents/) technology page.
 
 *Labels used above: **Official fact** (from the MiniMax Code GitHub repo and docs), **Vendor-reported claim** (capability and pricing statements by MiniMax), and **China AI Hub analysis** (our synthesis, always introduced as such).*
