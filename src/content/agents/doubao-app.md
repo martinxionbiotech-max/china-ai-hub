@@ -59,17 +59,73 @@ sources:
     last_verified: "2026-09-20"
     confidence: high
 ---
-**What it is.** Doubao is ByteDance's consumer AI assistant app (豆包), the largest consumer-to-model surface in the database, plus its "Doubao Work" autonomous desktop agent. **Why it matters.** It is the entry point for ByteDance's closed-API [Doubao Seed](/models/doubao-seed-2-1-pro/) models — consumer users reach the models only through the app, not through open weights. **Key characteristics.** Q&A, study help, office automation, and image/video creation backed by Seedream/Seedance; a computer-use "Work" mode operating a virtual desktop with Feishu integration. **What a professional should know.** It is mainland-China-focused (overseas users are redirected to Dola), subscription-billed (68/200/500 CNY/month), and has no public consumer API — developer access to Doubao models is via Volcengine Ark only.
+**Short answer.** Doubao is ByteDance's consumer AI assistant app (豆包) — Q&A, study help, office automation, image/video creation via Seedream/Seedance — plus its "Doubao Work" autonomous desktop agent that operates a virtual desktop on the local computer. It is the demand-side complement to ByteDance's closed-API [Doubao Seed](/models/doubao-seed-2-1-pro/) models, mainland-China-focused and subscription-billed.
 
-Doubao is ByteDance's consumer AI assistant app: Q&A and explanations, study help, office automation (documents, spreadsheets, PPT, data analysis, code), and image and video creation backed by the Seedream and Seedance models. It also supports voice calls, photo recognition and web search.
+**Key facts.**
 
-"Doubao Work" mode runs an autonomous planning-and-executing agent that operates a virtual desktop on the local computer, with real-time watching, pause and takeover, plus Feishu integration for enterprise context.
+- Combines a consumer assistant (Q&A, study, office docs/spreadsheets/PPT/data/code) with creation models Seedream (image) and Seedance (video), plus voice calls, photo recognition and web search.
+- "Doubao Work" mode runs a planning/executing agent on a local virtual desktop, with real-time watching, pause and takeover, and Feishu integration for enterprise context.
+- Subscription tiers: Basic free; Standard 68 CNY/month (688/yr); Enhanced 200 CNY/month (2,048/yr); Professional 500 CNY/month (5,088/yr) — quota-based, with creation packs and cloud-storage sold separately.
+- Mainland-China-focused; overseas users are redirected to Dola (itself geo-restricted), and web access outside mainland China requires login.
+- No public consumer API — developer access to Doubao models is via [Volcengine Ark](/api/ark/) only.
 
-Doubao is mainland-China-focused (overseas users are redirected to Dola) and billed by subscription: Basic is free; paid tiers are 68 / 200 / 500 CNY per month with quota-based usage and separately sold creation packs. See the [ByteDance](/companies/bytedance/) profile.
+**What this means.** Doubao is where ByteDance's closed model strategy meets consumers: the same Seed models Ark sells to developers are productized as a subscription the public pays for monthly, with the computer-use capability surfaced as a shipping desktop mode rather than a developer SDK.
+
+**What is uncertain.** The chat LLM powering the consumer assistant is not named in official pages (only creation models Seedream/Seedance are), and the Android store listing was not directly verified this run. Exact quota math per tier and whether Doubao Work ships outside mainland China are not publicly documented.
+
+**Sources.**
+
+| evidence_id | source_name | source_url | source_type | published | verified | confidence | conflict |
+|---|---|---|---|---|---|---|---|
+| src-agents-doubao-app-1 | Doubao official website | https://www.doubao.com/ | Official | — | 2026-09-20 | high | — |
+| src-agents-doubao-app-2 | Doubao desktop download & features page | https://www.doubao.com/download/desktop | Official | — | 2026-09-20 | high | — |
+| src-agents-doubao-app-3 | Apple App Store CN listing (Doubao) | https://itunes.apple.com/search?term=%E8%B1%86%E5%8C%85&country=cn&entity=software | Official | — | 2026-09-20 | high | — |
+| src-agents-doubao-app-4 | Doubao paid-service agreement | https://www.doubao.com/legal/ey01 | Official | — | 2026-09-20 | high | — |
+| src-agents-doubao-app-5 | Volcengine Doubao LLM platform page | https://www.volcengine.com/product/doubao | Official | — | 2026-09-20 | high | — |
 
 ## Why it matters
 
-Doubao matters as the demand-side complement to ByteDance's closed model strategy: where Ark sells Doubao Seed models to developers, Doubao App sells their *output* to consumers through a subscription and a computer-use desktop mode. The app's underlying chat LLM is not named in official pages — a documented gap that reinforces the closed-API posture. China AI Hub analysis indicates Doubao's structural role is consumer distribution: it demonstrates that ByteDance's Seed models are productized for mainstream users, while the [computer use](/technology/computer-use/) capability shows up in a shipping consumer surface rather than only in a developer SDK.
+Doubao is the demand-side half of ByteDance's closed-model strategy, and the database's clearest case of a consumer surface built on models with no open weights. Where Ark sells Doubao Seed models to developers through an API, Doubao App sells their *output* to consumers through a subscription and a computer-use desktop mode — two routes to the same underlying models, one token-billed and one quota-billed.
+
+China AI Hub analysis indicates Doubao's structural role is consumer distribution: it demonstrates that ByteDance's Seed models are productized for mainstream users, while [computer use](/technology/computer-use/) appears in a shipping consumer surface rather than only in a developer SDK. The un-named chat LLM is itself a signal — ByteDance is willing to document its *creation* models (Seedream, Seedance) but not the model behind the assistant's conversational core, reinforcing the closed posture that distinguishes it from open-weight rivals like DeepSeek and Qwen.
+
+## How it differs from the other autonomous agents
+
+Doubao occupies a different cell from the autonomous agents that ship to developers and teams.
+
+- **[AutoGLM](/agents/autoglm/)** is an open phone-use agent — a framework and VLM anyone can run or license, research-only, with no consumer subscription.
+- **[Manus](/agents/manus/)** is a closed cloud general agent sold as a subscription to do whole tasks, but is a *third-party product* with an undisclosed model supply chain.
+- **Doubao** is a first-party consumer assistant plus a desktop agent, bound to ByteDance's own models end-to-end, distributed through the App Store and mainland-China web rather than a CLI or API.
+
+China AI Hub analysis: Doubao is the only one of the three that is simultaneously a consumer app, a desktop agent, and a first-party model surface. AutoGLM and Manus compete on agent capability; Doubao competes on distribution — it inherits ByteDance's consumer reach and Feishu enterprise channel, which no open framework or independent agent can match.
+
+## Practical implications
+
+**For consumers.** Doubao is the "assistant plus creation suite" bundle — Q&A, study help, office automation, and Seedream/Seedance image/video generation under one quota-based subscription, with Doubao Work adding hands-off desktop automation. The quota system means heavy creation use exhausts a tier and requires top-ups; creation packs expire and do not roll over.
+
+**For enterprises.** Feishu integration is the documented path for using Doubao in a work context; there is no consumer API to build against — teams needing programmatic access to the same models must go through [Volcengine Ark](/api/ark/), which is a separate, developer-facing channel.
+
+**For evaluators.** The App Store's own disclaimer — the AI "may misunderstand or mislead" — is a vendor's explicit reliability caveat, and the un-named chat model means the assistant's conversational capability cannot be tied to a specific tracked model for comparison.
+
+## What the evidence shows
+
+The evidence is strongest on the product surface and weakest on the model internals. Official pages document the feature set (Q&A, study, office, creation, voice, photo, search), the Doubao Work desktop agent with real-time watch/pause/takeover, the Feishu integration, and the subscription tiers (68/200/500 CNY/month). The iOS App Store listing corroborates the pricing and adds the disclaimer that Doubao is geo-scoped to mainland China, with overseas users redirected to Dola.
+
+The gap is the conversational core. The chat LLM behind the assistant is not named in any fetched official page — only the creation models (Seedream, Seedance) are — and there is no public GitHub repository (verified against ByteDance's org on 2026-09-27). China AI Hub analysis indicates this is a deliberate asymmetry: ByteDance discloses the models tied to *media generation* (where it wants to signal capability) while keeping the model behind the *assistant's reasoning* unnamed, which both protects the closed-API posture and makes Doubao's assistant quality impossible to benchmark against a named model.
+
+## Where this fits
+
+| Workload | Relevance |
+|---|---|
+| Consumer Q&A, study help, inspiration | High |
+| Office automation (docs, spreadsheets, PPT, data, code) | High |
+| Image / video creation (Seedream / Seedance) | High |
+| Agentic desktop automation (Doubao Work) | High |
+| Enterprise work via Feishu | High |
+| Developer / programmatic access | Low (no consumer API; via Ark) |
+| Overseas / non-mainland-China use | Low (redirected to Dola) |
+
+*Relevance judgments are China AI Hub analysis based on documented capabilities, not vendor claims.*
 
 ## Field reference
 
@@ -94,5 +150,7 @@ Doubao matters as the demand-side complement to ByteDance's closed model strateg
 | Limitations | Region-restricted; quota-based membership; creation packs expire | Official |
 | Source | [Doubao website](https://www.doubao.com/) | Official |
 | Last verified | 2026-09-20 | Official |
+
+See the [ByteDance](/companies/bytedance/) company profile, the [Volcengine Ark](/api/ark/) platform, the [Doubao Seed 2.1 Pro](/models/doubao-seed-2-1-pro/) model, and the site's [computer use](/technology/computer-use/) and [multimodal AI](/technology/multimodal-ai/) technology pages.
 
 *Labels used above: **Official fact** (from the Doubao website and App Store listing), **Vendor-reported claim** (capability and pricing statements by ByteDance), and **China AI Hub analysis** (our synthesis, always introduced as such).*
