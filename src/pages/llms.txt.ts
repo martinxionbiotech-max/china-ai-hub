@@ -44,6 +44,11 @@ export const GET: APIRoute = async ({ site }) => {
   L.push(`- [Corrections](${base}/corrections/): How to report an error and the correction record.`);
   L.push(`- [Update History](${base}/updates/): Structured record of site changes by date and scope.`);
   L.push(`- [Editorial Standards](${base}/editorial-standards/): The quality gate for every published page.`);
+  L.push(`- [Contact](${base}/contact/): How to reach the project and the public correction channel.`);
+  L.push(`- [Disclaimer](${base}/disclaimer/): Informational nature, not professional advice, AI-content disclosure, and correction channels.`);
+  L.push(`- [Privacy](${base}/privacy/): Data handling — no accounts, no forms, no tracking; hosting logs; GDPR/CCPA rights.`);
+  L.push(`- [Terms](${base}/terms/): Terms of use, intellectual property, liability limits and governing law.`);
+  L.push(`- [Cookies](${base}/cookies/): Cookie classification and management.`);
   L.push('');
   L.push('## Models');
   for (const m of models) {

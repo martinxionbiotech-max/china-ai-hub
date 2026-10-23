@@ -4,64 +4,223 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
 <BaseLayout
   title="About"
-  description="What China AI Hub is, why it exists, who it serves, and how its data is sourced and verified."
+  description="What China AI Hub is, what it is not, who operates and writes it, and how its data is sourced, verified and labeled."
   type="article"
 >
   <article class="prose prose-slate max-w-none">
     <h1>About China AI Hub</h1>
-
-    <p>
-      China AI Hub is an independent English-language knowledge and intelligence platform for
-      understanding China's AI models, agents, APIs, companies, technologies, pricing and ecosystem.
-      It exists to answer one practical question: <em>which Chinese AI model, agent or API is suitable
-      for which task, at what cost, with what capabilities, and under what deployment conditions?</em>
-    </p>
-
-    <h2>Why this website exists</h2>
-    <p>
-      China's AI ecosystem moves quickly and its documentation is fragmented across Chinese-language
-      sources. International developers and researchers routinely lack a reliable, structured, English-language
-      view of what exists, what it costs, and what evidence supports it. China AI Hub fills that gap with
-      structured data and sourced analysis — not with hype or rankings.
-    </p>
+    <p class="text-sm text-gray-500">Last updated: 2026-10-23</p>
 
     <h2>What China AI Hub is</h2>
+    <p>
+      China AI Hub is an independent, English-language knowledge and intelligence platform for
+      understanding China's AI ecosystem — models, agents, APIs, companies, technologies, pricing,
+      benchmarks and the relationships between them. It exists to answer one practical question:
+      <em>which Chinese AI model, agent or API is suitable for which task, at what cost, with what
+      capabilities, and under what deployment conditions?</em>
+    </p>
+    <p>Concretely, the site is four things:</p>
     <ul>
-      <li>A <strong>database</strong> of models, companies, agents, APIs, pricing and benchmarks</li>
-      <li>A <strong>knowledge base</strong> of AI technologies and their Chinese implementations</li>
-      <li>A <strong>comparison system</strong> that explains trade-offs, not winners</li>
-      <li>A <strong>research platform</strong> publishing original analysis with clearly labeled evidence</li>
+      <li>A <strong>database</strong> of models, companies, agents, APIs, pricing and benchmarks;</li>
+      <li>A <strong>knowledge base</strong> of AI technologies and their Chinese implementations;</li>
+      <li>A <strong>comparison system</strong> that explains trade-offs rather than declaring winners;</li>
+      <li>A <strong>research platform</strong> publishing original analysis with clearly labeled evidence.</li>
     </ul>
 
     <h2>What China AI Hub is not</h2>
     <ul>
-      <li>A news aggregator or translation site</li>
-      <li>A "Top 10 Chinese AI models" blog</li>
-      <li>A ranking site that declares one best model</li>
-      <li>A collection of rewritten official documentation</li>
+      <li>Not an official source — the site is <strong>not affiliated with, endorsed by, or operated by any AI vendor</strong> (DeepSeek, Alibaba Cloud, ByteDance, Moonshot, MiniMax, Zhipu or others).</li>
+      <li>Not a news aggregator or translation site.</li>
+      <li>Not a "Top 10 Chinese AI models" listicle.</li>
+      <li>Not a ranking site that declares one best model.</li>
+      <li>Not a collection of rewritten official documentation.</li>
+      <li>Not a provider of AI systems, APIs, or any paid service.</li>
     </ul>
+
+    <h2>Why this website exists</h2>
+    <p>
+      China's AI ecosystem moves quickly and its documentation is fragmented across Chinese-language
+      sources. International developers and researchers routinely lack a reliable, structured,
+      English-language view of what exists, what it costs, and what evidence supports it. China AI
+      Hub fills that gap with structured data and sourced analysis — not with hype or rankings.
+      The full scope and limits of what the content can be relied on for are in the
+      <a href="/disclaimer/">Disclaimer</a>.
+    </p>
+
+    <h2>What is on the site</h2>
+    <p>
+      The site is organized around eleven content collections, each answering a different question:
+    </p>
+    <ul>
+      <li><a href="/models/">Models</a> — Chinese AI models and their specifications, licenses and benchmarks.</li>
+      <li><a href="/companies/">Companies</a> — the companies behind the models, and their products.</li>
+      <li><a href="/agents/">Agents</a> — Chinese coding and general-purpose AI agents.</li>
+      <li><a href="/api/">API</a> — the API platforms and their endpoints, compatibility and capabilities.</li>
+      <li><a href="/pricing/">Pricing</a> — normalized API pricing across providers.</li>
+      <li><a href="/benchmarks/">Benchmarks</a> — benchmark evaluations and their methodology.</li>
+      <li><a href="/technology/">Technology</a> — a knowledge base of AI technologies with Chinese adoption context.</li>
+      <li><a href="/comparisons/">Comparisons</a> — evidence-based model comparisons, without rankings.</li>
+      <li><a href="/guides/">Guides</a> — decision frameworks for choosing and evaluating models.</li>
+      <li><a href="/research/">Research</a> — original analysis with labeled evidence.</li>
+      <li><a href="/news/">News</a> — short, sourced release notes.</li>
+    </ul>
+    <p>
+      Each entity page (models, companies, agents, APIs, pricing, benchmarks) is a data record with
+      sourced fields and a verification status; the editorial pages (research, guides, comparisons,
+      technology, news) add interpretation on top of that data. The same facts are also served in
+      machine-readable form on the companion Data Hub (<code>data.sinoaihub.com</code>).
+    </p>
 
     <h2>Who it serves</h2>
     <p>
       AI developers, software engineers, researchers, enterprise technology buyers, startups,
-      analysts and journalists — anyone evaluating Chinese AI systems from outside China.
-      Content assumes an intelligent reader who knows AI but may not know China's AI ecosystem.
+      analysts and journalists — anyone evaluating Chinese AI systems from outside China. Content
+      assumes an intelligent reader who knows AI but may not know China's AI ecosystem.
+    </p>
+
+    <h2>Who operates and writes the site</h2>
+    <p>
+      The site is operated by the China AI Hub project. Research and writing are done by the
+      <a href="/authors/">SinoAI Hub Research Team</a> — a team-level byline, not a set of named
+      individuals. The project deliberately avoids publishing invented individual "expert" profiles;
+      accountability comes from the source layer (every claim carries a source, a source type and a
+      verification date), not from a persona. The project is independent and ad-free, as described
+      in the <a href="/disclosure/">funding disclosure</a>. The project does not publish a corporate
+      legal name, registration number, or registered office; the contact point is
+      Martin.W — <a href="mailto:admin@sinoaihub.com">admin@sinoaihub.com</a>.
     </p>
 
     <h2>How data is sourced</h2>
     <p>
       Every important factual claim carries a source, a source type, a publication date and a
-      last-verified date. Primary sources (official documentation, model cards, pricing pages,
-      papers, GitHub) are preferred; community sources never carry critical facts alone.
-      Where sources conflict, the conflict is explained, not silently resolved.
-      Where data is unknown, the site says so. Nothing is invented.
+      last-verified date. Sources are ranked in a four-tier hierarchy — primary sources first
+      (official documentation, model cards, pricing pages, papers, GitHub), then high-quality
+      technical sources, then major media, then community — and a community-only source can never
+      carry a critical fact alone. Where sources conflict, the conflict is explained, not silently
+      resolved. Where data is unknown, the site says so. Nothing is invented.
+    </p>
+    <p>
+      The full collection hierarchy, the verification workflow, and the eight-field evidence layer
+      are documented on the <a href="/methodology/">methodology</a> page. How the site is licensed,
+      how the main site and the Data Hub (<code>data.sinoaihub.com</code>) divide labor, and how
+      often data is re-verified are on the <a href="/data-policy/">Data Policy</a> page.
+    </p>
+
+    <h2>Verification and evidence</h2>
+    <p>
+      Every entity record carries a verification status: <code>verified</code> or
+      <code>partially_verified</code>. A record is <code>partially_verified</code> when a core
+      field is documented as not publicly disclosed — the gap is stated, never hidden. Across the
+      reference dataset this is currently a <strong>45 / 14 split</strong> (45 records fully
+      verified, 14 partially verified), and the evidence layer normalizes every source into eight
+      fields — identifier, name, URL, type, publication date, verification date, confidence, and
+      conflict flag. This is what makes the site's claims checkable rather than asserted.
     </p>
 
     <h2>Analysis policy</h2>
     <p>
-      Editorial analysis (including the China AI Hub View sections) is always labeled as analysis
-      and is traceable to cited evidence. The site does not promote or attack companies, does not
-      declare universal winners, and does not pretend certainty where none exists.
+      Editorial analysis (including the sections labeled "China AI Hub analysis") is always labeled
+      as analysis and is traceable to cited evidence. The site does not promote or attack companies,
+      does not declare universal winners, and does not pretend certainty where none exists. The four
+      claim labels — Official fact, Vendor-reported claim, Third-party evidence, and China AI Hub
+      analysis — are applied throughout so the reader can always tell whose claim they are reading.
+      The quality gate is documented in the <a href="/editorial-standards/">editorial standards</a>.
+    </p>
+
+    <h2>Use of AI in producing the site</h2>
+    <p>
+      The site is transparent about where AI-assisted tooling is used. Illustrations on entity pages
+      are <strong>AI-generated</strong> and labeled in image credits (e.g. "Seedream"). Automated
+      tooling is used in the <a href="/methodology/">verification workflow</a> to re-fetch primary
+      sources and compare extracted values against stored values. Editorial text and analysis are
+      produced and reviewed by the SinoAI Hub Research Team, and analysis is labeled. See the
+      <a href="/disclaimer/">Disclaimer</a> for the complete AI disclosure.
+    </p>
+
+    <h2>How to read the site</h2>
+    <p>
+      The site is built so you can tell, on any page, what kind of statement you are reading. Entity
+      pages open with a short answer block that states what the thing is, why it matters, its key
+      characteristics, and what a professional should know, before the detailed data. Facts carry
+      sources and verification dates; analysis is labeled. Every record shows a verification status
+      (<code>verified</code> or <code>partially_verified</code>), and the four claim labels —
+      Official fact, Vendor-reported claim, Third-party evidence, and China AI Hub analysis — tell
+      you whose claim you are reading.
+    </p>
+    <p>
+      Comparisons explain trade-offs without declaring a winner; decision guides route you to the
+      best-documented fit for a scenario rather than to a "best model"; research pages state their
+      method and their uncertainties. If a value is unknown, the page says so rather than guessing.
+      The <a href="/methodology/">methodology</a> and <a href="/editorial-standards/">editorial
+      standards</a> pages define these conventions in full.
+    </p>
+
+    <h2>Editorial values</h2>
+    <ul>
+      <li><strong>Zero fabrication</strong> — no invented prices, benchmarks, parameters, dates or company details. Unknown values are marked, not guessed.</li>
+      <li><strong>No winner verdicts</strong> — the site explains trade-offs and suitability rather than declaring a universal best model.</li>
+      <li><strong>Honest uncertainty</strong> — where evidence is thin or conflicting, the site says so, and does not pretend certainty.</li>
+      <li><strong>Source over persona</strong> — credibility comes from the evidence layer, not from invented author authority.</li>
+      <li><strong>Verification over speed</strong> — a sourced, date-stamped record beats a fast, unsourced claim.</li>
+    </ul>
+
+    <h2>Independence and funding</h2>
+    <p>
+      The site operates with no advertising, no sponsored listings, no paid placements and no
+      affiliate links. No AI vendor pays for placement, ranking or description. The project is
+      operated at its own expense and currently has no revenue model; if that changes, the
+      <a href="/disclosure/">funding disclosure</a> will be updated before the change takes effect.
+    </p>
+
+    <h2>Corrections and accountability</h2>
+    <p>
+      Errors are handled through a public, recorded process — see the
+      <a href="/corrections/">corrections policy</a> — and site changes are logged in the
+      <a href="/updates/">update history</a>. Data licensing and reuse terms are in the
+      <a href="/data-policy/">Data Policy</a> and the <a href="/terms/">Terms of Use</a>.
+    </p>
+
+    <h2>How the main site and the Data Hub relate</h2>
+    <p>
+      The project deliberately splits content across two properties so that analysis and raw data
+      stay separable. The main site (<code>sinoaihub.com</code>) is the editorial authority: it
+      explains what things mean, why they matter, and how to choose between them. The Data Hub
+      (<code>data.sinoaihub.com</code>) is the reference layer: it carries the exact, machine-readable
+      facts and their evidence records. Every Data Hub record links back to its canonical main-site
+      page, and the two layers are kept in agreement by automated cross-checks. Interpretation lives
+      on the main site; the Data Hub is not a second blog.
+    </p>
+
+    <h2>How the site stays current</h2>
+    <p>
+      Data changes on three cadences, and staleness is shown rather than hidden: light weekly
+      re-checks of pricing and status for top models and providers; a monthly full crawl of all
+      monitored targets; and event-driven updates within 24 hours of a major release, price cut or
+      license change. Every record shows a <code>last_verified</code> date — under 30 days counts as
+      current, 30–90 days is flagged "may be outdated", and over 90 days is marked prominently for
+      verification before reliance. The full schedule is in the
+      <a href="/data-policy/">Data Policy</a>, and the chronological record of changes is in the
+      <a href="/updates/">update history</a>.
+    </p>
+
+    <h2>Contact</h2>
+    <p>
+      To reach the project: Martin.W — <a href="mailto:admin@sinoaihub.com">admin@sinoaihub.com</a>,
+      or see the <a href="/contact/">contact page</a> for all channels.
+    </p>
+
+    <h2>Related pages</h2>
+    <p>
+      The site's operating rules and disclosures live alongside this page:
+      <a href="/methodology/">Methodology</a> (how data is collected and verified),
+      <a href="/editorial-standards/">Editorial Standards</a> (the quality gate),
+      <a href="/data-policy/">Data Policy</a> (licensing and update cadence),
+      <a href="/authors/">Authors</a> (who writes the site),
+      <a href="/disclosure/">Funding Disclosure</a> (how the project is funded),
+      <a href="/corrections/">Corrections</a> (how errors are handled),
+      <a href="/updates/">Updates</a> (the change history),
+      <a href="/terms/">Terms of Use</a>, <a href="/privacy/">Privacy Policy</a>,
+      <a href="/cookies/">Cookie Policy</a>, and <a href="/disclaimer/">Disclaimer</a>.
     </p>
   </article>
 </BaseLayout>
