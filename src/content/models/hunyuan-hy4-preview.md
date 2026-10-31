@@ -1,5 +1,4 @@
 ---
-image: null
 model_id: hunyuan-hy4-preview
 model_name: Hunyuan Hy4 preview
 provider: tencent
