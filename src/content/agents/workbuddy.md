@@ -5,6 +5,7 @@ company: tencent
 description: "WorkBuddy is Tencent's all-scenario AI office agent — a desktop workbench launched 9 March 2026 on the CodeBuddy architecture. It plans and executes multi-step tasks, operates local files with permission, and delivers finished documents, spreadsheets and slides. It is model-neutral by design (Hunyuan, GLM, Kimi, MiniMax and DeepSeek are all built in), compatible with the OpenClaw skill format, and connected to WeChat, WeCom, QQ, Feishu and DingTalk for remote control."
 agent_type: enterprise
 underlying_models:
+  - Hunyuan Hy4 preview
   - GLM-5.3
   - GLM-5.3-Flash
   - GLM-5.2
@@ -42,7 +43,7 @@ limitations:
   - Desktop-first; the mobile app can dispatch tasks but cannot operate desktop files
   - Cloud-delivered service — no open-source or self-hosted edition, though a VPC edition is offered to enterprises
   - With the built-in models, inputs and outputs are processed in the cloud; only a custom-model configuration keeps content off Tencent's side
-  - Hunyuan Hy4 preview and Hy3 ship as built-in models but are not yet tracked in this database's model index
+  - Hy3 ships as a built-in model but is not yet tracked in this database's model index (Hy4 preview is)
   - No independent evaluation of task-completion quality is recorded
   - Skill quality is uneven at the platform's 200,000-listing scale; skill-scanner reduces but does not eliminate the risk of a malicious package
 last_verified: "2026-10-31"

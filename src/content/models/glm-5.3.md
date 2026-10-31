@@ -83,7 +83,7 @@ sources:
     confidence: high
 ---
 
-**What it is.** GLM-5.3 (2026-08-18) is Zhipu AI's flagship text model: a 744B-total / 40B-active open-weight model with a 1M-token context and 128K max output, released under Apache-2.0. **Why it matters.** It shares its base model with GLM-5.2 — all gains come from post-training — making it a direct study in how much post-training can move a fixed architecture, and it is one of only two open-weight 1M-context models in the database. **Key characteristics.** Text-only input, reasoning always enabled (low/high/max, default max), open weights in FP8 and BF16. **What a professional should know.** Reasoning cannot be disabled, and the headline "50% coding improvement" is measured on Z.ai Code Bench, a private in-house benchmark — treat it as a vendor claim, not an independent result.
+**What it is.** GLM-5.3 (2026-08-18) is Zhipu AI's flagship text model: a 744B-total / 40B-active open-weight model with a 1M-token context and 128K max output, released under Apache-2.0. **Why it matters.** It shares its base model with GLM-5.2 — all gains come from post-training — making it a direct study in how much post-training can move a fixed architecture, and it was one of only two open-weight 1M-context models in the database until Tencent's Hy4 preview joined it in August 2026. **Key characteristics.** Text-only input, reasoning always enabled (low/high/max, default max), open weights in FP8 and BF16. **What a professional should know.** Reasoning cannot be disabled, and the headline "50% coding improvement" is measured on Z.ai Code Bench, a private in-house benchmark — treat it as a vendor claim, not an independent result.
 
 ## Architecture and parameters
 
@@ -91,7 +91,7 @@ GLM-5.3 is a 744B-total / 40B-active MoE (~5.4% activation), the same base model
 
 ## What the context window actually means
 
-The 1M-token context with a 131,072 output cap is the standard flagship split: long-input analysis, not long-form generation. China AI Hub analysis: the distinguishing factor is that this 1M window is available in *open weights* — GLM-5.3 and GLM-5.3-Flash are the only open-weight 1M-context models in the collection, which matters for enterprises that cannot use APIs. See the [context-window research](/research/chinese-ai-context-windows/).
+The 1M-token context with a 131,072 output cap is the standard flagship split: long-input analysis, not long-form generation. China AI Hub analysis: the distinguishing factor is that this 1M window is available in *open weights* — GLM-5.3, GLM-5.3-Flash and — since August 2026 — Tencent's Hy4 preview are the open-weight 1M-context models in the collection, which matters for enterprises that cannot use APIs. See the [context-window research](/research/chinese-ai-context-windows/).
 
 ## Pricing implications
 
@@ -138,7 +138,7 @@ China AI Hub analysis indicates GLM-5.3's significance is structural rather than
 
 ## Market position and outlook
 
-China AI Hub analysis indicates GLM-5.3's structural role is as the open-weight long-context anchor: the database records GLM-5.3 and GLM-5.3-Flash as the only open-weight 1M-context models in the collection, which makes Zhipu the default answer for enterprises that need long context but cannot use APIs. That position is reinforced by the model's release strategy — shipping the same 744B/40B base as GLM-5.2 and improving it purely through post-training is a low-cost way to extend a model family without a new architecture. The two caveats that define its adoption profile are always-on reasoning (no non-thinking mode, so every request carries reasoning latency and cost) and the reliance on the private Z.ai Code Bench for the headline improvement claim, which cannot be independently reproduced. See the [state of China's AI models](/research/state-of-chinas-ai-models-2026/) and [context-window](/research/chinese-ai-context-windows/) research.
+China AI Hub analysis indicates GLM-5.3's structural role is as the open-weight long-context anchor: the database records GLM-5.3 and GLM-5.3-Flash as the first open-weight 1M-context models in the collection, with Tencent's Hy4 preview joining them in August 2026, which makes Zhipu the default answer for enterprises that need long context but cannot use APIs. That position is reinforced by the model's release strategy — shipping the same 744B/40B base as GLM-5.2 and improving it purely through post-training is a low-cost way to extend a model family without a new architecture. The two caveats that define its adoption profile are always-on reasoning (no non-thinking mode, so every request carries reasoning latency and cost) and the reliance on the private Z.ai Code Bench for the headline improvement claim, which cannot be independently reproduced. See the [state of China's AI models](/research/state-of-chinas-ai-models-2026/) and [context-window](/research/chinese-ai-context-windows/) research.
 
 ## What is uncertain
 

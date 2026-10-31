@@ -15,7 +15,8 @@ ai_products:
   - WorkBuddy — AI office agent and desktop workbench (launched 9 March 2026)
   - CodeBuddy — AI coding IDE the WorkBuddy client is built on
   - Tencent Cloud AI
-foundation_models: []
+foundation_models:
+  - hunyuan-hy4-preview
 agents:
   - yuanqi
   - workbuddy
