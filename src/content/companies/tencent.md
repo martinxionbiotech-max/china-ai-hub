@@ -12,16 +12,19 @@ funding: "Publicly listed (SEHK: 0700)."
 ai_products:
   - Tencent Hunyuan (混元) foundation model family
   - Tencent Yuanqi (元器) agent platform
+  - WorkBuddy — AI office agent and desktop workbench (launched 9 March 2026)
+  - CodeBuddy — AI coding IDE the WorkBuddy client is built on
   - Tencent Cloud AI
 foundation_models: []
 agents:
   - yuanqi
+  - workbuddy
 api: []
 open_source_projects: []
 official_documentation: https://cloud.tencent.com/document/product/1729/10475
 official_website: https://www.tencent.com/
 related_entities: []
-last_verified: "2026-09-29"
+last_verified: "2026-10-31"
 sources:
   - source_name: Tencent Yuanqi official platform
     source_url: https://yuanqi.tencent.com/
