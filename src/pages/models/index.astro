@@ -73,8 +73,8 @@ const families = [...new Set(models.map((m) => m.data.model_family).filter(Boole
               <th>Open weights</th>
               <th>License</th>
               <th>API</th>
-              <th>Input $/1M</th>
-              <th>Output $/1M</th>
+              <th>Input per 1M</th>
+              <th>Output per 1M</th>
               <th>Verified</th>
             </tr>
           </thead>
@@ -103,8 +103,8 @@ const families = [...new Set(models.map((m) => m.data.model_family).filter(Boole
                   <td>{openLabel}</td>
                   <td>{d.license ?? '—'}</td>
                   <td>{apiLabel}</td>
-                  <td>{d.pricing?.input_price_per_1m ?? '—'}</td>
-                  <td>{d.pricing?.output_price_per_1m ?? '—'}</td>
+                  <td>{d.pricing?.input_price_per_1m != null ? (d.pricing.currency === 'CNY' ? '¥' : '$') + d.pricing.input_price_per_1m : '—'}</td>
+                  <td>{d.pricing?.output_price_per_1m != null ? (d.pricing.currency === 'CNY' ? '¥' : '$') + d.pricing.output_price_per_1m : '—'}</td>
                   <td>{d.last_verified}</td>
                 </tr>
               );

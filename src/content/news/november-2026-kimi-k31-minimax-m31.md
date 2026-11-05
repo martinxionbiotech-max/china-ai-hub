@@ -31,9 +31,9 @@ Two changes landed in the same week, and they point in opposite directions: Moon
 
 Moonshot describes K3.1 Pro as the first model in a new K3.1 series and its "most capable 3T-class open-weight model to date", with a 1,048,576-token context window and vision input. It is a post-trained version of Kimi K3 with substantially larger post-training compute, and it ships with a `highspeed` variant.
 
-Pricing is flat pay-as-you-go with no context-length tiering. The documentation lists cache writes (5-minute and 1-hour TTL), cache-hit input and output as separate billable items, and batch inference at 60% of the standard price for `kimi-k3.1-pro` and `kimi-k3`.
+Pricing is flat pay-as-you-go with no context-length tiering: **¥13 per 1M input, ¥68 per 1M output, ¥1.3 cached input** on the China platform. The highspeed variant lists **¥26 / ¥136** for roughly 2–3x throughput. Batch inference is 60% of the standard price for `kimi-k3.1-pro` and `kimi-k3`, and cache writes are billed separately by TTL (5 minutes or 1 hour).
 
-The pricing table on the documentation page renders client-side and could not be read as text, so this database records the model's specifications and status without a price. That is deliberate: an unverified number is worse than a blank one.
+At an indicative 7.1 CNY/USD that is about $1.83 / $9.58 against Kimi K3's $3.00 / $15.00 — roughly a third cheaper on both sides, which matches Moonshot's own framing of the release. The international USD list had not been published when this record was created, so the CNY figure is the only verified number and the model page carries it as CNY rather than converting it into a dollar figure the provider has not quoted.
 
 ## K2 is closing
 
@@ -53,4 +53,4 @@ The new model's announcement also implies a repositioning: the flash tier now si
 
 **The K2 retirement is the urgent item.** Migration work has a deadline, and the replacement is more expensive: K3.1 Pro is a 3T-class flagship, not a mid-tier coding model. Teams that relied on K2.7 Code's price will need to re-run their unit economics, not just swap a model ID.
 
-**A missing price is a data point.** The database now lists K3.1 Pro with specifications and no price because the published table could not be verified. We would rather show the gap than import a number from a reseller page.
+**The K3.1 cut is real, and it is smaller than it looks.** A third off a flagship that K2 users are being pushed toward still leaves them paying several times the K2.7 Code rate they had budgeted. The migration is mandatory by December; the cost increase is not covered by the discount.

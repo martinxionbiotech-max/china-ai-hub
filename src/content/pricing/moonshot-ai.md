@@ -68,6 +68,14 @@ The Highspeed variant doubles both input and output for about 1.7x the throughpu
 
 K3 is the 1M-context flagship; K2.7-Code is a 262K coding specialist at one-third the input price. For repository work inside 262K tokens, the specialist is dramatically cheaper and, on coding benchmarks, competitive. The flagship earns its price on long-context tasks and general reasoning, not on code.
 
+## K3.1 Pro is priced in CNY
+
+Kimi K3.1 Pro does not appear in the USD table above because Moonshot publishes its price on the China platform in renminbi: **¥13 per 1M input, ¥68 per 1M output, ¥1.3 cached input**, with a highspeed variant at **¥26 / ¥136** for roughly 2–3x throughput.
+
+At an indicative 7.1 CNY/USD that is about $1.83 / $9.58 — roughly a third below Kimi K3's $3.00 / $15.00, which is consistent with Moonshot's own framing of the release as a price cut as well as a capability step.
+
+Two cautions. First, mixing this row into a USD comparison without stating the exchange rate produces a fake ranking. Second, the international USD list had not been published when this record was created, so the CNY figure is the only verified number — treat any USD figure you see elsewhere as an estimate.
+
 ## Our view
 
 **Kimi's pricing is the most tiered in the market, and buyers should exploit it.** Few teams need a 1M-context flagship for every call. Routing code and short-context work to K2.7-Code and reserving K3 for genuinely long inputs cuts spend by 60-70% with little quality loss on the routed tasks.

@@ -187,9 +187,9 @@ export function modelFaqs(d: any): Faq[] {
   if (d.pricing?.input_price_per_1m != null) {
     faqs.push({
       q: `How much does ${name} cost through the API?`,
-      a: `$${d.pricing.input_price_per_1m} per 1M input tokens and $${
-        d.pricing.output_price_per_1m ?? '—'
-      } per 1M output tokens (${d.pricing.currency}).`,
+      a: `${d.pricing.currency === 'CNY' ? '¥' : '$'}${d.pricing.input_price_per_1m} per 1M input tokens and ${
+        d.pricing.currency === 'CNY' ? '¥' : '$'
+      }${d.pricing.output_price_per_1m ?? '—'} per 1M output tokens (${d.pricing.currency}).`,
     });
   } else {
     faqs.push({

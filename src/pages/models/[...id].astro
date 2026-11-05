@@ -36,6 +36,9 @@ const hasPricingPage = Boolean(d.pricing?.pricing_ref && pricingProviders.has(d.
 const companyRec = allCompanies.find((c) => c.id === d.provider || c.data.aliases?.includes(d.provider));
 
 /* Superseded / merged (canonical) target resolution. */
+/* Currency symbol for the price rows: models are not all priced in USD. */
+const curSym = d.pricing?.currency === 'CNY' ? '¥' : d.pricing?.currency === 'USD' ? '$' : '';
+
 const supersededBy = d.superseded_by ?? d.canonical_model ?? null;
 const supersededHref = supersededBy ? modelHref(modelMap, supersededBy) : null;
 const supersededName = supersededBy
@@ -114,7 +117,7 @@ const evidenceLabel: Record<string, string> = {
 
 <BaseLayout
   title={`${d.model_name}: Context, Pricing, Benchmarks`}
-  description={`${d.model_name} by ${d.provider}: ${d.context_window ? `${(d.context_window/1024).toFixed(0)}K-token context` : 'context not listed'}, ${d.pricing?.input_price_per_1m != null ? `$${d.pricing.input_price_per_1m} input and $${d.pricing.output_price_per_1m} output per 1M tokens` : 'API pricing not listed'}, ${d.open_weight ? 'open weights' : 'hosted only'}, ${d.benchmark_results.length} benchmark records and sourced specifications.`}
+  description={`${d.model_name} by ${d.provider}: ${d.context_window ? `${(d.context_window/1024).toFixed(0)}K-token context` : 'context not listed'}, ${d.pricing?.input_price_per_1m != null ? `${curSym}${d.pricing.input_price_per_1m} input and ${curSym}${d.pricing.output_price_per_1m} output per 1M tokens` : 'API pricing not listed'}, ${d.open_weight ? 'open weights' : 'hosted only'}${d.release_date ? `, released ${d.release_date}` : ''}${d.benchmark_results.length > 0 ? `, ${d.benchmark_results.length} benchmark records` : ''} and sourced specifications.`}
   type="article"
   canonicalPath={d.canonical_model ? modelHref(modelMap, d.canonical_model) : undefined}
   noindex={Boolean(d.canonical_model)}
@@ -190,7 +193,7 @@ const evidenceLabel: Record<string, string> = {
           <tr>
             <th scope="row">API pricing</th>
             <td>
-              ${d.pricing.input_price_per_1m} input / ${d.pricing.output_price_per_1m ?? '—'} output per 1M tokens ({d.pricing.currency})
+              {curSym}{d.pricing.input_price_per_1m} input / {curSym}{d.pricing.output_price_per_1m ?? '—'} output per 1M tokens ({d.pricing.currency})
               {d.pricing.effective_date && <> · effective {d.pricing.effective_date}</>}
               {hasPricingPage && <> · <a href={`/pricing/${d.pricing.pricing_ref}/`}>provider pricing page</a></>}
             </td>
@@ -314,7 +317,7 @@ const evidenceLabel: Record<string, string> = {
         {d.pricing?.input_price_per_1m != null && (
           <tr>
             <th scope="row">API pricing</th>
-            <td>${d.pricing.input_price_per_1m} / ${d.pricing.output_price_per_1m ?? '—'} per 1M tokens ({d.pricing.currency})</td>
+            <td>{curSym}{d.pricing.input_price_per_1m} / {curSym}{d.pricing.output_price_per_1m ?? '—'} per 1M tokens ({d.pricing.currency})</td>
             <td>Official</td>
           </tr>
         )}

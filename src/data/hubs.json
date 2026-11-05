@@ -40,6 +40,8 @@
         "hunyuan-hy4-preview",
         "kimi-k2.6",
         "kimi-k3",
+        "kimi-k3.1-pro",
+        "kimi-k3.1-pro-highspeed",
         "minimax-m2.7",
         "minimax-m2.7-highspeed",
         "minimax-m3",
@@ -83,6 +85,8 @@
         "glm-5.3-flash",
         "hunyuan-hy4-preview",
         "kimi-k3",
+        "kimi-k3.1-pro",
+        "kimi-k3.1-pro-highspeed",
         "minimax-m3",
         "qwen3.8-flash",
         "qwen3.8-max"
@@ -123,6 +127,8 @@
         "glm-5.3-flash",
         "kimi-k2.6",
         "kimi-k3",
+        "kimi-k3.1-pro",
+        "kimi-k3.1-pro-highspeed",
         "minimax-m3",
         "qwen3.8-flash",
         "qwen3.8-max"
@@ -165,6 +171,8 @@
         "kimi-k2.7-code",
         "kimi-k2.7-code-highspeed",
         "kimi-k3",
+        "kimi-k3.1-pro",
+        "kimi-k3.1-pro-highspeed",
         "minimax-m2.7",
         "minimax-m2.7-highspeed",
         "minimax-m3",
@@ -206,6 +214,8 @@
         "kimi-k2.7-code",
         "kimi-k2.7-code-highspeed",
         "kimi-k3",
+        "kimi-k3.1-pro",
+        "kimi-k3.1-pro-highspeed",
         "minimax-m3",
         "qwen3.8-max"
       ]
