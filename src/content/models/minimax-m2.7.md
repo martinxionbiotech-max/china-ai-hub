@@ -44,6 +44,7 @@ known_limitations:
   - "Text-only input; interleaved thinking always on (cannot be disabled via API)"
   - "Parameter count and max output tokens not publicly disclosed"
   - "Must echo full assistant content (thinking blocks) back in multi-turn history"
+  - "Not listed on the provider's international pricing page as of 2026-11-05; confirm availability before building on it."
   - "Benchmarks vendor-reported; not independently verified"
 last_verified: "2026-09-27"
 sources:

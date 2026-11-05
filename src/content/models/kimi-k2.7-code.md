@@ -5,7 +5,7 @@ model_id: kimi-k2.7-code
 model_name: Kimi K2.7 Code
 provider: moonshot-ai
 model_family: Kimi K2.7
-status: active
+status: deprecated
 context_window: 262144
 capabilities:
   reasoning: true
@@ -25,6 +25,7 @@ known_limitations:
   - "Thinking is always on; temperature/top_p/n/penalties are fixed and must not be passed"
   - "Max output ceiling not stated in the fetched docs (256K context)"
   - "No open-weight release confirmed for K2.7 series"
+  - "Provider notice (2026-10-31): K2 series closed to new registrations and scheduled for retirement by end-December 2026; migrate to K3 or K3.1 Pro."
 last_verified: "2026-09-27"
 sources:
   - source_name: Kimi API platform — model list

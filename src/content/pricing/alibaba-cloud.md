@@ -35,12 +35,12 @@ models:
       - "Limited-time 20% console discount"
       - "Thinking billed same as output"
     official_source: https://www.alibabacloud.com/help/en/model-studio/model-pricing
-last_verified: "2026-09-20"
+last_verified: "2026-11-05"
 sources:
   - source_name: Model Studio — model pricing
     source_url: https://www.alibabacloud.com/help/en/model-studio/model-pricing
     source_type: official
-    last_verified: "2026-09-20"
+    last_verified: "2026-11-05"
     confidence: high
 ---
 

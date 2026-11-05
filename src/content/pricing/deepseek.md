@@ -38,23 +38,23 @@ price_history:
     new_value: "Reduced V4.1-Flash pricing"
     effective_date: "2026-09-10"
     source: https://api-docs.deepseek.com/updates
-last_verified: "2026-09-20"
+last_verified: "2026-11-05"
 sources:
   - source_name: DeepSeek API docs — Models & Pricing
     source_url: https://api-docs.deepseek.com/quick_start/pricing
     source_type: official
-    last_verified: "2026-09-20"
+    last_verified: "2026-11-05"
     confidence: high
   - source_name: DeepSeek API Change Log
     source_url: https://api-docs.deepseek.com/updates
     source_type: official
-    last_verified: "2026-09-20"
+    last_verified: "2026-11-05"
     confidence: high
   - source_name: DeepSeek-V4.1-Flash release announcement
     source_url: https://www.deepseek.com/en/news/deepseek-v4-1-flash/
     source_type: official
     published_date: "2026-09-10"
-    last_verified: "2026-09-20"
+    last_verified: "2026-11-05"
     confidence: high
 ---
 

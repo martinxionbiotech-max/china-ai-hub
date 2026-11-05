@@ -70,28 +70,28 @@ known_limitations:
   - "Benchmarks are vendor-reported using DeepSeek Harness (minimal mode, max effort); not independently verified"
   - "HLE score is on the pure-text subset (39.1 on that subset; 36.8 full)"
   - "Legacy API names deepseek-v4-flash and deepseek-v4-flash-vision-exp route to V4.1-Flash"
-last_verified: "2026-09-20"
+last_verified: "2026-11-05"
 sources:
   - source_name: DeepSeek API docs — Models & Pricing
     source_url: https://api-docs.deepseek.com/quick_start/pricing
     source_type: official
-    last_verified: "2026-09-20"
+    last_verified: "2026-11-05"
     confidence: high
   - source_name: DeepSeek API Change Log
     source_url: https://api-docs.deepseek.com/updates
     source_type: official
-    last_verified: "2026-09-20"
+    last_verified: "2026-11-05"
     confidence: high
   - source_name: DeepSeek-V4.1-Flash release announcement
     source_url: https://www.deepseek.com/en/news/deepseek-v4-1-flash/
     source_type: official
     published_date: "2026-09-10"
-    last_verified: "2026-09-20"
+    last_verified: "2026-11-05"
     confidence: high
   - source_name: Hugging Face model card — DeepSeek-V4.1-Flash
     source_url: https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash
     source_type: official
-    last_verified: "2026-09-20"
+    last_verified: "2026-11-05"
     confidence: high
 ---
 

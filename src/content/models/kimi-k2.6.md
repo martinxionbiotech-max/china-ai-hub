@@ -6,7 +6,7 @@ model_name: Kimi K2.6
 provider: moonshot-ai
 model_family: Kimi K2.6
 release_date: "2026-04-20"
-status: active
+status: deprecated
 architecture: "Mixture-of-Experts (MoE): 1T total / 32B activated; 384 routed experts (8 selected + 1 shared); MLA attention, SwiGLU activation; 61 layers (1 dense); MoonViT vision encoder (400M)"
 parameter_information:
   total_parameters: "1T"
@@ -30,6 +30,7 @@ cloud_providers:
   - Moonshot AI Platform
 known_limitations:
   - "Maximum output of 98,304 tokens is the documented max generation length in the official model card's evaluation configuration"
+  - "Provider notice (2026-10-31): K2 series closed to new registrations and scheduled for retirement by end-December 2026; migrate to K3 or K3.1 Pro."
 last_verified: "2026-09-27"
 benchmark_results:
   - benchmark: HLE

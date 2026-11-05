@@ -51,17 +51,17 @@ price_history:
     new_value: 0.06
     effective_date: ""
     source: https://platform.minimax.io/docs/guides/pricing-paygo
-last_verified: "2026-09-20"
+last_verified: "2026-11-05"
 sources:
   - source_name: MiniMax API platform — pay-as-you-go pricing (intl)
     source_url: https://platform.minimax.io/docs/guides/pricing-paygo.md
     source_type: official
-    last_verified: "2026-09-20"
+    last_verified: "2026-11-05"
     confidence: high
   - source_name: MiniMax API platform — pay-as-you-go pricing (CN)
     source_url: https://platform.minimaxi.com/docs/guides/pricing-paygo.md
     source_type: official
-    last_verified: "2026-09-20"
+    last_verified: "2026-11-05"
     confidence: high
 ---
 

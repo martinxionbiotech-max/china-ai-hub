@@ -37,17 +37,17 @@ models:
     notes:
       - "China platform: ¥8 / ¥28, cache ¥2"
     official_source: https://docs.z.ai/guides/overview/pricing
-last_verified: "2026-09-20"
+last_verified: "2026-11-05"
 sources:
   - source_name: Z.ai pricing
     source_url: https://docs.z.ai/guides/overview/pricing
     source_type: official
-    last_verified: "2026-09-20"
+    last_verified: "2026-11-05"
     confidence: high
   - source_name: BigModel pricing docs (CNY)
     source_url: https://docs.bigmodel.cn/cn/guide/start/pricing
     source_type: official
-    last_verified: "2026-09-20"
+    last_verified: "2026-11-05"
     confidence: high
 ---
 

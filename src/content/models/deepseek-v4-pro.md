@@ -68,28 +68,28 @@ known_limitations:
   - "Vision not supported"
   - "Open-weight HF checkpoint last modified 2026-06-22; unclear whether it matches the 0813 GA checkpoint"
   - "Pricing is peak/off-peak: listed prices are off-peak; peak is 2x"
-last_verified: "2026-09-20"
+last_verified: "2026-11-05"
 sources:
   - source_name: DeepSeek API docs — Models & Pricing
     source_url: https://api-docs.deepseek.com/quick_start/pricing
     source_type: official
-    last_verified: "2026-09-20"
+    last_verified: "2026-11-05"
     confidence: high
   - source_name: DeepSeek API Change Log
     source_url: https://api-docs.deepseek.com/updates
     source_type: official
-    last_verified: "2026-09-20"
+    last_verified: "2026-11-05"
     confidence: high
   - source_name: DeepSeek-V4 Preview release
     source_url: https://www.deepseek.com/en/news/v4-preview/
     source_type: official
     published_date: "2026-04-24"
-    last_verified: "2026-09-20"
+    last_verified: "2026-11-05"
     confidence: high
   - source_name: Hugging Face model card — DeepSeek-V4-Pro
     source_url: https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro
     source_type: official
-    last_verified: "2026-09-20"
+    last_verified: "2026-11-05"
     confidence: high
 ---
 
