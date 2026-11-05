@@ -62,11 +62,11 @@ The benchmark database (18 benchmarks, last verified 2026-09-29) records each be
 
 | Benchmark | Task type (verified field) | What a score on it evidences |
 |---|---|---|
-| [HLE](/benchmarks/hle/) | Hardest-knowledge exam | Broad world-knowledge ceiling |
-| [GPQA Diamond](/benchmarks/gpqa-diamond/) | Graduate-level, retrieval-resistant Q&A | Reasoning over obscure knowledge |
-| [SWE-bench](/benchmarks/swe-bench/) | Real GitHub issue resolution | Repository-scale coding |
-| [Terminal-Bench](/benchmarks/terminal-bench/) | Terminal/agent task completion | Agentic terminal use |
-| [DeepSWE](/benchmarks/deepswe/) | Deep software engineering | Long-horizon SWE |
-| [MMMU-Pro](/benchmarks/mmmu-pro/) | Multimodal understanding | Vision-language reasoning |
+| [HLE](/benchmarks/frontier-reasoning-benchmarks/) | Hardest-knowledge exam | Broad world-knowledge ceiling |
+| [GPQA Diamond](/benchmarks/frontier-reasoning-benchmarks/) | Graduate-level, retrieval-resistant Q&A | Reasoning over obscure knowledge |
+| [SWE-bench](/benchmarks/coding-agent-benchmarks/) | Real GitHub issue resolution | Repository-scale coding |
+| [Terminal-Bench](/benchmarks/coding-agent-benchmarks/) | Terminal/agent task completion | Agentic terminal use |
+| [DeepSWE](/benchmarks/coding-agent-benchmarks/) | Deep software engineering | Long-horizon SWE |
+| [MMMU-Pro](/benchmarks/multimodal-benchmarks/) | Multimodal understanding | Vision-language reasoning |
 
 Each benchmark page records its version, scoring and contamination caveats — check those before comparing any two numbers.

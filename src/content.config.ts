@@ -260,6 +260,7 @@ const benchmarks = defineCollection({
   loader: glob({ pattern: '**/*.md', base: './src/content/benchmarks' }),
   schema: z.object({
     benchmark_id: z.string(),
+    member_ids: z.array(z.string()).default([]),
     caveat: z.string().optional(),
     benchmark_name: z.string(),
     version: z.string().optional(),

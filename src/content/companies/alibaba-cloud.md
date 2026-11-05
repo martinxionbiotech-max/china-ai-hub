@@ -125,12 +125,12 @@ China AI Hub analysis: Alibaba Cloud occupies a structurally unique position in 
 
 ### Benchmarks
 
-- [AutomationBench](/benchmarks/automationbench/)
-- [DeepSWE](/benchmarks/deepswe/)
-- [GPQA Diamond](/benchmarks/gpqa-diamond/)
-- [HLE](/benchmarks/hle/)
-- [SWE-bench](/benchmarks/swe-bench/)
-- [Terminal-Bench](/benchmarks/terminal-bench/)
+- [AutomationBench](/benchmarks/agent-web-benchmarks/)
+- [DeepSWE](/benchmarks/coding-agent-benchmarks/)
+- [GPQA Diamond](/benchmarks/frontier-reasoning-benchmarks/)
+- [HLE](/benchmarks/frontier-reasoning-benchmarks/)
+- [SWE-bench](/benchmarks/coding-agent-benchmarks/)
+- [Terminal-Bench](/benchmarks/coding-agent-benchmarks/)
 
 ## What is uncertain
 

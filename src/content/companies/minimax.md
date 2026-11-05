@@ -131,9 +131,9 @@ China AI Hub analysis: MiniMax's structural role is the cost-efficient challenge
 
 ### Benchmarks
 
-- [BrowseComp](/benchmarks/browsecomp/)
-- [SWE-bench](/benchmarks/swe-bench/)
-- [Terminal-Bench](/benchmarks/terminal-bench/)
+- [BrowseComp](/benchmarks/agent-web-benchmarks/)
+- [SWE-bench](/benchmarks/coding-agent-benchmarks/)
+- [Terminal-Bench](/benchmarks/coding-agent-benchmarks/)
 
 ## What is uncertain
 

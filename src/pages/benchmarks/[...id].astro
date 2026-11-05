@@ -23,6 +23,9 @@ const { Content } = await render(b);
 const pageUrl = new URL(Astro.url.pathname, Astro.site).href;
 const modelMap = await getModelIdMap();
 const faqs = benchmarkFaqs(d);
+const benchLabels = [...new Set(d.evaluations.map((e: any) => e.benchmark).filter(Boolean))];
+const multiBench = benchLabels.length > 1;
+const members = d.member_ids ?? [];
 const jsonLd = datasetJsonLd({
   id: pageUrl,
   name: `${d.benchmark_name}${d.version ? ` v${d.version}` : ''}`,
@@ -37,8 +40,8 @@ const breadcrumb = breadcrumbJsonLd([
 ---
 
 <BaseLayout
-  title={`${d.benchmark_name} Benchmark: Scores, Method and Limits`}
-  description={`${d.benchmark_name}${d.version ? ` v${d.version}` : ''}: ${d.task_type}. ${d.evaluations.length} Chinese model results recorded with source types, versions and the caveats that decide whether scores are comparable.`}
+  title={members.length > 0 ? `${d.benchmark_name}: Scores and Limits` : `${d.benchmark_name} Benchmark: Scores, Method and Limits`}
+  description={`${d.benchmark_name}${d.version ? ` v${d.version}` : ''}: ${d.task_type}. ${d.evaluations.length} Chinese model results recorded with source types, versions and the caveats that decide comparability.`}
   type="article"
 >
   <article class="max-w-none">
@@ -53,6 +56,11 @@ const breadcrumb = breadcrumbJsonLd([
       </div>
     )}
     {d.description && <p class="text-gray-600 mb-4">{d.description}</p>}
+    {members.length > 0 && (
+      <p class="text-sm text-gray-600 mb-4">
+        This page consolidates {members.length} benchmarks: <strong>{members.join(', ')}</strong>.
+      </p>
+    )}
 
     {d.image && (
       <figure class="mb-6">
@@ -118,6 +126,7 @@ const breadcrumb = breadcrumbJsonLd([
       <caption class="sr-only">Results for {d.benchmark_name}</caption>
       <thead>
         <tr>
+          {multiBench && <th scope="col">Benchmark</th>}
           <th scope="col">Model</th>
           <th scope="col">Model version</th>
           <th scope="col">Score</th>
@@ -130,6 +139,7 @@ const breadcrumb = breadcrumbJsonLd([
       <tbody>
         {d.evaluations.map((e) => (
           <tr>
+            {multiBench && <td>{e.benchmark}</td>}
             <td>{e.model ? (modelMap.has(e.model) ? <a href={modelHref(modelMap, e.model)}>{e.model}</a> : e.model) : e.benchmark}</td>
             <td>{e.model_version ?? '—'}</td>
             <td>{e.score}</td>

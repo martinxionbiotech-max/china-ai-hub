@@ -129,12 +129,12 @@ China AI Hub analysis: DeepSeek is the ecosystem's price-and-openness reference 
 
 ### Benchmarks
 
-- [AutomationBench](/benchmarks/automationbench/)
-- [CyberGym](/benchmarks/cybergym/)
-- [DeepSWE](/benchmarks/deepswe/)
-- [GPQA Diamond](/benchmarks/gpqa-diamond/)
-- [HLE](/benchmarks/hle/)
-- [Terminal-Bench](/benchmarks/terminal-bench/)
+- [AutomationBench](/benchmarks/agent-web-benchmarks/)
+- [CyberGym](/benchmarks/agent-web-benchmarks/)
+- [DeepSWE](/benchmarks/coding-agent-benchmarks/)
+- [GPQA Diamond](/benchmarks/frontier-reasoning-benchmarks/)
+- [HLE](/benchmarks/frontier-reasoning-benchmarks/)
+- [Terminal-Bench](/benchmarks/coding-agent-benchmarks/)
 
 ## What is uncertain
 

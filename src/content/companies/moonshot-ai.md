@@ -123,13 +123,13 @@ China AI Hub analysis: Moonshot AI's structural role is the long-context special
 
 ### Benchmarks
 
-- [BrowseComp](/benchmarks/browsecomp/)
-- [DeepSWE](/benchmarks/deepswe/)
-- [GPQA Diamond](/benchmarks/gpqa-diamond/)
-- [HLE](/benchmarks/hle/)
-- [MMMU-Pro](/benchmarks/mmmu-pro/)
-- [Terminal-Bench](/benchmarks/terminal-bench/)
-- [Video-MME](/benchmarks/video-mme/)
+- [BrowseComp](/benchmarks/agent-web-benchmarks/)
+- [DeepSWE](/benchmarks/coding-agent-benchmarks/)
+- [GPQA Diamond](/benchmarks/frontier-reasoning-benchmarks/)
+- [HLE](/benchmarks/frontier-reasoning-benchmarks/)
+- [MMMU-Pro](/benchmarks/multimodal-benchmarks/)
+- [Terminal-Bench](/benchmarks/coding-agent-benchmarks/)
+- [Video-MME](/benchmarks/multimodal-benchmarks/)
 
 ## What is uncertain
 

@@ -134,10 +134,10 @@ China AI Hub analysis: Zhipu AI's structural role is the open-weight-plus-agents
 
 ### Benchmarks
 
-- [AutomationBench](/benchmarks/automationbench/)
-- [CyberGym](/benchmarks/cybergym/)
-- [DeepSWE](/benchmarks/deepswe/)
-- [Terminal-Bench](/benchmarks/terminal-bench/)
+- [AutomationBench](/benchmarks/agent-web-benchmarks/)
+- [CyberGym](/benchmarks/agent-web-benchmarks/)
+- [DeepSWE](/benchmarks/coding-agent-benchmarks/)
+- [Terminal-Bench](/benchmarks/coding-agent-benchmarks/)
 
 ## What is uncertain
 
