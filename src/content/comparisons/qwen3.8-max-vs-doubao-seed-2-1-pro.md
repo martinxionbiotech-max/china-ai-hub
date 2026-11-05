@@ -16,6 +16,7 @@ dimensions:
   - benchmark
 published_date: "2026-09-29"
 updated_date: "2026-09-29"
+routing: "Both are closed flagships with 1M context; the difference is currency and ecosystem. Qwen3.8-Max bills in USD at $2.00/$6.00 with international regions; Doubao Seed 2.1 Pro bills in CNY at ¥6/¥30 (roughly $0.85/$4.23) and is built for the China market. If you can invoice and operate in CNY, Doubao is cheaper; if you need USD contracting and global endpoints, Qwen is the practical choice."
 sources:
   - source_name: "Alibaba Cloud Model Studio — Qwen3.8-Max"
     source_url: "https://www.alibabacloud.com/help/en/model-studio/qwen3-8-max"

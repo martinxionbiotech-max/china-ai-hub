@@ -110,6 +110,13 @@ const breadcrumb = breadcrumbJsonLd([
       </div>
     )}
 
+    {d.routing && (
+      <div class="border-l-4 border-[#0f4c81] bg-blue-50/40 px-5 py-4 my-6 rounded-r">
+        <p class="text-sm font-semibold text-[#0f4c81] mb-1">Decision rule</p>
+        <p class="text-gray-800">{d.routing}</p>
+      </div>
+    )}
+
     <div class="prose prose-slate max-w-none my-8">
       <Content />
     </div>

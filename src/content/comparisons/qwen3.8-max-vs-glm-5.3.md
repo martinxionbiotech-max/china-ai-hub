@@ -18,6 +18,7 @@ dimensions:
   - api
 published_date: "2026-09-22"
 updated_date: "2026-09-22"
+routing: "Choose GLM-5.3 for openness and price: $1.40/$4.40 with Apache-2.0 weights and self-hosting optionality. Choose Qwen3.8-Max for Alibaba's managed platform, regional endpoints and enterprise contracting, at 1.4x the input and 1.4x the output price. If you might ever need to run the model yourself, this decision is already made."
 sources:
   - source_name: "Alibaba Cloud Model Studio — Qwen3.8-Max"
     source_url: "https://www.alibabacloud.com/help/en/model-studio/qwen3-8-max"

@@ -16,6 +16,7 @@ dimensions:
   - benchmark
 published_date: "2026-09-29"
 updated_date: "2026-09-29"
+routing: "Pick Kimi K3 for open weights and output length: a 1M-token maximum output against Qwen3.8-Max's 131K, at $3.00/$15.00. Pick Qwen3.8-Max for regional coverage, managed contracting and a lower price — $2.00/$6.00 — accepting a closed model. The choice is between generating very long outputs on your own infrastructure and buying a cheaper managed service."
 sources:
   - source_name: "Moonshot AI — Kimi K3 (GitHub)"
     source_url: "https://github.com/MoonshotAI/Kimi-K3"

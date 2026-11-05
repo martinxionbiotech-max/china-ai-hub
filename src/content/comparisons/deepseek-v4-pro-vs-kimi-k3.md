@@ -19,6 +19,7 @@ dimensions:
   - api
 published_date: "2026-09-22"
 updated_date: "2026-09-22"
+routing: "Choose DeepSeek-V4-Pro for cost-controlled production: MIT weights, $0.66/$1.98 and a 2% cache make it roughly 4.5x cheaper on input and 7.6x on output than Kimi K3. Choose Kimi K3 when you need a full 1M-token maximum output — DeepSeek caps output far lower — or when the Kimi licence terms fit better than MIT for your distribution model. At this price gap, K3 has to win on a specific task, not on general capability."
 sources:
   - source_name: "DeepSeek API pricing"
     source_url: "https://api-docs.deepseek.com/quick_start/pricing"

@@ -34,7 +34,8 @@
         }
       ],
       "technology": [],
-      "editorial_take": "Our read: the licence, not the weights, is the decision. Apache-2.0 and MIT models are deployable without a conversation; the custom Chinese licences — MiniMax's community terms, Kimi's revenue-triggered clauses, several Qwen variants — turn self-hosting into a legal review. Chinese labs use open weights as distribution, not as a gift, so expect permissive licences on the models they want adopted and restrictive ones on the models they want to monetise."
+      "editorial_take": "Our read: the licence, not the weights, is the decision. Apache-2.0 and MIT models are deployable without a conversation; the custom Chinese licences — MiniMax's community terms, Kimi's revenue-triggered clauses, several Qwen variants — turn self-hosting into a legal review. Chinese labs use open weights as distribution, not as a gift, so expect permissive licences on the models they want adopted and restrictive ones on the models they want to monetise.",
+      "data_note": "The data shows how completely open weights have become the default in China: most tracked models publish weights, and the licences split cleanly into permissive (MIT, Apache-2.0) and custom regimes with commercial conditions. The price range among open models is wider than among closed ones, which is the signature of labs using weights as distribution rather than as a product."
     },
     {
       "slug": "long-context",
@@ -66,7 +67,8 @@
           "title": "Long Context"
         }
       ],
-      "editorial_take": "Our read: a 1M-token window is table stakes and almost useless as a differentiator. What separates models is retrieval accuracy at depth, the price of a long call, and whether quality degrades before the window ends. Vendors quote the maximum; buyers should measure the effective depth on their own documents, because the last 200K tokens are usually where the claim quietly stops being true."
+      "editorial_take": "Our read: a 1M-token window is table stakes and almost useless as a differentiator. What separates models is retrieval accuracy at depth, the price of a long call, and whether quality degrades before the window ends. Vendors quote the maximum; buyers should measure the effective depth on their own documents, because the last 200K tokens are usually where the claim quietly stops being true.",
+      "data_note": "Long context has become a threshold rather than a gradient: models cluster at 1M tokens or sit well below it, with little in between. That clustering is a pricing decision as much as a technical one — a 1M window changes serving cost, which is why the cheapest tiers often stop at 262K."
     },
     {
       "slug": "multimodal",
@@ -98,7 +100,8 @@
           "title": "Multimodal AI"
         }
       ],
-      "editorial_take": "Our read: vision claims are broadly true and video claims are mostly untested. Image understanding is reliable enough to build on; video is where demos outrun published evaluation, and computer use is where the gap between demo and product is widest. Treat any multimodal claim without a named benchmark and version as marketing."
+      "editorial_take": "Our read: vision claims are broadly true and video claims are mostly untested. Image understanding is reliable enough to build on; video is where demos outrun published evaluation, and computer use is where the gap between demo and product is widest. Treat any multimodal claim without a named benchmark and version as marketing.",
+      "data_note": "The data separates vision from video and from computer use, and the three do not move together: many models accept images, fewer handle video, and fewer still support screen control. Buying 'multimodal' on the strength of an image demo is the most common over-specification in this dataset."
     },
     {
       "slug": "reasoning",
@@ -125,7 +128,8 @@
           "title": "Reasoning Models"
         }
       ],
-      "editorial_take": "Our read: reasoning models are not more expensive per token — they are more expensive per answer, sometimes by an order of magnitude, because they emit hundreds of hidden tokens before the first visible one. Buy them where a wrong answer costs more than the tokens: code review, financial extraction, multi-step planning. Not for classification, where a flash tier is far cheaper and equally accurate."
+      "editorial_take": "Our read: reasoning models are not more expensive per token — they are more expensive per answer, sometimes by an order of magnitude, because they emit hundreds of hidden tokens before the first visible one. Buy them where a wrong answer costs more than the tokens: code review, financial extraction, multi-step planning. Not for classification, where a flash tier is far cheaper and equally accurate.",
+      "data_note": "Reasoning models cluster at the top of the price range, and their cost is better measured per answer than per token: hidden reasoning tokens are billed as output. In the data, every reasoning model costs several times the flash tier of the same family per visible token of answer."
     },
     {
       "slug": "coding",
@@ -152,7 +156,8 @@
         }
       ],
       "technology": [],
-      "editorial_take": "Our read: coding is the least comparable category in the market. Vendors mix single-shot and agentic benchmarks, report pass@1 and pass@k interchangeably, and rarely state the harness. A model leading a public leaderboard can lose on your repository, because the variable that matters — how well it recovers from a failed test — is almost never published."
+      "editorial_take": "Our read: coding is the least comparable category in the market. Vendors mix single-shot and agentic benchmarks, report pass@1 and pass@k interchangeably, and rarely state the harness. A model leading a public leaderboard can lose on your repository, because the variable that matters — how well it recovers from a failed test — is almost never published.",
+      "data_note": "Coding capability is the most evenly distributed flag in the dataset — almost every frontier model claims it — which is precisely why the flag has little selection value. The differentiators in the data are context window, price and licence, not the coding label."
     },
     {
       "slug": "moe",
@@ -193,7 +198,8 @@
           "title": "Mixture of Experts"
         }
       ],
-      "editorial_take": "Our read: parameter counts are the most misleading number in Chinese AI marketing. A 744B model with 40B active parameters costs roughly like a 40B model to serve and like a 744B model to host. Buyers comparing on size are comparing the wrong figure; activation ratio and memory footprint decide the bill."
+      "editorial_take": "Our read: parameter counts are the most misleading number in Chinese AI marketing. A 744B model with 40B active parameters costs roughly like a 40B model to serve and like a 744B model to host. Buyers comparing on size are comparing the wrong figure; activation ratio and memory footprint decide the bill.",
+      "data_note": "The data shows activation ratios from roughly 1.4% to 4.3% of total parameters, and that ratio, not the headline parameter count, tracks the price of serving. Two models with the same total size but different activation ratios are not comparable on cost, even when their benchmark scores are."
     }
   ]
 }

@@ -19,6 +19,7 @@ dimensions:
   - api
 published_date: "2026-09-22"
 updated_date: "2026-09-22"
+routing: "MiniMax-M3 is roughly a quarter of the price on input and a third on output, with the same 1M context and a licence that permits commercial self-hosting with attribution. Doubao Seed 2.1 Pro makes sense only if you are already inside Volcano Engine's ecosystem, need CNY invoicing, or require ByteDance's regional infrastructure — otherwise this is a price decision that MiniMax wins clearly."
 sources:
   - source_name: "Volcengine Ark — Model list"
     source_url: "https://docs.volcengine.com/docs/ark/model-list?lang=zh"

@@ -16,6 +16,7 @@ dimensions:
   - benchmark
 published_date: "2026-09-29"
 updated_date: "2026-09-29"
+routing: "The context window decides this one: Pro lists 1M tokens, Turbo lists 262K. If your prompts fit in 262K, Turbo is half the price for the same 5:1 output ratio and there is no reason to pay for Pro. If they do not, Pro is the only option in this family — and the 1M window, not the model quality, is what you are buying."
 sources:
   - source_name: "Volcengine Ark — Model list"
     source_url: "https://docs.volcengine.com/docs/ark/model-list?lang=zh"

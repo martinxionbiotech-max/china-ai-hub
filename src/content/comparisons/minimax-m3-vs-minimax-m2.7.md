@@ -16,6 +16,7 @@ dimensions:
   - benchmark
 published_date: "2026-09-29"
 updated_date: "2026-09-29"
+routing: "Do not choose M2.7. It costs the same as M3, has one-fifth the context (204K against 1M), and its licence is non-commercial — meaning any commercial deployment requires written authorisation. M3 at the same price with a commercial licence and a 1M window is strictly better. The only reason to touch M2.7 is reproducing an older result."
 sources:
   - source_name: "MiniMax API platform — model overview (CN)"
     source_url: "https://platform.minimaxi.com/docs/guides/models-intro"

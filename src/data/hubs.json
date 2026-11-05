@@ -6,6 +6,7 @@
       "description": "Chinese AI models with openly downloadable weights: licenses, context windows and self-hosting status, counted automatically from the models database.",
       "short_answer": "Open-weight models publish their trained weights for download and self-hosting, unlike API-only models. The database records open-weight status and license terms per model so builders can evaluate deployment rights against the actual license — MIT, Apache-2.0, or a custom regime.",
       "editorial_take": "Our read: the licence, not the weights, is the decision. Apache-2.0 and MIT models are deployable without a conversation; the custom Chinese licences — MiniMax's community terms, Kimi's revenue-triggered clauses, several Qwen variants — turn self-hosting into a legal review. Chinese labs use open weights as distribution, not as a gift, so expect permissive licences on the models they want adopted and restrictive ones on the models they want to monetise.",
+      "data_note": "The data shows how completely open weights have become the default in China: most tracked models publish weights, and the licences split cleanly into permissive (MIT, Apache-2.0) and custom regimes with commercial conditions. The price range among open models is wider than among closed ones, which is the signature of labs using weights as distribution rather than as a product.",
       "why_it_matters": "The license, not the weights alone, decides what you can legally do: MIT and Apache-2.0 are permissive, while the custom regimes (Kimi K3, MiniMax M-series, Qwen3.8) attach revenue or attribution thresholds.",
       "rule_description": "open_weight === true",
       "guides": [
@@ -51,6 +52,7 @@
       "description": "Chinese AI models with a documented context window of one million tokens or more, counted automatically from the models database.",
       "short_answer": "Long-context models accept a million or more input tokens in a single request — enough for whole-repository code review, multi-document analysis and long agent traces. This hub lists models whose documented context window is 1,000,000 tokens or more.",
       "editorial_take": "Our read: a 1M-token window is table stakes and almost useless as a differentiator. What separates models is retrieval accuracy at depth, the price of a long call, and whether quality degrades before the window ends. Vendors quote the maximum; buyers should measure the effective depth on their own documents, because the last 200K tokens are usually where the claim quietly stops being true.",
+      "data_note": "Long context has become a threshold rather than a gradient: models cluster at 1M tokens or sit well below it, with little in between. That clustering is a pricing decision as much as a technical one — a 1M window changes serving cost, which is why the cheapest tiers often stop at 262K.",
       "why_it_matters": "Input context is cheap to advertise but the output ceiling and cache pricing decide real cost. Output limits range from 131,072 (GLM, Qwen) to 1,048,576 (Kimi K3) tokens — the difference between reading a long document and generating one.",
       "rule_description": "context_window >= 1,000,000",
       "guides": [
@@ -92,6 +94,7 @@
       "description": "Chinese AI models that accept vision input, with video and computer-use flags shown where documented, counted automatically from the models database.",
       "short_answer": "Multimodal models accept non-text input — images, and in some cases video or screen control. This hub lists every model that records a vision-input flag, with the rarer video and computer-use flags shown where documented.",
       "editorial_take": "Our read: vision claims are broadly true and video claims are mostly untested. Image understanding is reliable enough to build on; video is where demos outrun published evaluation, and computer use is where the gap between demo and product is widest. Treat any multimodal claim without a named benchmark and version as marketing.",
+      "data_note": "The data separates vision from video and from computer use, and the three do not move together: many models accept images, fewer handle video, and fewer still support screen control. Buying 'multimodal' on the strength of an image demo is the most common over-specification in this dataset.",
       "why_it_matters": "Vision has migrated down the price stack: the cheapest tiers are now among the most capable, and two flagships (DeepSeek-V4-Pro, GLM-5.3) are text-only while their $0.15 flash siblings carry vision.",
       "rule_description": "capabilities.vision === true",
       "guides": [
@@ -131,6 +134,7 @@
       "description": "Chinese AI models that record a reasoning capability flag, counted automatically from the models database: test-time compute, pricing and the benchmark evidence behind every published score.",
       "short_answer": "Reasoning models interleave an extended chain-of-thought before answering, improving performance on math, code and hard knowledge tasks at the cost of latency and output tokens. This hub lists every model that records a reasoning capability flag.",
       "editorial_take": "Our read: reasoning models are not more expensive per token — they are more expensive per answer, sometimes by an order of magnitude, because they emit hundreds of hidden tokens before the first visible one. Buy them where a wrong answer costs more than the tokens: code review, financial extraction, multi-step planning. Not for classification, where a flash tier is far cheaper and equally accurate.",
+      "data_note": "Reasoning models cluster at the top of the price range, and their cost is better measured per answer than per token: hidden reasoning tokens are billed as output. In the data, every reasoning model costs several times the flash tier of the same family per visible token of answer.",
       "why_it_matters": "Reasoning is near-universal across the 2026 lineup. The real differentiators are whether it can be disabled, its effort levels (low/high/max) and its price — not whether it exists.",
       "rule_description": "capabilities.reasoning === true",
       "guides": [
@@ -175,6 +179,7 @@
       "description": "Chinese AI models with a documented coding capability flag, counted automatically from the models database: context windows, prices, licences and the coding benchmark records behind each claim.",
       "short_answer": "Coding models are documented for code generation and agentic software work — the arena where China's frontier race is most intense. This hub lists every model that records a coding capability flag.",
       "editorial_take": "Our read: coding is the least comparable category in the market. Vendors mix single-shot and agentic benchmarks, report pass@1 and pass@k interchangeably, and rarely state the harness. A model leading a public leaderboard can lose on your repository, because the variable that matters — how well it recovers from a failed test — is almost never published.",
+      "data_note": "Coding capability is the most evenly distributed flag in the dataset — almost every frontier model claims it — which is precisely why the flag has little selection value. The differentiators in the data are context window, price and licence, not the coding label.",
       "why_it_matters": "Coding evidence is unevenly published: SWE-bench and Terminal-Bench versions differ across vendors, so the coding flag plus each model's documented benchmark scores is the honest signal set — not a single ranking.",
       "rule_description": "capabilities.coding === true",
       "guides": [
@@ -211,6 +216,7 @@
       "description": "Chinese AI models documented as Mixture-of-Experts, by explicit architecture label or published active-parameter count, counted automatically from the models database.",
       "short_answer": "Mixture-of-Experts models route each token through a small subset of a much larger parameter set, cutting per-token compute cost. This hub lists models documented as MoE — either by an explicit MoE architecture label or by a published active-parameter count (the sparse-activation signature only MoE models publish).",
       "editorial_take": "Our read: parameter counts are the most misleading number in Chinese AI marketing. A 744B model with 40B active parameters costs roughly like a 40B model to serve and like a 744B model to host. Buyers comparing on size are comparing the wrong figure; activation ratio and memory footprint decide the bill.",
+      "data_note": "The data shows activation ratios from roughly 1.4% to 4.3% of total parameters, and that ratio, not the headline parameter count, tracks the price of serving. Two models with the same total size but different activation ratios are not comparable on cost, even when their benchmark scores are.",
       "why_it_matters": "Active parameters, not total, drive inference cost. Activation ratios from ~1.4% (DeepSeek-V4.1-Flash) to ~5.6% (GLM-5.3-Flash) are a leading indicator of long-run price floors.",
       "rule_description": "architecture contains \"MoE\" or \"Mixture-of-Experts\" (case-insensitive) OR parameter_information.active_parameters is present",
       "guides": [],

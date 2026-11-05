@@ -16,6 +16,7 @@ dimensions:
   - benchmark
 published_date: "2026-09-29"
 updated_date: "2026-09-29"
+routing: "Buy Flash first. At $0.15/$0.50 with the same 1M window, Apache-2.0 weights and vision, it covers extraction, classification, summarisation and most agent steps. Move to GLM-5.3 only when a specific task fails measurably — the 9.3x input premium buys parameters, not context, and should be justified per workload rather than per account."
 sources:
   - source_name: "Z.ai — GLM-5.3 documentation"
     source_url: "https://docs.z.ai/guides/llm/glm-5.3"

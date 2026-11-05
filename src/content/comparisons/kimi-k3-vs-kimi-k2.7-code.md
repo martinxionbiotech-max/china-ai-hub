@@ -16,6 +16,7 @@ dimensions:
   - benchmark
 published_date: "2026-09-29"
 updated_date: "2026-09-29"
+routing: "Route coding work to K2.7-Code and reserve K3 for genuinely long inputs: K2.7-Code is $0.95/$4.00 against $3.00/$15.00, a third of the price, and its 262K window covers most repositories. K3 earns its premium above 262K tokens or on general reasoning tasks that are not code. Running everything on K3 is the most common and most expensive misconfiguration in this family."
 sources:
   - source_name: "Moonshot AI — Kimi K3 (GitHub)"
     source_url: "https://github.com/MoonshotAI/Kimi-K3"

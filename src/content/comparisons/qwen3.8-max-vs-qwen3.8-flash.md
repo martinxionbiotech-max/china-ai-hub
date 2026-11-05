@@ -16,6 +16,7 @@ dimensions:
   - benchmark
 published_date: "2026-09-29"
 updated_date: "2026-09-29"
+routing: "Start with Flash: $0.15/$0.47 against $2.00/$6.00 — 13x cheaper on input — with the same 1M context. Max earns its price only on tasks where Flash measurably fails, and those tasks are rarer than the price gap suggests. A routing layer that sends easy traffic to Flash and hard traffic to Max typically cuts spend by 80% with no visible quality loss."
 sources:
   - source_name: "Alibaba Cloud Model Studio — Qwen3.8-Max"
     source_url: "https://www.alibabacloud.com/help/en/model-studio/qwen3-8-max"

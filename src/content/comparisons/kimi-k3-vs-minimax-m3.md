@@ -19,6 +19,7 @@ dimensions:
   - api
 published_date: "2026-09-22"
 updated_date: "2026-09-22"
+routing: "This is the widest price gap among open-weight flagships: MiniMax-M3 at $0.30/$1.20 against Kimi K3 at $3.00/$15.00, both with 1M context. Choose M3 for volume, cost-sensitive products and self-hosting under its community licence; choose K3 only when its output length or licence terms are specifically required. At a tenth of the input price, M3 needs to fail a task badly before K3 is justified."
 sources:
   - source_name: "Moonshot AI — Kimi K3 (GitHub)"
     source_url: "https://github.com/MoonshotAI/Kimi-K3"

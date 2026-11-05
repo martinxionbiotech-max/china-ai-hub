@@ -16,6 +16,7 @@ dimensions:
   - benchmark
 published_date: "2026-09-29"
 updated_date: "2026-09-29"
+routing: "These are not competing products. Qwen3.8-Max is a closed API: convenient, priced per token, no infrastructure. Qwen3.8-2.4T-A95B is open weights with a 262K context and no listed API price — you host it or find a provider. Choose Max unless you have a compliance reason to own the model and the GPU capacity to serve a 2.4T-parameter MoE; the cost comparison only makes sense above roughly 30% sustained utilisation."
 sources:
   - source_name: "Alibaba Cloud Model Studio — Qwen3.8-Max"
     source_url: "https://www.alibabacloud.com/help/en/model-studio/qwen3-8-max"

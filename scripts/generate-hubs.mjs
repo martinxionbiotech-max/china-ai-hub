@@ -97,6 +97,7 @@ const hubs = rulesDoc.hubs.map((hub) => {
     description: hub.description,
     short_answer: hub.short_answer,
     editorial_take: hub.editorial_take,
+    data_note: hub.data_note,
     why_it_matters: hub.why_it_matters,
     rule_description: hub.rule_description,
     guides: hub.guides,

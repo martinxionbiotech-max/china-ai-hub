@@ -16,6 +16,7 @@ dimensions:
   - benchmark
 published_date: "2026-09-29"
 updated_date: "2026-09-29"
+routing: "Take DeepSeek when you need to self-host later or want the deepest cache discount in the market (2% of input): MIT weights and $0.003 hits make it the cheapest option for repeated context. Take Qwen3.8-Flash when output volume dominates and you want a closed, managed platform with Alibaba's regional footprint: $0.47 output against $0.60 is a 22% saving on the larger half of the bill. Licence portability versus managed simplicity is the real fork."
 sources:
   - source_name: "DeepSeek API docs — Models & Pricing"
     source_url: "https://api-docs.deepseek.com/quick_start/pricing"

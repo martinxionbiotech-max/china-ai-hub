@@ -19,6 +19,7 @@ dimensions:
   - api
 published_date: "2026-09-22"
 updated_date: "2026-09-22"
+routing: "Choose DeepSeek if your workload is cache-heavy and can be scheduled off-peak: a 2% cache hit and a queue-friendly discount beat GLM's 20% cache on any agent loop that re-reads context, provided you avoid Beijing peak hours. Choose GLM-5.3-Flash if traffic is interactive and output-heavy: $0.50 output against $0.60, no peak multiplier, and vision in the Flash release. At identical $0.15 input, the decision is entirely about shape of traffic, not price."
 sources:
   - source_name: "DeepSeek API pricing"
     source_url: "https://api-docs.deepseek.com/quick_start/pricing"

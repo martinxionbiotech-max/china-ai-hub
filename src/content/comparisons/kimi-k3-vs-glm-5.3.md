@@ -16,6 +16,7 @@ dimensions:
   - benchmark
 published_date: "2026-09-29"
 updated_date: "2026-09-29"
+routing: "Choose GLM-5.3 for price and openness: $1.40/$4.40 against $3.00/$15.00, Apache-2.0 weights, and a 1M window in both tiers. Choose Kimi K3 when output length is the binding constraint — it lists a full 1M-token maximum output against GLM's 131K — or when you need the Kimi licence's terms specifically. For most workloads GLM is less than half the cost for the same context."
 sources:
   - source_name: "Moonshot AI — Kimi K3 (GitHub)"
     source_url: "https://github.com/MoonshotAI/Kimi-K3"

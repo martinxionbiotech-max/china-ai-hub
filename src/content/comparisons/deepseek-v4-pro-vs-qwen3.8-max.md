@@ -20,6 +20,7 @@ dimensions:
   - deployment
 published_date: "2026-09-22"
 updated_date: "2026-09-22"
+routing: "DeepSeek-V4-Pro is the default for teams that value licence portability: MIT weights, $0.66/$1.98, and self-hosting as an exit. Qwen3.8-Max is the choice when you need Alibaba's regional endpoints, managed SLAs and enterprise contracting, and can absorb 3x the input price. Both list 1M context; the difference is who operates the model and what happens when you want to leave."
 sources:
   - source_name: "DeepSeek API pricing"
     source_url: "https://api-docs.deepseek.com/quick_start/pricing"

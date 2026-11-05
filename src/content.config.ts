@@ -306,6 +306,7 @@ const comparisons = defineCollection({
     description: z.string().optional(),
     author: z.string().optional(),
     entities: z.array(z.string()),
+    routing: z.string().optional(),
     dimensions: z.array(z.string()).default([]),
     image: z.string().optional(),
     image_credit: z.string().optional(),

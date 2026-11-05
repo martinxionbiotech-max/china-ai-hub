@@ -16,6 +16,7 @@ dimensions:
   - benchmark
 published_date: "2026-09-29"
 updated_date: "2026-09-29"
+routing: "Start on V4.1-Flash and only move to V4-Pro when a task fails on quality, not on price: Flash is 4.4x cheaper on input and 3.3x on output at the same 1M context. The exception is concurrency — V4-Pro allows 500 concurrent requests against Flash's 2,500, so high-throughput services should stay on Flash regardless. With V4-Pro's retirement already announced, anything new should be built on Flash."
 sources:
   - source_name: "DeepSeek API docs — Models & Pricing"
     source_url: "https://api-docs.deepseek.com/quick_start/pricing"

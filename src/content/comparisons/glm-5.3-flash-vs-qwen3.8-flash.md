@@ -16,6 +16,7 @@ dimensions:
   - benchmark
 published_date: "2026-09-29"
 updated_date: "2026-09-29"
+routing: "Both sit at $0.15 input; the difference is 6% on output and the licence. Choose GLM-5.3-Flash for Apache-2.0 weights, self-hosting optionality and vision in the Flash tier. Choose Qwen3.8-Flash for Alibaba's regional coverage and managed platform, accepting a closed model. At this price level, switching costs dominate: pick the ecosystem you can operate, not the cheaper row."
 sources:
   - source_name: "Z.ai — GLM-5.3-Flash documentation"
     source_url: "https://docs.z.ai/guides/vlm/glm-5.3-flash"

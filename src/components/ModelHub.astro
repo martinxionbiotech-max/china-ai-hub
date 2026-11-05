@@ -20,6 +20,7 @@ interface Hub {
   technology: HubLink[];
   members: string[];
   editorial_take?: string;
+  data_note?: string;
 }
 
 interface Props {
@@ -40,6 +41,15 @@ const members = hub.members
   .sort((a, b) => a.data.model_name.localeCompare(b.data.model_name));
 
 const count = hub.members.length;
+
+/* Distribution of the dimension across members — computed, not written. */
+const openCount = members.filter((m) => m.data.open_weight === true).length;
+const contexts = members.map((m) => m.data.context_window).filter((x): x is number => typeof x === 'number');
+const prices = members.map((m) => m.data.pricing?.input_price_per_1m).filter((x): x is number => typeof x === 'number');
+const providers = new Set(members.map((m) => m.data.provider));
+const licences = new Set(members.map((m) => (m.data.license ?? '').split(/[ (]/)[0]).filter(Boolean));
+const fmtRange = (arr: number[], fmt: (n: number) => string) =>
+  arr.length ? `${fmt(Math.min(...arr))} – ${fmt(Math.max(...arr))}` : '—';
 
 const fmtInt = (v: number | null | undefined) => (v != null ? v.toLocaleString('en-US') : null);
 const openLabel = (v: boolean | null | undefined) => (v === true ? 'Open weight' : v === false ? 'Closed weight' : 'Weight status unknown');
@@ -86,6 +96,26 @@ const breadcrumb = breadcrumbJsonLd([
       <div class="border-l-4 border-[#0f4c81] bg-blue-50/40 px-5 py-4 mb-8 rounded-r">
         <p class="text-sm font-semibold text-[#0f4c81] mb-1">Editorial position</p>
         <p class="text-gray-800">{hub.editorial_take}</p>
+      </div>
+    )}
+
+    {hub.data_note && (
+      <div class="mb-8">
+        <h2 class="text-xl font-semibold text-gray-900 mb-3">Pattern in the data</h2>
+        <div class="table-wrap mb-3">
+          <table class="data-table">
+            <caption class="sr-only">Distribution of this dimension across matching models</caption>
+            <tbody>
+              <tr><th scope="row">Models matching</th><td>{count}</td></tr>
+              <tr><th scope="row">Open weights</th><td>{openCount} of {count}</td></tr>
+              <tr><th scope="row">Providers represented</th><td>{providers.size}</td></tr>
+              <tr><th scope="row">Context window range</th><td>{fmtRange(contexts, (n) => `${(n / 1024).toFixed(0)}K`)}</td></tr>
+              <tr><th scope="row">Input price range /1M</th><td>{fmtRange(prices, (n) => `$${n}`)}</td></tr>
+              <tr><th scope="row">Licence families</th><td>{[...licences].join(', ') || '—'}</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="text-gray-700">{hub.data_note}</p>
       </div>
     )}
 
