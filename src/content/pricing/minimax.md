@@ -64,4 +64,37 @@ sources:
     last_verified: "2026-09-20"
     confidence: high
 ---
-MiniMax open platform publishes pay-as-you-go API pricing in USD for the International region, covering 3 model(s): minimax-m3, minimax-m2.7, minimax-m2.7-highspeed. Per-model input, output and cached rates are listed in the table below with links to the official source for each row; Prices change frequently — verify against the official pricing page before making decisions.
+
+**Short answer.** MiniMax runs a permanent 50% discount against its own list price, tiers by context length with a hard doubling above 512K tokens, and sells a priority tier at 1.5x. The headline $0.30/$1.20 is real, but it applies only below the context cliff.
+
+## The structure
+
+| Model | Input | Output | Out/in | Cache | Condition |
+|---|---|---|---|---|---|
+| MiniMax-M3 | $0.30 | $1.20 | 4.00 | $0.06 (20%) | ≤512K input |
+| MiniMax-M3 (>512K) | $0.60 | $2.40 | 4.00 | $0.12 | >512K input |
+| MiniMax-M2.7 | $0.30 | $1.20 | 4.00 | $0.06 | ≤512K |
+| M2.7 Highspeed | $0.60 | $2.40 | 4.00 | $0.06 | faster serving |
+| Priority tier | 1.5x | 1.5x | — | — | service_tier=priority |
+
+The price history recorded here shows M3 cut from $0.60/$2.40 to $0.30/$1.20 — in other words, the "permanent 50% discount" is a halving that has been left in place, not a promotional rate.
+
+## The 512K cliff
+
+This is the single most important fact on the page. A request with 600K input tokens is not charged a blended rate; the whole call moves to the higher tier. For long-document workloads the effective price doubles the moment a document crosses the threshold, and a 1M-context model whose price doubles at half its window is a different proposition from one priced flat.
+
+Architecturally, that argues for chunking above 512K, or for comparing the effective price at your real input size rather than at the headline.
+
+## Priority at 1.5x is cheap insurance
+
+Most providers price priority implicitly or not at all. A 50% premium for a guaranteed service tier is modest, and for customer-facing workloads it is usually the cheapest reliability purchase available.
+
+## Our view
+
+**The context cliff is the point of this page.** A flat-looking $0.30 input that doubles above 512K is a worse deal for long-context work than a provider charging $0.45 flat. Compare at your actual context length, not at the marketing number.
+
+**A permanent 50% discount means the list price is fiction.** MiniMax's list price is not a price anyone pays; it exists to make the discount legible. Treat the discounted number as the real one when comparing across providers.
+
+**Priority at 1.5x is the most honest reliability pricing in the database.** It is stated, bounded and optional — which is more than most competitors offer, where priority is bundled or unstated.
+
+**M3 and M2.7 at identical prices is a migration waiting to happen.** M2.7 has a 204K context and a non-commercial licence; M3 has 1M and a commercial one. There is no price reason to stay on M2.7.

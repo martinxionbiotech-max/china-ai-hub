@@ -43,4 +43,39 @@ sources:
     last_verified: "2026-09-20"
     confidence: high
 ---
-Alibaba Cloud Model Studio publishes pay-as-you-go API pricing in USD for the Singapore (International) region, covering 3 model(s): qwen3.8-max, qwen3.8-flash, qwen3.7-plus. Per-model input, output and cached rates are listed in the table below with links to the official source for each row; Prices change frequently — verify against the official pricing page before making decisions.
+
+**Short answer.** Alibaba prices the same model differently by region — Singapore costs about 17% more than Beijing and the global regions for Qwen3.8-Max — and offers the only explicit cache-creation charge in this database. The list price is therefore a function of where you deploy, which makes region a pricing decision, not just a latency one.
+
+## The ladder
+
+| Model | Input | Output | Out/in | Cache read | Singapore premium |
+|---|---|---|---|---|---|
+| Qwen3.8-Max | $2.00 | $6.00 | 3.00 | $0.25 (12.5%) | ~17.5% over Beijing |
+| Qwen3.8-Flash | $0.15 | $0.47 | 3.13 | $0.016 (10.7%) | ~25% over Beijing |
+| Qwen3.7-Plus | $0.40 | $1.60 | 4.00 | — | — |
+
+The Singapore premium is not uniform: Flash carries a larger regional gap (25%) than Max (17.5%), which means the cheapest tier is also the most sensitive to where you buy it.
+
+## Explicit caching has a creation cost
+
+Alibaba charges $2.50 per 1M tokens to create an explicit cache and $0.17 per 1M to read it. The read price is 8.5% of input, in line with competitors; the creation charge is unusual and changes the arithmetic.
+
+A cache pays for itself only after a few reads: at $2.50 creation against $2.00 input, the first reuse already saves money, but a cache that is created and read once costs more than not caching at all. Short-lived contexts should skip explicit caching and rely on the implicit discount.
+
+## Batch pricing is tier-dependent
+
+Batch inference is 50% off on Max and unavailable on Flash. That inversion is worth noticing: the model most likely to be used for bulk classification — the cheapest one — is the one that cannot use the batch tier. Bulk work on Flash pays full rate.
+
+## Free quota
+
+1M tokens for 90 days on the Singapore region is a genuine evaluation allowance, roughly enough to run a small pilot. It does not extend to batch or to the Beijing region.
+
+## Our view
+
+**Region is the first pricing decision with Alibaba, and most buyers make it on latency.** The 17-25% premium for Singapore buys data residency and lower latency to Southeast Asia; buying it without needing either is an avoidable cost.
+
+**The explicit-cache creation fee makes caching a commitment.** Providers that charge only for reads let you cache speculatively; Alibaba makes you amortise the creation. Model it before enabling it on short-lived prompts.
+
+**No batch tier on Flash is the biggest structural gap here.** Competitors discount batch work by half across the board. If your workload is bulk inference on the cheapest model, Alibaba is more expensive than its list price suggests.
+
+**The three-tier ladder is shallow.** Max, Plus and Flash span 13x on input — narrower than Zhipu's 9x flagship-to-flash spread when normalised, and without a speed tier in between.

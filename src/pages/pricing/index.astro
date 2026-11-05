@@ -4,6 +4,28 @@ import { getCollection } from 'astro:content';
 import { datasetJsonLd } from '../../lib/seo';
 
 const pricing = await getCollection('pricing');
+
+/* Structural metrics per provider: tier spread, output/input ratio, cache depth.
+   Derived from the same records the table renders, never hand-written. */
+const structure = pricing.map((p) => {
+  const inputs = p.data.models.map((m) => m.input_price_per_1m).filter((x): x is number => x != null);
+  const ratios = p.data.models
+    .filter((m) => m.input_price_per_1m && m.output_price_per_1m)
+    .map((m) => m.output_price_per_1m! / m.input_price_per_1m!);
+  const caches = p.data.models
+    .filter((m) => m.input_price_per_1m && m.cached_input_price_per_1m)
+    .map((m) => (m.cached_input_price_per_1m! / m.input_price_per_1m!) * 100);
+  return {
+    id: p.id,
+    currency: p.data.currency,
+    models: p.data.models.length,
+    minInput: Math.min(...inputs),
+    maxInput: Math.max(...inputs),
+    spread: Math.max(...inputs) / Math.min(...inputs),
+    ratio: ratios.length ? ratios.reduce((a, b) => a + b, 0) / ratios.length : null,
+    cache: caches.length ? Math.min(...caches) : null,
+  };
+});
 const pricingPageUrl = new URL(Astro.url.pathname, Astro.site).href;
 const pricingDataset = datasetJsonLd({
   id: pricingPageUrl,
@@ -24,6 +46,31 @@ const pricingDataset = datasetJsonLd({
   </p>
 
     <script type="application/ld+json" set:html={JSON.stringify(pricingDataset)} />
+
+  <div class="max-w-3xl space-y-4 mb-8 text-gray-800">
+    <p><strong>Short answer.</strong> Chinese API list prices have converged on a shape: input around $0.15 for a flash tier, output at 3–5x input, and a cache hit at 2–20% of input. What differs — and what actually decides your bill — is the structure around the price: time-of-day tiers, context cliffs, cache residency charges, batch availability and the currency you are invoiced in.</p>
+
+    <h2 class="text-xl font-semibold pt-2">The $0.15 floor is real, and it is not the whole story</h2>
+    <p>Six providers, and almost every one has a model at or near $0.15 per 1M input tokens. That number has become the market's anchor, and it is genuinely available — Qwen3.8-Flash, GLM-5.3-Flash and DeepSeek-V4.1-Flash all sit there. But the floor is a floor on <em>input</em>, and input is rarely the dominant cost.</p>
+    <p>Output is where bills are made. At a 4:1 ratio — the median here — a workload that generates 500 tokens for every 100 it reads spends 95% of its money on output. Comparing two models at the same input price but different output ratios is comparing the smaller half of the bill.</p>
+
+    <h2 class="text-xl font-semibold pt-2">Cache depth varies by a factor of ten</h2>
+    <p>The cache discount is the second lever, and it is the one buyers under-use. A cache hit costs 2% of input at DeepSeek, 10–12% at Moonshot and Alibaba, and 20% at ByteDance, MiniMax and Zhipu. On an agent loop that re-reads a 40K-token system prompt twenty times, that difference is larger than the gap between the headline prices.</p>
+    <p>The catch is that caching rewards stable prefixes. Prompts that reshuffle context on every call — the common RAG pattern — get little benefit from any provider, and should be optimised before the provider is chosen.</p>
+
+    <h2 class="text-xl font-semibold pt-2">Structure beats list price</h2>
+    <ul class="list-disc pl-6 space-y-2">
+      <li><strong>Time-of-day pricing</strong> (DeepSeek): the cheap rate is available to queues, not to chat. A European product's working day overlaps the peak window.</li>
+      <li><strong>Context cliffs</strong> (MiniMax): above 512K input tokens the whole call doubles, so a 1M-context model is not flat-priced across its window.</li>
+      <li><strong>Tier spreads</strong> (Zhipu 9x, Moonshot 20x): the same family sold at wildly different prices, which makes routing — not provider choice — the biggest cost lever.</li>
+      <li><strong>Cache residency</strong> (ByteDance): the only provider charging for cache storage per hour, which punishes caches that are created and forgotten.</li>
+      <li><strong>Currency</strong> (ByteDance, CNY only): the dollar cost is an FX decision, and the invoice may not fit your finance system.</li>
+    </ul>
+
+    <h2 class="text-xl font-semibold pt-2">Read the table below with three questions</h2>
+    <p>First, what does a completed task cost at your output length — not at your input length. Second, what fraction of your prompt is a stable prefix that can be cached. Third, which tier boundary your workload crosses: the 512K context cliff, the batch availability gap, or the peak window.</p>
+    <p>Answer those three and the per-token price becomes almost irrelevant. Ignore them and the cheapest-looking model on this page is frequently the most expensive one to operate.</p>
+  </div>
 
   {pricing.length === 0 ? (
     <p class="text-gray-500">No pricing records published yet. Phase 2 adds the first verified providers.</p>
@@ -70,6 +117,40 @@ const pricingDataset = datasetJsonLd({
       </table>
     </div>
   )}
+
+  <h2 class="text-xl font-semibold mt-10 mb-3">Price structure by provider</h2>
+  <p class="text-gray-700 mb-4 max-w-3xl">
+    Derived from the same records as the table above: how wide each provider's tier ladder is, how much output costs relative to input, and how deep the best cache discount goes.
+  </p>
+  <div class="table-wrap mb-6">
+    <table class="data-table">
+      <caption class="sr-only">Price structure metrics by provider</caption>
+      <thead>
+        <tr>
+          <th scope="col">Provider</th>
+          <th scope="col">Models</th>
+          <th scope="col">Currency</th>
+          <th scope="col">Input range /1M</th>
+          <th scope="col">Tier spread</th>
+          <th scope="col">Avg output/input</th>
+          <th scope="col">Best cache hit</th>
+        </tr>
+      </thead>
+      <tbody>
+        {structure.map((s) => (
+          <tr>
+            <td><a href={`/pricing/${s.id}/`} class="font-medium">{s.id}</a></td>
+            <td>{s.models}</td>
+            <td>{s.currency}</td>
+            <td>{s.minInput} – {s.maxInput}</td>
+            <td>{s.spread.toFixed(1)}x</td>
+            <td>{s.ratio ? s.ratio.toFixed(2) : '—'}</td>
+            <td>{s.cache != null ? `${s.cache.toFixed(1)}% of input` : '—'}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
 
   <p class="text-xs text-gray-500 mt-4">
     All prices in {new Set(pricing.map((p) => p.data.currency)).size === 1 ? pricing[0]?.data.currency : 'original currency'} per 1M tokens unless noted.
