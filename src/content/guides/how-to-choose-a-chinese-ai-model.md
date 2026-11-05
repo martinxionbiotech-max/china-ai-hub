@@ -3,7 +3,7 @@ image: "/images/ai/guides-how-to-choose-a-chinese-ai-model.webp"
 image_credit: "AI-generated illustration (Seedream)"
 title: "How to Choose a Chinese AI Model: A Decision Framework"
 author: "SinoAI Hub Research Team"
-description: "A practical framework for choosing among Chinese AI models — DeepSeek, Qwen, Kimi, GLM, MiniMax and Doubao — based on price, context, capabilities, openness and verification status."
+description: "A decision framework for Chinese AI models: task fit, evidence quality, deployment constraints and total cost, ordered by what actually eliminates options."
 published_date: "2026-09-22"
 updated_date: "2026-09-22"
 related_entities:

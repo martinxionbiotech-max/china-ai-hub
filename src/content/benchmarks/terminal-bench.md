@@ -8,6 +8,7 @@ task_type: "Terminal-based agent tasks (shell commands, file operations, compila
 dataset_size: "~100 tasks (beta release)"
 evaluation_method: "Sandboxed terminal environment (Docker); each task has an English instruction, a test script verifying completion, and a reference (oracle) solution; agents run end-to-end autonomously"
 scoring: "Binary pass/fail per task; accuracy = share of tasks completed successfully"
+caveat: "Terminal-Bench measures command-line task completion in a container. Scores depend on the allowed time, the number of attempts and whether the agent can install packages — three settings that are rarely published together."
 
 evaluations:
   - benchmark: Terminal-Bench

@@ -8,6 +8,7 @@ task_type: "Expert-level academic Q&A across mathematics, humanities and natural
 dataset_size: "2,500 questions across dozens of subjects"
 evaluation_method: "Multiple-choice and short-answer questions developed by subject-matter experts; multimodal; suitable for automated grading"
 scoring: "Accuracy (% correct); frequently reported with and without tool access"
+caveat: "HLE contains expert-written questions designed to resist search, and vendors commonly report with and without tool access — two different measurements. The database records which variant each score refers to; do not compare across variants."
 contamination_notes: "Dataset includes a canary string (hle:3r2s:26b5c67b-...) to aid model builders in filtering the dataset from future training."
 
 evaluations:

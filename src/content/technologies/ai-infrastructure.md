@@ -2,7 +2,7 @@
 image: "/images/ai/technologies-ai-infrastructure.webp"
 image_credit: "AI-generated illustration (Seedream)"
 slug: ai-infrastructure
-title: AI Infrastructure
+title: "AI Infrastructure in China: Clusters, Power, Constraints"
 author: "SinoAI Hub Research Team"
 definition: "AI infrastructure is the systems layer beneath models — compute clusters, storage, networking, and the serving software — that turns raw hardware into a service developers can call."
 related_models: []

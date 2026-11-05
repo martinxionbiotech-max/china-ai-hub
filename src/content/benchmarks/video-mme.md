@@ -8,6 +8,7 @@ task_type: "Video understanding (multimodal video analysis)"
 dataset_size: "900 videos (254 hours total), 2,700 human-annotated question-answer pairs"
 evaluation_method: "Video QA with subtitles and audio modalities; duration-stratified evaluation"
 scoring: "Accuracy (% correct); variants with/without subtitles"
+caveat: "Video-MME evaluates video understanding across durations. Scores are sensitive to frame sampling rate and subtitle availability, and short-video results do not transfer to long-form content."
 
 evaluations:
   - benchmark: Video-MME

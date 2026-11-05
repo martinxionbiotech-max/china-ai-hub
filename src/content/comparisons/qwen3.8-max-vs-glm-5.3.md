@@ -1,9 +1,9 @@
 ---
 image: "/images/ai/comparisons-qwen3.8-max-vs-glm-5.3.webp"
 image_credit: "AI-generated illustration (Seedream)"
-title: "Qwen3.8-Max vs GLM-5.3: API Access, Openness and Media Support"
+title: "Qwen3.8-Max vs GLM-5.3: Openness and Media"
 author: "SinoAI Hub Research Team"
-description: "Evidence-based comparison of Qwen3.8-Max and GLM-5.3: API pricing, context window, capabilities, open weights, licenses and benchmark records from the China AI Hub database."
+description: "qwen3.8-max vs glm-5.3 compared on price per 1M tokens, context window, licence and benchmark evidence, and which differences survive a real workload."
 entities:
   - qwen3.8-max
   - glm-5.3

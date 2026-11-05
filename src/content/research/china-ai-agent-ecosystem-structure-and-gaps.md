@@ -1,7 +1,7 @@
 ---
 title: "China AI Agent Ecosystem: Structure and Gaps"
 author: "SinoAI Hub Research Team"
-description: "A dependency analysis of China's 18-agent ecosystem: how tightly each agent is bound to its own vendor's models, where genuinely cross-model agents exist, and the structural gaps that openness has not filled."
+description: "A structural map of China's AI agent ecosystem in 2026: platform players, vertical agents, the tooling layer and the gaps that remain unfilled."
 published_date: "2026-09-29"
 updated_date: "2026-09-29"
 research_question: "How dependent is China's AI agent ecosystem on single-vendor model stacks, where do genuinely cross-model (neutral) agents exist, and what structural gaps does that dependency create?"

@@ -8,6 +8,7 @@ task_type: "Multimodal understanding and reasoning (college-level, multi-discipl
 dataset_size: "1,730 questions in standard format plus 1,730 vision-augmented variants (3,460 total); parent MMMU = 11.5K questions across 6 disciplines, 30 subjects"
 evaluation_method: "Multiple-choice questions with interleaved images; vision-only input setting removes text leakage"
 scoring: "Accuracy (% correct answers)"
+caveat: "MMMU-Pro hardens MMMU against text-only shortcuts by embedding questions in screenshots. Results depend on image resolution and whether the model may use OCR tooling, both of which are inconsistently reported."
 
 evaluations:
   - benchmark: MMMU-Pro

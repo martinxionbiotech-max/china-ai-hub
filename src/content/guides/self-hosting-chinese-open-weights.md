@@ -1,9 +1,9 @@
 ---
 image: "/images/ai/models-glm-5.3.webp"
 image_credit: "AI-generated illustration (Seedream)"
-title: "Self-Hosting Chinese Open-Weight Models: Licenses, Hardware and Quantization"
+title: "Self-Hosting Chinese Open Models: Licences and Hardware"
 author: "SinoAI Hub Research Team"
-description: "A decision guide for self-hosting Chinese open-weight models — matching license obligations, hardware footprint, quantization routes and inference ecosystems to the right open checkpoint."
+description: "Self-hosting Chinese open-weight models: licence restrictions, GPU memory requirements, quantization choices and the real cost per million tokens."
 published_date: "2026-09-29"
 updated_date: "2026-09-29"
 related_entities:

@@ -80,7 +80,7 @@ M2.7's headline is its "self-evolution" loop: MiniMax describes the model updati
 
 ## Pricing implications
 
-$0.30 input / $1.20 output per 1M tokens, cache reads at $0.06 and cache writes at $0.375. The 4x input-to-output ratio is standard, and the low cache-read price rewards agent loops that re-read shared context. At $0.30 input, M2.7 shares the database's cheapest flagship input price with M3 — but the [highspeed variant](/models/minimax-m27-highspeed/) doubles it to $0.60 for roughly 1.7x throughput, so the value question reduces to latency-versus-cost. See the [M3 vs M2.7 comparison](/comparisons/minimax-m3-vs-minimax-m2.7/) and [choosing-by-price](/guides/choosing-by-price/).
+$0.30 input / $1.20 output per 1M tokens, cache reads at $0.06 and cache writes at $0.375. The 4x input-to-output ratio is standard, and the low cache-read price rewards agent loops that re-read shared context. At $0.30 input, M2.7 shares the database's cheapest flagship input price with M3 — but the [highspeed variant](/models/minimax-m27-highspeed/) doubles it to $0.60 for roughly 1.7x throughput, so the value question reduces to latency-versus-cost. See the [M3 vs M2.7 comparison](/comparisons/minimax-m3-vs-minimax-m27/) and [choosing-by-price](/guides/choosing-by-price/).
 
 ## API, coding, and agent implications
 

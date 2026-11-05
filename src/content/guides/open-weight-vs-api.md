@@ -3,7 +3,7 @@ image: "/images/ai/guides-open-weight-vs-api.webp"
 image_credit: "AI-generated illustration (Seedream)"
 title: "Open-Weight vs API: Trade-offs for Chinese Models"
 author: "SinoAI Hub Research Team"
-description: "A practical guide to choosing between open-weight self-hosting and API access for Chinese AI models, using license data and prices from the China AI Hub database."
+description: "Open-weight versus API access for Chinese models: licence rights, hardware cost, operational burden and the volumes at which self-hosting pays."
 published_date: "2026-09-22"
 updated_date: "2026-09-22"
 related_entities:

@@ -8,6 +8,7 @@ task_type: "Software engineering (resolve real GitHub issues by generating code 
 dataset_size: "2,294 task instances from 12 Python repositories (full set); SWE-bench Verified = 500 human-confirmed solvable problems"
 evaluation_method: "Docker-containerized harness; the model's patch is applied to the repository and the project's tests are run to verify resolution"
 scoring: "Resolved rate (% of instances where all tests pass)"
+caveat: "SWE-bench results are only comparable within the same harness and subset: SWE-bench Verified, full SWE-bench and agentic variants produce very different numbers. A vendor quoting 'SWE-bench' without the variant has told you almost nothing."
 
 evaluations:
   - benchmark: SWE-bench

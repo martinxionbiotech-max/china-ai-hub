@@ -6,6 +6,7 @@ task_type: "Grid-based abstract visual reasoning — infer an input→output tra
 dataset_size: "ARC-AGI-1: 400 training + 400 public evaluation tasks; newer families (ARC-AGI-2, ARC-AGI-3) add fresh task sets"
 evaluation_method: "A task is solved if the model produces the correct output grid for every test input (up to 3 trials per input)"
 scoring: "Accuracy (% of tasks solved); a task counts only if all test inputs are correct"
+caveat: "ARC-AGI is designed to resist memorisation, which makes it the least benchmark-saturated test in this database — and the one where a single solved puzzle changes the headline number. Vendor scores are usually from a specific attempt budget that is rarely disclosed."
 contamination_notes: "Evaluation tasks are held out; ARC-AGI-2 and ARC-AGI-3 introduce new task families to counter overfitting to ARC-AGI-1."
 limitations: "ARC-AGI measures a specific form of abstraction, not general model quality; visual-grid reasoning is only weakly correlated with useful real-world task performance. No Chinese model in the China AI Hub database currently publishes an ARC-AGI score, so this page records no evaluations."
 last_verified: "2026-09-29"

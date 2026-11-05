@@ -1,7 +1,7 @@
 ---
-title: "DeepSeek-V4.1-Flash vs Qwen3.8-Flash: The Open and Closed Flash Tiers"
+title: "DeepSeek-V4.1-Flash vs Qwen3.8-Flash: Open or Not"
 author: "SinoAI Hub Research Team"
-description: "Evidence-based comparison of DeepSeek-V4.1-Flash and Qwen3.8-Flash: API pricing, context window, capabilities, openness, deployment and benchmark records from the China AI Hub database."
+description: "deepseek-v4-1-flash vs qwen3.8-flash compared on price per 1M tokens, context window, licence and benchmark evidence, and the trade-offs that decide the."
 entities:
   - deepseek-v4-1-flash
   - qwen3.8-flash

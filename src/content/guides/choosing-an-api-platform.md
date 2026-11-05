@@ -1,9 +1,9 @@
 ---
 image: "/images/ai/apis-model-studio.webp"
 image_credit: "AI-generated illustration (Seedream)"
-title: "Choosing a Chinese AI API Platform: Compatibility, Pricing, Regions and Rate Limits"
+title: "Choosing a Chinese AI API Platform: Five Checks"
 author: "SinoAI Hub Research Team"
-description: "A decision guide for selecting among the six official Chinese AI API platforms — DeepSeek, Volcengine Ark, Model Studio, Moonshot, MiniMax and Z.ai — on protocol compatibility, pricing, region coverage and rate limits."
+description: "Five checks before committing to a Chinese AI API platform: compatibility, pricing structure, region access, rate limits and contract terms."
 published_date: "2026-09-29"
 updated_date: "2026-09-29"
 related_entities:

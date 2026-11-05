@@ -152,6 +152,6 @@ The gaps are release history and defaults. There are no release tags, no disclos
 | Source | [MiniMax Code GitHub](https://github.com/MiniMax-AI/minimax-code) | Official |
 | Last verified | 2026-09-20 | Official |
 
-See the [MiniMax](/companies/minimax/) company profile, the [MiniMax-M3](/models/minimax-m3/) model, the [MiniMax-M3 vs M2.7 comparison](/comparisons/minimax-m3-vs-minimax-m2.7/), the closed [MiniMax Agent](/agents/minimax-agent/) counterpart, the [choosing-a-coding-model guide](/guides/choosing-a-coding-model/), and the site's [AI agents](/technology/ai-agents/) technology page.
+See the [MiniMax](/companies/minimax/) company profile, the [MiniMax-M3](/models/minimax-m3/) model, the [MiniMax-M3 vs M2.7 comparison](/comparisons/minimax-m3-vs-minimax-m27/), the closed [MiniMax Agent](/agents/minimax-agent/) counterpart, the [choosing-a-coding-model guide](/guides/choosing-a-coding-model/), and the site's [AI agents](/technology/ai-agents/) technology page.
 
 *Labels used above: **Official fact** (from the MiniMax Code GitHub repo and docs), **Vendor-reported claim** (capability and pricing statements by MiniMax), and **China AI Hub analysis** (our synthesis, always introduced as such).*

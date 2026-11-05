@@ -6,6 +6,7 @@ task_type: "Instruction following on verifiable natural-language constraints (le
 dataset_size: "25 types of verifiable instructions; approximately 500 prompts, each containing one or more verifiable instructions"
 evaluation_method: "Prompts carry rule-checkable instructions; a program verifies whether each constraint was satisfied"
 scoring: "Strict accuracy and prompt-level / instruction-level accuracy (fraction of instructions followed)"
+caveat: "IFEval measures instruction-following on synthetic prompts (length, format, casing). It is cheap to optimise and correlates weakly with real product behaviour, so treat a high score as a floor, not a capability claim."
 contamination_notes: "Rule-checked verification (not an LLM judge) reduces evaluator bias; the verifiable-instruction format is not tied to a single knowledge cutoff."
 limitations: "IFEval measures only mechanical, rule-checkable instruction following — it does not capture semantic quality, helpfulness or correctness of the response content. No Chinese model in the China AI Hub database currently publishes an IFEval score, so this page records no evaluations."
 last_verified: "2026-09-29"

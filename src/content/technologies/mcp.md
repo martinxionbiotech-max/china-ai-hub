@@ -2,7 +2,7 @@
 image: "/images/ai/technologies-mcp.webp"
 image_credit: "AI-generated illustration (Seedream)"
 slug: mcp
-title: MCP
+title: "MCP in Chinese AI: Adoption, Servers and Limitations"
 author: "SinoAI Hub Research Team"
 definition: "Model Context Protocol (MCP) is an open protocol, introduced by Anthropic in 2024, that standardizes how applications expose tools, resources and context to AI models — an analogue of a USB-C port for AI integrations."
 related_models:

@@ -6,6 +6,7 @@ task_type: "Chinese multiple-choice knowledge and reasoning questions across 67 
 dataset_size: "67 subjects from elementary to advanced professional level; multiple-choice with 4 options and a single correct answer; a 5-question development set and a 100+ question test set per subject"
 evaluation_method: "Multiple-choice; evaluated in zero-shot and five-shot settings, with and without chain-of-thought"
 scoring: "Accuracy (% correct); the random baseline is 25%"
+caveat: "CMMLU covers Chinese professional knowledge across 67 subjects. Like C-Eval it is exposed to contamination, and few vendors publish per-subject breakdowns — the aggregate hides whether a model is broadly capable or strong on a few subjects."
 contamination_notes: "CMMLU maintainers verify API-only models for data contamination before listing them on the leaderboard; questions include China-specific answers less common in English training data."
 limitations: "Multiple-choice format measures recognition and reasoning within fixed options, not free-form generation or grounding. Zero-shot and five-shot scores are not directly comparable. No Chinese model in the China AI Hub database currently publishes a CMMLU score, so this page records no evaluations."
 last_verified: "2026-09-29"

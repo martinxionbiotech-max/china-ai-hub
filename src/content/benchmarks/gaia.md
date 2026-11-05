@@ -6,6 +6,7 @@ task_type: "Real-world question answering requiring reasoning, web browsing, mul
 dataset_size: "466 questions across three difficulty levels; answers to 300 of them are held out for the leaderboard"
 evaluation_method: "Questions are conceptually simple for humans but require tool use; graded by exact-match against a single ground-truth answer"
 scoring: "Exact-match accuracy (% correct); a question is passed only if the final answer matches exactly"
+caveat: "GAIA tests real-world assistant tasks that require tools and multi-step planning. Scores vary with tool access and web availability at evaluation time, which makes historical comparisons unreliable."
 contamination_notes: "300 of the 466 questions are retained privately for leaderboard evaluation, reducing training-set leakage."
 limitations: "Exact-match scoring is strict and can understate near-correct answers. Results depend on the tool/search scaffolding a model is given, so scores are not comparable across different setups. No Chinese model in the China AI Hub database currently publishes a GAIA score, so this page records no evaluations."
 last_verified: "2026-09-29"

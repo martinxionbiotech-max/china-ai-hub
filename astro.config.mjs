@@ -9,5 +9,13 @@ export default defineConfig({
   vite: {
     plugins: [tailwindcss()],
   },
-  integrations: [sitemap()],
+  integrations: [
+    sitemap({
+      // Model variants (X-Highspeed, FlashX) canonicalise to a parent model.
+      // They stay reachable for people following an old link, but they are
+      // noindex and must not compete in the sitemap.
+      filter: (page) =>
+        !/\/(glm-53-flashx|minimax-m27-highspeed|kimi-k27-code-highspeed)\/$/.test(page),
+    }),
+  ],
 });

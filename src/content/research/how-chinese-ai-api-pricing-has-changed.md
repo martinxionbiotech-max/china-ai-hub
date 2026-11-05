@@ -1,7 +1,7 @@
 ---
-title: "How Chinese AI API Pricing Has Changed: From a DeepSeek Price War to Subscription and Tiered Economics"
+title: "Chinese API Pricing: From Price War to Tiered Plans"
 author: "SinoAI Hub Research Team"
-description: "A price-history analysis of China's frontier API market: the five documented price-change events, the $0.15 flash floor DeepSeek triggered, and the structural migration away from per-token price cuts toward subscription, credit and time-based tiering."
+description: "The evolution of Chinese AI API pricing: the 2024 price war, cache and batch discounts, subscription tiers and what the current structure signals."
 published_date: "2026-09-29"
 updated_date: "2026-09-29"
 research_question: "What do the documented price-change events in China's AI API market actually show — is the market still racing to the bottom on per-token price, or has it migrated to a different pricing instrument?"

@@ -8,6 +8,7 @@ task_type: "End-to-end business workflow automation in simulated SaaS environmen
 dataset_size: "47 simulated SaaS tools across 6 business functions (Sales, Marketing, Operations, Support, Finance, HR)"
 evaluation_method: "Each task initializes a simulated business environment (CRM, calendar, inbox); the agent must leave the environment in the correct end state"
 scoring: "Task success rate (environment end-state verification)"
+caveat: "AutomationBench measures end-to-end task completion in business workflows, so scores depend on the harness, the tool set and the retry policy as much as on the model. Two vendors reporting the same benchmark name may be measuring different systems."
 
 evaluations:
   - benchmark: AutomationBench

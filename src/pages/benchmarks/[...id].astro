@@ -37,8 +37,8 @@ const breadcrumb = breadcrumbJsonLd([
 ---
 
 <BaseLayout
-  title={d.benchmark_name}
-  description={`${d.benchmark_name}${d.version ? ` v${d.version}` : ''}: evaluation method and Chinese AI model results, with source types and dates.`}
+  title={`${d.benchmark_name} Benchmark: Scores, Method and Limits`}
+  description={`${d.benchmark_name}${d.version ? ` v${d.version}` : ''}: ${d.task_type}. ${d.evaluations.length} Chinese model results recorded with source types, versions and the caveats that decide whether scores are comparable.`}
   type="article"
 >
   <article class="max-w-none">
@@ -46,6 +46,12 @@ const breadcrumb = breadcrumbJsonLd([
     <script type="application/ld+json" set:html={JSON.stringify(breadcrumb)} />
     <p class="text-sm text-gray-500 mb-1"><a href="/benchmarks/">Benchmarks</a> / {d.benchmark_name}</p>
     <h1 class="text-3xl font-bold text-gray-900 mb-2">{d.benchmark_name}{d.version ? ` v${d.version}` : ''}</h1>
+    {d.caveat && (
+      <div class="border-l-4 border-amber-500 bg-amber-50/50 px-4 py-3 my-6 rounded-r">
+        <p class="text-sm font-semibold text-amber-800 mb-1">Comparability note</p>
+        <p class="text-gray-800">{d.caveat}</p>
+      </div>
+    )}
     {d.description && <p class="text-gray-600 mb-4">{d.description}</p>}
 
     {d.image && (

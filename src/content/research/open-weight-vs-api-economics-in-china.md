@@ -1,7 +1,7 @@
 ---
-title: "Open Weights and API Economics in China: The Qwen A95B Case"
+title: "Open Weights vs API Economics: The Qwen A95B Case"
 author: "SinoAI Hub Research Team"
-description: "An economics analysis of open-weight releases in China's frontier tier, centered on Qwen's A95B open release: why labs give away flagship-class weights, and what the price anchors reveal about open weights as a hedge against API lock-in."
+description: "A cost comparison of serving Qwen3.8-2.4T-A95B yourself versus buying the API, including utilization assumptions that decide the answer. Sourced figures."
 published_date: "2026-09-29"
 updated_date: "2026-09-29"
 research_question: "What is the economic function of open-weight releases in China's frontier tier — specifically, why would Alibaba release a flagship-class model like Qwen3.8-2.4T-A95B, and what does that reveal about open weights as strategy rather than charity?"

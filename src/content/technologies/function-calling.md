@@ -2,7 +2,7 @@
 image: "/images/ai/technologies-function-calling.webp"
 image_credit: "AI-generated illustration (Seedream)"
 slug: function-calling
-title: Function Calling
+title: "Function Calling in Chinese Models: Support and Gaps"
 author: "SinoAI Hub Research Team"
 definition: "Function calling is OpenAI's term for tool calling: a model capability in which the model produces a structured request (name plus arguments) to invoke a developer-defined function, so applications can execute real code in response to natural language."
 related_models:

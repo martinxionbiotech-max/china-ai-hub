@@ -19,6 +19,7 @@ interface Hub {
   research: HubLink[];
   technology: HubLink[];
   members: string[];
+  editorial_take?: string;
 }
 
 interface Props {
@@ -79,7 +80,14 @@ const breadcrumb = breadcrumbJsonLd([
       </div>
     </div>
 
-    <p class="text-gray-700 mb-8">{hub.why_it_matters}</p>
+    <p class="text-gray-700 mb-6">{hub.why_it_matters}</p>
+
+    {hub.editorial_take && (
+      <div class="border-l-4 border-[#0f4c81] bg-blue-50/40 px-5 py-4 mb-8 rounded-r">
+        <p class="text-sm font-semibold text-[#0f4c81] mb-1">Editorial position</p>
+        <p class="text-gray-800">{hub.editorial_take}</p>
+      </div>
+    )}
 
     <!-- Entity cards -->
     <h2 class="text-xl font-semibold text-gray-900 mb-3">Matching models</h2>

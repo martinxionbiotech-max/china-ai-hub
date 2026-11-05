@@ -6,6 +6,7 @@ task_type: "Competitive-programming code generation plus self-repair, code execu
 dataset_size: "Continuously growing; initially 300+ problems from LeetCode, AtCoder and Codeforces contests (from May 2023 onward, updated over time)"
 evaluation_method: "Models solve fresh contest problems released after a cutoff date; graded by executing code against hidden test cases"
 scoring: "Pass@1 accuracy (% of problems solved correctly on the first submission)"
+caveat: "LiveCodeBench draws problems published after model cut-offs to limit contamination, but the window moves: scores from different date ranges are not comparable, and vendors rarely state the range they used."
 contamination_notes: "Problems are drawn from contests after a fixed cutoff date specifically to avoid contamination; the benchmark keeps adding new problems to stay ahead of training leakage."
 limitations: "Pass@1 depends on sampling temperature and prompting, and on the execution sandbox. Newer problems are added continuously, so a score is always tied to a specific snapshot. No Chinese model in the China AI Hub database currently publishes a LiveCodeBench score, so this page records no evaluations."
 last_verified: "2026-09-29"

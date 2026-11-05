@@ -1,9 +1,9 @@
 ---
 image: "/images/ai/technologies-ai-agents.webp"
 image_credit: "AI-generated illustration (Seedream)"
-title: "Choosing a Chinese AI Agent: Underlying Models, Tool Calling and MCP"
+title: "Choosing a Chinese AI Agent: Models, Tools, MCP"
 author: "SinoAI Hub Research Team"
-description: "A decision guide for building on Chinese AI agents — how model binding, tool calling, MCP support, deployment and openness decide which of the ten tracked agents fits a given workload."
+description: "How to choose a Chinese AI agent: the model underneath, tool and MCP support, memory, deployment, and the questions that separate a demo from a system you."
 published_date: "2026-09-29"
 updated_date: "2026-09-29"
 related_entities:

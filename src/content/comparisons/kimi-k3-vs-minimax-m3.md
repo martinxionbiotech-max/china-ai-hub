@@ -3,7 +3,7 @@ image: "/images/ai/comparisons-kimi-k3-vs-minimax-m3.webp"
 image_credit: "AI-generated illustration (Seedream)"
 title: "Kimi K3 vs MiniMax M3: Price, Output Length and Media"
 author: "SinoAI Hub Research Team"
-description: "Evidence-based comparison of Kimi K3 and MiniMax M3: API pricing, context window, maximum output, capabilities, licenses and benchmark records from the China AI Hub database."
+description: "kimi-k3 vs minimax-m3 compared on price per 1M tokens, context window, licence and benchmark evidence, and where the published numbers stop being."
 entities:
   - kimi-k3
   - minimax-m3

@@ -1,7 +1,7 @@
 ---
-title: "MiniMax-M3 vs MiniMax-M2.7: Flagship Against the Self-Evolving Model"
+title: "MiniMax M3 vs M2.7: Same Price, Twice the Context"
 author: "SinoAI Hub Research Team"
-description: "Evidence-based comparison of MiniMax-M3 and MiniMax-M2.7: API pricing, context window, capabilities, licenses, deployment and benchmark records from the China AI Hub database."
+description: "minimax-m3 vs minimax-m2.7 compared on price per 1M tokens, context window, licence and benchmark evidence, and the trade-offs that decide the choice."
 entities:
   - minimax-m3
   - minimax-m2.7

@@ -8,6 +8,7 @@ task_type: "Long-horizon software engineering tasks on active open-source reposi
 dataset_size: "113 tasks across TypeScript, Go, Python, JavaScript and Rust"
 evaluation_method: "Isolated agent environment with program-based verifiers; the agent's committed patch is applied and graded in a pristine container"
 scoring: "Binary reward plus pass fractions per task (reward.json / CTRF test report)"
+caveat: "DeepSWE is a software-engineering benchmark whose results depend on repository size, test visibility and the number of allowed attempts. Compare only results published with the same harness version."
 
 evaluations:
   - benchmark: DeepSWE

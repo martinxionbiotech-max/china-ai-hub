@@ -8,6 +8,7 @@ task_type: "Browsing agent benchmark (locate hard-to-find, entangled information
 dataset_size: "1,266 problems"
 evaluation_method: "Short-answer questions with a single correct answer; graders verify the exact answer (encrypted set)"
 scoring: "Accuracy (% correct)"
+caveat: "BrowseComp rewards persistent multi-step browsing, and results are sensitive to the search backend, the time limit and whether the agent may retry. A score without those settings is not reproducible."
 
 evaluations:
   - benchmark: BrowseComp

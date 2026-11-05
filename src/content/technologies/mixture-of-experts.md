@@ -2,7 +2,7 @@
 image: "/images/ai/technologies-mixture-of-experts.webp"
 image_credit: "AI-generated illustration (Seedream)"
 slug: mixture-of-experts
-title: Mixture of Experts
+title: "Mixture of Experts in Chinese Models: Activation Explained"
 author: "SinoAI Hub Research Team"
 definition: "Mixture of Experts (MoE) is a model architecture where each layer contains many small 'expert' networks and a router activates only a few per token, so total parameters can scale up while per-token compute stays roughly flat."
 related_models:

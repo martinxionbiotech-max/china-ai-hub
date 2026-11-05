@@ -1,7 +1,7 @@
 ---
-title: "Chinese AI APIs Compared: Six Official Platforms, One Convergence and a Few Real Differences"
+title: "Chinese AI APIs Compared: Six Platforms, One Shape"
 author: "SinoAI Hub Research Team"
-description: "A comparison of the six official Chinese AI API platforms — DeepSeek, Ark, Model Studio, Moonshot, MiniMax and Z.ai — on authentication, protocol compatibility, model routing, regions and rate limits."
+description: "Six Chinese AI API platforms compared on compatibility, pricing, region access and rate limits, and why their interfaces converged while their contracts."
 published_date: "2026-09-22"
 updated_date: "2026-09-22"
 research_question: "How do the six official Chinese AI API platforms differ in practice on authentication, protocol compatibility, model routing, regions and rate limits?"

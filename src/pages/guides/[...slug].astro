@@ -17,6 +17,15 @@ const { g } = Astro.props;
 const d = g.data;
 const { Content } = await render(g);
 
+const allGuides = await getCollection('guides');
+const siblings = d.pillar
+  ? allGuides.filter((x) => x.data.pillar === d.pillar).sort((a, b) => a.data.order - b.data.order)
+  : [];
+const pos = siblings.findIndex((x) => x.id === g.id);
+const prevChapter = pos > 0 ? siblings[pos - 1] : null;
+const nextChapter = pos >= 0 && pos < siblings.length - 1 ? siblings[pos + 1] : null;
+const pillarPage = d.pillar ? siblings.find((x) => x.data.order === 0) ?? null : null;
+
 const pageUrl = new URL(Astro.url.pathname, Astro.site).href;
 const jsonLd = {
   '@context': 'https://schema.org',
@@ -27,6 +36,8 @@ const jsonLd = {
   description: d.description,
   datePublished: d.published_date,
   dateModified: d.updated_date ?? d.published_date,
+  author: { '@type': 'Organization', name: d.author ?? 'China AI Hub Research Team' },
+  publisher: { '@type': 'Organization', name: 'China AI Hub', url: 'https://sinoaihub.com' },
   isPartOf: { '@type': 'WebSite', name: 'China AI Hub', url: 'https://sinoaihub.com' },
 };
 const breadcrumb = breadcrumbJsonLd([
@@ -46,7 +57,13 @@ const breadcrumb = breadcrumbJsonLd([
     <script type="application/ld+json" set:html={JSON.stringify(breadcrumb)} />
     <p class="text-sm text-gray-500 mb-1"><a href="/guides/">Guides</a> / {d.title}</p>
     <h1 class="text-3xl font-bold text-gray-900 mb-2">{d.title}</h1>
-    {d.updated_date && <p class="text-sm text-gray-500 mb-4">Updated: {d.updated_date}</p>}
+    {d.updated_date && <p class="text-sm text-gray-500 mb-2">Updated: {d.updated_date}</p>}
+    {pillarPage && (
+      <p class="text-sm text-gray-600 mb-4">
+        Part of the pillar <a href={`/guides/${pillarPage.id}/`} class="underline">{pillarPage.data.title}</a>
+        {d.order ? <span> · chapter {d.order} of {siblings.length - 1}</span> : null}
+      </p>
+    )}
 
     {d.image && (
       <figure class="mb-6">
@@ -62,6 +79,17 @@ const breadcrumb = breadcrumbJsonLd([
     <div class="prose prose-slate max-w-none my-8">
       <Content />
     </div>
+
+    {(prevChapter || nextChapter) && (
+      <nav class="flex flex-wrap gap-4 justify-between border-t border-gray-200 pt-4 mt-8 text-sm">
+        {prevChapter ? (
+          <a href={`/guides/${prevChapter.id}/`}>← {prevChapter.data.title}</a>
+        ) : <span />}
+        {nextChapter ? (
+          <a href={`/guides/${nextChapter.id}/`} class="text-right">{nextChapter.data.title} →</a>
+        ) : <span />}
+      </nav>
+    )}
 
     {d.sources.length > 0 && (
       <>

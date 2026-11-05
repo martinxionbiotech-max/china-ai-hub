@@ -22,13 +22,16 @@ const d = model.data;
 const { Content } = await render(model);
 
 const modelMap = await getModelIdMap();
-const [allModels, allBenchmarks, allAgents, allApis, allCompanies] = await Promise.all([
+const [allModels, allBenchmarks, allAgents, allApis, allCompanies, allPricing] = await Promise.all([
   getCollection('models'),
   getCollection('benchmarks'),
   getCollection('agents'),
   getCollection('apis'),
   getCollection('companies'),
+  getCollection('pricing'),
 ]);
+const pricingProviders = new Set(allPricing.map((p) => p.id));
+const hasPricingPage = Boolean(d.pricing?.pricing_ref && pricingProviders.has(d.pricing.pricing_ref));
 
 const companyRec = allCompanies.find((c) => c.id === d.provider || c.data.aliases?.includes(d.provider));
 
@@ -110,10 +113,11 @@ const evidenceLabel: Record<string, string> = {
 ---
 
 <BaseLayout
-  title={d.model_name}
-  description={`${d.model_name} by ${d.provider}: context window, capabilities, pricing, benchmarks and verified sources.`}
+  title={`${d.model_name}: Context, Pricing, Benchmarks`}
+  description={`${d.model_name} by ${d.provider}: ${d.context_window ? `${(d.context_window/1024).toFixed(0)}K-token context` : 'context not listed'}, ${d.pricing?.input_price_per_1m != null ? `$${d.pricing.input_price_per_1m} input and $${d.pricing.output_price_per_1m} output per 1M tokens` : 'API pricing not listed'}, ${d.open_weight ? 'open weights' : 'hosted only'}, ${d.benchmark_results.length} benchmark records and sourced specifications.`}
   type="article"
   canonicalPath={d.canonical_model ? modelHref(modelMap, d.canonical_model) : undefined}
+  noindex={Boolean(d.canonical_model)}
 >
   <article class="max-w-none">
     <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
@@ -188,7 +192,7 @@ const evidenceLabel: Record<string, string> = {
             <td>
               ${d.pricing.input_price_per_1m} input / ${d.pricing.output_price_per_1m ?? '—'} output per 1M tokens ({d.pricing.currency})
               {d.pricing.effective_date && <> · effective {d.pricing.effective_date}</>}
-              {d.pricing.pricing_ref && <> · <a href={`/pricing/${d.pricing.pricing_ref}/`}>provider pricing page</a></>}
+              {hasPricingPage && <> · <a href={`/pricing/${d.pricing.pricing_ref}/`}>provider pricing page</a></>}
             </td>
           </tr>
         )}
@@ -265,7 +269,7 @@ const evidenceLabel: Record<string, string> = {
     <!-- Related entities -->
     <div class="space-y-6 mb-6">
       <EntityLinks title="Provider" links={[{ href: `/companies/${d.provider}/`, label: d.provider }]} />
-      {d.pricing?.pricing_ref && (
+      {hasPricingPage && (
         <EntityLinks title="Pricing" links={[{ href: `/pricing/${d.pricing.pricing_ref}/`, label: `${d.pricing.pricing_ref} pricing` }]} />
       )}
       {benchLinks.length > 0 && <EntityLinks title="Benchmarks with results for this model" links={benchLinks} />}

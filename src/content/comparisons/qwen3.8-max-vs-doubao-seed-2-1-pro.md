@@ -1,7 +1,7 @@
 ---
-title: "Qwen3.8-Max vs Doubao Seed 2.1 Pro: Closed Flagships, Different Agent Surfaces"
+title: "Qwen3.8-Max vs Doubao Seed 2.1 Pro: Agent Surfaces"
 author: "SinoAI Hub Research Team"
-description: "Evidence-based comparison of Qwen3.8-Max and Doubao Seed 2.1 Pro: API pricing, context window, capabilities, agent surfaces, deployment and benchmark records from the China AI Hub database."
+description: "qwen3.8-max vs doubao-seed-2-1-pro compared on price per 1M tokens, context window, licence and benchmark evidence, plus licence terms buyers tend to."
 entities:
   - qwen3.8-max
   - doubao-seed-2-1-pro

@@ -23,7 +23,7 @@ const { Content } = await render(company);
 
 const pageUrl = new URL(Astro.url.pathname, Astro.site).href;
 const modelMap = await getModelIdMap();
-const metaDescription = d.description ?? `${d.company_name}: Chinese AI company profile — models, agents, API, open-source projects and official sources.`;
+const metaDescription = `${d.company_name}${d.headquarters ? ` (${d.headquarters})` : ''}: ${d.foundation_models.length} models, ${d.agents.length} agents, ${d.api.length} APIs and ${d.open_models.length} open-weight releases, with ownership, funding, ${d.sources.length} cited sources and the entity behind the API.`;
 
 /* Entity definition — derived from verified DB fields only. */
 const hqShort2 = (d.headquarters ?? '').split(';')[0].trim().replace(/^China platform:\s*/i, '');
@@ -48,7 +48,7 @@ const apiLinks = d.api.map((a) => ({ href: `/api/${a}/`, label: `${a} API` }));
 ---
 
 <BaseLayout
-  title={d.company_name}
+  title={`${d.company_name.replace(/\s*\(.*?\)\s*/g, "")}: AI Models, Agents and API Access`}
   description={metaDescription}
   type="article"
 >

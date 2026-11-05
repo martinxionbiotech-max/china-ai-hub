@@ -260,6 +260,7 @@ const benchmarks = defineCollection({
   loader: glob({ pattern: '**/*.md', base: './src/content/benchmarks' }),
   schema: z.object({
     benchmark_id: z.string(),
+    caveat: z.string().optional(),
     benchmark_name: z.string(),
     version: z.string().optional(),
     description: z.string().optional(),
@@ -325,6 +326,8 @@ const guides = defineCollection({
     image_source: z.string().optional(),
     published_date: z.string().optional(),
     updated_date: z.string().optional(),
+    pillar: z.string().optional(),
+    order: z.number().default(99),
     related_entities: z.array(z.string()).default([]),
     sources: z.array(sourceSchema).default([]),
   }),

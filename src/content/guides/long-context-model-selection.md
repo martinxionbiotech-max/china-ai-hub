@@ -1,9 +1,9 @@
 ---
 image: "/images/ai/models-kimi-k3.webp"
 image_credit: "AI-generated illustration (Seedream)"
-title: "Long-Context Model Selection: 1M-Token Windows and What They Actually Mean"
+title: "Long-Context Model Selection: What 1M Tokens Really Mean"
 author: "SinoAI Hub Research Team"
-description: "A decision guide for choosing a Chinese model for long-context workloads — how the 1M-token input norm, the output-token ceiling and cache pricing together decide which model fits long-document analysis versus long-form generation."
+description: "Selecting a long-context Chinese model: effective retrieval depth, cost per call, latency and the tasks where a large window beats retrieval."
 published_date: "2026-09-29"
 updated_date: "2026-09-29"
 related_entities:

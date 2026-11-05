@@ -23,7 +23,7 @@ const { Content } = await render(api);
 
 const pageUrl = new URL(Astro.url.pathname, Astro.site).href;
 const providerUrl = new URL(`/companies/${d.provider}/`, Astro.site).href;
-const metaDescription = d.description ?? `${d.api_id} API by ${d.provider}: endpoint, authentication, capabilities, context limits, regions and pricing.`;
+const metaDescription = `${d.api_id} API by ${d.provider}: ${d.api_type.replace(/_/g, ' ')} access with ${d.context_limits.length} model limits, ${d.authentication ?? 'key-based'} authentication, regions and endpoint details from official docs.`;
 
 const modelMap = await getModelIdMap();
 const allModels = await getCollection('models');
@@ -50,7 +50,7 @@ const fmt = (v: boolean | null | undefined) => (v === true ? 'Yes' : v === false
 ---
 
 <BaseLayout
-  title={`${d.api_id} API`}
+  title={`${d.api_id} API: Models, Endpoints and Access`}
   description={metaDescription}
   type="article"
 >

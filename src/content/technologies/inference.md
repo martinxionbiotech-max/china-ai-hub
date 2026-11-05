@@ -2,7 +2,7 @@
 image: "/images/ai/technologies-inference.webp"
 image_credit: "AI-generated illustration (Seedream)"
 slug: inference
-title: Inference
+title: "Inference in China: Serving Costs and Optimisation"
 author: "SinoAI Hub Research Team"
 definition: "Inference is the process of running a trained model to generate outputs — and, as a discipline, the engineering of making that process fast and cheap through attention optimizations, caching, and serving systems."
 related_models:

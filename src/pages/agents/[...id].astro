@@ -55,8 +55,8 @@ const caps = [
 ---
 
 <BaseLayout
-  title={d.agent_name}
-  description={`${d.agent_name} by ${d.company}: capabilities, underlying models, deployment and sources.`}
+  title={`${d.agent_name.replace(/\s*\(.*?\)\s*/g, "")}: AI Agent Capabilities and Access`}
+  description={`${d.agent_name} by ${d.company}: a ${d.agent_type.replace(/_/g, ' ')} agent built on ${d.underlying_models.length} models, ${d.deployment ?? 'deployment not listed'} deployment, ${d.open_source ? 'open source' : 'proprietary'}, tool calling and sourced capability data.`}
   type="article"
 >
   <article class="max-w-none">

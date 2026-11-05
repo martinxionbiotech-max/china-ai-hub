@@ -2,7 +2,7 @@
 image: "/images/ai/technologies-deep-research.webp"
 image_credit: "AI-generated illustration (Seedream)"
 slug: deep-research
-title: Deep Research
+title: "Deep Research Agents in China: Products and Gaps"
 author: "SinoAI Hub Research Team"
 definition: "Deep research is an agentic workflow in which a model autonomously plans a research question, performs many rounds of search and document reading, and produces a cited, structured report — compressing hours of human research into minutes."
 related_models:

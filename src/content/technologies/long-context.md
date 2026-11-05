@@ -2,7 +2,7 @@
 image: "/images/ai/technologies-long-context.webp"
 image_credit: "AI-generated illustration (Seedream)"
 slug: long-context
-title: Long Context
+title: "Long Context in Chinese Models: 1M Tokens in Practice"
 author: "SinoAI Hub Research Team"
 definition: "Long context refers to a model's ability to accept very large inputs — hundreds of thousands to millions of tokens — in a single request, allowing whole codebases, document sets or conversation histories to be processed at once."
 related_models:

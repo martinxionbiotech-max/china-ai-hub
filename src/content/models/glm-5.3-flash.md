@@ -92,7 +92,7 @@ The 1M-token context with a 131,072 output cap is the standard flagship split, b
 
 ## Pricing implications
 
-Flash $0.15 input / $0.50 output per 1M tokens (cached $0.03); the [FlashX speed tier](/models/glm-53-flashx/) is $0.37 / $1.25 (cached $0.075). At $0.15 input, Flash sits at the three-way $0.15 floor the database records across DeepSeek, Alibaba and Zhipu flash tiers. The 3.3x input-to-output ratio and low cache pricing reward agent loops that re-read visual context. See the [GLM-5.3 vs GLM-5.3-Flash comparison](/comparisons/glm-5.3-vs-glm-5.3-flash/) and [choosing-by-price](/guides/choosing-by-price/).
+Flash $0.15 input / $0.50 output per 1M tokens (cached $0.03); the [FlashX speed tier](/models/glm-53-flashx/) is $0.37 / $1.25 (cached $0.075). At $0.15 input, Flash sits at the three-way $0.15 floor the database records across DeepSeek, Alibaba and Zhipu flash tiers. The 3.3x input-to-output ratio and low cache pricing reward agent loops that re-read visual context. See the [GLM-5.3 vs GLM-5.3-Flash comparison](/comparisons/glm-53-vs-glm-53-flash/) and [choosing-by-price](/guides/choosing-by-price/).
 
 ## API, coding, and agent implications
 
@@ -104,7 +104,7 @@ Open weight, Apache-2.0 per the GitHub repo metadata, self-hostable in FP8. The 
 
 ## Benchmark interpretation
 
-The three recorded rows mix source types. DeepSWE v1.1 (63.4) and AutomationBench (48.8) are vendor-reported; the Artificial Analysis Intelligence Index v4.1.1 (57) is an aggregate index that is itself a third-party construction even though Zhipu is the one citing it. None of the three is an independent re-measurement in this database. See the [GLM-5.3-Flash vs Qwen3.8-Flash comparison](/comparisons/glm-5.3-flash-vs-qwen3.8-flash/).
+The three recorded rows mix source types. DeepSWE v1.1 (63.4) and AutomationBench (48.8) are vendor-reported; the Artificial Analysis Intelligence Index v4.1.1 (57) is an aggregate index that is itself a third-party construction even though Zhipu is the one citing it. None of the three is an independent re-measurement in this database. See the [GLM-5.3-Flash vs Qwen3.8-Flash comparison](/comparisons/glm-53-flash-vs-qwen38-flash/).
 
 ## What the benchmarks do not prove
 

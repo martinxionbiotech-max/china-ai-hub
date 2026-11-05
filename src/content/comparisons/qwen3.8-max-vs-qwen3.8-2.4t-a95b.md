@@ -1,7 +1,7 @@
 ---
-title: "Qwen3.8-Max vs Qwen3.8-2.4T-A95B: Closed API Flagship Against Its Open-Weight Sibling"
+title: "Qwen3.8-Max vs Qwen3.8-2.4T-A95B: Closed vs Open"
 author: "SinoAI Hub Research Team"
-description: "Evidence-based comparison of Qwen3.8-Max and Qwen3.8-2.4T-A95B: API availability, context window, capabilities, licensing, deployment and benchmark records from the China AI Hub database."
+description: "qwen3.8-max vs qwen3.8-2.4t-a95b compared on price per 1M tokens, context window, licence and benchmark evidence, with dates and source types on each."
 entities:
   - qwen3.8-max
   - qwen3.8-2.4t-a95b

@@ -8,6 +8,7 @@ task_type: "Cybersecurity vulnerability analysis (real-world vulnerability disco
 dataset_size: "Large-scale task suite sourced from ARVO and OSS-Fuzz (~240GB data)"
 evaluation_method: "Docker-isolated environments; agents analyze vulnerabilities and generate proofs of concept; pre-/post-patch versions"
 scoring: "Success rate on vulnerability analysis tasks (PoC generation)"
+caveat: "CyberGym evaluates vulnerability discovery and exploitation in a sandbox. Scores are dominated by harness configuration and available tooling, and successful exploitation is a different capability from finding the bug."
 
 evaluations:
   - benchmark: CyberGym

@@ -6,6 +6,7 @@ task_type: "Chinese multi-part evaluation spanning language understanding/genera
 dataset_size: "Multi-part rolling evaluation across four ability quadrants and 12 base capabilities; no fixed single question count (periodic leaderboard releases)"
 evaluation_method: "Combines objective multiple-choice questions with multi-turn open-ended questions and agent/tool-use tasks; scored by the CLUE team rather than self-reported"
 scoring: "Composite total score (总分) with sub-scores per quadrant (e.g. OPEN multi-turn, open questions, objective questions)"
+caveat: "SuperCLUE is a Chinese-language aggregate across many sub-tasks, and the composite score hides the weighting. Compare sub-task results, not the headline, and check whether the evaluation set overlaps with the vendor's own test data."
 contamination_notes: "SuperCLUE maintains public and hidden test sets and runs its own evaluation, reducing reliance on vendor self-reported scores."
 limitations: "The composite score aggregates heterogeneous sub-tasks, so a single total hides capability-specific strengths. Leaderboard snapshots are time-stamped and not comparable across dates. No Chinese model in the China AI Hub database currently publishes a SuperCLUE score, so this page records no evaluations."
 last_verified: "2026-09-29"

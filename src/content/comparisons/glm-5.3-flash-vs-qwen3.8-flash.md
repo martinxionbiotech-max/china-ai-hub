@@ -1,7 +1,7 @@
 ---
-title: "GLM-5.3-Flash vs Qwen3.8-Flash: Multimodal Open Flash Against Closed Flash"
+title: "GLM-5.3-Flash vs Qwen3.8-Flash: Open vs Closed"
 author: "SinoAI Hub Research Team"
-description: "Evidence-based comparison of GLM-5.3-Flash and Qwen3.8-Flash: API pricing, context window, capabilities, openness, deployment and benchmark records from the China AI Hub database."
+description: "glm-5.3-flash vs qwen3.8-flash compared on price per 1M tokens, context window, licence and benchmark evidence, and the trade-offs that decide the choice."
 entities:
   - glm-5.3-flash
   - qwen3.8-flash

@@ -1,9 +1,9 @@
 ---
 image: "/images/ai/pricing-deepseek.webp"
 image_credit: "AI-generated illustration (Seedream)"
-title: "Choosing by Price: Flash Tiers, Cache Discounts and the $0.15 Standard"
+title: "Choosing a Chinese Model by Price: Cache and Tiers"
 author: "SinoAI Hub Research Team"
-description: "A decision guide for selecting a Chinese model on price — reading the flash tier, cache-hit discounts, peak/off-peak differentials, regional splits and subscription structures from the pricing database and its documented price-history events."
+description: "How to compare Chinese model prices properly: cache discounts, batch tiers, output-heavy workloads and the list prices that mislead procurement."
 published_date: "2026-09-29"
 updated_date: "2026-09-29"
 related_entities:

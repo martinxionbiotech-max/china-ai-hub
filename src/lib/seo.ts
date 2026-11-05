@@ -370,3 +370,13 @@ export function benchmarkFaqs(d: any): Faq[] {
   });
   return faqs;
 }
+
+
+/** Trim a meta description to <= max characters on a word boundary. */
+export function fitDescription(text: string, max = 155): string {
+  let s = (text ?? '').replace(/\s+/g, ' ').trim();
+  if (s.length <= max) return s;
+  s = s.slice(0, max);
+  s = s.slice(0, s.lastIndexOf(' ')).replace(/[,;:\u2014-]+$/, '');
+  return s + '.';
+}

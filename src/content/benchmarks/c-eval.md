@@ -6,6 +6,7 @@ task_type: "Multiple-choice knowledge and reasoning questions across 52 discipli
 dataset_size: "13,948 multiple-choice questions across 52 disciplines; four difficulty levels (middle school, high school, college, professional); plus the C-Eval Hard subset"
 evaluation_method: "Closed-book multiple-choice; models answer exam-style questions spanning 52 disciplines at four difficulty levels"
 scoring: "Accuracy (% correct); reported as an overall average and per-discipline / per-level breakdowns"
+caveat: "C-Eval is a Chinese academic knowledge benchmark with heavy overlap in pre-training corpora; contamination is likely for models trained after its release, and vendor-reported numbers should be read as an upper bound."
 contamination_notes: "The complete C-Eval test set was released to the community in July 2025, so models trained after that date may have seen the answers."
 limitations: "Multiple-choice format cannot assess free-form generation, open-ended reasoning or factual grounding. Scores on C-Eval Hard and the full set are not interchangeable. No Chinese model in the China AI Hub database currently publishes a C-Eval score, so this page records no evaluations."
 last_verified: "2026-09-29"
