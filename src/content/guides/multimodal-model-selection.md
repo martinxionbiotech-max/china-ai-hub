@@ -6,6 +6,8 @@ author: "SinoAI Hub Research Team"
 description: "Selecting a multimodal Chinese model: image, video and document handling, benchmark caveats and the modalities vendors overstate. Sourced figures and."
 published_date: "2026-09-29"
 updated_date: "2026-09-29"
+pillar: model-selection-by-workload
+order: 3
 related_entities:
   - deepseek-v4-1-flash
   - doubao-seed-2-1-pro

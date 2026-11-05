@@ -6,6 +6,8 @@ author: "SinoAI Hub Research Team"
 description: "How to compare Chinese model prices properly: cache discounts, batch tiers, output-heavy workloads and the list prices that mislead procurement."
 published_date: "2026-09-29"
 updated_date: "2026-09-29"
+pillar: model-selection-by-workload
+order: 1
 related_entities:
   - deepseek-v4-1-flash
   - deepseek-v4-pro

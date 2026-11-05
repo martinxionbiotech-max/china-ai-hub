@@ -6,6 +6,8 @@ author: "SinoAI Hub Research Team"
 description: "A method for choosing a Chinese coding model: repository-level evidence, tool-calling behaviour, context limits, and the vendor claims that do not survive."
 published_date: "2026-09-29"
 updated_date: "2026-09-29"
+pillar: model-selection-by-workload
+order: 4
 related_entities:
   - deepseek-v4-1-flash
   - deepseek-v4-pro

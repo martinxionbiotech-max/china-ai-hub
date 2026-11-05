@@ -1,18 +1,20 @@
 ---
 image: "/images/ai/guides-how-to-choose-a-chinese-ai-model.webp"
 image_credit: "AI-generated illustration (Seedream)"
-title: "How to Choose a Chinese AI Model: A Decision Framework"
+title: "Choosing a Chinese AI Model by Workload"
 author: "SinoAI Hub Research Team"
-description: "A decision framework for Chinese AI models: task fit, evidence quality, deployment constraints and total cost, ordered by what actually eliminates options."
+description: "A selection method that starts from the task, not the leaderboard: five filters in order, the six workloads that differ, and when a cheap model is the wrong answer."
 published_date: "2026-09-22"
-updated_date: "2026-09-22"
+updated_date: "2026-11-05"
+pillar: model-selection-by-workload
+order: 0
 related_entities:
-  - deepseek-v4-pro
   - deepseek-v4-1-flash
-  - qwen3.8-max
-  - kimi-k3
-  - glm-5.3
+  - glm-5.3-flash
+  - qwen3.8-flash
   - minimax-m3
+  - kimi-k3
+  - qwen3.8-max
   - doubao-seed-2-1-pro
 sources:
   - source_name: "China AI Hub — Models database"
@@ -29,72 +31,102 @@ sources:
     source_type: official
 ---
 
-This guide is a decision framework, not a ranking. It uses verified fields from the China AI Hub database (last verified 2026-09-22) and official provider pages. Prices change frequently; re-verify before committing.
+**The short version.** Model selection fails when it starts with a leaderboard. It works when it starts with the shape of the task: how much context it needs, how much output it produces, whether it must be self-hosted, and what a mistake costs. Those four questions eliminate most of the market before price is even discussed.
 
-## Step 1: Price per task, not price per token
+This pillar is the method, applied to the workloads buyers actually run.
 
-Output tokens dominate reasoning workloads. Compare price-per-completed-task, not the input price:
-- The budget tier in our database lists $0.15/1M input: DeepSeek-V4.1-Flash ($0.60 output) and GLM-5.3-Flash ($0.50 output).
-- The mid tier: MiniMax M3 at $0.30/$1.20 is the cheapest flagship by a wide margin.
-- The premium tier: Doubao Seed 2.1 Pro at $6.00/$30.00 is the most expensive listing — twenty times MiniMax M3's input price.
+## Why workload first
 
-Long reasoning chains amplify output cost. If your task generates long chains of thought, compute expected output tokens before comparing.
+Two models with the same benchmark score can differ by 20x in cost per completed task, because cost depends on the ratio of input to output, cache behaviour and context length — none of which a benchmark measures.
 
-## Step 2: Context and output ceilings
+Three models in this database sit at the same $0.15 input price:
 
-Eleven current models in the database list 1M-token context windows, but maximum output varies:
-- Kimi K3: 1,048,576 output (the full window).
-- DeepSeek-V4-Pro: 393,216; Doubao Seed 2.1 Pro: 262,144.
-- Qwen3.8-Max and GLM-5.3: 131,072.
-- MiniMax M3: not publicly disclosed.
+| Model | Input | Output | Output/input | Cache hit |
+|---|---|---|---|---|
+| Qwen3.8-Flash | $0.15 | $0.47 | 3.13 | $0.016 (10.7%) |
+| GLM-5.3-Flash | $0.15 | $0.50 | 3.33 | $0.03 (20%) |
+| DeepSeek-V4.1-Flash | $0.15 | $0.60 | 4.00 | $0.003 (2%) |
 
-For long-form generation or whole-codebase rewriting, check the output ceiling, not just the input window.
+At equal input price, the completed-task cost differs by 28% between the cheapest and most expensive output rate — and by far more once caching or time-of-day pricing applies. Choosing on input price is choosing on the smaller half of the bill.
 
-## Step 3: Capabilities you actually need
+## The five filters, in order
 
-Look up the specific capability column, not the vendor's overall pitch. From the database (2026-09-22):
-- Vision and video: Qwen3.8-Max, Kimi K3, MiniMax M3, GLM-5.3-Flash (video), Qwen3.8-Flash.
-- Structured output: DeepSeek-V4-Pro, V4.1-Flash, Qwen3.8-Max, Kimi K3, Doubao Seed series.
-- Computer use: Doubao Seed 2.1 series and GLM-5.3-Flash (models); seven of ten tracked agents.
-- Agent capability: Kimi K3, MiniMax M3, Doubao Seed 2.1 series, GLM-5.3-Flash.
+**1. Hard constraints.** Self-hosting requirement, data residency, licence terms, context ceiling. These eliminate options outright and cost nothing to check. A model you cannot legally deploy is not a candidate, regardless of quality.
 
-A capability listed as "Yes" is a vendor listing, not an independent test result.
+**2. Task shape.** Input-heavy or output-heavy? Single-shot or multi-turn? Stable prefix or reshuffled context? This determines which pricing structure fits before any vendor is compared.
 
-## Step 4: Openness and licenses
+**3. Evidence.** What has actually been measured on a task like yours, by whom, under what harness. Vendor benchmarks rarely answer this; a 50-item eval on your own data usually does.
 
-If you must self-host, the field that matters is open_weight plus the actual license text:
-- MIT: DeepSeek-V3.2, V4-Pro, V4.1-Flash — the most permissive.
-- Apache-2.0: GLM-5.2, GLM-5.3, GLM-5.3-Flash.
-- Custom with obligations: Kimi K3 (revenue-triggered agreements), MiniMax M3 (non-commercial boundary, attribution), Qwen3.8-2.4T-A95B (scale-triggered terms).
+**4. Cost per completed task.** Not per token. Include retries, failed outputs and the human review a weaker model requires.
 
-Read the license before commercial use — permissive-sounding licenses carry conditions in this ecosystem.
+**5. Exit.** Can you switch in a week? Licence portability, API compatibility and provider concentration decide how much the first four filters are worth.
 
-## Step 5: Status and verification
+Most comparisons skip straight to step 4 and then argue about step 3, which is why they end in a tie.
 
-Check the model's status field: DeepSeek-V4-Pro is listed as deprecated in the database. Check last_verified dates and source types on every page you rely on. Vendor-reported benchmark scores are labeled as such; independent results are rarer.
+## Context and output are different ceilings
 
-## The short version
+Eleven tracked models list a 1M-token input window, but maximum output varies by almost an order of magnitude:
 
-- Cheapest flagship: MiniMax M3.
-- Longest output: Kimi K3.
-- Most permissive licenses: DeepSeek MIT releases.
-- Vision+video+structured output: Qwen3.8-Max or Kimi K3.
-- Computer use: Doubao Seed 2.1 Pro (model) or the seven agents listing it.
+- **Kimi K3** — 1,048,576 output (the full window).
+- **DeepSeek-V4-Pro / V4.1-Flash** — 393,216.
+- **Doubao Seed 2.1 Pro** — 262,144.
+- **Qwen3.8-Max / GLM-5.3** — 131,072.
+- **MiniMax M3** — not publicly disclosed.
 
-No single model wins these axes at once; the right choice is a function of your task's weight on each.
+For long-form generation, whole-repository rewriting or multi-document synthesis, the output ceiling binds before the input window does. A 1M-context model that stops generating at 131K is a 131K model for writing tasks.
+
+## The six workloads that actually differ
+
+| Workload | Binding constraint | Where it usually lands |
+|---|---|---|
+| Document extraction | Structured-output reliability, cost per document | Flash tier, high volume, cheap output |
+| Coding agents | Context window, tool-calling reliability | Mid-tier coding models, 262K–1M |
+| Chinese customer support | Tone, compliance, latency | Cheap tier with strong Chinese, cached prompts |
+| Long-document analysis | Effective context depth, price per long call | 1M-context models, or chunking |
+| High-volume classification | Cost per million tokens | Cheapest flash, batch or off-peak |
+| Research / browsing agents | Tool use, persistence, harness | Mid-tier with tool calling, plus orchestration |
+
+Each chapter below takes one shape and works through it. None concludes "buy the flagship", which is the point.
+
+## What the tiers look like
+
+- **$0.15 input tier** — Qwen3.8-Flash, GLM-5.3-Flash, DeepSeek-V4.1-Flash; output $0.47–$0.60.
+- **$0.30–$1.40 tier** — MiniMax M3 ($0.30/$1.20), DeepSeek-V4-Pro ($0.66/$1.98), GLM-5.3 ($1.40/$4.40).
+- **$2.00+ tier** — Qwen3.8-Max ($2.00/$6.00), Kimi K3 ($3.00/$15.00), Doubao Seed 2.1 Pro (¥6/¥30, roughly $0.85/$4.23).
+
+The capability gap between the first and second tier is smaller than the price gap in most published results; the gap between the second and third is task-specific. That asymmetry is where selection judgement lives.
 
 ## Selection matrix
 
-This matrix maps common requirements to the database record that best matches, per the verified fields (2026-09-22). It is a starting filter, not a ranking — verify pricing and capability on the model page before committing.
+A starting filter, not a ranking — verify price and capability on the model page before committing.
 
 | Requirement | Best-documented fit | Why (verified field) |
 |---|---|---|
-| Lowest cost, budget-tier | [DeepSeek-V4.1-Flash](/models/deepseek-v4-1-flash/) / [GLM-5.3-Flash](/models/glm-53-flash/) | $0.15/1M input; $0.50–$0.60 output |
-| Lowest flagship cost | [MiniMax-M3](/models/minimax-m3/) | $0.30/$1.20 — cheapest flagship by a wide margin |
-| Longest output / generation | [Kimi K3](/models/kimi-k3/) | 1,048,576-token output ceiling |
-| Permissive self-hosting | [DeepSeek-V4-Pro](/models/deepseek-v4-pro/) | MIT license, 1.6T open-weight MoE |
+| Lowest cost, budget tier | [DeepSeek-V4.1-Flash](/models/deepseek-v4-1-flash/) / [GLM-5.3-Flash](/models/glm-53-flash/) | $0.15/1M input; $0.50–$0.60 output |
+| Lowest flagship cost | [MiniMax-M3](/models/minimax-m3/) | $0.30/$1.20 with a 1M window |
+| Longest output | [Kimi K3](/models/kimi-k3/) | 1,048,576-token output ceiling |
+| Permissive self-hosting | [DeepSeek-V4-Pro](/models/deepseek-v4-pro/) | MIT licence, 1M context |
 | Vision + video + structured output | [Qwen3.8-Max](/models/qwen38-max/) | Lists vision, video and structured output |
-| Computer use (model) | [Doubao Seed 2.1 Pro](/models/doubao-seed-2-1-pro/) | Lists computer use; cn-beijing only |
-| Multi-region enterprise API | [Model Studio](/api/model-studio/) | Six regions; 30,000 RPM global limits |
+| Computer use (model) | [Doubao Seed 2.1 Pro](/models/doubao-seed-2-1-pro/) | Lists computer use |
+| Multi-region enterprise API | [Model Studio](/api/model-studio/) | Six regions, documented rate limits |
 
-See the [pricing database](/pricing/), [models database](/models/) and the [open weight vs API guide](/guides/open-weight-vs-api/) for the underlying records.
+## Our position
+
+**Start at the cheapest tier that passes your eval, and move up only on a measured failure.** The default direction of travel in procurement is downward — teams over-buy "just in case" and never re-test. At a 9–20x spread between tiers, over-buying is usually the largest avoidable cost in an AI budget.
+
+**The binding constraint is almost never capability.** In practice it is context length, self-hosting or a licence clause. Teams spend weeks comparing scores and five minutes checking whether the model may be deployed in their jurisdiction — which is backwards.
+
+**Two models beat one.** A routing layer that sends easy traffic to a flash tier and hard traffic to a mid-tier model typically cuts spend by 70–80% with no measurable quality loss. A single-model architecture is a simplicity choice, not an optimisation.
+
+**Every chapter ends in an eval, because selection without measurement is preference.** The last chapter is the method for building that eval in an afternoon.
+
+## The chapters
+
+1. [Choosing by price](/guides/choosing-by-price/) — cost per completed task, cache and tier structure.
+2. [Long-context selection](/guides/long-context-model-selection/) — what 1M tokens really deliver.
+3. [Multimodal selection](/guides/multimodal-model-selection/) — vision, video and computer use.
+4. [Coding models](/guides/choosing-a-coding-model/) — evidence over claims.
+5. [Agents](/guides/choosing-an-agent/) — models, tools and MCP.
+6. [Document extraction](/guides/choosing-a-model-for-document-extraction/) — structured output at volume.
+7. [High-volume classification](/guides/choosing-a-model-for-classification/) — cost per million tokens.
+8. [Build a 50-item eval](/guides/build-your-own-model-eval/) — the method that settles it.

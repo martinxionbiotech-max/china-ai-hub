@@ -6,6 +6,8 @@ author: "SinoAI Hub Research Team"
 description: "Selecting a long-context Chinese model: effective retrieval depth, cost per call, latency and the tasks where a large window beats retrieval."
 published_date: "2026-09-29"
 updated_date: "2026-09-29"
+pillar: model-selection-by-workload
+order: 2
 related_entities:
   - deepseek-v4-1-flash
   - deepseek-v4-pro

@@ -6,6 +6,8 @@ author: "SinoAI Hub Research Team"
 description: "How to choose a Chinese AI agent: the model underneath, tool and MCP support, memory, deployment, and the questions that separate a demo from a system you."
 published_date: "2026-09-29"
 updated_date: "2026-09-29"
+pillar: model-selection-by-workload
+order: 5
 related_entities:
   - autoglm
   - deepseek-harness
